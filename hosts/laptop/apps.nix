@@ -43,6 +43,7 @@
 
     taps = [
       "homebrew/services"
+      "nikitabobko/tap"
     ];
 
     # `brew install`
@@ -59,8 +60,8 @@
       "arc"
       "firefox"
       "raycast"
-
-      "telegram"
+      "aerospace"
+      "visual-studio-code@insiders"
 
       "iina" # video player
 
