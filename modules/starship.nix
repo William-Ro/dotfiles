@@ -8,10 +8,10 @@
       add_newline = true;
 
       format = ''
-        [╭─user───❯](bold blue) $username
-        [┣─system─❯](bold yellow) $hostname
-        [┣─project❯](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
-        [╰─cmd────❯](bold green) '';
+        [╭─user─── ](bold blue) $username
+        [┣─system─ ](bold yellow) $hostname
+        [┣─project ](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
+        [╰─cmd──── ](bold green) '';
 
       username = {
         style_user = "green bold";
@@ -29,7 +29,7 @@
       };
 
       character = {
-        success_symbol = "[﬌](bold green)";
+        success_symbol = "[](bold green)";
         error_symbol = "[✗](bold red)";
       };
 
