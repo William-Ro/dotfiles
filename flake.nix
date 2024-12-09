@@ -46,10 +46,11 @@
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
-        ./hosts/laptop/nix-core.nix
+        
+	./hosts/laptop/nix-core.nix
         ./hosts/laptop/system.nix
-        ./hosts/laptop/apps.nix
-        ./hosts/laptop/host-users.nix
+	./hosts/laptop/apps.nix
+        ./hosts/laptop/host-users.nix	
 
         # Home Manager
         home-manager.darwinModules.home-manager
@@ -59,6 +60,11 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.users.${username} = import ./modules;
         }
+
+	# Homebrew
+	nix-homebrew.darwinModules.nix-homebrew
+	
+
       ];
     };
   };

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   ##########################################################################
   #
   #  Install all apps and packages here.
@@ -21,6 +21,14 @@
   #
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
+  
+  # Add nix-homebrew configuration
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = username;
+    autoMigrate = true;
+  };
   homebrew = {
     enable = true;
 
@@ -57,7 +65,6 @@
 
     # `brew install --cask`
     casks = [
-      "arc"
       "firefox"
       "raycast"
       "aerospace"
