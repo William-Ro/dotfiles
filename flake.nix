@@ -4,6 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Darwin System
     nix-darwin = {
@@ -21,6 +22,12 @@
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew";
     };
+
+    # Alejandra
+    alejandra = {
+      url = "github:kamadorueda/alejandra/3.1.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
@@ -29,6 +36,7 @@
     nix-darwin,
     home-manager,
     nix-homebrew,
+    alejandra,
     ...
   }: let
     username = "deishuu";
@@ -42,15 +50,15 @@
         inherit username useremail hostname;
       };
   in {
-    # Configuración para MacOS
+    # MacOS Configuration
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
-        
-	./hosts/laptop/nix-core.nix
+        # System Configuration
+        ./hosts/laptop/nix-core.nix
         ./hosts/laptop/system.nix
-	./hosts/laptop/apps.nix
-        ./hosts/laptop/host-users.nix	
+        ./hosts/laptop/apps.nix
+        ./hosts/laptop/host-users.nix
 
         # Home Manager
         home-manager.darwinModules.home-manager
@@ -61,10 +69,13 @@
           home-manager.users.${username} = import ./modules;
         }
 
-	# Homebrew
-	nix-homebrew.darwinModules.nix-homebrew
-	
+        # Homebrew
+        nix-homebrew.darwinModules.nix-homebrew
 
+        # Alejandra
+        {
+          environment.systemPackages = [alejandra.defaultPackage.${system}];
+        }
       ];
     };
   };
