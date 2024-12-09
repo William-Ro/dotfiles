@@ -28,12 +28,6 @@
       url = "github:kamadorueda/alejandra/3.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # NixVim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs @ {
@@ -43,7 +37,6 @@
     home-manager,
     nix-homebrew,
     alejandra,
-    nixvim,
     ...
   }: let
     username = "deishuu";
@@ -83,8 +76,6 @@
         {
           environment.systemPackages = [alejandra.defaultPackage.${system}];
         }
-        # NixVim
-        nixvim.nixDarwinModules.nixvim
       ];
     };
   };

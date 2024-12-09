@@ -1,5 +1,5 @@
-{
-  programs.nixvim = {
-    plugins.lightline.enable = true;
+{...}: {
+  programs.neovim = {
+    enable = true;
   };
 }
