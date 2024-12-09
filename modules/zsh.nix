@@ -22,6 +22,8 @@
     vim = "nvim";
     vi = "nvim";
     v = "nvim";
+    # Lazygit alias
+    lg = "lazygit";
   };
 
   # Agregar lsd y bat
