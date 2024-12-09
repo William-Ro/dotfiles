@@ -12,6 +12,8 @@
     which
     tree
 
+    fastfetch # fetch system information
+
     # productivity
     glow # markdown previewer in terminal
   ];
