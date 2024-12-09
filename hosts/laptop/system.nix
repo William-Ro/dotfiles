@@ -14,7 +14,10 @@
       # customize dock
       dock = {
         autohide = true;
+        tilesize = 34; # dock icon size
+        orientation = "right"; # dock position
         show-recents = false; # disable recent apps
+        static-only = true; # only show active apps
       };
 
       # customize finder
@@ -39,7 +42,7 @@
       #   https://github.com/yannbertrand/macos-defaults
       NSGlobalDomain = {
         # `defaults read NSGlobalDomain "xxx"`
-        "com.apple.swipescrolldirection" = false; # enable natural scrolling(default to true)
+        "com.apple.swipescrolldirection" = false; # disable natural scrolling(default to true)
         "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
         AppleInterfaceStyle = "Dark"; # dark mode
         AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
@@ -75,6 +78,7 @@
         NSGlobalDomain = {
           # Add a context menu item for showing the Web Inspector in web views
           WebKitDeveloperExtras = true;
+          "com.apple.mouse.linear" = true; # disable mouse acceleration
         };
         "com.apple.finder" = {
           ShowExternalHardDrivesOnDesktop = false;
@@ -111,6 +115,9 @@
         };
         "com.apple.AdLib" = {
           allowApplePersonalizedAdvertising = false;
+        };
+        "com.apple.HIToolbox" = {
+          AppleFnUsageType = 0; 
         };
         # Prevent Photos from opening automatically when devices are plugged in
         "com.apple.ImageCapture".disableHotPlug = true;
