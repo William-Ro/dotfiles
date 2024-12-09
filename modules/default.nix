@@ -7,6 +7,7 @@
     ./starship.nix
     ./discord.nix
     ./kitty.nix
+    ./neovim.nix
   ];
 
   # Home Manager needs a bit of information about you and the
