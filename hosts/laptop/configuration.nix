@@ -159,7 +159,7 @@
       #
       # disabled, caused only problems!
 
-      swapLeftCommandAndLeftAlt = true;
+      swapLeftCommandAndLeftAlt = false;
     };
   };
 
