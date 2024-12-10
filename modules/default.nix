@@ -4,10 +4,10 @@
     ./core.nix
     ./zsh.nix
     ./git.nix
+    ./neovim.nix
     ./starship.nix
     ./discord.nix
     ./kitty.nix
-    ./neovim.nix
     ./lazygit.nix
     ./aerospace.nix
   ];
