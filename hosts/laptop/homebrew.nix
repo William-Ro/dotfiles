@@ -1,8 +1,4 @@
-{
-  pkgs,
-  username,
-  ...
-}: {
+{username, ...}: {
   ##########################################################################
   #
   #  Install all apps and packages here.
