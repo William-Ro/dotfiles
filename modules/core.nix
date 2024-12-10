@@ -5,6 +5,7 @@
     xz
     unzip
     p7zip
+    alejandra
 
     # misc
     cowsay
