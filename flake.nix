@@ -56,9 +56,9 @@
       modules = [
         # System Configuration
         ./hosts/laptop/nix-core.nix
-        ./hosts/laptop/system.nix
-        ./hosts/laptop/apps.nix
         ./hosts/laptop/host-users.nix
+        ./hosts/laptop/configuration.nix
+        ./hosts/laptop/homebrew.nix
 
         # Home Manager
         home-manager.darwinModules.home-manager

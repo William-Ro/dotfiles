@@ -52,15 +52,12 @@
 
     # `brew install --cask`
     casks = [
-      "firefox"
-      "raycast"
-      "aerospace"
-      "visual-studio-code@insiders"
-      "spotify"
-
+      "firefox" # web browser
+      "raycast" # app launcher
+      "aerospace" # window manager
+      "visual-studio-code@insiders" # code editor
+      "spotify" # music player
       "iina" # video player
-
-      # Development
       "insomnia" # REST client
     ];
   };
