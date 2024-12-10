@@ -23,9 +23,9 @@
       url = "github:zhaofengli-wip/nix-homebrew";
     };
 
-    # Alejandra
-    alejandra = {
-      url = "github:kamadorueda/alejandra/3.1.0";
+    # NvChad
+    nvchad4nix = {
+      url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -36,19 +36,18 @@
     nix-darwin,
     home-manager,
     nix-homebrew,
-    alejandra,
     ...
   }: let
     username = "deishuu";
     useremail = "deishuu666@gmail.com";
     system = "aarch64-darwin";
     hostname = "laptop";
-
-    specialArgs =
-      inputs
-      // {
-        inherit username useremail hostname;
-      };
+    specialArgs = {
+      inherit username useremail hostname system inputs;
+    };
+    extraSpecialArgs = {
+      inherit username useremail hostname system inputs;
+    };
   in {
     # MacOS Configuration
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
@@ -65,17 +64,12 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = specialArgs;
+          home-manager.extraSpecialArgs = extraSpecialArgs;
           home-manager.users.${username} = import ./modules;
         }
 
         # Homebrew
         nix-homebrew.darwinModules.nix-homebrew
-
-        # Alejandra
-        {
-          environment.systemPackages = [alejandra.defaultPackage.${system}];
-        }
       ];
     };
   };
