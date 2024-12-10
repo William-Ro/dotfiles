@@ -56,6 +56,7 @@
       "raycast"
       "aerospace"
       "visual-studio-code@insiders"
+      "spotify"
 
       "iina" # video player
 
