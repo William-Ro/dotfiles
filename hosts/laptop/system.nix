@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   system = {
     stateVersion = 5;
     # activationScripts are executed every time you boot the system or run `nixos-rebuild` / `darwin-rebuild`.
@@ -28,6 +32,8 @@
         QuitMenuItem = true; # enable quit menu item
         ShowPathbar = true; # show path bar
         ShowStatusBar = true; # show status bar
+        NewWindowTarget = "Other"; # set default folder to home
+        NewWindowTargetPath = "file:///Users/${username}/"; # set default folder to home
       };
 
       # customize trackpad
@@ -117,7 +123,7 @@
           allowApplePersonalizedAdvertising = false;
         };
         "com.apple.HIToolbox" = {
-          AppleFnUsageType = 0; 
+          AppleFnUsageType = 0;
         };
         # Prevent Photos from opening automatically when devices are plugged in
         "com.apple.ImageCapture".disableHotPlug = true;
