@@ -65,6 +65,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = extraSpecialArgs;
+          home-manager.backupFileExtension = "bak";
           home-manager.users.${username} = import ./modules;
         }
 
