@@ -3,15 +3,7 @@
   username,
   ...
 }: {
-  # ... tu configuración existente ...
-
-  # Instalar Karabiner-Elements
-  homebrew = {
-    enable = true;
-    casks = ["karabiner-elements"];
-  };
-
-  # Crear la configuración de Karabiner
+  # Configure Karabiner-Elements
   home.file.".config/karabiner/karabiner.json".text = builtins.toJSON {
     global = {
       check_for_updates_on_startup = true;
