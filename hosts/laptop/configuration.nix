@@ -98,6 +98,10 @@
         "com.apple.symbolichotkeys" = {
           # Disable some of the default keybindings
           AppleSymbolicHotKeys = {
+            # Spotlight
+            "64" = {enabled = false;}; # Cmd + Space
+            "65" = {enabled = false;}; # Cmd + Alt + Space
+
             # Mission Control
             "34" = {enabled = false;}; # Control + Arrow Left
             "35" = {enabled = false;}; # Control + Arrow Right
@@ -108,10 +112,6 @@
             # Input Sources
             "60" = {enabled = false;}; # Control + Space
             "61" = {enabled = false;}; # Control + Alt + Space
-
-            # Spotlight
-            "64" = {enabled = false;}; # Cmd + Space
-            "65" = {enabled = false;}; # Cmd + Alt + Space
           };
         };
         "com.apple.finder" = {
