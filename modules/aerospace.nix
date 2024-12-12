@@ -39,7 +39,7 @@
     [mode.main.binding]
     # Launch applications
     alt-shift-enter = 'exec-and-forget open -na alacritty'
-    alt-shift-f = 'exec-and-forget open -a "Firefox"'
+    alt-shift-b = 'exec-and-forget open -a "Firefox"'
     alt-shift-t = 'exec-and-forget open -a "Telegram"'
     alt-shift-e = 'exec-and-forget open -a Finder'
 
@@ -103,7 +103,7 @@
     r = ['flatten-workspace-tree', 'mode main']
 
     # Toggle floating/tiling layout
-    alt-f = ['layout floating tiling', 'mode main']
+    f = ['layout floating tiling', 'mode main']
 
     # Close all windows but current
     backspace = ['close-all-windows-but-current', 'mode main']
