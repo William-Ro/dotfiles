@@ -38,10 +38,10 @@
     # Main mode bindings
     [mode.main.binding]
     # Launch applications
-    alt-shift-enter = 'exec-and-forget open -na kitty'
-    alt-shift-b = 'exec-and-forget open -a "Brave Browser"'
+    alt-shift-enter = 'exec-and-forget open -na alacritty'
+    alt-shift-f = 'exec-and-forget open -a "Firefox"'
     alt-shift-t = 'exec-and-forget open -a "Telegram"'
-    alt-shift-f = 'exec-and-forget open -a Finder'
+    alt-shift-e = 'exec-and-forget open -a Finder'
 
     # Window management
     alt-q = "close"
@@ -103,7 +103,7 @@
     r = ['flatten-workspace-tree', 'mode main']
 
     # Toggle floating/tiling layout
-    f = ['layout floating tiling', 'mode main']
+    alt-f = ['layout floating tiling', 'mode main']
 
     # Close all windows but current
     backspace = ['close-all-windows-but-current', 'mode main']
@@ -114,25 +114,5 @@
     alt-shift-k = ['join-with up', 'mode main']
     alt-shift-l = ['join-with right', 'mode main']
 
-    # Window detection rules
-    [[on-window-detected]]
-    if.app-id = 'com.brave.Browser'
-    run = 'move-node-to-workspace 1'
-
-    [[on-window-detected]]
-    if.app-id = 'org.alacritty'
-    run = 'move-node-to-workspace 2'
-
-    [[on-window-detected]]
-    if.app-id = 'com.tdesktop.Telegram'
-    run = 'move-node-to-workspace 3'
-
-    [[on-window-detected]]
-    if.app-id = 'com.obsproject.obs-studio'
-    run = 'move-node-to-workspace 4'
-
-    [[on-window-detected]]
-    if.app-id = 'us.zoom.xos'
-    run = 'move-node-to-workspace 5'
   '';
 }

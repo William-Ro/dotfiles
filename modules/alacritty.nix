@@ -1,4 +1,3 @@
-# modules/alacritty/default.nix
 {
   config,
   pkgs,
