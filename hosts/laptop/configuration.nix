@@ -96,6 +96,9 @@
           WebKitDeveloperExtras = true;
           "com.apple.mouse.linear" = true; # disable mouse acceleration
         };
+        "com.apple.Terminal" = {
+          "FocusFollowsMouse" = true; # focus follows mouse
+        };
         "com.apple.symbolichotkeys" = {
           # Disable some of the default keybindings
           AppleSymbolicHotKeys = {
