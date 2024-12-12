@@ -49,6 +49,7 @@
     # `brew install --cask`
     casks = [
       "firefox" # web browser
+      "brave-browser" # web browser
       "raycast" # app launcher
       "aerospace" # window manager
       "visual-studio-code@insiders" # code editor
