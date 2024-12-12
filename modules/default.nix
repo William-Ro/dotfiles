@@ -8,6 +8,7 @@
     ./starship.nix
     ./discord.nix
     ./kitty.nix
+    ./alacritty.nix
     ./lazygit.nix
     ./aerospace.nix
     ./karabiner.nix
