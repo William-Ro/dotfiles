@@ -6,6 +6,7 @@
     unzip
     p7zip
     alejandra
+    fontconfig
 
     # misc
     cowsay
