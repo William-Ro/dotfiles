@@ -31,6 +31,7 @@
         orientation = "right"; # dock position
         show-recents = false; # disable recent apps
         static-only = true; # only show active apps
+        mineffect = "scale"; # minimize effect
       };
 
       # customize finder
