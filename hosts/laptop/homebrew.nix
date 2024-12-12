@@ -52,7 +52,7 @@
       "brave-browser" # web browser
       "raycast" # app launcher
       "aerospace" # window manager
-      "visual-studio-code@insiders" # code editor
+      "visual-studio-code" # code editor
       "spotify" # music player
       "iina" # video player
       "insomnia" # REST client
