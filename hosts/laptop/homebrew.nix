@@ -44,6 +44,7 @@
       "curl" # no not install curl via nixpkgs, it's not working well on macOS!
       "mas" # Mac App Store CLI
       "cocoapods" # dependency manager for Swift and Objective-C projects
+      "displayplacer" # CLI for display settings
     ];
 
     # `brew install --cask`
