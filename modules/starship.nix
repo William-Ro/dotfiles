@@ -160,7 +160,7 @@
 
       time = {
         disabled = false;
-        time_format = "%R"; # Hour:Minute Format
+        time_format = "%I:%M %p"; # Hour:Minute in 12-hour format
         style = "bg:#33658A";
         format = "[ ♥ $time ]($style)";
       };
