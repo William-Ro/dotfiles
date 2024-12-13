@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # Enable zsh
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -25,8 +26,14 @@
     # Lazygit alias
     lg = "lazygit";
   };
+  # Add new path to zshenv
+  home.file.".zshenv" = {
+    text = ''
+      export PATH=$HOME/Development/flutter/bin:$PATH
+    '';
+  };
 
-  # Agregar lsd y bat
+  # Install lsd and bat
   home.packages = [
     pkgs.lsd
     pkgs.bat
