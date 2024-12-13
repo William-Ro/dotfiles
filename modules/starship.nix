@@ -5,126 +5,176 @@
     enableZshIntegration = true;
 
     settings = {
+      format = ''
+        [](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$elixir$elm$golang$gradle$haskell$java$julia$nodejs$nim$rust$scala[](fg:#86BBD8 bg:#06969A)$docker_context[](fg:#06969A bg:#33658A)$time[ ](fg:#33658A)
+      '';
+
       add_newline = true;
 
-      format = ''
-        [╭─user─── ](bold blue) $username
-        [┣─system─ ](bold yellow) $hostname
-        [┣─project ](bold red) $directory$rust$git_branch$git_status$package$golang$terraform$docker_context$python$docker_context$nodejs
-        [╰─cmd──── ](bold green) '';
-
       username = {
-        style_user = "green bold";
-        style_root = "red bold";
-        format = "[$user]($style) ";
-        disabled = false;
         show_always = true;
-      };
-
-      hostname = {
-        ssh_only = false;
-        format = "on [$hostname](bold yellow) ";
-        trim_at = ".";
+        style_user = "bg:#9A348E";
+        style_root = "bg:#9A348E";
+        format = "[$user]($style)";
         disabled = false;
       };
 
-      character = {
-        success_symbol = "[](bold green)";
-        error_symbol = "[✗](bold red)";
+      os = {
+        style = "bg:#9A348E";
+        disabled = true; # Disabled by default
+        symbol = " ";
       };
 
       directory = {
-        read_only = " ";
-        truncation_length = 10;
-        truncate_to_repo = true;
-        style = "bold italic blue";
+        style = "bg:#DA627D";
+        format = "[ $path ]($style)";
+        truncation_length = 3;
+      };
+      directory.substitutions = {
+        "Documents" = "󰈙 ";
+        "Downloads" = " ";
+        "Music" = " ";
+        "Pictures" = " ";
       };
 
-      cmd_duration = {
-        min_time = 4;
-        show_milliseconds = false;
-        disabled = false;
-        style = "bold italic red";
+      c = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
-
-      aws = {
-        symbol = "  ";
+      docker_context = {
+        symbol = " ";
+        style = "bg:#06969A";
+        format = "[ $symbol $context ]($style)";
       };
-
-      conda = {
-        symbol = " ";
-      };
-
-      dart = {
-        symbol = " ";
-      };
-
       elixir = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       elm = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       git_branch = {
-        symbol = " ";
+        symbol = "";
+        style = "bg:#FCA17D";
+        format = "[ $symbol $branch ]($style)";
+      };
+
+      git_status = {
+        style = "bg:#FCA17D";
+        format = "[$all_status$ahead_behind ]($style)";
       };
 
       golang = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
-      hg_branch = {
-        symbol = " ";
+      gradle = {
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+
+      haskell = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       java = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       julia = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
-      memory_usage = {
-        symbol = "󰍛 ";
+      nodejs = {
+        symbol = "";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       nim = {
-        symbol = " ";
-      };
-
-      nix_shell = {
-        symbol = " ";
-      };
-
-      package = {
-        symbol = "󰏗 ";
-      };
-
-      perl = {
-        symbol = " ";
-      };
-
-      php = {
-        symbol = " ";
-      };
-
-      ruby = {
-        symbol = " ";
+        symbol = "󰆥 ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       rust = {
-        symbol = " ";
+        symbol = "";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
       scala = {
         symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      aws = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      conda = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      dart = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      nix_shell = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol $state ]($style)";
+      };
+      perl = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      ruby = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
+      };
+      php = {
+        symbol = " ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol ($version) ]($style)";
       };
 
-      shlvl = {
-        symbol = " ";
+      time = {
+        disabled = false;
+        time_format = "%R"; # Hour:Minute Format
+        style = "bg:#33658A";
+        format = "[ ♥ $time ]($style)";
+      };
+
+      memory_usage = {
+        symbol = "󰍛 ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol $ram ]($style)";
+      };
+
+      package = {
+        symbol = "󰏗 ";
+        style = "bg:#86BBD8";
+        format = "[ $symbol $version ]($style)";
       };
     };
   };
