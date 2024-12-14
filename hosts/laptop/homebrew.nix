@@ -57,7 +57,6 @@
       "spotify" # music player
       "iina" # video player
       "insomnia" # REST client
-      "karabiner-elements" # keyboard customizer
     ];
   };
 }
