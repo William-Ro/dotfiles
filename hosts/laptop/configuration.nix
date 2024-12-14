@@ -62,7 +62,7 @@
         "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
         AppleInterfaceStyle = "Dark"; # dark mode
         AppleKeyboardUIMode = 3; # Mode 3 enables full keyboard control.
-        ApplePressAndHoldEnabled = true; # enable press and hold
+        ApplePressAndHoldEnabled = false; # enable press and hold
 
         # If you press and hold certain keyboard keys when in a text area, the key’s character begins to repeat.
         # This is very useful for vim users, they use `hjkl` to move cursor.
@@ -172,7 +172,7 @@
     # the most important thing is to remap option key to alt key globally,
     # but it's not supported by macOS yet.
     keyboard = {
-      enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
+      enableKeyMapping = true; # enable key mapping so that we can use `option` as `control``
 
       # NOTE: do NOT support remap capslock to both control and escape at the same time
       remapCapsLockToControl = false; # remap caps lock to control, useful for emac users
