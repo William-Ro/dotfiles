@@ -169,7 +169,7 @@
     };
 
     # keyboard settings is not very useful on macOS
-    # the most important thing is to remap option key to alt key globally,
+    # the most important thing is to remap
     # but it's not supported by macOS yet.
     keyboard = {
       enableKeyMapping = true; # enable key mapping so that we can use `option` as `control``
@@ -183,7 +183,7 @@
       #
       # disabled, caused only problems!
 
-      swapLeftCommandAndLeftAlt = true;
+      swapLeftCommandAndLeftAlt = false;
     };
   };
 

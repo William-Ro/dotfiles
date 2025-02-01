@@ -28,6 +28,10 @@
       url = "github:nix-community/nix4nvchad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Ghostty
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = inputs @ {
