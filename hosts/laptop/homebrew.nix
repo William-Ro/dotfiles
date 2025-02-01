@@ -60,6 +60,7 @@
       "iina" # video player
       "obsidian"
       "cursor"
+      "ghostty"
     ];
   };
 }
