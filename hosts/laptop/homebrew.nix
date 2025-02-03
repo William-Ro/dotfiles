@@ -46,6 +46,7 @@
       "cocoapods" # dependency manager for Swift and Objective-C projects
       "displayplacer" # CLI for display settings
       "ollama"
+      "docker"
     ];
 
     # `brew install --cask`
