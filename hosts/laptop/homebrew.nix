@@ -45,6 +45,7 @@
       "mas" # Mac App Store CLI
       "cocoapods" # dependency manager for Swift and Objective-C projects
       "displayplacer" # CLI for display settings
+      "ollama"
     ];
 
     # `brew install --cask`
