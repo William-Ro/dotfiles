@@ -61,9 +61,7 @@
       "iina" # video player
       "obsidian"
       "cursor"
-      "ghostty"
       "docker"
-      
     ];
   };
 }
