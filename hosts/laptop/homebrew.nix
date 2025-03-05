@@ -62,6 +62,8 @@
       "obsidian"
       "cursor"
       "docker"
+      "qbittorrent"
+      "postman"
     ];
   };
 }
