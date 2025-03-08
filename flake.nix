@@ -38,40 +38,75 @@
     nix-homebrew,
     ...
   }: let
-    username = "deishuu";
-    useremail = "deishuu666@gmail.com";
-    system = "aarch64-darwin";
-    hostname = "laptop";
-    specialArgs = {
-      inherit username useremail hostname system inputs;
+    # Common Settings for all systems
+    shared = {
+      username = "deishuu";
+      useremail = "william.r2409@gmail.com";
     };
-    extraSpecialArgs = {
-      inherit username useremail hostname system inputs;
+
+    hosts = {
+      laptop = {
+        hostname = "laptop";
+        system = "aarch64-darwin";
+        builder = nix-darwin.lib.darwinSystem;
+        modules = [
+          ./hosts/nix-core.nix
+          ./hosts/host-users.nix
+          ./hosts/laptop/configuration.nix
+          ./hosts/laptop/homebrew.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
+        ];
+      };
+      desktop = {
+        hostname = "desktop";
+        system = "x86_64-linux";
+        builder = nixpkgs.lib.nixosSystem;
+        modules = [
+          ./hosts/nix-core.nix
+          ./hosts/host-users.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
+    };
+
+    baseConfig = {hostname, ...}: {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = {
+          inherit (shared) username useremail;
+          inherit hostname;
+        };
+        users.${shared.username} = import ./modules;
+      };
     };
   in {
     # MacOS Configuration
-    darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
-      inherit system specialArgs;
-      modules = [
-        # System Configuration
-        ./hosts/laptop/nix-core.nix
-        ./hosts/laptop/host-users.nix
-        ./hosts/laptop/configuration.nix
-        ./hosts/laptop/homebrew.nix
-
-        # Home Manager
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = extraSpecialArgs;
-          home-manager.backupFileExtension = "bak";
-          home-manager.users.${username} = import ./modules;
-        }
-
-        # Homebrew
-        nix-homebrew.darwinModules.nix-homebrew
-      ];
+    darwinConfigurations = {
+      laptop = hosts.laptop.builder {
+        system = hosts.laptop.system;
+        specialArgs =
+          {
+            inherit inputs;
+            hostname = hosts.laptop.hostname;
+          }
+          // shared;
+        modules = hosts.laptop.modules ++ [{imports = [baseConfig];}];
+      };
+    };
+    # NixOS Configuration
+    nixosConfigurations = {
+      desktop = hosts.desktop.builder {
+        system = hosts.desktop.system;
+        specialArgs =
+          {
+            inherit inputs;
+            hostname = hosts.desktop.hostname;
+          }
+          // shared;
+        modules = hosts.desktop.modules ++ [{imports = [baseConfig];}];
+      };
     };
   };
 }
