@@ -26,6 +26,11 @@
         path = "~/Work/.gitconfig";
         condition = "gitdir:~/Work/";
       }
+      {
+        # use different email & name for dotfiles
+        path = "~/.dotfiles/.gitconfig";
+        condition = "gitdir:~/.dotfiles/";
+      }
     ];
 
     extraConfig = {
