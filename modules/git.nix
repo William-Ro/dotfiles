@@ -17,14 +17,14 @@
     lfs.enable = true;
 
     # TODO replace with your own name & email
-    userName = "William-Ro";
+    userName = username;
     userEmail = useremail;
 
     includes = [
       {
         # use diffrent email & name for work
-        path = "~/work/.gitconfig";
-        condition = "gitdir:~/work/";
+        path = "~/Work/.gitconfig";
+        condition = "gitdir:~/Work/";
       }
     ];
 
