@@ -58,13 +58,18 @@
 
         # Home Manager
         home-manager.darwinModules.home-manager
-        {
+        ({
+          config,
+          pkgs,
+          specialArgs,
+          ...
+        }: {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
-          home-manager.users.${username} = import ./modules;
-        }
+          home-manager.users.${specialArgs.username} = import ./modules;
+        })
 
         # Homebrew
         nix-homebrew.darwinModules.nix-homebrew
@@ -82,14 +87,19 @@
         ./hosts/host-users.nix
 
         # Home Manager
-        home-manager.nixosModules.home-manager
-        {
+        home-manager.darwinModules.home-manager
+        ({
+          config,
+          pkgs,
+          specialArgs,
+          ...
+        }: {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
-          home-manager.users.${username} = import ./modules;
-        }
+          home-manager.users.${specialArgs.username} = import ./modules;
+        })
       ];
     };
   };
