@@ -31,6 +31,7 @@
       isNormalUser = true;
       description = username;
       extraGroups = ["networkmanager" "wheel"];
+      shell = pkgs.zsh;
     };
 
   # Permitir usuario en trusted-users de Nix
