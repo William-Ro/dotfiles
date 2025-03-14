@@ -14,22 +14,24 @@
 {
   networking.hostName = hostname;
 
-  # Configuración específica para macOS
   home-manager.sharedModules = lib.optional pkgs.stdenv.isDarwin {
-    networking.computerName = hostname;
-    system.defaults.smb.NetBIOSName = hostname;
+    #networking.computerName = hostname;
+    #system.defaults.smb.NetBIOSName = hostname;
   };
 
-  # Definir usuario
-  users.users."${username}" = {
-    home =
-      if pkgs.stdenv.isDarwin
-      then "/Users/${username}"
-      else "/home/${username}";
-    isNormalUser = true;
-    description = username;
-    extraGroups = lib.optionals (!pkgs.stdenv.isDarwin) ["networkmanager" "wheel"];
-  };
+  # User configuration
+  users.users."${username}" =
+    if pkgs.stdenv.isDarwin
+    then {
+      home = "/Users/${username}";
+      description = username;
+    }
+    else {
+      home = "/home/${username}";
+      isNormalUser = true;
+      description = username;
+      extraGroups = ["networkmanager" "wheel"];
+    };
 
   # Permitir usuario en trusted-users de Nix
   nix.settings.trusted-users = [username];
