@@ -48,25 +48,6 @@
     LC_TIME = "es_CR.UTF-8";
   };
 
-  # Set zsh as the default shell
-  programs.zsh.enable = true;
-  environment.shells = [
-    pkgs.zsh
-  ];
-
-  # Configure fonts
-  fonts.packages = with pkgs; [
-    # Icons
-    material-design-icons
-    font-awesome
-
-    # Nerd Fonts
-    nerd-fonts.symbols-only
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.iosevka
-  ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 

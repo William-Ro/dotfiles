@@ -26,6 +26,28 @@
     ];
   };
 
+  # Create /etc/zshrc that loads the nix-darwin environment.
+  # this is required if you want to use darwin's default shell - zsh
+  programs.zsh.enable = true;
+  environment.shells = [
+    pkgs.zsh
+  ];
+
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      # icon fonts
+      material-design-icons
+      font-awesome
+
+      # nerdfonts
+      nerd-fonts.symbols-only
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.iosevka
+    ];
+  };
+
   # do garbage collection weekly to keep disk usage low
   nix.gc = {
     automatic = lib.mkDefault true;
