@@ -52,6 +52,10 @@
         };
         dynamic_padding = true;
         opacity = 1.0;
+        dimensions = {
+          columns = 100; # Ancho en columnas de caracteres
+          lines = 30; # Alto en líneas de caracteres
+        };
       };
     };
   };
