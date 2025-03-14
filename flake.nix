@@ -84,9 +84,11 @@
       modules = [
         # System Configuration
         ./hosts/nix-core.nix
+        ./hosts/desktop/configuration.nix
+        ./hosts/desktop/hardware-configuration.nix
 
         # Home Manager
-        home-manager.darwinModules.home-manager
+        home-manager.nixosModules.home-manager
         ({
           config,
           pkgs,
