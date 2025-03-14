@@ -61,11 +61,11 @@
   programs.firefox.enable = true;
 
   # System Packages
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-    git
-  ];
+  #environment.systemPackages = with pkgs; [
+  #  vim
+  #  wget
+  #  git
+  #];
 
   # System User Icon Setup
   system.activationScripts.userIcon.text = ''
