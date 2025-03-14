@@ -16,6 +16,8 @@
 
     # productivity
     glow # markdown previewer in terminal
+
+    vscode
   ];
 
   programs = {
