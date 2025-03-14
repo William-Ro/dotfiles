@@ -1,4 +1,10 @@
-{username, ...}: {
+{
+  config,
+  pkgs,
+  lib,
+  username,
+  ...
+}: {
   # import sub modules
   imports = [
     ./core.nix
@@ -18,7 +24,10 @@
   # paths it should manage.
   home = {
     username = username;
-    homeDirectory = "/Users/${username}";
+    homeDirectory =
+      if pkgs.stdenv.isDarwin
+      then "/Users/${username}"
+      else "/home/${username}";
 
     # This value determines the Home Manager release that your
     # configuration is compatible with. This helps avoid breakage
