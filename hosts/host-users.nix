@@ -27,6 +27,7 @@
       then "/Users/${username}"
       else "/home/${username}";
     description = username;
+    extraGroups = ["networkmanager" "wheel"];
   };
 
   # Permitir usuario en trusted-users de Nix
