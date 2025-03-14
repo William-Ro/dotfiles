@@ -52,7 +52,7 @@
       modules = [
         # System Configuration
         ./hosts/nix-core.nix
-        ./hosts/host-users.nix
+        ./hosts/laptop/host-users.nix
         ./hosts/laptop/configuration.nix
         ./hosts/laptop/homebrew.nix
 
@@ -84,7 +84,6 @@
       modules = [
         # System Configuration
         ./hosts/nix-core.nix
-        ./hosts/host-users.nix
 
         # Home Manager
         home-manager.darwinModules.home-manager
