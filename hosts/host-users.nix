@@ -26,6 +26,7 @@
       if pkgs.stdenv.isDarwin
       then "/Users/${username}"
       else "/home/${username}";
+    isNormalUser = true;
     description = username;
     extraGroups = ["networkmanager" "wheel"];
   };
