@@ -28,7 +28,7 @@
       else "/home/${username}";
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = lib.optionals (!pkgs.stdenv.isDarwin) ["networkmanager" "wheel"];
   };
 
   # Permitir usuario en trusted-users de Nix
