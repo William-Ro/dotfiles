@@ -52,7 +52,7 @@
       modules = [
         # System Configuration
         ./hosts/nix-core.nix
-        ./hosts/laptop/host-users.nix
+        ./hosts/host-users.nix
         ./hosts/laptop/configuration.nix
         ./hosts/laptop/homebrew.nix
 
@@ -84,6 +84,7 @@
       modules = [
         # System Configuration
         ./hosts/nix-core.nix
+        ./hosts/host-users.nix
         ./hosts/desktop/configuration.nix
         ./hosts/desktop/hardware-configuration.nix
 
