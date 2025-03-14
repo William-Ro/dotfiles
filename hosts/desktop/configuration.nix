@@ -15,6 +15,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  system.activationScripts.script.text = ''
+    mkdir -p /var/lib/AccountsService/{icons,users}
+    cp home/deishuu/Pictures/face.png /var/lib/AccountsService/icons/deishuu
+    echo -e "[User]\nIcon=/var/lib/AccountsService/icons/deishuu\n" > /var/lib/AccountsService/users/deishuu
+  '';
+
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
