@@ -1,22 +1,16 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    # archives
     zip
     xz
     unzip
     p7zip
     alejandra
     fontconfig
-
-    # misc
     cowsay
     file
     which
     tree
-
-    # productivity
-    glow # markdown previewer in terminal
-
+    glow
     vscode
   ];
 
