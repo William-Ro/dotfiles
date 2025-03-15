@@ -8,16 +8,16 @@
   # Determine if we are on macOS or NixOS
   imports = [
     # Common modules
-    ./common/core.nix
-    ./common/zsh.nix
-    ./common/git.nix
-    ./common/neovim.nix
-    ./common/starship.nix
-    ./common/discord.nix
-    ./common/kitty.nix
-    ./common/alacritty.nix
-    ./common/lazygit.nix
-    ./common/fastfetch.nix
+    ./core.nix
+    ./zsh.nix
+    ./git.nix
+    ./neovim.nix
+    ./starship.nix
+    ./discord.nix
+    ./kitty.nix
+    ./alacritty.nix
+    ./lazygit.nix
+    ./fastfetch.nix
   ];
 
   # Home Manager needs a bit of information about you and the
