@@ -3,11 +3,9 @@
     vscode
     docker-compose
     spotify
+    firefox
   ];
 
   programs = {
-    firefox = {
-      enable = true;
-    };
   };
 }
