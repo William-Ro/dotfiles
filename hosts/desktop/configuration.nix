@@ -59,6 +59,11 @@
 
   # Programs
   programs.firefox.enable = true;
+  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 
   # System Packages
   #environment.systemPackages = with pkgs; [
