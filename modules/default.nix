@@ -18,25 +18,6 @@
     ./common/alacritty.nix
     ./common/lazygit.nix
     ./common/fastfetch.nix
-
-    # NixOS-specific modules
-    (
-      if lib.system.isNixos
-      then [
-        # Add more NixOS modules here
-      ]
-      else []
-    )
-
-    # Darwin/macOS-specific modules
-    (
-      if lib.system.isDarwin
-      then [
-        # Add more Darwin modules here
-        ./laptop/aerospace.nix
-      ]
-      else []
-    )
   ];
 
   # Home Manager needs a bit of information about you and the
