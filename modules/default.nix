@@ -5,19 +5,38 @@
   username,
   ...
 }: {
-  # import sub modules
+  # Determine if we are on macOS or NixOS
   imports = [
-    ./core.nix
-    ./zsh.nix
-    ./git.nix
-    ./neovim.nix
-    ./starship.nix
-    ./discord.nix
-    ./kitty.nix
-    ./alacritty.nix
-    ./lazygit.nix
-    ./aerospace.nix
-    ./fastfetch.nix
+    # Common modules
+    ./common/core.nix
+    ./common/zsh.nix
+    ./common/git.nix
+    ./common/neovim.nix
+    ./common/starship.nix
+    ./common/discord.nix
+    ./common/kitty.nix
+    ./common/alacritty.nix
+    ./common/lazygit.nix
+    ./common/fastfetch.nix
+
+    # NixOS-specific modules
+    (
+      if lib.system.isNixos
+      then [
+        # Add more NixOS modules here
+      ]
+      else []
+    )
+
+    # Darwin/macOS-specific modules
+    (
+      if lib.system.isDarwin
+      then [
+        # Add more Darwin modules here
+        ./laptop/aerospace.nix
+      ]
+      else []
+    )
   ];
 
   # Home Manager needs a bit of information about you and the
