@@ -68,7 +68,10 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
-          home-manager.users.${specialArgs.username} = import ./modules;
+          home-manager.users.${specialArgs.username}.imports = [
+            ./modules
+            ./modules/laptop/default.nix # Añadir módulos específicos de laptop
+          ];
         })
 
         # Homebrew
@@ -100,7 +103,10 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
-          home-manager.users.${specialArgs.username} = import ./modules;
+          home-manager.users.${specialArgs.username}.imports = [
+            ./modules
+            ./modules/desktop/default.nix # Añadir módulos específicos de laptop
+          ];
         })
       ];
     };
