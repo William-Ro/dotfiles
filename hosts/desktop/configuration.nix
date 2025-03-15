@@ -57,9 +57,7 @@
   # Printing
   services.printing.enable = true;
 
-  # Programs
-  programs.firefox.enable = true;
-
+  # Docker & Podman
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
 
