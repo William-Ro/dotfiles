@@ -69,7 +69,7 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
           home-manager.users.${specialArgs.username}.imports = [
-            ./modules
+            ./modules/common/default.nix
             ./modules/laptop/default.nix # Añadir módulos específicos de laptop
           ];
         })
@@ -104,7 +104,7 @@
           home-manager.extraSpecialArgs = specialArgs;
           home-manager.backupFileExtension = "bak";
           home-manager.users.${specialArgs.username}.imports = [
-            ./modules
+            ./modules/common/default.nix
             ./modules/desktop/default.nix # Añadir módulos específicos de laptop
           ];
         })
