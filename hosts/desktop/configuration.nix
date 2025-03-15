@@ -59,18 +59,14 @@
 
   # Programs
   programs.firefox.enable = true;
+
   virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
+
   virtualisation.docker.rootless = {
     enable = true;
     setSocketVariable = true;
   };
-
-  # System Packages
-  #environment.systemPackages = with pkgs; [
-  #  vim
-  #  wget
-  #  git
-  #];
 
   # System User Icon Setup
   system.activationScripts.userIcon.text = ''
