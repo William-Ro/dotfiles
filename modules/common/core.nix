@@ -11,8 +11,6 @@
     which
     tree
     glow
-    vscode
-    docker-compose
   ];
 
   programs = {
