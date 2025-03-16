@@ -3,14 +3,13 @@
   pkgs,
   ...
 }: {
-  home-manager.users.${config.user}.programs.vscode = {
+  programs.vscode = {
     enable = true;
     enableUpdateCheck = false;
 
     extensions = with pkgs; [
       vscode-extensions.github.copilot
       vscode-extensions.kamadorueda.alejandra
-      vscode-extensions.nash.awesome-flutter-snippets
       vscode-extensions.dart-code.dart-code
       vscode-extensions.ms-vscode-remote.remote-containers
       vscode-extensions.ms-azuretools.vscode-docker
