@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix # Include hardware scan results
+    ./nvidia.nix
   ];
 
   # Bootloader
@@ -53,6 +54,10 @@
     pulse.enable = true;
     # jack.enable = true; # Uncomment if using JACK applications
   };
+
+  # Nvidia Graphics
+
+  hardware.nvidia.modesetting.enable = true;
 
   # Printing
   services.printing.enable = true;
