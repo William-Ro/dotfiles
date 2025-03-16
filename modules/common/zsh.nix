@@ -6,8 +6,31 @@
     syntaxHighlighting.enable = true;
     enableCompletion = true;
 
+    plugins = [
+      {
+        name = "zsh-colored-man-pages";
+        file = "colored-man-pages.plugin.zsh";
+        src = builtins.fetchGit {
+          url = "https://github.com/ael-code/zsh-colored-man-pages";
+          rev = "57bdda68e52a09075352b18fa3ca21abd31df4cb";
+        };
+      }
+    ];
+
     initExtra = ''
       export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
+
+      # Plugin sudo manual (doble ESC para agregar sudo)
+      sudo-command-line() {
+        [[ -z $BUFFER ]] && zle up-history
+        if [[ $BUFFER != sudo\ * ]]; then
+          BUFFER="sudo $BUFFER"
+          zle end-of-line
+        fi
+      }
+      zle -N sudo-command-line
+      bindkey -M emacs '^[^[' sudo-command-line
+      bindkey -M viins '^[^[' sudo-command-line
     '';
   };
 
