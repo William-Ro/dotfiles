@@ -51,7 +51,6 @@
     # `brew install --cask`
     casks = [
       "android-studio" # IDE for Android development
-      "visual-studio-code" # code editor
       "insomnia" # REST client
       "firefox" # web browser
       "brave-browser" # web browser
