@@ -5,6 +5,7 @@
     spotify
     firefox
     postman
+    lm_sensors
   ];
 
   programs = {
