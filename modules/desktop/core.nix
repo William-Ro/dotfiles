@@ -4,6 +4,7 @@
     docker-compose
     spotify
     firefox
+    postman
   ];
 
   programs = {
