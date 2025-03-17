@@ -6,6 +6,7 @@
     firefox
     postman
     lm_sensors
+    telegram-desktop
   ];
 
   programs = {
