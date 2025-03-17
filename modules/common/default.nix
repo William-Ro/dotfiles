@@ -19,6 +19,7 @@
     ./lazygit.nix
     ./fastfetch.nix
     ./vscode.nix
+    ./obsidian.nix
   ];
 
   # Home Manager needs a bit of information about you and the
