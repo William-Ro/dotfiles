@@ -6,7 +6,7 @@
   home.file = let
     vesktopPath =
       if pkgs.stdenv.isDarwin
-      then "Library/vesktop"
+      then "Library/Application\ Support/vesktop/"
       else ".config/vesktop";
   in {
     "${vesktopPath}/themes/deishuu.css".text = ''
