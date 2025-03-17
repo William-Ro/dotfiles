@@ -5,7 +5,7 @@
 
   home.file.".config/vesktop/themes/deishuu.css".text = ''
     /**
-     * @name midnight deishuu's dotfiles
+     * @name midnight deishuu' dotfiles
      * @description A dark, rounded discord theme generated with home manager.
      * @author refact0r, anubis
      * @version 1.6.2
@@ -106,7 +106,7 @@
         "themeLinks": [],
         "enabledThemes": ["deishuu.css"],
         "enableReactDevtools": false,
-        "frameless": true,
+        "frameless": false,
         "transparent": false,
         "winCtrlQ": false,
         "disableMinSize": false,
@@ -597,7 +597,7 @@
                 "enabled": false
             },
             "SpotifyCrack": {
-                "enabled": true,
+                "enabled": false,
                 "noSpotifyAutoPause": true,
                 "keepSpotifyActivityOnIdle": false
             },
@@ -729,10 +729,10 @@
             "logLimit": 50
         },
         "cloud": {
-            "authenticated": true,
+            "authenticated": false,
             "url": "https://api.vencord.dev/",
-            "settingsSync": true,
-            "settingsSyncVersion": 1739991689711
+            "settingsSync": false,
+            "settingsSyncVersion": 1742180703594
         },
         "notifyAboutUpdates": true,
         "eagerPatches": false
