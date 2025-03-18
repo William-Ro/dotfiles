@@ -55,10 +55,6 @@
     # jack.enable = true; # Uncomment if using JACK applications
   };
 
-  # Nvidia Graphics
-
-  hardware.nvidia.modesetting.enable = true;
-
   # Printing
   services.printing.enable = true;
 
