@@ -7,6 +7,7 @@
     postman
     lm_sensors
     telegram-desktop
+    mpv
   ];
 
   programs = {
