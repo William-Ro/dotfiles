@@ -21,6 +21,7 @@
         vscode-extensions.bbenoist.nix
         vscode-extensions.zhuangtongfa.material-theme
         vscode-extensions.esbenp.prettier-vscode
+        vscode-extensions.golang.go
       ];
 
       userSettings = {
@@ -123,6 +124,9 @@
           "editor.selectionHighlight" = false;
           "editor.tabCompletion" = "onlySnippets";
           "editor.wordBasedSuggestions" = "off";
+        };
+        "[xml]" = {
+          "editor.defaultFormatter" = "DotJoshJohnson.xml";
         };
       };
     };
