@@ -11,6 +11,7 @@
     which
     tree
     glow
+    go
   ];
 
   programs = {
