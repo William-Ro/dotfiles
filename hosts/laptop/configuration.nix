@@ -126,6 +126,7 @@
           _FXSortFoldersFirst = true;
           # When performing a search, search the current folder by default
           FXDefaultSearchScope = "SCcf";
+          _FXSortFoldersFirstOnDesktop = true;
         };
         "com.apple.desktopservices" = {
           # Avoid creating .DS_Store files on network or USB volumes
@@ -159,6 +160,10 @@
         };
         # Prevent Photos from opening automatically when devices are plugged in
         "com.apple.ImageCapture".disableHotPlug = true;
+
+        "com.apple.CloudSubscriptionFeatures" = {
+          optIn = false;
+        };
       };
 
       loginwindow = {
