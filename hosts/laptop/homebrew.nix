@@ -58,11 +58,9 @@
       "aerospace" # window manager
       "spotify" # music player
       "iina" # video player
-      "obsidian"
       "cursor"
       "docker"
       "qbittorrent"
-      "postman"
     ];
   };
 }
