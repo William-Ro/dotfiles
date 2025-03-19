@@ -12,6 +12,7 @@
     tree
     glow
     go
+    python3
   ];
 
   programs = {
