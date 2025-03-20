@@ -58,6 +58,8 @@
   # Printing
   services.printing.enable = true;
 
+  services.pcscd.enable = true;
+
   # Docker & Podman
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
