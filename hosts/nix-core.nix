@@ -36,6 +36,14 @@
     pkgs.zsh
   ];
 
+  # Credentials management
+
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   # Fonts
   fonts = {
     packages = with pkgs; [

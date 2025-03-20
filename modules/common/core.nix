@@ -11,8 +11,12 @@
     which
     tree
     glow
+    # programming languages
     go
     python3
+    # credential management
+    pass
+    docker-credential-helpers
   ];
 
   programs = {
