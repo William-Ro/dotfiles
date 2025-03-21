@@ -17,7 +17,6 @@
     # credential management
     pass
     gnupg
-    pinentry
     docker-credential-helpers
   ];
 
