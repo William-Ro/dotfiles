@@ -16,6 +16,8 @@
     python3
     # credential management
     pass
+    gnupg
+    pinentry
     docker-credential-helpers
   ];
 
