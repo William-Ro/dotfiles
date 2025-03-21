@@ -38,10 +38,9 @@
       push.autoSetupRemote = true;
       pull.rebase = true;
 
-      # TODO test if pass it's working
       credential.helper = "pass";
     };
-
+ 
     # signing = {
     #   key = "xxx";
     #   signByDefault = true;
