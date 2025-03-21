@@ -42,6 +42,7 @@
     lla = "lsd -lha --group-dirs=first";
     ls = "lsd --group-dirs=first";
     cat = "bat";
+    c = "bat";
     # Neovim aliases
     vim = "nvim";
     vi = "nvim";
