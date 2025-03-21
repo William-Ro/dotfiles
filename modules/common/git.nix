@@ -37,7 +37,7 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
-      # credential.helper = "pass";
+      credential.helper = "pass";
     };
 
     # signing = {
