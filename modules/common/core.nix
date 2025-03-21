@@ -18,6 +18,7 @@
     pass
     gnupg
     docker-credential-helpers
+    git-credential-manager
   ];
 
   programs = {
