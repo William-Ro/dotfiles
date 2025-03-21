@@ -37,6 +37,8 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
+
+      # TODO test if pass it's working
       credential.helper = "pass";
     };
 
