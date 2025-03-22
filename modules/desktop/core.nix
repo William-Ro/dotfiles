@@ -8,7 +8,6 @@
     lm_sensors
     telegram-desktop
     mpv
-    pinentry
     qbittorrent
   ];
 

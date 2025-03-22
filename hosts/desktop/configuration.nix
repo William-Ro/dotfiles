@@ -64,9 +64,6 @@
   # Printing
   services.printing.enable = true;
 
-  # Smart Card Daemon
-  services.pcscd.enable = true;
-
   # Docker & Podman
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;

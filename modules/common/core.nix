@@ -14,10 +14,6 @@
     # programming languages
     go
     python3
-    # credential management
-    pass
-    gnupg
-    docker-credential-helpers
   ];
 
   programs = {
