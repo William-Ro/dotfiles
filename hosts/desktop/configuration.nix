@@ -53,6 +53,12 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     # jack.enable = true; # Uncomment if using JACK applications
+    extraConfig.pipewire."adjust-sample-rate" = {
+      "context.properties" = {
+        "default.clock.rate" = 384000; # Establece la tasa de muestreo a 384kHz
+        "default.clock.allowed-rates" = [384000 192000 48000]; # Permite 384kHz, 192kHz y 48kHz
+      };
+    };
   };
 
   # Printing
