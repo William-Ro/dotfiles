@@ -21,18 +21,11 @@
           python-lsp-server
           flake8
         ]))
-      # Go
-      
-      go
-      gopls
-      golangci-lint
-      
+
       # Clipboard
       wl-clipboard
-
     ];
     hm-activation = true;
     backup = false;
   };
 }
-
