@@ -49,6 +49,7 @@
     v = "nvim";
     # Lazygit alias
     lg = "lazygit";
+    y = "yazi";
   };
   # Add new path to zshenv
   home.file.".zshenv" = {
