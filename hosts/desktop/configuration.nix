@@ -56,7 +56,7 @@
     extraConfig.pipewire."adjust-sample-rate" = {
       "context.properties" = {
         "default.clock.rate" = 384000;
-        "default.clock.allowed-rates" = [384000 192000 48000];
+        "default.clock.allowed-rates" = [384000 192000];
       };
     };
   };
