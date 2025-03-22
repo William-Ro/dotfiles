@@ -11,7 +11,6 @@
     wl-clipboard
     pinentry
     qbittorrent
-    firejail
   ];
 
   programs = {
