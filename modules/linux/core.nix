@@ -9,7 +9,6 @@
     telegram-desktop
     mpv
     qbittorrent
-    jetbrains.rider
     dotnet-sdk
   ];
   programs = {
