@@ -70,7 +70,7 @@
           home-manager.backupFileExtension = "bak";
           home-manager.users.${specialArgs.username}.imports = [
             ./modules/shared/default.nix
-            ./modules/laptop/default.nix
+            ./modules/darwin/default.nix
           ];
         })
 
@@ -105,7 +105,7 @@
           home-manager.backupFileExtension = "bak";
           home-manager.users.${specialArgs.username}.imports = [
             ./modules/shared/default.nix
-            ./modules/desktop/default.nix
+            ./modules/linux/default.nix
           ];
         })
       ];
