@@ -5,9 +5,8 @@
   username,
   ...
 }: {
-  # Determine if we are on macOS or NixOS
   imports = [
-    # Common modules
+    # Shared modules
     ./core.nix
     ./zsh.nix
     ./git.nix
