@@ -14,6 +14,8 @@
     # programming languages
     go
     python3
+    dotnet-sdk
+    ctop
   ];
 
   programs = {
