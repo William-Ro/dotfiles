@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     zip
     xz
+    gh
     unzip
     p7zip
     alejandra
