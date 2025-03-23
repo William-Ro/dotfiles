@@ -6,16 +6,13 @@
     unzip
     p7zip
     alejandra
+    docker-compose
     fontconfig
     cowsay
     file
     which
     tree
     glow
-    # programming languages
-    go
-    python3
-    dotnet-sdk
     ctop
   ];
 
