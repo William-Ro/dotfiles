@@ -55,6 +55,7 @@
   home.file.".zshenv" = {
     text = ''
       export PATH=$HOME/Development/flutter/bin:$PATH
+      export PATH="$PATH:/home/deishuu/.dotnet/tools"
     '';
   };
 
