@@ -74,20 +74,6 @@
           "*.ts" = "$(capture).*";
           "*.tsx" = "$(capture).*";
         };
-        "files.exclude" = {
-          ".angular" = true;
-          ".vscode" = true;
-          ".dart_tool" = true;
-          ".idea" = true;
-          ".vscode-test" = true;
-          "bower_components" = true;
-          "node_modules" = true;
-          "build" = true;
-        };
-        "search.exclude" = {
-          "**/node_modules" = true;
-          "**/bower_components" = true;
-        };
         "workbench.activityBar.location" = "hidden";
         "workbench.sideBar.location" = "right";
         "workbench.reduceMotion" = "off";
