@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    vscode
-    docker-compose
     spotify
     firefox
     postman
@@ -9,7 +7,6 @@
     telegram-desktop
     mpv
     qbittorrent
-    dotnet-sdk
   ];
   programs = {
   };
