@@ -17,11 +17,11 @@
         vscode-extensions.ms-azuretools.vscode-docker
         vscode-extensions.dart-code.flutter
         vscode-extensions.github.copilot-chat
-        vscode-extensions.pkief.material-icon-theme
         vscode-extensions.bbenoist.nix
-        vscode-extensions.zhuangtongfa.material-theme
         vscode-extensions.esbenp.prettier-vscode
         vscode-extensions.golang.go
+        vscode-extensions.pkief.material-icon-theme
+        vscode-extensions.zhuangtongfa.material-theme
       ];
 
       userSettings = {
@@ -116,7 +116,7 @@
         };
         "[csharp]" = {
           "editor.defaultFormatter" = "ms-dotnettools.csharp";
-        };      
+        };
       };
     };
   };
