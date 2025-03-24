@@ -12,7 +12,7 @@
     ./git.nix
     ./neovim.nix
     ./starship.nix
-    ./discord.nix
+    ./vencord.nix
     ./kitty.nix
     ./alacritty.nix
     ./lazygit.nix
