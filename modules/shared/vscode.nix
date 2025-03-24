@@ -114,6 +114,9 @@
         "[xml]" = {
           "editor.defaultFormatter" = "DotJoshJohnson.xml";
         };
+        "[csharp]" = {
+          "editor.defaultFormatter" = "ms-dotnettools.csharp";
+        };      
       };
     };
   };
