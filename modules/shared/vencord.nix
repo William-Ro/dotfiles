@@ -11,97 +11,86 @@
   in {
     "${vesktopPath}/themes/deishuu.css".text = ''
       /**
-       * @name midnight deishuu' dotfiles
-       * @description A dark, rounded discord theme generated with home manager.
-       * @author refact0r, anubis
-       * @version 1.6.2
-       * @source https://github.com/refact0r/midnight-discord/blob/master/flavors/midnight-nord.theme.css
+       * @name system24
+       * @description A tui-style discord theme generated with home manager.
+       * @author refact0r
+       * @version 1.0.0
+       * @source https://github.com/refact0r/system24/blob/master/system24.theme.css
        * @authorId 508863359777505290
        * @authorLink https://www.refact0r.dev
       */
 
-      /* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
-
-      @import url('https://refact0r.github.io/midnight-discord/midnight.css');
+      /* import theme modules */
+      @import url('https://refact0r.github.io/system24/src/main.css'); /* main theme css. DO NOT REMOVE */
+      @import url('https://refact0r.github.io/system24/src/unrounding.css'); /* gets rid of all rounded corners. remove if you want rounded corners. */
 
       /* customize things here */
       :root {
-      	/* font, change to 'gg sans' for default discord font */
-      	--font: 'figtree';
+      	--font: 'DM Mono'; /* UI font name. it must be installed on your system. */
+      	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
+      	font-weight: 300; /* UI font weight. */
+      	--label-font-weight: 500; /* font weight for panel labels. */
+      	--corner-text: 'system24'; /* custom text to display in the corner. only works on windows. */
+      	--pad: 16px; /* padding between panels. */
+      	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
+      	--panel-roundness: 0px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
 
-      	/* top left corner text */
-      	--corner-text: 'Nord';
+      	/* background colors */
+      	--bg-0: oklch(19% 0 0); /* main background color. */
+      	--bg-1: oklch(23% 0 0); /* background color for secondary elements like code blocks, embeds, etc. */
+      	--bg-2: oklch(27% 0 0); /* color of neutral buttons. */
+      	--bg-3: oklch(31% 0 0); /* color of neutral buttons when hovered. */
 
-      	/* thickness of messages divider */
-      	--divider-thickness: 3px;
-
-      	/* color of status indicators and window controls */
-      	--online-indicator: #a3be8c; /* change to #23a55a for default green */
-      	--dnd-indicator: #bf616a; /* change to #f23f43 for default red */
-      	--idle-indicator: #ebcb8b; /* change to #f0b232 for default yellow */
-      	--streaming-indicator: #b48ead; /* change to #593695 for default purple */
-
-      	/* accent colors */
-      	--accent-1: hsl(179, 25%, 65%); /* links */
-      	--accent-2: hsl(193, 43%, 67%); /* general unread/mention elements */
-      	--accent-3: hsl(193, 43%, 67%); /* accent buttons */
-      	--accent-4: hsl(193, 37%, 60%); /* accent buttons when hovered */
-      	--accent-5: hsl(193, 31%, 53%); /* accent buttons when clicked */
-      	--mention: hsla(193, 43%, 51%, 0.1); /* mentions & mention messages */
-      	--mention-hover: hsla(193, 43%, 51%, 0.05); /* mentions & mention messages when hovered */
+      	/* state modifiers */
+      	--hover: oklch(54% 0 0 / 0.1); /* color of hovered elements. */
+      	--active: oklch(54% 0 0 / 0.2); /* color of elements when clicked. */
+      	--selected: var(--active); /* color of selected elements. */
 
       	/* text colors */
-      	--text-0: #2e3440; /* text on colored elements */
-      	--text-1: #eceff4; /* other normally white text */
-      	--text-2: #e5e9f0; /* headings and important text */
-      	--text-3: #eceff4; /* normal text */
-      	--text-4: #93a4c2; /* icon buttons and channels */
-      	--text-5: #434c5e; /* muted channels/chats and timestamps */
+      	--txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
+      	--txt-link: var(--cyan); /* color of links. */
+      	--txt-0: oklch(90% 0 0); /* color of bright/white text. */
+      	--txt-1: oklch(80% 0 0); /* main text color. */
+      	--txt-2: oklch(60% 0 0); /* color of secondary text like channel list. */
+      	--txt-3: oklch(40% 0 0); /* color of muted text. */
 
-      	/* background and dark colors */
-      	--bg-1: #434c5e; /* dark buttons when clicked */
-      	--bg-2: #3b4252; /* dark buttons */
-      	--bg-3: #2e3440; /* spacing, secondary elements */
-      	--bg-4: #272b35; /* main background color */
-      	--hover: hsla(220, 17%, 32%, 0.3); /* buttons when hovered */
-      	--active: hsla(220, 17%, 32%, 0.5); /* channels and buttons when clicked or selected */
-      	--message-hover: hsla(0, 0%, 0%, 0.1); /* messages when hovered */
+      	/* accent colors */
+      	--acc-0: white; /* main accent color. */
+      	--acc-1: white; /* color of accent buttons when hovered. */
+      	--acc-2: white; /* color of accent buttons when clicked. */
 
-      	/* amount of spacing and padding */
-      	--spacing: 12px;
+      	/* borders */
+      	--border-width: 2px; /* panel border thickness. */
+      	--border-color: var(--bg-3); /* panel border color. */
+      	--border-hover-color: var(--acc-0); /* panel border color when hovered. */
+      	--border-transition: 0.2s ease; /* panel border transition. */
 
-      	/* animations */
-      	/* ALL ANIMATIONS CAN BE DISABLED WITH REDUCED MOTION IN DISCORD SETTINGS */
-      	--list-item-transition: 0.2s ease; /* channels/members/settings hover transition */
-      	--unread-bar-transition: 0.2s ease; /* unread bar moving into view transition */
-      	--moon-spin-transition: 0.4s ease; /* moon icon spin */
-      	--icon-spin-transition: 1s ease; /* round icon button spin (settings, emoji, etc.) */
+      	/* status dot colors */
+      	--online-dot: var(--green); /* color of online dot. */
+      	--dnd-dot: var(--pink); /* color of do not disturb dot. */
+      	--idle-dot: var(--yellow); /* color of idle dot. */
+      	--streaming-dot: white; /* color of streaming dot. */
 
-      	/* corner roundness (border-radius) */
-      	--roundness-xl: 22px; /* roundness of big panel outer corners */
-      	--roundness-l: 20px; /* popout panels */
-      	--roundness-m: 16px; /* smaller panels, images, embeds */
-      	--roundness-s: 12px; /* members, settings inputs */
-      	--roundness-xs: 10px; /* channels, buttons */
-      	--roundness-xxs: 8px; /* searchbar, small elements */
+      	/* mention/ping and message colors */
+      	--mention-txt: var(--acc-0); /* color of mention text. */
+      	--mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%); /* background highlight of mention text. */
+      	--mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%); /* overlay color of messages that mention you. */
+      	--mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%); /* overlay color of messages that mention you when hovered. */
+      	--reply-overlay: var(--active); /* overlay color of message you are replying to. */
+      	--reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
 
-      	/* direct messages moon icon */
-      	/* change to block to show, none to hide */
-      	--discord-icon: none; /* discord icon */
-      	--moon-icon: block; /* moon icon */
-      	--moon-icon-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg'); /* custom icon url */
-      	--moon-icon-size: auto;
-
-      	/* filter uncolorable elements to fit theme */
-      	/* (just set to none, they're too much work to configure) */
-      	--login-bg-filter: none; /* login background artwork */
-      	--green-to-accent-3-filter: none; /* add friend page explore icon */
-      	--blurple-to-accent-3-filter: none; /* add friend page school icon */
-
-      	/* choose style for window control buttons (minimize-maximize-close) */
-      	/* block to show, none to hide; choose only one to show!*/
-      	--windows-nav: none; /* default windows-style buttons */
-      	--custom-nav: block; /* custom mac-style buttons */
+      	/* color shades */
+      	--pink: oklch(73% 0.12 0);
+      	--pink-1: oklch(63% 0.12 0);
+      	--pink-2: oklch(53% 0.12 0);
+      	--purple: oklch(73% 0.12 300);
+      	--purple-1: oklch(63% 0.12 300);
+      	--purple-2: oklch(53% 0.12 300);
+      	--cyan: oklch(73% 0.12 200);
+      	--yellow: oklch(78% 0.12 80);
+      	--green: oklch(73% 0.12 160);
+      	--green-1: oklch(63% 0.12 160);
+      	--green-2: oklch(53% 0.12 160);
       }
     '';
     "${vesktopPath}/settings/settings.json".text = ''
