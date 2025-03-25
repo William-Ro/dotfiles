@@ -451,12 +451,8 @@
                   "enabled": false
               },
               "OpenInApp": {
-                  "enabled": true,
-                  "spotify": true,
-                  "steam": true,
-                  "epic": true,
-                  "tidal": true,
-                  "itunes": true
+                  "enabled": false
+
               },
               "OverrideForumDefaults": {
                   "enabled": false
