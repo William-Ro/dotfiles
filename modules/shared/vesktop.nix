@@ -14,7 +14,7 @@
        * @name system24
        * @description A tui-style discord theme generated with home manager.
        * @author refact0r
-       * @version 1.0.0
+       * @version 1.0.0t
        * @source https://github.com/refact0r/system24/blob/master/system24.theme.css
        * @authorId 508863359777505290
        * @authorLink https://www.refact0r.dev
@@ -97,7 +97,7 @@
       {
           "autoUpdate": true,
           "autoUpdateNotification": true,
-          "useQuickCss": true,
+          "useQuickCss": false,
           "themeLinks": [],
           "enabledThemes": ["deishuu.css"],
           "enableReactDevtools": false,
@@ -144,7 +144,7 @@
                   "enabled": false
               },
               "AlwaysAnimate": {
-                  "enabled": true
+                  "enabled": false
               },
               "AlwaysExpandRoles": {
                   "enabled": false
@@ -165,15 +165,7 @@
                   "enabled": false
               },
               "BetterFolders": {
-                  "enabled": true,
-                  "sidebar": true,
-                  "showFolderIcon": 1,
-                  "keepIcons": false,
-                  "closeAllHomeButton": false,
-                  "closeAllFolders": false,
-                  "forceOpen": false,
-                  "sidebarAnim": true,
-                  "closeOthers": false
+                  "enabled": false
               },
               "BetterGifAltText": {
                   "enabled": false
@@ -206,7 +198,7 @@
                   "enabled": false
               },
               "CallTimer": {
-                  "enabled": true
+                  "enabled": false
               },
               "ClearURLs": {
                   "enabled": false
@@ -308,8 +300,7 @@
                   "enabled": false
               },
               "GameActivityToggle": {
-                  "enabled": true,
-                  "oldIcon": false
+                  "enabled": false
               },
               "GifPaste": {
                   "enabled": false
@@ -369,7 +360,7 @@
                   "collapseDeleted": false,
                   "deleteStyle": "text",
                   "ignoreBots": false,
-                  "ignoreSelf": false,
+                  "ignoreSelf": true,
                   "ignoreUsers": "",
                   "ignoreChannels": "",
                   "ignoreGuilds": "",
@@ -412,7 +403,7 @@
                   "enabled": false
               },
               "NoF1": {
-                  "enabled": true
+                  "enabled": false
               },
               "NoMaskedUrlPaste": {
                   "enabled": false
@@ -451,7 +442,7 @@
                   "enabled": false
               },
               "NSFWGateBypass": {
-                  "enabled": true
+                  "enabled": false
               },
               "OnePingPerDM": {
                   "enabled": false
@@ -592,9 +583,7 @@
                   "enabled": false
               },
               "SpotifyCrack": {
-                  "enabled": false,
-                  "noSpotifyAutoPause": true,
-                  "keepSpotifyActivityOnIdle": false
+                  "enabled": false
               },
               "SpotifyShareCommands": {
                   "enabled": false
@@ -675,10 +664,10 @@
                   "enabled": false
               },
               "WebKeybinds": {
-                  "enabled": true
+                  "enabled": false
               },
               "WebScreenShareFixes": {
-                  "enabled": true
+                  "enabled": false
               },
               "WhoReacted": {
                   "enabled": false
@@ -687,7 +676,7 @@
                   "enabled": false
               },
               "YoutubeAdblock": {
-                  "enabled": true
+                  "enabled": false
               },
               "NoTrack": {
                   "enabled": true,
