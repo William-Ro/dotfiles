@@ -48,6 +48,11 @@
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.iosevka
+
+      noto-fonts
+      noto-fonts-emoji
+      font-awesome_5
+      font-awesome_6
     ];
   };
 
