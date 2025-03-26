@@ -2,12 +2,6 @@
 
 This repository contains my automated configuration for Nix-Darwin on macOS. The flake is designed to automate most configurations, but there are two commands that need to be executed manually due to current limitations:
 
-```bash
-displayplacer "id:3683B5C8-F3EE-2AB8-0857-D6964E3302DB res:2560x1440 hz:144 color_depth:8 scaling:off origin:(0,0) degree:0"
-
-sudo spctl --master-disable
-```
-
 ## Notes on Display Configuration
 
 The display configuration is specific to the USB hub I use, which only supports 144 Hz. If you are not using a hub with these characteristics, this step might not be necessary.
