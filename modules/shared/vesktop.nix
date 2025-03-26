@@ -99,7 +99,7 @@
           "autoUpdateNotification": true,
           "useQuickCss": false,
           "themeLinks": [],
-          "enabledThemes": ["deishuu.css"],
+          "enabledThemes": [""],
           "enableReactDevtools": false,
           "frameless": false,
           "transparent": false,
