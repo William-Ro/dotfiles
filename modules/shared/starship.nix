@@ -43,18 +43,18 @@
         format = "[ $symbol ($version) ]($style)";
       };
       docker_context = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#06969A";
         format = "[ $symbol $context ]($style)";
       };
       elixir = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       elm = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -71,7 +71,7 @@
       };
 
       golang = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -82,19 +82,19 @@
       };
 
       haskell = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       java = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
 
       julia = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -106,7 +106,7 @@
       };
 
       nim = {
-        symbol = "󰆥 ";
+        symbol = "󰆥";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -118,32 +118,32 @@
       };
 
       scala = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
       aws = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
       conda = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
       dart = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
       nix_shell = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol $state ]($style)";
       };
       perl = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -153,7 +153,7 @@
         format = "[ $symbol ($version) ]($style)";
       };
       php = {
-        symbol = " ";
+        symbol = "";
         style = "bg:#86BBD8";
         format = "[ $symbol ($version) ]($style)";
       };
@@ -172,7 +172,7 @@
       };
 
       package = {
-        symbol = "󰏗 ";
+        symbol = "󰏗";
         style = "bg:#86BBD8";
         format = "[ $symbol $version ]($style)";
       };
