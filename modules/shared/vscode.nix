@@ -117,6 +117,9 @@
         "[csharp]" = {
           "editor.defaultFormatter" = "ms-dotnettools.csharp";
         };
+        "[go]" = {
+          "editor.defaultFormatter" = "golang.go";
+        };
       };
     };
   };
