@@ -73,6 +73,7 @@
     enable = true;
     setSocketVariable = true;
   };
+  programs.ssh.startAgent = true;
 
   # System User Icon Setup
   system.activationScripts.userIcon.text = ''
