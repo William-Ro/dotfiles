@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -37,10 +38,9 @@
     LC_TIME = "es_CR.UTF-8";
   };
 
-  # X11 & Desktop Environment
+  # X11
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     xkb = {
       layout = "us";
@@ -64,6 +64,24 @@
     };
   };
 
+  # Desktop Environment
+
+  services.displayManager.ly.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
   # Printing
   services.printing.enable = true;
 
@@ -75,6 +93,8 @@
     enable = true;
     setSocketVariable = true;
   };
+
+  # Ssh Agent
   programs.ssh.startAgent = true;
 
   # OpenSSH (Optional)
