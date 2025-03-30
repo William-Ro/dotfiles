@@ -75,13 +75,6 @@
   };
   programs.ssh.startAgent = true;
 
-  # System User Icon Setup
-  system.activationScripts.userIcon.text = ''
-    mkdir -p /var/lib/AccountsService/{icons,users}
-    cp /home/deishuu/Pictures/face.png /var/lib/AccountsService/icons/deishuu
-    echo -e "[User]\nIcon=/var/lib/AccountsService/icons/deishuu\n" > /var/lib/AccountsService/users/deishuu
-  '';
-
   # OpenSSH (Optional)
   # services.openssh.enable = true;
 
