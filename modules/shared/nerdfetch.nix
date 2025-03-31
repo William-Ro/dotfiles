@@ -1,5 +1,5 @@
-{...}: {
-  programs.nerdfetch = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = [
+    pkgs.nerdfetch
+  ];
 }

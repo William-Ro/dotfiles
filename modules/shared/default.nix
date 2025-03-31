@@ -19,6 +19,7 @@
     ./fastfetch.nix
     ./vscode.nix
     ./obsidian.nix
+    ./nerdfetch.nix
   ];
 
   # Home Manager needs a bit of information about you and the
