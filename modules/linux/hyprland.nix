@@ -141,6 +141,7 @@ in {
       xwayland.force_zero_scaling = true;
 
       debug.disable_logs = false;
+      debug.damage_tracking = 0;
 
       plugin = {
         csgo-vulkan-fix = {
