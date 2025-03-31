@@ -54,6 +54,7 @@
         "terminal.integrated.cursorStyle" = "line";
         "terminal.integrated.cursorBlinking" = false;
         "terminal.integrated.stickyScroll.enabled" = false;
+        "terminal.integrated.rendererType" = "canvas";
         "terminal.integrated.allowedLinkSchemes" = [
           "file"
           "http"
