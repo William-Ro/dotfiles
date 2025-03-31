@@ -20,7 +20,7 @@
       background = [
         {
           monitor = "";
-          path = config.theme.wallpaper;
+          path = "$HOME/Pictures/wallpaper.jpg";
         }
       ];
 
