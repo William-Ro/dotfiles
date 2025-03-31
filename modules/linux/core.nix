@@ -9,6 +9,7 @@
     grimblast
     playerctl
     uwsm
+    xfce.thunar
   ];
   programs = {
   };
