@@ -62,7 +62,7 @@
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  # Disable auto-optimise-store because of this issue:
+  # Disable auto-optimise-store if this issue is present:
   #   https://github.com/NixOS/nix/issues/7273
   # "error: cannot link '/nix/store/.tmp-link-xxxxx-xxxxx' to '/nix/store/.links/xxxx': File exists"
   nix.settings = {
