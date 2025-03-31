@@ -13,20 +13,20 @@
 
       username = {
         show_always = true;
-        style_user = "bg:#bd93f9";
-        style_root = "bg:#bd93f9";
+        style_user = "bg:#bd93f9 fg:#333333";
+        style_root = "bg:#bd93f9 fg:#333333";
         format = "[$user]($style)";
         disabled = false;
       };
 
       os = {
-        style = "bg:#bd93f9";
+        style = "bg:#bd93f9 fg:#333333";
         disabled = true;
         symbol = " ";
       };
 
       directory = {
-        style = "bg:#ff79c6";
+        style = "bg:#ff79c6 fg:#333333";
         format = "[ $path ]($style)";
         truncation_length = 3;
       };
@@ -39,53 +39,53 @@
 
       c = {
         symbol = " ";
-        style = "bg:#8be9fd";
+        style = "bg:#8be9fd fg:#333333";
         format = "[ $symbol ($version) ]($style)";
       };
       docker_context = {
         symbol = "";
-        style = "bg:#50fa7b";
+        style = "bg:#50fa7b fg:#333333";
         format = "[ $symbol $context ]($style)";
       };
       elixir = {
         symbol = "";
-        style = "bg:#8be9fd";
+        style = "bg:#8be9fd fg:#333333";
         format = "[ $symbol ($version) ]($style)";
       };
 
       elm = {
         symbol = "";
-        style = "bg:#8be9fd";
+        style = "bg:#8be9fd fg:#333333";
         format = "[ $symbol ($version) ]($style)";
       };
 
       git_branch = {
         symbol = "";
-        style = "bg:#ffb86c";
+        style = "bg:#ffb86c fg:#333333";
         format = "[ $symbol $branch ]($style)";
       };
 
       git_status = {
-        style = "bg:#ffb86c";
+        style = "bg:#ffb86c fg:#333333";
         format = "[$all_status$ahead_behind ]($style)";
       };
 
       nodejs = {
         symbol = "";
-        style = "bg:#8be9fd";
+        style = "bg:#8be9fd fg:#333333";
         format = "[ $symbol ($version) ]($style)";
       };
 
       rust = {
         symbol = "";
-        style = "bg:#8be9fd";
+        style = "bg:#8be9fd fg:#333333";
         format = "[ $symbol ($version) ]($style)";
       };
 
       time = {
         disabled = false;
         time_format = "%I:%M %p";
-        style = "bg:#6272a4";
+        style = "bg:#6272a4 fg:#333333";
         format = "[ ♥ $time ]($style)";
       };
     };
