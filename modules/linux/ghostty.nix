@@ -8,12 +8,15 @@
     window-theme = dark
     window-height = 20
     window-width = 110
+    window-padding-x = 15
+    window-padding-y = 1
     background-opacity = 1
     background-blur-radius = 60
     selection-background = #2d3f76
     selection-foreground = #c8d3f5
     cursor-style = bar
     mouse-hide-while-typing = true
+
 
 
     # tabs
