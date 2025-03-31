@@ -32,7 +32,7 @@
           valign = "bottom";
           position = "0%, 10%";
 
-          outline_thickness = 1;
+          outline_thickness = 2;
 
           font_color = "rgb(255, 255, 255)";
           font_family = "JetBrainsMono Nerd Font";
