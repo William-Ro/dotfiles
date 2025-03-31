@@ -8,8 +8,8 @@
     window-theme = dark
     window-height = 20
     window-width = 110
-    window-padding-x = 15
-    window-padding-y = 1
+    window-padding-x = 20
+    window-padding-y = 20
     background-opacity = 1
     background-blur-radius = 60
     selection-background = #2d3f76
