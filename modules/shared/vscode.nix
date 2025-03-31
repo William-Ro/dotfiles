@@ -22,6 +22,7 @@
         vscode-extensions.golang.go
         vscode-extensions.pkief.material-icon-theme
         vscode-extensions.zhuangtongfa.material-theme
+        vscode-extensions.dracula-theme.theme-dracula
       ];
 
       userSettings = {
@@ -82,7 +83,7 @@
           ".angular" = true;
         };
         "workbench.startupEditor" = "none";
-        "workbench.colorTheme" = "One Dark Pro Darker";
+        "workbench.colorTheme" = "Dracula Theme";
         "workbench.iconTheme" = "material-icon-theme";
         "git.autofetch" = true;
         "git.confirmSync" = false;
