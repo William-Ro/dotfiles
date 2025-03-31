@@ -9,8 +9,9 @@
     grimblast
     playerctl
     uwsm
-    xfce.thunar
     keychain
+    hyprcursor
+    egl-wayland
   ];
   programs = {
   };
