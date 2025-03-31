@@ -10,6 +10,7 @@
     playerctl
     uwsm
     xfce.thunar
+    keychain
   ];
   programs = {
   };
