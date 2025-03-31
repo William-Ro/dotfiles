@@ -30,8 +30,6 @@ in {
 
       env = [
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "HYPRCURSOR_THEME,Bibata-Modern-Classic "
-        "HYPRCURSOR_SIZE,24"
         "EDITOR,nvim"
       ];
 
@@ -39,7 +37,6 @@ in {
         # finalize startup
         "uwsm finalize"
         # set cursor for HL itself
-        "hyprctl setcursor Bibata-Modern-Classic 24"
         "hyprlock"
       ];
       general = {
@@ -282,35 +279,6 @@ in {
       ###########
       ###Rules###
       ###########
-
-      layerrule = let
-        toRegex = list: let
-          elements = lib.concatStringsSep "|" list;
-        in "^(${elements})$";
-
-        lowopacity = [
-          "bar"
-          "calendar"
-          "notifications"
-          "system-menu"
-        ];
-
-        highopacity = [
-          "anyrun"
-          "osd"
-          "logout_dialog"
-        ];
-
-        blurred = lib.concatLists [
-          lowopacity
-          highopacity
-        ];
-      in [
-        "blur, ${toRegex blurred}"
-        "xray 1, ${toRegex ["bar"]}"
-        "ignorealpha 0.5, ${toRegex (highopacity ++ ["music"])}"
-        "ignorealpha 0.2, ${toRegex lowopacity}"
-      ];
 
       # window rules
       windowrulev2 = [
