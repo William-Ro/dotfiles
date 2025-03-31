@@ -26,7 +26,7 @@
 
       input-field = [
         {
-          monitor = "eDP-1";
+          monitor = "DP-1";
 
           size = "300, 50";
           valign = "bottom";
@@ -34,7 +34,8 @@
 
           outline_thickness = 1;
 
-          font_color = "rgb(b6c4ff)";
+          font_color = "rgb(255, 255, 255)";
+          font_family = "JetBrainsMono Nerd Font";
           outer_color = "rgba(180, 180, 180, 0.5)";
           inner_color = "rgba(200, 200, 200, 0.1)";
           check_color = "rgba(247, 193, 19, 0.5)";
@@ -56,10 +57,10 @@
       label = [
         {
           monitor = "";
-          text = "$TIME";
+          text = "cmd[update:3600000] date +'%I:%M'";
           font_size = 150;
-          color = "rgb(b6c4ff)";
-
+          color = "rgb(255, 255, 255)";
+          font_family = "JetBrainsMono Nerd Font";
           position = "0%, 30%";
 
           valign = "center";
@@ -74,8 +75,8 @@
           monitor = "";
           text = "cmd[update:3600000] date +'%a %b %d'";
           font_size = 20;
-          color = "rgb(b6c4ff)";
-
+          color = "rgb(255, 255, 255)";
+          font_family = "JetBrainsMono Nerd Font";
           position = "0%, 40%";
 
           valign = "center";
