@@ -6,6 +6,9 @@
     telegram-desktop
     mpv
     qbittorrent
+    grimblast
+    playerctl
+    uwsm
   ];
   programs = {
   };
