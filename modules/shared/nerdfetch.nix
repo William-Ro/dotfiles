@@ -1,0 +1,5 @@
+{...}: {
+  programs.nerdfetch = {
+    enable = true;
+  };
+}
