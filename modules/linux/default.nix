@@ -4,5 +4,6 @@
     ./wofi.nix
     ./core.nix
     ./hyprland.nix
+    ./ghostty.nix
   ];
 }
