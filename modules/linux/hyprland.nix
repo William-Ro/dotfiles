@@ -20,6 +20,8 @@
   in "pkill ${prog} || uwsm app -- ${program}";
 
   runOnce = program: "pgrep ${program} || uwsm app -- ${program}";
+
+  cursorName = "Bibata-Modern-Classic";
 in {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -29,9 +31,22 @@ in {
       #######################
 
       env = [
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        # Nvidia patch
         "WLR_NO_HARDWARE_CURSORS,1"
         "NIXOS_OZONE_WL,1"
+        "GBM_BACKEND,nvidia-drm"
+        "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+        "LIBVA_DRIVER_NAME,nvidia"
+        "WLR_RENDERER, vulkan"
+
+        # Cursor
+        "HYPRCURSOR_THEME,${cursorName}"
+        "HYPRCURSOR_SIZE,24"
+
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
+        "GDK_SCALE,2"
         "EDITOR,nvim"
       ];
 
@@ -39,7 +54,7 @@ in {
         # finalize startup
         "uwsm finalize"
         # set cursor for HL itself
-        "hyprlock"
+        "hyprctl setcursor ${cursorName} 24"
       ];
       general = {
         gaps_in = 5;
