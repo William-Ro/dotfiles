@@ -6,8 +6,6 @@
   home.file = {
     ".config/wofi/config" = {
       text = ''
-        width=50%
-        height=50%
         lines=10
         prompt=Search..
       '';
