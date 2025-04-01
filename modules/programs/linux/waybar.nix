@@ -42,24 +42,24 @@
         color: #d9e0ee;
       }
       #clock {
-        color: rgb(217, 224, 238);
+        color: #d9e0ee;
       }
-      #audio {
-        color: rgb(245, 224, 220);
+      #pulseaudio {
+        color: #d9e0ee;
       }
       #memory {
-        color: rgb(181, 232, 224);
+        color: #d9e0ee;
       }
       #cpu {
-        color: rgb(245, 194, 231);
+        color: #d9e0ee;
       }
       #network {
-        color: #ABE9B3;
+        color: #d9e0ee;
       }
       #network.disconnected {
-        color: rgb(255, 255, 255);
+        color: #d9e0ee;
       }
-      #custom-nix-icon, #clock, #audio, #memory,#cpu, #network{
+      #custom-nix-icon, #clock, #pulseaudio, #memory,#cpu, #network{
         padding-left: 10px;
         padding-right: 10px;
       }
@@ -75,15 +75,14 @@
           "clock"
         ];
         modules-right = [
-          "audio"
+          "pulseaudio"
           "memory"
           "cpu"
           "network"
         ];
         "custom/nix-icon" = {
           "format" = " ";
-          "on-click" = "pkill rofi || rofi2";
-          "on-click-middle" = "exec wallpaper_default";
+          "on-click" = "exec wallpaper_default";
           "on-click-right" = "exec wallpaper_random";
           "tooltip" = false;
         };
@@ -94,12 +93,12 @@
           "tooltip-format" = "{:%A; %d %B %Y}\n<tt>{calendar}</tt>";
         };
 
-        "audio" = {
+        "pulseaudio" = {
           "scroll-step" = 1;
           "format" = "{icon} {volume}%";
-          "format-muted" = "󰖁 Muted";
+          "format-muted" = "󰝟 Muted";
           "format-icons" = {
-            "default" = ["" "" ""];
+            "default" = ["󰕾"];
           };
           "on-click" = "pamixer -t";
           "tooltip" = false;
@@ -107,14 +106,14 @@
 
         "memory" = {
           "interval" = 1;
-          "format" = "󰻠 {percentage}%";
+          "format" = "󰍛 {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
           "interval" = 1;
-          "format" = "󰍛 {usage}%";
+          "format" = "󱃃 {usage}%";
         };
         "network" = {
           "format-disconnected" = "󰯡 Disconnected";
