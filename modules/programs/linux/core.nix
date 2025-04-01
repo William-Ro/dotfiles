@@ -2,15 +2,14 @@
   home.packages = with pkgs; [
     spotify
     firefox
-    lm_sensors
     telegram-desktop
-    mpv
-    killall
     qbittorrent
+    lm_sensors
+    mpv
     playerctl
-    keychain
     mpc
-    cava
+    killall
+    keychain
     pamixer
     nautilus
     pavucontrol
