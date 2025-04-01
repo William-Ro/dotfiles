@@ -5,6 +5,7 @@
     lm_sensors
     telegram-desktop
     mpv
+    killall
     qbittorrent
     playerctl
     keychain

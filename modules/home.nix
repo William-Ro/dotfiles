@@ -7,7 +7,8 @@
 }: {
   imports = [
     # Shared modules
-    ./shared/default.nix
+    ./programs/shared/default.nix
+    ./scripts/default.nix
   ];
 
   # Home Manager needs a bit of information about you and the
