@@ -54,7 +54,7 @@
         show_indicators = "yes";
         shrink = "no";
         word_wrap = "yes";
-        browser = "/usr/bin/env librewolf -new-tab";
+        browser = "/usr/bin/env firefox -new-tab";
       };
 
       fullscreen_delay_everything = {fullscreen = "delay";};
