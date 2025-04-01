@@ -5,6 +5,5 @@
     ./core.nix
     ./hyprland.nix
     ./ghostty.nix
-    ./hyprlock.nix
   ];
 }
