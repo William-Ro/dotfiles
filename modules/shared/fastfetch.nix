@@ -104,12 +104,7 @@
         }
         {
           type = "terminal";
-          key = " ├─  "; # Terminal
-          keyColor = "yellow";
-        }
-        {
-          type = "font";
-          key = " ╰─  "; # Fuente
+          key = " ╰──  "; # Terminal
           keyColor = "yellow";
         }
 
