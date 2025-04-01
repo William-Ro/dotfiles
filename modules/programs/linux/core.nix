@@ -13,6 +13,7 @@
     cava
     pamixer
     nautilus
+    pavucontrol
   ];
   programs = {
   };
