@@ -37,9 +37,18 @@
       tooltip label {
         color: #d9e0ee;
       }
-      #custom-nix-icon {
+      #custom-icon {
         font-size: 20px;
         color: #d9e0ee;
+      }
+      #workspaces {
+        background-color: #232323;
+      }
+      #workspaces button {
+        color: #d9e0ee;
+      }
+      #workspaces button.active {
+        color:rgb(74, 74, 74);
       }
       #clock {
         color: #d9e0ee;
@@ -59,7 +68,7 @@
       #network.disconnected {
         color: #d9e0ee;
       }
-      #custom-nix-icon, #clock, #pulseaudio, #memory,#cpu, #network{
+      #custom-icon, #clock, #pulseaudio, #memory,#cpu, #network{
         padding-left: 10px;
         padding-right: 10px;
       }
@@ -69,7 +78,8 @@
         "layer" = "top";
         "position" = "top";
         modules-left = [
-          "custom/nix-icon"
+          "custom/icon"
+          "hyprland/workspaces"
         ];
         modules-center = [
           "clock"
@@ -80,7 +90,29 @@
           "cpu"
           "network"
         ];
-        "custom/nix-icon" = {
+        "hyprland/workspaces" = {
+          "all-outputs" = true;
+          "active-only" = false;
+          "disable-scroll" = true;
+          "format" = "{icon}";
+          "format-icons" = {
+            "1" = "";
+            "2" = "";
+            "3" = "";
+            "4" = "";
+            "5" = "";
+            "6" = "";
+            "7" = "";
+            "8" = "";
+            "9" = "";
+            "urgent" = "";
+            "active" = "";
+            "default" = "";
+          };
+          "tooltip" = false;
+        };
+
+        "custom/icon" = {
           "format" = " ";
           "on-click" = "exec wallpaper_default";
           "on-click-right" = "exec wallpaper_random";
