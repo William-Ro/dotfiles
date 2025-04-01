@@ -22,7 +22,7 @@
 
   wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
     if command -v swww >/dev/null 2>&1; then
-          swww img ~/Pictures/wallpapers/menhera.jpg  --transition-type simple
+          swww img ~/Pictures/wallpapers/wallpaper.jpg  --transition-type simple
     fi
   '';
 in {

@@ -12,6 +12,7 @@
     mpc
     cava
     pamixer
+    nautilus
   ];
   programs = {
   };
