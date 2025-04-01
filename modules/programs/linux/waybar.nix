@@ -11,59 +11,58 @@
       target = "graphical-session.target";
     };
     style = ''
-            * {
-              font-family: "JetBrainsMono Nerd Font";
-              font-size: 12pt;
-              font-weight: bold;
-              border-radius: 8px;
-              transition-property: background-color;
-              transition-duration: 0.5s;
-            }
-            window#waybar {
-              background-color: transparent;
-            }
-            window > box {
-              margin-left: 5px;
-              margin-right: 5px;
-              margin-top: 5px;
-              background-color: #232323;
-              padding: 3px;
-              padding-left:8px;
-              border: 2px none #d9e0ee;
-            }
-            tooltip {
-              background: #232323;
-            }
-            tooltip label {
-              color: #d9e0ee;
-            }
+      * {
+        font-family: "JetBrainsMono Nerd Font";
+        font-size: 12pt;
+        font-weight: bold;
+        border-radius: 8px;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+      }
+      window#waybar {
+        background-color: transparent;
+      }
+      window > box {
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        background-color: #232323;
+        padding: 3px;
+        padding-left:8px;
+        border: 2px none #d9e0ee;
+      }
+      tooltip {
+        background: #232323;
+      }
+      tooltip label {
+        color: #d9e0ee;
+      }
       #custom-nix-icon {
-              font-size: 20px;
-              color: #d9e0ee;
-            }
+        font-size: 20px;
+        color: #d9e0ee;
+      }
       #clock {
-              color: rgb(217, 224, 238);
-            }
+        color: rgb(217, 224, 238);
+      }
       #audio {
-              color: rgb(245, 224, 220);
-            }
+        color: rgb(245, 224, 220);
+      }
       #memory {
-              color: rgb(181, 232, 224);
-            }
+        color: rgb(181, 232, 224);
+      }
       #cpu {
-              color: rgb(245, 194, 231);
-            }
+        color: rgb(245, 194, 231);
+      }
       #network {
-              color: #ABE9B3;
-            }
+        color: #ABE9B3;
+      }
       #network.disconnected {
-              color: rgb(255, 255, 255);
-            }
-
+        color: rgb(255, 255, 255);
+      }
       #custom-nix-icon, #clock, #audio, #memory,#cpu, #network{
-              padding-left: 10px;
-              padding-right: 10px;
-            }
+        padding-left: 10px;
+        padding-right: 10px;
+      }
     '';
     settings = [
       {
