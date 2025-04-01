@@ -60,7 +60,7 @@
       fullscreen_delay_everything = {fullscreen = "delay";};
 
       urgency_critical = {
-        background = "#d64e4e";
+        background = "#232323";
         foreground = "#d9e0ee";
       };
       urgency_low = {
@@ -68,7 +68,7 @@
         foreground = "#d9e0ee";
       };
       urgency_normal = {
-        background = "#1e1e2a";
+        background = "#232323";
         foreground = "#d9e0ee";
       };
     };
