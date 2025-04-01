@@ -6,12 +6,8 @@
     telegram-desktop
     mpv
     qbittorrent
-    grimblast
     playerctl
-    uwsm
     keychain
-    hyprcursor
-    egl-wayland
   ];
   programs = {
   };
