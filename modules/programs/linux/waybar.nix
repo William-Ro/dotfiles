@@ -39,7 +39,7 @@
                margin-left: 5px;
                margin-right: 5px;
                margin-top: 5px;
-               background-color: #1e1e2a;
+               background-color: #232323;
                padding: 3px;
                padding-left:8px;
                border: 2px none #33ccff;
