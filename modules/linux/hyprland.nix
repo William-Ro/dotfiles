@@ -8,7 +8,6 @@
   cursorSize = "24";
 in {
   home.packages = with pkgs; [
-    waybar # Status bar
     swww # Wallpaper manager
     hyprcursor # Cursor theme
     egl-wayland # Wayland EGL
