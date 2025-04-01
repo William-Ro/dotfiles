@@ -10,6 +10,7 @@
     mpc
     killall
     keychain
+
     pamixer
     nautilus
     pavucontrol

@@ -7,7 +7,7 @@
 }: {
   imports = [
     # Shared modules
-    ./programs/shared/default.nix
+    ./shared/default.nix
     ./scripts/default.nix
   ];
 
