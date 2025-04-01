@@ -44,7 +44,7 @@
       #clock {
               color: rgb(217, 224, 238);
             }
-      #pulseaudio {
+      #audio {
               color: rgb(245, 224, 220);
             }
       #memory {
@@ -60,7 +60,7 @@
               color: rgb(255, 255, 255);
             }
 
-      #custom-nix-icon, #clock, #pulseaudio, #memory,#cpu, #network{
+      #custom-nix-icon, #clock, #audio, #memory,#cpu, #network{
               padding-left: 10px;
               padding-right: 10px;
             }
@@ -76,7 +76,7 @@
           "clock"
         ];
         modules-right = [
-          "pulseaudio"
+          "audio"
           "memory"
           "cpu"
           "network"
@@ -95,7 +95,7 @@
           "tooltip-format" = "{:%A; %d %B %Y}\n<tt>{calendar}</tt>";
         };
 
-        "pulseaudio" = {
+        "audio" = {
           "scroll-step" = 1;
           "format" = "{icon} {volume}%";
           "format-muted" = "󰖁 Muted";
