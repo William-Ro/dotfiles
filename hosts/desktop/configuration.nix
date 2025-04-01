@@ -38,16 +38,6 @@
     LC_TIME = "es_CR.UTF-8";
   };
 
-  # X11
-  services.xserver = {
-    enable = true;
-    desktopManager.gnome.enable = true;
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
-
   # Sound (PipeWire)
   security.rtkit.enable = true;
   services.pipewire = {
@@ -76,9 +66,6 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
-
-  # Printing
-  services.printing.enable = true;
 
   # Docker & Podman
   virtualisation.docker.enable = true;
