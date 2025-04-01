@@ -75,7 +75,7 @@
                font-size: 20px;
                padding-left: 8px;
                padding-right: 6px;
-               color: #7ebae4;
+               color: #d9e0ee;
              }
        #mode, #clock, #memory, #temperature,#cpu,#mpd, #custom-wall, #temperature, #backlight, #pulseaudio, #network, #battery, #custom-powermenu, #custom-cava-internal {
                padding-left: 10px;
