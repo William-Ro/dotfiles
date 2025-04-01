@@ -5,5 +5,6 @@
     ./core.nix
     ./hyprland.nix
     ./ghostty.nix
+    ./waybar.nix
   ];
 }
