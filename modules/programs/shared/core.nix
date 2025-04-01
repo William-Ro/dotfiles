@@ -8,7 +8,6 @@
     alejandra
     docker-compose
     fontconfig
-    cowsay
     file
     which
     tree
