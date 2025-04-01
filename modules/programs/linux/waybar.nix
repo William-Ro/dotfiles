@@ -37,18 +37,14 @@
       tooltip label {
         color: #d9e0ee;
       }
-      #custom-icon {
-        font-size: 20px;
-        color: #d9e0ee;
-      }
       #workspaces {
         background-color: #232323;
       }
       #workspaces button {
-        color: #d9e0ee;
+        color:rgb(74, 74, 74);
       }
       #workspaces button.active {
-        color:rgb(74, 74, 74);
+        color: #d9e0ee;
       }
       #clock {
         color: #d9e0ee;
@@ -68,6 +64,10 @@
       #network.disconnected {
         color: #d9e0ee;
       }
+      #custom-icon {
+        font-size: 20px;
+        color: #d9e0ee;
+      }
       #custom-icon, #clock, #pulseaudio, #memory,#cpu, #network{
         padding-left: 10px;
         padding-right: 10px;
@@ -78,7 +78,6 @@
         "layer" = "top";
         "position" = "top";
         modules-left = [
-          "custom/icon"
           "hyprland/workspaces"
         ];
         modules-center = [
@@ -89,6 +88,7 @@
           "memory"
           "cpu"
           "network"
+          "custom/icon"
         ];
         "hyprland/workspaces" = {
           "all-outputs" = true;
@@ -111,13 +111,6 @@
           };
           "tooltip" = false;
         };
-
-        "custom/icon" = {
-          "format" = " ";
-          "on-click" = "exec wallpaper_default";
-          "on-click-right" = "exec wallpaper_random";
-          "tooltip" = false;
-        };
         "clock" = {
           "interval" = 1;
           "format" = "{:%I:%M %p  %A %b %d}";
@@ -126,26 +119,30 @@
         };
 
         "pulseaudio" = {
-          "scroll-step" = 1;
           "format" = "{icon} {volume}%";
-          "format-muted" = "󰝟 Muted";
+          "format-muted" = "{format_source}";
+          "format-bluetooth" = "{icon} {volume}%";
+          "format-bluetooth-muted" = "{format_source}";
+          "format-source" = "  Muted";
+
           "format-icons" = {
-            "default" = ["󰕾"];
+            "default" = [" " " " " "];
           };
           "on-click" = "pamixer -t";
+          "on-click-right" = "pavucontrol";
           "tooltip" = false;
         };
 
         "memory" = {
           "interval" = 1;
-          "format" = "󰍛 {percentage}%";
+          "format" = "  {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
           "interval" = 1;
-          "format" = "󱃃 {usage}%";
+          "format" = "󰍛 {usage}%";
         };
         "network" = {
           "format-disconnected" = "󰯡 Disconnected";
@@ -153,6 +150,12 @@
           "format-linked" = "󰖪 {essid} (No IP)";
           "format-wifi" = "󰖩 {essid}";
           "interval" = 1;
+          "tooltip" = false;
+        };
+        "custom/icon" = {
+          "format" = " ";
+          "on-click" = "exec wallpaper_default";
+          "on-click-right" = "exec wallpaper_random";
           "tooltip" = false;
         };
       }
