@@ -19,19 +19,6 @@
                transition-property: background-color;
                transition-duration: 0.5s;
              }
-             @keyframes blink_red {
-               to {
-                 background-color: rgb(242, 143, 173);
-                 color: rgb(26, 24, 38);
-               }
-             }
-             .warning, .critical, .urgent {
-               animation-name: blink_red;
-               animation-duration: 1s;
-               animation-timing-function: linear;
-               animation-iteration-count: infinite;
-               animation-direction: alternate;
-             }
              window#waybar {
                background-color: transparent;
              }
@@ -42,34 +29,13 @@
                background-color: #232323;
                padding: 3px;
                padding-left:8px;
-               border: 2px none #33ccff;
-             }
-       #workspaces {
-               padding-left: 0px;
-               padding-right: 4px;
-             }
-       #workspaces button {
-               padding-top: 5px;
-               padding-bottom: 5px;
-               padding-left: 6px;
-               padding-right: 6px;
-             }
-       #workspaces button.active {
-               background-color: rgb(181, 232, 224);
-               color: rgb(26, 24, 38);
-             }
-       #workspaces button.urgent {
-               color: rgb(26, 24, 38);
-             }
-       #workspaces button:hover {
-               background-color: rgb(248, 189, 150);
-               color: rgb(26, 24, 38);
+               border: 2px none #d9e0ee;
              }
              tooltip {
-               background: rgb(48, 45, 65);
+               background: #232323;
              }
              tooltip label {
-               color: rgb(217, 224, 238);
+               color: #d9e0ee;
              }
        #custom-launcher {
                font-size: 20px;
