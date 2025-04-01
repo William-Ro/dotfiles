@@ -8,6 +8,9 @@
     qbittorrent
     playerctl
     keychain
+    mpc
+    cava
+    pamixer
   ];
   programs = {
   };
