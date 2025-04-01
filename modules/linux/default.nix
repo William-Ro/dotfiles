@@ -6,5 +6,6 @@
     ./hyprland.nix
     ./ghostty.nix
     ./waybar.nix
+    ./dunst.nix
   ];
 }
