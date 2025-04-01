@@ -20,7 +20,7 @@
     fi
   '';
 
-  default_wall = pkgs.writeShellScriptBin "default_wall" ''
+  wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
     if command -v swww >/dev/null 2>&1; then
           swww img ~/Pictures/wallpapers/menhera.jpg  --transition-type simple
     fi
@@ -28,6 +28,6 @@
 in {
   home.packages = with pkgs; [
     wallpaper_random
-    default_wall
+    wallpaper_default
   ];
 }
