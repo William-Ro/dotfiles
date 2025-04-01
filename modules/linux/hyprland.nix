@@ -4,57 +4,67 @@
   inputs,
   ...
 }: let
-  # binds $mod + [shift +] {1..9} to [move to] workspace {1..9}
-  workspaces = builtins.concatLists (builtins.genList (
-      x: let
-        ws = toString (x + 1); # Genera directamente el número del workspace
-      in [
-        "$mod, ${ws}, workspace, ${ws}"
-        "$mod SHIFT, ${ws}, movetoworkspace, ${ws}"
-      ]
-    )
-    9);
-
-  toggle = program: let
-    prog = builtins.substring 0 14 program;
-  in "pkill ${prog} || uwsm app -- ${program}";
-
-  runOnce = program: "pgrep ${program} || uwsm app -- ${program}";
-
   cursorName = "Bibata-Modern-Classic";
+  cursorSize = "24";
 in {
+  home.packages = with pkgs; [
+    waybar # Status bar
+    swww # Wallpaper manager
+    hyprcursor # Cursor theme
+    egl-wayland # Wayland EGL
+    grimblast # Screenshots
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      #######################
-      #### Settings.nix #####
-      #######################
-
+      ####################
+      ### Environment ####
+      ####################
       env = [
-        # Nvidia patch
+        # Basic
+        "EDITOR,nvim"
+        "BROWSER, firefox"
+        "TERMINAL, ghostty"
+        # Wayland
         "WLR_NO_HARDWARE_CURSORS,1"
-        "NIXOS_OZONE_WL,1"
         "GBM_BACKEND,nvidia-drm"
         "__GLX_VENDOR_LIBRARY_NAME, nvidia"
         "LIBVA_DRIVER_NAME,nvidia"
+        "__GL_VRR_ALLOWED,1"
+        "WLR_RENDERER_ALLOW_SOFTWARE,1"
         "WLR_RENDERER, vulkan"
+        "CLUTTER_BACKEND,wayland"
+        "NIXOS_OZONE_WL,1"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
 
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
-        "HYPRCURSOR_SIZE,24"
-
+        "HYPRCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
-        "GDK_SCALE,2"
-        "EDITOR,nvim"
+      ];
+      ####################
+      #### Settings ######
+      ####################
+
+      monitor = [
+        # name, resolution, scale, rotation
+        "DP-1,2560x1440@165,auto,1"
       ];
 
       exec-once = [
-        # finalize startup
-        "uwsm finalize"
         # set cursor for HL itself
-        "hyprctl setcursor ${cursorName} 24"
+        "hyprctl setcursor ${cursorName} ${cursorSize}"
+        "swww init & sleep 0.5 && exec wallpaper_random"
+      ];
+      exec = [
+        # fix slow startup
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+
+        "pkill waybar & sleep 0.5 && waybar"
       ];
       general = {
         gaps_in = 5;
@@ -158,37 +168,6 @@ in {
       debug.disable_logs = false;
       debug.damage_tracking = 0;
 
-      plugin = {
-        csgo-vulkan-fix = {
-          res_w = 1280;
-          res_h = 800;
-          class = "cs2";
-        };
-
-        hyprbars = {
-          bar_height = 20;
-          bar_precedence_over_border = true;
-
-          # order is right-to-left
-          hyprbars-button = [
-            # close
-            "rgb(ffb4ab), 15, , hyprctl dispatch killactive"
-            # maximize
-            "rgb(b6c4ff), 15, , hyprctl dispatch fullscreen 1"
-          ];
-        };
-
-        hyprexpo = {
-          columns = 3;
-          gap_size = 4;
-          bg_col = "rgb(000000)";
-
-          enable_gesture = true;
-          gesture_distance = 300;
-          gesture_positive = false;
-        };
-      };
-
       #######################
       ##### Binds.nix #######
       #######################
@@ -200,77 +179,73 @@ in {
         "$mod SUPER, mouse:272, resizewindow"
       ];
       # binds
-      bind =
-        [
-          # compositor commands
-          "$mod SHIFT, E, exec, pkill Hyprland"
-          "$mod, Q, killactive,"
-          "$mod, F, fullscreen,"
-          "$mod, G, togglegroup,"
-          "$mod SHIFT, N, changegroupactive, f"
-          "$mod SHIFT, P, changegroupactive, b"
-          "$mod, R, togglesplit,"
-          "$mod, T, togglefloating,"
-          "$mod, P, pseudo,"
-          "$mod SUPER, ,resizeactive,"
+      bind = [
+        # compositor commands
+        "$mod SHIFT, E, exec, pkill Hyprland"
+        "$mod, Q, killactive,"
+        "$mod, F, fullscreen,"
+        "$mod, G, togglegroup,"
+        "$mod SHIFT, N, changegroupactive, f"
+        "$mod SHIFT, P, changegroupactive, b"
+        "$mod, R, togglesplit,"
+        "$mod, T, togglefloating,"
+        "$mod, P, pseudo,"
+        "$mod SUPER, ,resizeactive,"
 
-          # utility
-          # terminal
-          "$mod, Return, exec, uwsm app -- ghostty"
-          # logout menu
-          "$mod, Escape, exec, ${toggle "wlogout"} -p layer-shell"
-          # lock screen
-          "$mod, L, exec, ${runOnce "hyprlock"}"
-          # lock screen, to be used with the special key Fn+F10 on my keyboard
-          "$mod, I, exec, ${runOnce "hyprlock"}"
-          # select area to perform OCR on
-          "$mod, O, exec, ${runOnce "wl-ocr"}"
-          ", XF86Favorites, exec, ${runOnce "wl-ocr"}"
-          # open calculator
-          ", XF86Calculator, exec, ${toggle "gnome-calculator"}"
-          # open settings
-          "$mod, U, exec, XDG_CURRENT_DESKTOP=gnome ${runOnce "gnome-control-center"}"
+        # utility
+        # terminal
+        "$mod, Return, exec, ghostty"
 
-          # move focus
-          "$mod, left, movefocus, l"
-          "$mod, right, movefocus, r"
-          "$mod, up, movefocus, u"
-          "$mod, down, movefocus, d"
+        # move focus
+        "$mod, left, movefocus, l"
+        "$mod, right, movefocus, r"
+        "$mod, up, movefocus, u"
+        "$mod, down, movefocus, d"
 
-          # screenshot
-          # area
-          ", Print, exec, ${runOnce "grimblast"} --notify copysave area"
-          "$mod SHIFT, S, exec, ${runOnce "grimblast"} --notify copysave area"
+        # screenshot
+        # area
+        ", Print, exec, pgrep grimblast || grimblast --notify copysave area"
 
-          # current screen
-          "CTRL, Print, exec, ${runOnce "grimblast"} --notify --cursor copysave output"
-          "$mod SHIFT CTRL, R, exec, ${runOnce "grimblast"} --notify --cursor copysave output"
+        "$mod SHIFT, S, exec, pgrep grimblast || grimblast --notify copysave area"
 
-          # all screens
-          "SUPER, Print, exec, ${runOnce "grimblast"} --notify --cursor copysave screen"
-          "$mod SHIFT SUPER, R, exec, ${runOnce "grimblast"} --notify --cursor copysave screen"
+        # cycle workspaces
+        "$mod, bracketleft, workspace, m-1"
+        "$mod, bracketright, workspace, m+1"
 
-          # special workspace
-          "$mod SHIFT, grave, movetoworkspace, special"
-          "$mod, grave, togglespecialworkspace, eDP-1"
+        # cycle monitors
+        "$mod SHIFT, bracketleft, focusmonitor, l"
+        "$mod SHIFT, bracketright, focusmonitor, r"
 
-          # cycle workspaces
-          "$mod, bracketleft, workspace, m-1"
-          "$mod, bracketright, workspace, m+1"
+        # send focused workspace to left/right monitors
+        "$mod SHIFT SUPER, bracketleft, movecurrentworkspacetomonitor, l"
+        "$mod SHIFT SUPER, bracketright, movecurrentworkspacetomonitor, r"
 
-          # cycle monitors
-          "$mod SHIFT, bracketleft, focusmonitor, l"
-          "$mod SHIFT, bracketright, focusmonitor, r"
+        # switch workspaces
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
 
-          # send focused workspace to left/right monitors
-          "$mod SHIFT SUPER, bracketleft, movecurrentworkspacetomonitor, l"
-          "$mod SHIFT SUPER, bracketright, movecurrentworkspacetomonitor, r"
-        ]
-        ++ workspaces;
+        # move active window to workspace
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
+      ];
 
       bindr = [
         # launcher
-        "$mod, Space, exec, ${toggle "wofi --show drun"}"
+        "$mod, Space, exec, wofi --show drun"
       ];
 
       bindl = [
