@@ -57,6 +57,8 @@ in {
         # set cursor for HL itself
         "hyprctl setcursor ${cursorName} ${cursorSize}"
         "swww init & sleep 0.5 && exec wallpaper_random"
+
+        "dunst"
       ];
       exec = [
         # fix slow startup
@@ -67,13 +69,14 @@ in {
       ];
       general = {
         gaps_in = 5;
-        gaps_out = 5;
+        gaps_out = 20;
         border_size = 1;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
 
         allow_tearing = true;
         resize_on_border = true;
+        layout = "dwindle";
       };
       decoration = {
         rounding = 10;
@@ -145,7 +148,7 @@ in {
         force_default_wallpaper = 0;
 
         # disable dragging animation
-        animate_mouse_windowdragging = false;
+        animate_mouse_windowdragging = true;
 
         # enable variable refresh rate (effective depending on hardware)
         vrr = 1;
@@ -310,9 +313,6 @@ in {
         "rounding 0, xwayland:1"
         "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
         "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
-
-        # don't render hyprbars on tiling windows
-        "plugin:hyprbars:nobar, floating:0"
 
         # less sensitive scroll for some windows
         # browser(-based)
