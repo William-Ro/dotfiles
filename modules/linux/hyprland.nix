@@ -72,7 +72,7 @@ in {
       ];
       general = {
         gaps_in = 5;
-        gaps_out = 15;
+        gaps_out = 10;
         border_size = 1;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
