@@ -23,22 +23,22 @@
         background-color: transparent;
       }
       window > box {
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 5px;
-        background-color: #232323;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 6px;
+        background-color: #1F1F1F;
         padding: 3px;
         padding-left:8px;
         border: 2px none #d9e0ee;
       }
       tooltip {
-        background: #232323;
+        background: #1F1F1F;
       }
       tooltip label {
         color: #d9e0ee;
       }
       #workspaces {
-        background-color: #232323;
+        background-color: #1F1F1F;
       }
       #workspaces button {
         color:rgb(74, 74, 74);
