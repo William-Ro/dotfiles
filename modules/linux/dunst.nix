@@ -51,7 +51,7 @@
         padding = 10;
         plain_text = "no";
         separator_height = 2;
-        show_indicators = "yes";
+        show_indicators = "no";
         shrink = "no";
         word_wrap = "yes";
         browser = "/usr/bin/env firefox -new-tab";
