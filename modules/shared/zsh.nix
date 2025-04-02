@@ -18,6 +18,10 @@
       zle -N sudo-command-line
       bindkey -M emacs '^[^[' sudo-command-line
       bindkey -M viins '^[^[' sudo-command-line
+
+      # Keychain
+      eval "$(keychain --agents ssh --eval id_ed25519 2>/dev/null)" >/dev/null
+
     '';
   };
 
