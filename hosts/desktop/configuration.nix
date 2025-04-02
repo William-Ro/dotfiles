@@ -76,9 +76,6 @@
     setSocketVariable = true;
   };
 
-  # Ssh Agent
-  programs.ssh.startAgent = true;
-
   # OpenSSH (Optional)
   # services.openssh.enable = true;
 
