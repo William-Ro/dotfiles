@@ -13,7 +13,6 @@ in {
     egl-wayland # Wayland EGL
     grimblast # Screenshots
     bibata-cursors # Cursor theme
-    nwg-look # GTK theme
   ];
 
   wayland.windowManager.hyprland = {
