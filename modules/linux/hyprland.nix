@@ -5,13 +5,15 @@
   ...
 }: let
   cursorName = "Bibata-Modern-Classic";
-  cursorSize = "24";
+  cursorSize = "23";
 in {
   home.packages = with pkgs; [
     swww # Wallpaper manager
     hyprcursor # Cursor theme
     egl-wayland # Wayland EGL
     grimblast # Screenshots
+    bibata-cursors # Cursor theme
+    nwg-look # GTK theme
   ];
 
   wayland.windowManager.hyprland = {
@@ -42,6 +44,8 @@ in {
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
+        "XCURSOR_THEME,${cursorName}"
+        "XCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       ];
       ####################
