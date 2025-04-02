@@ -8,6 +8,8 @@
     nwg-look
   ];
 
+  # Set the GTK theme and cursor theme
+
   gtk = {
     enable = true;
     theme = {
@@ -18,6 +20,7 @@
         colorVariants = ["dark"];
       };
     };
+
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
