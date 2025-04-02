@@ -55,9 +55,6 @@
 
     font-size = 22
     font-family = JetBrainsMono Nerd Font
-    font-family-bold = JetBrainsMono NFM Bold
-    font-family-bold-italic = JetBrainsMono NFM Bold Italic
-    font-family-italic = JetBrainsMono NFM Italic
 
     title = "Deishuu's Ghostty"
 
