@@ -27,18 +27,24 @@ in {
         "BROWSER, firefox"
         "TERMINAL, ghostty"
         # Wayland
-        "WLR_NO_HARDWARE_CURSORS,1"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME, nvidia"
+
+        # Nvidia drivers Hyprland wiki
+        # Source: https://wiki.hyprland.org/Nvidia/
         "LIBVA_DRIVER_NAME,nvidia"
-        "__GL_VRR_ALLOWED,1"
-        "WLR_RENDERER_ALLOW_SOFTWARE,1"
-        "WLR_RENDERER, vulkan"
-        "CLUTTER_BACKEND,wayland"
-        "NIXOS_OZONE_WL,1"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
+
+        #If you face problems with Discord windows not displaying or screen sharing not working in Zoom, first try running them in Native Wayland. Otherwise, remove or comment this line.
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+
+        # To force GBM as a backend
+        # Source: https://wiki.hyprland.org/Configuring/Environment-variables/
+        "GBM_BACKEND,nvidia-drm"
+        "__GL_VRR_ALLOWED,0"
+
+        # VA-API hardware video acceleration
+        "NVD_BACKEND,direct"
+
+        # Flickering in Electron / CEF apps
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
 
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
