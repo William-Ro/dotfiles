@@ -13,10 +13,14 @@
     keychain
     pamixer
     # GNOME Applications
-    nautilus
     eog
     sushi
+    # bluetooth manager
     overskride
+    # network manager applet
+    networkmanagerapplet
+    # sound manager
+    pavucontrol
   ];
   programs = {
   };
