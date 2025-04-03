@@ -7,6 +7,6 @@
     ./ghostty.nix
     ./waybar.nix
     ./dunst.nix
-    ./nwg-look.nix
+    ./gtk.nix
   ];
 }

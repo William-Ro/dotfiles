@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: {
+  # In case you want to use nwg-look
   home.packages = with pkgs; [
     nwg-look
   ];
 
   # Set the GTK theme and cursor theme
-
   gtk = {
     enable = true;
     theme = {
