@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    nvidia-vaapi-driver
     spotify
     firefox
     telegram-desktop
