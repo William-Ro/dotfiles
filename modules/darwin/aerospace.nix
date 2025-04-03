@@ -38,7 +38,7 @@
     # Main mode bindings
     [mode.main.binding]
     # Launch applications
-    alt-shift-enter = 'exec-and-forget open -na alacritty'
+    alt-enter = 'exec-and-forget open -na alacritty'
     alt-shift-b = 'exec-and-forget open -a "Firefox"'
     alt-shift-t = 'exec-and-forget open -a "Telegram"'
     alt-shift-e = 'exec-and-forget open -a Finder'
