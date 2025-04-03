@@ -59,10 +59,9 @@
         color: #d9e0ee;
       }
       #custom-icon {
-        font-size: 20px;
         color: #d9e0ee;
       }
-      #custom-icon, #clock, #pulseaudio, #bluetooth, #network{
+      #clock, #pulseaudio, #bluetooth, #network, #custom-icon{
         padding-left: 10px;
         padding-right: 10px;
       }
