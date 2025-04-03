@@ -52,12 +52,6 @@
       #pulseaudio {
         color: #d9e0ee;
       }
-      #memory {
-        color: #d9e0ee;
-      }
-      #cpu {
-        color: #d9e0ee;
-      }
       #network {
         color: #d9e0ee;
       }
@@ -68,7 +62,7 @@
         font-size: 20px;
         color: #d9e0ee;
       }
-      #custom-icon, #clock, #pulseaudio, #memory,#cpu, #network{
+      #custom-icon, #clock, #pulseaudio, #bluetooth, #network{
         padding-left: 10px;
         padding-right: 10px;
       }
@@ -85,8 +79,6 @@
         ];
         modules-right = [
           "pulseaudio"
-          "memory"
-          "cpu"
           "network"
           "custom/icon"
         ];
@@ -119,37 +111,26 @@
         };
 
         "pulseaudio" = {
-          "format" = "{icon} {volume}%";
+          "format" = "{icon}";
           "format-muted" = "{format_source}";
-          "format-bluetooth" = "{icon} {volume}%";
+          "format-bluetooth" = "{icon}";
           "format-bluetooth-muted" = "{format_source}";
-          "format-source" = "  Muted";
-
+          "format-source" = " ";
           "format-icons" = {
             "default" = [" " " " " "];
           };
-          "on-click" = "pamixer -t";
-          "on-click-right" = "pavucontrol";
+          "on-click" = "pavucontrol";
+          "on-click-right" = "pamixer -t";
           "tooltip" = false;
         };
 
-        "memory" = {
-          "interval" = 1;
-          "format" = "  {percentage}%";
-          "states" = {
-            "warning" = 85;
-          };
-        };
-        "cpu" = {
-          "interval" = 1;
-          "format" = "󰍛 {usage}%";
-        };
         "network" = {
-          "format-disconnected" = "󰯡 Disconnected";
-          "format-ethernet" = "󰒢 Connected";
-          "format-linked" = "󰖪 {essid} (No IP)";
-          "format-wifi" = "󰖩 {essid}";
+          "format-disconnected" = "󰯡 ";
+          "format-ethernet" = "󰈀 ";
+          "format-linked" = "󰖪 ";
+          "format-wifi" = "󰖩 ";
           "interval" = 1;
+          "on-click" = "nm-connection-editor";
           "tooltip" = false;
         };
         "custom/icon" = {
