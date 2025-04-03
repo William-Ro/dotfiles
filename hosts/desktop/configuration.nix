@@ -66,6 +66,11 @@
     # make sure to also set the portal package, so that they are in sync
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
+  environment.variables = {
+    # Force all applications to use Wayland
+    # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
+    NIXOS_OZONE_WL = "1";
+  };
 
   # Docker & Podman
   virtualisation.docker.enable = true;
