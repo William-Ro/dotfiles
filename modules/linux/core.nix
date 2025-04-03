@@ -11,6 +11,11 @@
     killall
     keychain
     pamixer
+    # GNOME Applications
+    nautilus
+    eog
+    sushi
+    overskride
   ];
   programs = {
   };
