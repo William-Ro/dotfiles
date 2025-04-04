@@ -1,175 +1,144 @@
 {...}: {
+  # This module configures the Starship prompt for the shell.
+  # It sets up the prompt format, colors, and various components
+  # such as the OS, directory, git branch, and more.
+  # Source: https://github.com/starship/starship/discussions/1107
+  # Credits: @wesleey
   programs.starship = {
     enable = true;
-
-    enableZshIntegration = true;
-
     settings = {
       format = ''
-        [](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$elixir$elm$golang$gradle$haskell$java$julia$nodejs$nim$rust$scala[](fg:#86BBD8 bg:#06969A)$docker_context[](fg:#06969A bg:#33658A)$time[ ](fg:#33658A)
+        [╭](fg:current_line)$os$directory$git_branch$fill$nodejs$dotnet$python$java$c$cmd_duration$shell$time$username$line_break$character
       '';
 
+      palette = "deishuu";
       add_newline = true;
 
-      username = {
-        show_always = true;
-        style_user = "bg:#9A348E";
-        style_root = "bg:#9A348E";
-        format = "[$user]($style)";
-        disabled = false;
+      palettes.deishuu = {
+        foreground = "#cdd6f4";
+        background = "#1e1e2e";
+        current_line = "#313244";
+        primary = "#1e1e2e";
+        box = "#313244";
+        blue = "#89b4fa";
+        cyan = "#94e2d5";
+        green = "#a6e3a1";
+        orange = "#fab387";
+        pink = "#f5c2e7";
+        purple = "#cba6f7";
+        red = "#f38ba8";
+        yellow = "#f9e2af";
       };
 
       os = {
-        style = "bg:#9A348E";
-        disabled = true; # Disabled by default
-        symbol = " ";
+        format = "(fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red)";
+        disabled = false;
+        symbols = {
+          Alpine = "";
+          Amazon = "";
+          Android = "";
+          Arch = "";
+          CentOS = "";
+          Debian = "";
+          EndeavourOS = "";
+          Fedora = "";
+          FreeBSD = "";
+          Garuda = "";
+          Gentoo = "";
+          Linux = "";
+          Macos = "";
+          Manjaro = "";
+          Mariner = "";
+          Mint = "";
+          NetBSD = "";
+          NixOS = "";
+          OpenBSD = "";
+          OpenCloudOS = "";
+          openEuler = "";
+          openSUSE = "";
+          OracleLinux = "⊂⊃";
+          Pop = "";
+          Raspbian = "";
+          Redhat = "";
+          RedHatEnterprise = "";
+          Solus = "";
+          SUSE = "";
+          Ubuntu = "";
+          Unknown = "";
+          Windows = "";
+        };
       };
 
       directory = {
-        style = "bg:#DA627D";
-        format = "[ $path ]($style)";
-        truncation_length = 3;
-      };
-      directory.substitutions = {
-        "Desktop" = "󰈙 ";
-        "Documents" = "󰈙 ";
-        "Downloads" = " ";
-        "Music" = " ";
-        "Pictures" = " ";
-      };
-
-      c = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-      docker_context = {
-        symbol = " ";
-        style = "bg:#06969A";
-        format = "[ $symbol $context ]($style)";
-      };
-      elixir = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-
-      elm = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+        format = "[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $path](fg:foreground bg:box)[](fg:box)";
+        truncation_length = 2;
+        read_only_style = "";
       };
 
       git_branch = {
-        symbol = "";
-        style = "bg:#FCA17D";
-        format = "[ $symbol $branch ]($style)";
-      };
-
-      git_status = {
-        style = "bg:#FCA17D";
-        format = "[$all_status$ahead_behind ]($style)";
-      };
-
-      golang = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-
-      gradle = {
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-
-      haskell = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-
-      java = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-
-      julia = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+        format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)";
+        symbol = " ";
       };
 
       nodejs = {
-        symbol = "";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+        format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)";
+        symbol = "󰎙 Node.js";
       };
 
-      nim = {
-        symbol = "󰆥 ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+      dotnet = {
+        format = "[─](fg:current_line)[](fg:purple)[$symbol](fg:primary bg:purple)[](fg:purple bg:box)[ $tfm](fg:foreground bg:box)[](fg:box)";
+        symbol = " .NET";
       };
 
-      rust = {
-        symbol = "";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+      python = {
+        format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $version](fg:foreground bg:box)[](fg:box)";
+        symbol = " python";
       };
 
-      scala = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+      java = {
+        format = "[─](fg:current_line)[](fg:red)[$symbol](fg:primary bg:red)[](fg:red bg:box)[ $version](fg:foreground bg:box)[](fg:box)";
+        symbol = " Java";
       };
-      aws = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+
+      c = {
+        format = "[─](fg:current_line)[](fg:blue)[$symbol](fg:primary bg:blue)[](fg:blue bg:box)[ $version](fg:foreground bg:box)[](fg:box)";
+        symbol = " C";
       };
-      conda = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+
+      fill = {
+        symbol = "─";
+        style = "fg:current_line";
       };
-      dart = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+
+      cmd_duration = {
+        min_time = 500;
+        format = "[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)";
       };
-      nix_shell = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol $state ]($style)";
-      };
-      perl = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-      ruby = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
-      };
-      php = {
-        symbol = " ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol ($version) ]($style)";
+
+      shell = {
+        format = "[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)";
+        unknown_indicator = "shell";
+        powershell_indicator = "powershell";
+        fish_indicator = "fish";
+        disabled = false;
       };
 
       time = {
+        format = "[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)";
+        time_format = "%H:%M";
         disabled = false;
-        time_format = "%I:%M %p"; # Hour:Minute in 12-hour format
-        style = "bg:#33658A";
-        format = "[  $time ]($style)";
       };
 
-      package = {
-        symbol = "󰏗 ";
-        style = "bg:#86BBD8";
-        format = "[ $symbol $version ]($style)";
+      username = {
+        format = "[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) ";
+        show_always = true;
+      };
+
+      character = {
+        format = ''
+          [╰─$symbol](fg:current_line) '';
+        success_symbol = "[](fg:bold white)";
+        error_symbol = "[×](fg:bold red)";
       };
     };
   };
