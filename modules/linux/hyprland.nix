@@ -67,7 +67,7 @@ in {
         # set cursor for HL itself
         "hyprctl setcursor ${cursorName} ${cursorSize}"
         "swww init & sleep 0.5 && exec wallpaper_random"
-
+        "hypridle"
         "dunst"
       ];
       exec = [
