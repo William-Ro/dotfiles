@@ -11,6 +11,7 @@ in {
     swww # Wallpaper manager
     hyprcursor # Cursor theme
     egl-wayland # Wayland EGL
+    brillo # Backlight control
     grimblast # Screenshots
     bibata-cursors # Cursor theme
   ];
@@ -206,6 +207,7 @@ in {
         # utility
         # terminal
         "$mod, Return, exec, ghostty"
+        "$mod, L, exec, hyprlock"
 
         # move focus
         "$mod, left, movefocus, l"
