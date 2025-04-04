@@ -3,7 +3,7 @@
     enable = true;
   };
   home.file."./.config/ghostty/config".text = ''
-    theme = deishuu.conf
+    theme = deishuu
     adjust-cell-height = 10%
     window-theme = dark
     window-height = 20
@@ -68,28 +68,28 @@
   '';
 
   # Custom theme
-  home.file.".config/ghostty/themes/deishuu.conf".text = ''
-    palette = 0=#51576d
-    palette = 1=#e78284
-    palette = 2=#a6d189
-    palette = 3=#e5c890
-    palette = 4=#8caaee
-    palette = 5=#f4b8e4
-    palette = 6=#81c8be
-    palette = 7=#a5adce
-    palette = 8=#626880
-    palette = 9=#e67172
-    palette = 10=#8ec772
-    palette = 11=#d9ba73
-    palette = 12=#7b9ef0
-    palette = 13=#f2a4db
-    palette = 14=#5abfb5
-    palette = 15=#b5bfe2
+  home.file.".config/ghostty/themes/deishuu".text = ''
+    palette = 0=#45475a
+    palette = 1=#f38ba8
+    palette = 2=#a6e3a1
+    palette = 3=#f9e2af
+    palette = 4=#89b4fa
+    palette = 5=#f5c2e7
+    palette = 6=#94e2d5
+    palette = 7=#a6adc8
+    palette = 8=#585b70
+    palette = 9=#f37799
+    palette = 10=#89d88b
+    palette = 11=#ebd391
+    palette = 12=#74a8fc
+    palette = 13=#f2aede
+    palette = 14=#6bd7ca
+    palette = 15=#bac2de
     background = #1F1F1F
     foreground = #d9e0ee
-    cursor-color = #f2d5cf
-    cursor-text = #c6d0f5
-    selection-background = #626880
-    selection-foreground = #c6d0f5
+    cursor-color = #f5e0dc
+    cursor-text = #cdd6f4
+    selection-background = #585b70
+    selection-foreground = #cdd6f4
   '';
 }
