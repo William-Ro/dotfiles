@@ -20,7 +20,7 @@
       background = [
         {
           monitor = "";
-          path = "$HOME/Pictures/wallpaper.jpg";
+          path = "$HOME/Pictures/wallpapers/GX9pKXFaUAENkzX.jpg";
         }
       ];
 
@@ -59,7 +59,7 @@
           monitor = "";
           text = "cmd[update:3600000] date +'%I:%M'";
           font_size = 150;
-          color = "rgb(255, 255, 255)";
+          color = "#d9e0ee";
           font_family = "JetBrainsMono Nerd Font";
           position = "0%, 30%";
 
@@ -73,9 +73,9 @@
         }
         {
           monitor = "";
-          text = "cmd[update:3600000] date +'%a %b %d'";
+          text = "cmd[update:3600000] date +'%A %b %d'";
           font_size = 20;
-          color = "rgb(255, 255, 255)";
+          color = "#d9e0ee";
           font_family = "JetBrainsMono Nerd Font";
           position = "0%, 40%";
 
