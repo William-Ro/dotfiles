@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     spotify
     firefox
+    brave
     qbittorrent
 
     nvidia-vaapi-driver # VA-API driver for NVIDIA GPUs (hardware acceleration)
