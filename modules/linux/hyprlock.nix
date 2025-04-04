@@ -34,15 +34,15 @@
 
           outline_thickness = 2;
 
-          font_color = "rgb(255, 255, 255)";
           font_family = "JetBrainsMono Nerd Font";
-          outer_color = "rgba(180, 180, 180, 0.5)";
-          inner_color = "rgba(200, 200, 200, 0.1)";
+          font_color = "rgb(217, 224, 238)";
+          outer_color = "rgba(217, 224, 238, 0)";
+          inner_color = "rgba(217, 224, 238, 0)";
           check_color = "rgba(247, 193, 19, 0.5)";
           fail_color = "rgba(255, 106, 134, 0.5)";
 
           fade_on_empty = false;
-          placeholder_text = "Enter Password";
+          placeholder_text = "Password";
 
           dots_spacing = 0.2;
           dots_center = true;
@@ -57,9 +57,9 @@
       label = [
         {
           monitor = "";
-          text = "cmd[update:3600000] date +'%I:%M'";
+          text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%I:%M'";
           font_size = 150;
-          color = "#d9e0ee";
+          color = "rgb(217, 224, 238)";
           font_family = "JetBrainsMono Nerd Font";
           position = "0%, 30%";
 
@@ -73,9 +73,9 @@
         }
         {
           monitor = "";
-          text = "cmd[update:3600000] date +'%A %b %d'";
+          text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%A %b %d'";
           font_size = 20;
-          color = "#d9e0ee";
+          color = "rgb(217, 224, 238)";
           font_family = "JetBrainsMono Nerd Font";
           position = "0%, 40%";
 
