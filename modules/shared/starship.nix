@@ -31,7 +31,7 @@
       };
 
       os = {
-        format = "(fg:current_line)[](fg:red)[$symbol ](fg:primary bg:red)[](fg:red)";
+        format = "(fg:current_line)[](fg:blue)[$symbol ](fg:primary bg:blue)[](fg:blue)";
         disabled = false;
         symbols = {
           Alpine = "";
@@ -70,13 +70,13 @@
       };
 
       directory = {
-        format = "[─](fg:current_line)[](fg:pink)[󰷏 ](fg:primary bg:pink)[](fg:pink bg:box)[ $path](fg:foreground bg:box)[](fg:box)";
+        format = "[─](fg:current_line)[](fg:purple)[󰷏 ](fg:primary bg:purple)[](fg:purple bg:box)[ $path](fg:foreground bg:box)[](fg:box)";
         truncation_length = 2;
         read_only_style = "";
       };
 
       git_branch = {
-        format = "[─](fg:current_line)[](fg:green)[$symbol](fg:primary bg:green)[](fg:green bg:box)[ $branch](fg:foreground bg:box)[](fg:box)";
+        format = "[─](fg:current_line)[](fg:yellow)[$symbol](fg:primary bg:yellow)[](fg:yellow bg:box)[ $branch](fg:foreground bg:box)[](fg:box)";
         symbol = " ";
       };
 
@@ -112,11 +112,11 @@
 
       cmd_duration = {
         min_time = 500;
-        format = "[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)";
+        format = "[─](fg:current_line)[](fg:red)[ ](fg:primary bg:red)[](fg:red bg:box)[ $duration ](fg:foreground bg:box)[](fg:box)";
       };
 
       shell = {
-        format = "[─](fg:current_line)[](fg:blue)[ ](fg:primary bg:blue)[](fg:blue bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)";
+        format = "[─](fg:current_line)[](fg:pink)[ ](fg:primary bg:pink)[](fg:pink bg:box)[ $indicator](fg:foreground bg:box)[](fg:box)";
         unknown_indicator = "shell";
         powershell_indicator = "powershell";
         fish_indicator = "fish";
@@ -124,13 +124,13 @@
       };
 
       time = {
-        format = "[─](fg:current_line)[](fg:purple)[󰦖 ](fg:primary bg:purple)[](fg:purple bg:box)[ $time](fg:foreground bg:box)[](fg:box)";
-        time_format = "%H:%M";
+        format = "[─](fg:current_line)[](fg:cyan)[󰦖 ](fg:primary bg:cyan)[](fg:cyan bg:box)[ $time](fg:foreground bg:box)[](fg:box)";
+        time_format = "%I:%M";
         disabled = false;
       };
 
       username = {
-        format = "[─](fg:current_line)[](fg:yellow)[ ](fg:primary bg:yellow)[](fg:yellow bg:box)[ $user](fg:foreground bg:box)[](fg:box) ";
+        format = "[─](fg:current_line)[](fg:orange)[ ](fg:primary bg:orange)[](fg:orange bg:box)[ $user](fg:foreground bg:box)[](fg:box) ";
         show_always = true;
       };
 
