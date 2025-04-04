@@ -10,9 +10,6 @@
   lock = "${pkgs.systemd}/bin/loginctl lock-session";
   brillo = "${pkgs.brillo}/bin/brillo";
 in {
-  home.packages = with pkgs; [
-    hypridle
-  ];
   # screen idle
   services.hypridle = {
     enable = true;

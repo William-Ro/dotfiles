@@ -10,7 +10,6 @@ in {
   home.packages = with pkgs; [
     swww # Wallpaper manager
     hyprcursor # Cursor theme
-    egl-wayland # Wayland EGL
     brillo # Backlight control
     grimblast # Screenshots
     bibata-cursors # Cursor theme
