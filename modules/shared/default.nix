@@ -14,5 +14,6 @@
     ./vscode.nix
     ./obsidian.nix
     ./nerdfetch.nix
+    ./yazi.nix
   ];
 }
