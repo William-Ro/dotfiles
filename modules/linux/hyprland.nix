@@ -10,6 +10,7 @@ in {
   home.packages = with pkgs; [
     swww # Wallpaper manager
     hyprcursor # Cursor theme
+    hypridle # Idle management
     brillo # Backlight control
     grimblast # Screenshots
     bibata-cursors # Cursor theme
