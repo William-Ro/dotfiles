@@ -13,7 +13,7 @@
         sort_reverse = false;
         sort_dir_first = true;
         linemode = "none";
-        show_hidden = true;
+        show_hidden = false;
         show_symlink = true;
       };
       preview = {

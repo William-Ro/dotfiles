@@ -7,7 +7,7 @@
     enableCompletion = true;
 
     initExtra = ''
-      # Plugin sudo manual (doble ESC para agregar sudo)
+      # Sudo plugin
       sudo-command-line() {
         [[ -z $BUFFER ]] && zle up-history
         if [[ $BUFFER != sudo\ * ]]; then
@@ -22,6 +22,14 @@
       # Keychain
       eval "$(keychain --agents ssh --eval id_ed25519 2>/dev/null)" >/dev/null
 
+      function y() {
+       local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+       yazi "$@" --cwd-file="$tmp"
+       if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+       fi
+       rm -f -- "$tmp"
+      }
     '';
   };
 
@@ -40,7 +48,6 @@
     v = "nvim";
     # Lazygit alias
     lg = "lazygit";
-    y = "yazi";
   };
   # Add new path to zshenv
   home.file.".zshenv" = {
