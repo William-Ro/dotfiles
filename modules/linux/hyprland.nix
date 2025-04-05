@@ -178,6 +178,8 @@ in {
       xwayland.force_zero_scaling = true;
 
       debug.disable_logs = false;
+      # This is a temporary fix for the flickering issue in some apps
+      debug.damage_tracking = 0;
 
       #######################
       ##### Binds.nix #######
