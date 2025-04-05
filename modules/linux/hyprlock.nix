@@ -36,13 +36,13 @@
 
           font_family = "JetBrainsMono Nerd Font";
           font_color = "rgb(217, 224, 238)";
-          outer_color = "rgba(217, 224, 238, 0)";
-          inner_color = "rgba(217, 224, 238, 0)";
+          outer_color = "rgb(31, 31, 31)";
+          inner_color = "rgb(31, 31, 31)";
           check_color = "rgba(247, 193, 19, 0.5)";
           fail_color = "rgba(255, 106, 134, 0.5)";
 
           fade_on_empty = false;
-          placeholder_text = "Password";
+          placeholder_text = "Enter password";
 
           dots_spacing = 0.2;
           dots_center = true;
