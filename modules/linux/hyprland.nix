@@ -203,12 +203,12 @@ in {
         "$mod, R, togglesplit,"
         "$mod, T, togglefloating,"
         "$mod, P, pseudo,"
-        "$mod SUPER, ,resizeactive,"
 
         # utility
         # terminal
         "$mod, Return, exec, ghostty"
         "$mod, L, exec, hyprlock"
+        "$mod, E, exec, ghostty -e yazi"
 
         # move focus
         "$mod, left, movefocus, l"
