@@ -5,7 +5,7 @@
   inputs,
   ...
 }: let
-  timeout = 300;
+  timeout = 900;
 
   lock = "${pkgs.systemd}/bin/loginctl lock-session";
   brillo = "${pkgs.brillo}/bin/brillo";
