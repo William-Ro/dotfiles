@@ -6,100 +6,161 @@
   home.file = let
     vesktopPath =
       if pkgs.stdenv.isDarwin
-      then "Library/Application\ Support/vesktop/"
+      then "Library/Application Support/vesktop/"
       else ".config/vesktop";
   in {
     "${vesktopPath}/themes/deishuu.css".text = ''
       /**
-       * @name system24
-       * @description A tui-style discord theme generated with home manager.
+       * @name deishuu's theme
+       * @description I customized this theme for personal use, based on the Midnight theme.
        * @author refact0r
-       * @version 1.0.0t
-       * @source https://github.com/refact0r/system24/blob/master/system24.theme.css
+       * @version 2.0.1
+       * @source https://github.com/refact0r/midnight-discord/blob/master/themes/midnight.theme.css
        * @authorId 508863359777505290
        * @authorLink https://www.refact0r.dev
-      */
+       */
 
       /* import theme modules */
-      @import url('https://refact0r.github.io/system24/src/main.css'); /* main theme css. DO NOT REMOVE */
-      @import url('https://refact0r.github.io/system24/src/unrounding.css'); /* gets rid of all rounded corners. remove if you want rounded corners. */
+      @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
-      /* customize things here */
+      body {
+        --font: 'JetBrainsMono Nerd Font';
+
+        /* sizes */
+        --gap: 12px;
+        --divider-thickness: 4px;
+
+        /* animation/transition options */
+        --animations: on;
+        --list-item-transition: 0.2s ease;
+        --dms-icon-svg-transition: 0.4s ease;
+
+        /* top bar options */
+        --move-top-bar-buttons: off;
+        --custom-app-top-bar-height: 32px;
+
+        /* window controls */
+        --custom-window-controls: on;
+        --window-control-size: 14px;
+
+        /* dms button icon options */
+        --dms-icon: on;
+        --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+        --dms-icon-svg-size: 90%;
+        --dms-icon-color-before: var(--icon-secondary);
+        --dms-icon-color-after: var(--white);
+
+        /* dms button background options */
+        --dms-background: off;
+        --dms-background-image-size: cover;
+        --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2));
+
+        /* background image options */
+        --background-image: off;
+
+        /* transparency/blur options */
+        --transparency-tweaks: off;
+        --remove-bg-layer: off;
+        --panel-blur: off;
+        --blur-amount: 12px;
+        --bg-floating: var(--bg-3);
+
+        /* chatbar options */
+        --flipped-chatbar: on;
+        --chatbar-height: 47px;
+        --chatbar-padding: 8px;
+
+        /* other options */
+        --small-user-panel: off;
+      }
+
       :root {
-      	--font: 'DM Mono'; /* UI font name. it must be installed on your system. */
-      	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
-      	font-weight: 300; /* UI font weight. */
-      	--label-font-weight: 500; /* font weight for panel labels. */
-      	--corner-text: 'system24'; /* custom text to display in the corner. only works on windows. */
-      	--pad: 16px; /* padding between panels. */
-      	--txt-pad: 10px; /* padding inside panels to prevent labels from clipping */
-      	--panel-roundness: 0px; /* corner roundness of panels. ONLY WORKS IF unrounding.css IS REMOVED (see above). */
+        --colors: on;
 
-      	/* background colors */
-      	--bg-0: oklch(19% 0 0); /* main background color. */
-      	--bg-1: oklch(23% 0 0); /* background color for secondary elements like code blocks, embeds, etc. */
-      	--bg-2: oklch(27% 0 0); /* color of neutral buttons. */
-      	--bg-3: oklch(31% 0 0); /* color of neutral buttons when hovered. */
+        /* text colors */
+        --text-0: #d9e0ee;
+        --text-1: #d9e0ee;
+        --text-2: #d9e0ee;
+        --text-3: #d9e0ee;
+        --text-4: #d9e0ee;
+        --text-5: #d9e0ee;
 
-      	/* state modifiers */
-      	--hover: oklch(54% 0 0 / 0.1); /* color of hovered elements. */
-      	--active: oklch(54% 0 0 / 0.2); /* color of elements when clicked. */
-      	--selected: var(--active); /* color of selected elements. */
+        /* background and dark colors */
+        --bg-1: #1F1F1F;
+        --bg-2: #1F1F1F;
+        --bg-3: #1F1F1F;
+        --bg-4: #1F1F1F;
+        --hover: hsla(221, 19%, 40%, 0.1);
+        --active: hsla(220, 19%, 40%, 0.2);
+        --active-2: hsla(220, 19%, 40%, 0.3);
+        --message-hover: hsla(220, 0%, 0%, 0.1);
 
-      	/* text colors */
-      	--txt-dark: var(--bg-0); /* color of dark text on colored backgrounds. */
-      	--txt-link: var(--cyan); /* color of links. */
-      	--txt-0: oklch(90% 0 0); /* color of bright/white text. */
-      	--txt-1: oklch(80% 0 0); /* main text color. */
-      	--txt-2: oklch(60% 0 0); /* color of secondary text like channel list. */
-      	--txt-3: oklch(40% 0 0); /* color of muted text. */
+        /* accent colors */
+        --accent-1: var(--blue-1);
+        --accent-2: var(--blue-2);
+        --accent-3: var(--blue-3);
+        --accent-4: var(--blue-4);
+        --accent-5: var(--blue-5);
+        --accent-new: var(--accent-2);
+        --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+        --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+        --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+        --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
 
-      	/* accent colors */
-      	--acc-0: white; /* main accent color. */
-      	--acc-1: white; /* color of accent buttons when hovered. */
-      	--acc-2: white; /* color of accent buttons when clicked. */
+        /* status indicator colors */
+        --online: var(--green-2);
+        --dnd: var(--red-2);
+        --idle: var(--yellow-2);
+        --streaming: var(--purple-2);
+        --offline: var(--text-4);
 
-      	/* borders */
-      	--border-width: 2px; /* panel border thickness. */
-      	--border-color: var(--bg-3); /* panel border color. */
-      	--border-hover-color: var(--acc-0); /* panel border color when hovered. */
-      	--border-transition: 0.2s ease; /* panel border transition. */
+        /* border colors */
+        --border-light: var(--hover);
+        --border: var(--active);
+        --button-border: hsl(220, 0%, 100%, 0.1);
 
-      	/* status dot colors */
-      	--online-dot: var(--green); /* color of online dot. */
-      	--dnd-dot: var(--pink); /* color of do not disturb dot. */
-      	--idle-dot: var(--yellow); /* color of idle dot. */
-      	--streaming-dot: white; /* color of streaming dot. */
+        /* base colors */
+        --red-1: oklch(76% 0.12 0);
+        --red-2: oklch(70% 0.12 0);
+        --red-3: oklch(64% 0.12 0);
+        --red-4: oklch(58% 0.12 0);
+        --red-5: oklch(52% 0.12 0);
 
-      	/* mention/ping and message colors */
-      	--mention-txt: var(--acc-0); /* color of mention text. */
-      	--mention-bg: color-mix(in oklch, var(--acc-0), transparent 90%); /* background highlight of mention text. */
-      	--mention-overlay: color-mix(in oklch, var(--acc-0), transparent 90%); /* overlay color of messages that mention you. */
-      	--mention-hover-overlay: color-mix(in oklch, var(--acc-0), transparent 95%); /* overlay color of messages that mention you when hovered. */
-      	--reply-overlay: var(--active); /* overlay color of message you are replying to. */
-      	--reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
+        --green-1: oklch(76% 0.11 170);
+        --green-2: oklch(70% 0.11 170);
+        --green-3: oklch(64% 0.11 170);
+        --green-4: oklch(58% 0.11 170);
+        --green-5: oklch(52% 0.11 160);
 
-      	/* color shades */
-      	--pink: oklch(73% 0.12 0);
-      	--pink-1: oklch(63% 0.12 0);
-      	--pink-2: oklch(53% 0.12 0);
-      	--purple: oklch(73% 0.12 300);
-      	--purple-1: oklch(63% 0.12 300);
-      	--purple-2: oklch(53% 0.12 300);
-      	--cyan: oklch(73% 0.12 200);
-      	--yellow: oklch(78% 0.12 80);
-      	--green: oklch(73% 0.12 160);
-      	--green-1: oklch(63% 0.12 160);
-      	--green-2: oklch(53% 0.12 160);
+        --blue-1: oklch(76% 0.1 215);
+        --blue-2: oklch(70% 0.1 215);
+        --blue-3: oklch(64% 0.1 215);
+        --blue-4: oklch(58% 0.1 215);
+        --blue-5: oklch(52% 0.1 215);
+
+        --yellow-1: oklch(80% 0.11 90);
+        --yellow-2: oklch(74% 0.11 90);
+        --yellow-3: oklch(68% 0.11 90);
+        --yellow-4: oklch(62% 0.11 90);
+        --yellow-5: oklch(56% 0.11 90);
+
+        --purple-1: oklch(76% 0.11 310);
+        --purple-2: oklch(70% 0.11 310);
+        --purple-3: oklch(64% 0.11 310);
+        --purple-4: oklch(58% 0.11 310);
+        --purple-5: oklch(52% 0.11 310);
       }
     '';
     "${vesktopPath}/settings/settings.json".text = ''
       {
           "autoUpdate": true,
           "autoUpdateNotification": true,
-          "useQuickCss": false,
+          "useQuickCss": true,
           "themeLinks": [],
-          "enabledThemes": [""],
+          "eagerPatches": false,
+          "enabledThemes": [
+              "deishuu.css"
+          ],
           "enableReactDevtools": false,
           "frameless": false,
           "transparent": false,
@@ -108,7 +169,7 @@
           "winNativeTitleBar": false,
           "plugins": {
               "ChatInputButtonAPI": {
-                  "enabled": true
+                  "enabled": false
               },
               "CommandsAPI": {
                   "enabled": true
@@ -135,13 +196,14 @@
                   "enabled": true
               },
               "ServerListAPI": {
-                  "enabled": true
+                  "enabled": false
               },
               "UserSettingsAPI": {
                   "enabled": true
               },
               "AccountPanelServerProfile": {
-                  "enabled": false
+                  "enabled": false,
+                  "prioritizeServerProfile": false
               },
               "AlwaysAnimate": {
                   "enabled": false
@@ -171,7 +233,7 @@
                   "enabled": false
               },
               "BetterGifPicker": {
-                  "enabled": false
+                  "enabled": true
               },
               "BetterNotesBox": {
                   "enabled": false
@@ -189,10 +251,10 @@
                   "enabled": false
               },
               "BetterUploadButton": {
-                  "enabled": false
+                  "enabled": true
               },
               "BiggerStreamPreview": {
-                  "enabled": true
+                  "enabled": false
               },
               "BlurNSFW": {
                   "enabled": false
@@ -201,7 +263,7 @@
                   "enabled": false
               },
               "ClearURLs": {
-                  "enabled": false
+                  "enabled": true
               },
               "ClientTheme": {
                   "enabled": false
@@ -259,12 +321,17 @@
               },
               "FakeNitro": {
                   "enabled": true,
-                  "enableStickerBypass": true,
-                  "enableStreamQualityBypass": true,
                   "enableEmojiBypass": true,
+                  "emojiSize": 48,
                   "transformEmojis": true,
+                  "enableStickerBypass": true,
+                  "stickerSize": 160,
                   "transformStickers": true,
-                  "transformCompoundSentence": false
+                  "transformCompoundSentence": false,
+                  "enableStreamQualityBypass": true,
+                  "useHyperLinks": true,
+                  "hyperLinkText": "{{NAME}}",
+                  "disableEmbedPermissionCheck": false
               },
               "FakeProfileThemes": {
                   "enabled": false
@@ -299,13 +366,19 @@
               "FullSearchContext": {
                   "enabled": false
               },
-              "GameActivityToggle": {
+              "FullUserInChatbox": {
                   "enabled": false
+              },
+              "GameActivityToggle": {
+                  "enabled": true
               },
               "GifPaste": {
                   "enabled": false
               },
               "GreetStickerPicker": {
+                  "enabled": false
+              },
+              "HideMedia": {
                   "enabled": false
               },
               "iLoveSpam": {
@@ -318,17 +391,15 @@
                   "enabled": false
               },
               "ImageZoom": {
-                  "enabled": true,
-                  "size": 100,
-                  "zoom": 2,
-                  "saveZoomValues": true,
-                  "nearestNeighbour": false,
-                  "square": false
+                  "enabled": true
               },
               "ImplicitRelationships": {
                   "enabled": false
               },
               "InvisibleChat": {
+                  "enabled": false
+              },
+              "IrcColors": {
                   "enabled": false
               },
               "KeepCurrentChannel": {
@@ -356,17 +427,7 @@
                   "enabled": false
               },
               "MessageLogger": {
-                  "enabled": true,
-                  "collapseDeleted": false,
-                  "deleteStyle": "text",
-                  "ignoreBots": false,
-                  "ignoreSelf": true,
-                  "ignoreUsers": "",
-                  "ignoreChannels": "",
-                  "ignoreGuilds": "",
-                  "logEdits": true,
-                  "logDeletes": true,
-                  "inlineEdits": true
+                  "enabled": true
               },
               "MessageTags": {
                   "enabled": false
@@ -377,9 +438,6 @@
               "MoreKaomoji": {
                   "enabled": false
               },
-              "MoreUserTags": {
-                  "enabled": false
-              },
               "Moyai": {
                   "enabled": false
               },
@@ -387,14 +445,7 @@
                   "enabled": false
               },
               "NewGuildSettings": {
-                  "enabled": true,
-                  "guild": true,
-                  "everyone": true,
-                  "role": true,
-                  "events": true,
-                  "highlights": true,
-                  "messages": 3,
-                  "showAllChannels": true
+                  "enabled": false
               },
               "NoBlockedMessages": {
                   "enabled": false
@@ -423,9 +474,6 @@
               "NoReplyMention": {
                   "enabled": false
               },
-              "NoScreensharePreview": {
-                  "enabled": false
-              },
               "NoServerEmojis": {
                   "enabled": false
               },
@@ -452,7 +500,6 @@
               },
               "OpenInApp": {
                   "enabled": false
-
               },
               "OverrideForumDefaults": {
                   "enabled": false
@@ -497,7 +544,7 @@
                   "enabled": false
               },
               "ReadAllNotificationsButton": {
-                  "enabled": true
+                  "enabled": false
               },
               "RelationshipNotifier": {
                   "enabled": false
@@ -545,18 +592,10 @@
                   "enabled": false
               },
               "ShowHiddenChannels": {
-                  "enabled": false,
-                  "showMode": 0,
-                  "hideUnreads": true,
-                  "defaultAllowedUsersAndRolesDropdownState": true
+                  "enabled": true
               },
               "ShowHiddenThings": {
-                  "enabled": true,
-                  "showTimeouts": true,
-                  "showInvitesPaused": true,
-                  "showModView": true,
-                  "disableDiscoveryFilters": true,
-                  "disableDisallowedDiscoveryFilters": true
+                  "enabled": false
               },
               "ShowMeYourName": {
                   "enabled": false
@@ -568,15 +607,13 @@
                   "enabled": false
               },
               "SilentTyping": {
-                  "enabled": true,
-                  "isEnabled": true,
-                  "showIcon": false
+                  "enabled": false
               },
               "SortFriendRequests": {
                   "enabled": false
               },
               "SpotifyControls": {
-                  "enabled": false
+                  "enabled": true
               },
               "SpotifyCrack": {
                   "enabled": false
@@ -660,10 +697,10 @@
                   "enabled": false
               },
               "WebKeybinds": {
-                  "enabled": false
+                  "enabled": true
               },
               "WebScreenShareFixes": {
-                  "enabled": false
+                  "enabled": true
               },
               "WhoReacted": {
                   "enabled": false
@@ -674,32 +711,25 @@
               "YoutubeAdblock": {
                   "enabled": false
               },
+              "BadgeAPI": {
+                  "enabled": true
+              },
               "NoTrack": {
                   "enabled": true,
                   "disableAnalytics": true
-              },
-              "WebContextMenus": {
-                  "enabled": true,
-                  "addBack": true
               },
               "Settings": {
                   "enabled": true,
                   "settingsLocation": "aboveNitro"
               },
+              "DisableDeepLinks": {
+                  "enabled": true
+              },
               "SupportHelper": {
                   "enabled": true
               },
-              "FullUserInChatbox": {
-                  "enabled": false
-              },
-              "IrcColors": {
-                  "enabled": false
-              },
-              "BadgeAPI": {
+              "WebContextMenus": {
                   "enabled": true
-              },
-              "HideMedia": {
-                  "enabled": false
               }
           },
           "notifications": {
@@ -712,11 +742,11 @@
               "authenticated": false,
               "url": "https://api.vencord.dev/",
               "settingsSync": false,
-              "settingsSyncVersion": 1742180703594
-          },
-          "notifyAboutUpdates": true,
-          "eagerPatches": false
+              "settingsSyncVersion": 1743869530820
+          }
       }
+
+
     '';
   };
 }

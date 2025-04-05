@@ -6,7 +6,7 @@
     ./git.nix
     ./neovim.nix
     ./starship.nix
-    ./discord.nix
+    ./vesktop.nix
     ./kitty.nix
     ./alacritty.nix
     ./lazygit.nix
