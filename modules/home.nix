@@ -31,18 +31,6 @@
     stateVersion = "24.05";
   };
 
-  home.sessionVariables = {
-    # Force all applications to use Wayland
-    # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
-    NIXOS_OZONE_WL = "1";
-  };
-
-  # Enable the Wayland backend for Electron applications
-  xdg.configFile."electron-flags.conf".text = ''
-    --enable-features=UseOzonePlatform
-    --ozone-platform=wayland
-  '';
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
