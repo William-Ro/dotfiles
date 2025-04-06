@@ -87,6 +87,32 @@
         "workbench.startupEditor" = "none";
         "workbench.colorTheme" = "Dracula Theme";
         "workbench.iconTheme" = "material-icon-theme";
+        "workbench.colorCustomizations" = {
+          "[Dracula Theme]" = {
+            "editor.background" = "#1F1F1F";
+            "sideBar.background" = "#1F1F1F";
+            "activityBar.background" = "#1F1F1F";
+            "titleBar.activeBackground" = "#1F1F1F";
+            "titleBar.inactiveBackground" = "#1F1F1F";
+            "statusBar.background" = "#1F1F1F";
+            "statusBar.noFolderBackground" = "#1F1F1F";
+            "statusBar.debuggingBackground" = "#1F1F1F";
+            "panel.background" = "#1F1F1F";
+            "terminal.background" = "#1F1F1F";
+            "editorGroupHeader.tabsBackground" = "#1F1F1F";
+            "tab.activeBackground" = "#1F1F1F";
+            "tab.inactiveBackground" = "#1F1F1F";
+            "breadcrumb.background" = "#1F1F1F";
+            "editorGroup.background" = "#1F1F1F";
+            "peekViewEditor.background" = "#1F1F1F";
+            "peekViewResult.background" = "#1F1F1F";
+            "notifications.background" = "#1F1F1F";
+            "scrollbarSlider.background" = "#2A2A2A";
+            "scrollbarSlider.hoverBackground" = "#3A3A3A";
+            "scrollbarSlider.activeBackground" = "#4A4A4A";
+          };
+        };
+
         "git.autofetch" = true;
         "git.confirmSync" = false;
         "git.openRepositoryInParentFolders" = "always";
