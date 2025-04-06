@@ -26,6 +26,8 @@
 
     # Sound manager
     pavucontrol # Advanced PulseAudio volume control
+
+    wf-recorder # Screen recording tool for Wayland
   ];
   programs = {
   };

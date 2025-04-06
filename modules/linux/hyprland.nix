@@ -244,6 +244,9 @@ in {
 
         "$mod SHIFT, S, exec, pgrep grimblast || grimblast --notify copysave area"
 
+        # record
+        "$mod SHIFT, R, exec, record_screen"
+
         # cycle workspaces
         "$mod, bracketleft, workspace, m-1"
         "$mod, bracketright, workspace, m+1"

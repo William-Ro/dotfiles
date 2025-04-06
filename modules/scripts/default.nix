@@ -27,9 +27,33 @@
         echo "swww is not installed or running."
     fi
   '';
+  record_screen = pkgs.writeShellScriptBin "record_screen" ''
+    if command -v wf-recorder >/dev/null 2>&1; then
+        # Verify if wf-recorder is already running
+        if pgrep -x "wf-recorder" >/dev/null; then
+            # If it is running, kill the process
+            pkill -INT -x wf-recorder
+            dunstify "Finished Recording" "Recording has finished successfully."
+            exit 0
+        fi
+
+        # Save the current date and time in the format MM-DD-YYYY-HH:MM:SS
+        dateTime=$(date +%m-%d-%Y-%H:%M:%S)
+        outputFile="$HOME/Videos/$dateTime.mp4"
+
+        # Start recording with wf-recorder
+        wf-recorder --bframes max_b_frames -f $outputFile &
+
+        # Notify the user
+        dunstify "Recording Started" "Recording has started!"
+    else
+        echo "wf-recorder is not installed."
+    fi
+  '';
 in {
   home.packages = with pkgs; [
     wallpaper_random
     wallpaper_default
+    record_screen
   ];
 }
