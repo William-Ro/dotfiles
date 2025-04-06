@@ -12,8 +12,6 @@
     window-padding-y = 20
     background-opacity = 1
     background-blur-radius = 60
-    selection-background = #1F1F1F
-    selection-foreground = #d9e0ee
     cursor-style = bar
     mouse-hide-while-typing = true
 
