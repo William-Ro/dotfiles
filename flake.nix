@@ -23,12 +23,6 @@
       url = "github:zhaofengli-wip/nix-homebrew";
     };
 
-    # NvChad
-    nvchad4nix = {
-      url = "github:nix-community/nix4nvchad";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
   };
@@ -47,7 +41,7 @@
   in {
     # MacOS Configuration
     darwinConfigurations.laptop = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin"; # ARM para MacBook
+      system = "aarch64-darwin";
       specialArgs = {
         inherit username useremail inputs;
         hostname = "laptop";

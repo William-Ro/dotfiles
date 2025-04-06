@@ -18,14 +18,6 @@
 
   nix.package = pkgs.nix;
 
-  nixpkgs = {
-    overlays = [
-      (final: prev: {
-        nvchad = inputs.nvchad4nix.packages."${pkgs.system}".nvchad;
-      })
-    ];
-  };
-
   # Set your time zone.
   time.timeZone = "America/Costa_Rica";
 
