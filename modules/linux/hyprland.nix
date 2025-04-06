@@ -48,12 +48,6 @@ in {
         # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
         "NIXOS_OZONE_WL,1"
 
-        "MOZ_ENABLE_WAYLAND, 1" # for firefox to run on wayland
-        "MOZ_WEBRENDER, 1" # for firefox to run on wayland
-        "XDG_SESSION_TYPE, wayland"
-        "WLR_RENDERER_ALLOW_SOFTWARE, 1"
-        "QT_QPA_PLATFORM, wayland"
-
         # Nvidia drivers Hyprland wiki
         # Source: https://wiki.hyprland.org/Nvidia/
         "LIBVA_DRIVER_NAME,nvidia"
@@ -70,7 +64,7 @@ in {
         "NVD_BACKEND,direct"
 
         # Flickering in Electron / CEF apps
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
 
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
@@ -185,11 +179,14 @@ in {
         # disable dragging animation
         animate_mouse_windowdragging = true;
 
-        # enable variable refresh rate (effective depending on hardware)
-        vrr = 1;
+        #
+
+        # disable variable refresh rate (effective depending on hardware)
+        vfr = true; # Variable Frame Rate
+        vrr = 0;
       };
       render = {
-        direct_scanout = true;
+        direct_scanout = false;
         # Fixes some apps stuttering (xournalpp, hyprlock). Possibly an amdgpu bug
         explicit_sync = 0;
         explicit_sync_kms = 0;
