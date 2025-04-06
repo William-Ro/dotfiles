@@ -16,6 +16,21 @@ in {
     bibata-cursors # Cursor theme
   ];
 
+  # Enable the Wayland backend for Electron applications
+  xdg.configFile."electron-flags.conf".text = ''
+    --enable-features=UseOzonePlatform
+    --ozone-platform=wayland
+  '';
+  xdg.portal = {
+    extraPortals = [pkgs.xdg-desktop-portal-wlr];
+    config.hyprland = {
+      default = [
+        "wlr"
+        "gtk"
+      ];
+    };
+  };
+
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -28,6 +43,16 @@ in {
         "BROWSER, firefox"
         "TERMINAL, ghostty"
         # Wayland
+
+        # Force all applications to use Wayland
+        # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
+        "NIXOS_OZONE_WL,1"
+
+        "MOZ_ENABLE_WAYLAND, 1" # for firefox to run on wayland
+        "MOZ_WEBRENDER, 1" # for firefox to run on wayland
+        "XDG_SESSION_TYPE, wayland"
+        "WLR_RENDERER_ALLOW_SOFTWARE, 1"
+        "QT_QPA_PLATFORM, wayland"
 
         # Nvidia drivers Hyprland wiki
         # Source: https://wiki.hyprland.org/Nvidia/
