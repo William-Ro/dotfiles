@@ -72,6 +72,8 @@ in {
         "XCURSOR_THEME,${cursorName}"
         "XCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        # Screenshots
+        "XDG_SCREENSHOTS_DIR,~/Pictures/Screenshots"
       ];
       ####################
       #### Settings ######
