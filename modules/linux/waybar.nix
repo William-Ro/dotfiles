@@ -6,10 +6,7 @@
 }: {
   programs.waybar = {
     enable = true;
-    systemd = {
-      enable = false;
-      target = "graphical-session.target";
-    };
+
     style = ''
       * {
         font-family: "JetBrainsMono Nerd Font";
