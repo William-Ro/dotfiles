@@ -6,8 +6,10 @@
   home.file = {
     ".config/wofi/config" = {
       text = ''
-        lines=10
+        lines=6
         prompt=Search..
+
+
       '';
     };
 
