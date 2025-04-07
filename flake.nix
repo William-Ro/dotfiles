@@ -41,7 +41,7 @@
   in {
     # MacOS Configuration
     darwinConfigurations.laptop = nix-darwin.lib.darwinSystem {
-      system = "aarch64-darwin";
+      system = "aarch64-darwin"; # ARM para MacBook
       specialArgs = {
         inherit username useremail inputs;
         hostname = "laptop";
