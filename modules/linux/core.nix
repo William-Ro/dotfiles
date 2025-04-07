@@ -28,6 +28,11 @@
     pavucontrol # Advanced PulseAudio volume control
 
     wf-recorder # Screen recording tool for Wayland
+
+    # File manager GUI
+    xfce.thunar
+    gvfs
+    xfce.tumbler
   ];
   programs = {
   };
