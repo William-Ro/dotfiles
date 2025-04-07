@@ -1,54 +1,9 @@
-# Nix-Darwin Configuration
+# dotfiles
 
-This repository contains my automated configuration for Nix-Darwin on macOS. The flake is designed to automate most configurations, but there are two commands that need to be executed manually due to current limitations:
+![Made with trial and error](https://img.shields.io/badge/Made%20with-trial%20and%20error-blue?style=flat-square&logo=haskell)
+[![NixOS Unstable](https://img.shields.io/badge/NixOS-unstable-blue.svg?style=flat-square&logo=NixOS&logoColor=white)](https://nixos.org)
 
-## Notes on Display Configuration
-
-The display configuration is specific to the USB hub I use, which only supports 144 Hz. If you are not using a hub with these characteristics, this step might not be necessary.
-
-## Prerequisites
-
-1. Installed macOS.
-2. Internet access.
-
-## Step-by-Step Installation
-
-### Step 1: Install Nix
-
-Run the following command to install Nix:
-
-```bash
-sh <(curl -L https://nixos.org/nix/install)
-```
-
-### Step 2: Install Git
-
-On macOS, install Git by downloading Apple’s Command Line Tools. This can be done by running:
-
-```bash
-xcode-select --install
-```
-
-### Step 3: Clone the Repository
-
-Clone this repository to get the configuration files:
-
-```bash
-git clone https://github.com/William-Ro/dotfiles
-cd dotfiles
-```
-
-### Step 4: Apply the Configuration
-
-Run the following command to apply the configuration:
-
-```bash
-nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --flake .#laptop
-```
-
-## Compatibility with NixOS
-
-In addition to macOS, this configuration can also be used on NixOS systems. Make sure to adapt the macOS-specific steps as needed.
+❄️ Nix flake dotfiles
 
 ## Manual Commands
 
@@ -74,4 +29,3 @@ After running the flake, execute these commands manually:
 
 - [Official Nix Documentation](https://nixos.org/manual/nix/stable/)
 - [Nix-Darwin Documentation](https://github.com/LnL7/nix-darwin)
-- [displayplacer](https://github.com/jakehilborn/displayplacer)
