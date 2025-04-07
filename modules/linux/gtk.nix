@@ -21,6 +21,11 @@
       };
     };
 
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
@@ -41,7 +46,7 @@
 
   xdg.configFile."xsettingsd/xsettingsd.conf".text = ''
     Net/ThemeName "Graphite-Dark"
-    Net/IconThemeName "Graphite-Dark"
+    Net/IconThemeName "Papirus-Dark"
     Gtk/CursorThemeName "Bibata-Modern-Classic"
     Net/EnableEventSounds 1
     EnableInputFeedbackSounds 0
