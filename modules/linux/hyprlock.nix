@@ -20,7 +20,7 @@
       background = [
         {
           monitor = "";
-          path = "$HOME/Pictures/wallpapers/GX9pKXFaUAENkzX.jpg";
+          path = "$HOME/Pictures/wallpapers/wallpaper.png";
         }
       ];
 
@@ -36,21 +36,17 @@
 
           font_family = "JetBrainsMono Nerd Font";
           font_color = "rgb(217, 224, 238)";
-          outer_color = "rgb(31, 31, 31)";
-          inner_color = "rgb(31, 31, 31)";
+          outer_color = "rgba(31, 31, 31, 0.39)";
+          inner_color = "rgba(31, 31, 31, 0.39)";
           check_color = "rgba(247, 193, 19, 0.5)";
           fail_color = "rgba(255, 106, 134, 0.5)";
 
           fade_on_empty = false;
-          placeholder_text = "Enter password";
+          placeholder_text = "Password";
 
           dots_spacing = 0.2;
           dots_center = true;
           dots_fade_time = 100;
-
-          shadow_color = "rgba(0, 0, 0, 0.1)";
-          shadow_size = 7;
-          shadow_passes = 2;
         }
       ];
 
