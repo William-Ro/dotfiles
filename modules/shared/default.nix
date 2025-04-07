@@ -12,7 +12,6 @@
     ./lazygit.nix
     ./fastfetch.nix
     ./vscode.nix
-    ./obsidian.nix
     ./nerdfetch.nix
     ./yazi.nix
   ];
