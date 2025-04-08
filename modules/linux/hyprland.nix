@@ -31,10 +31,13 @@ in {
         # Wayland
 
         # Flickering in Electron / CEF apps
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # Force all applications to use Wayland
         # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
         "NIXOS_OZONE_WL,1"
+
+        # VA-API hardware video acceleration
+        "NVD_BACKEND,direct"
 
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
@@ -42,6 +45,7 @@ in {
         "XCURSOR_THEME,${cursorName}"
         "XCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+
         # Screenshots
         "XDG_SCREENSHOTS_DIR,~/Pictures/Screenshots"
       ];
