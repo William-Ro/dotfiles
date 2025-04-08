@@ -14,22 +14,8 @@ in {
     brillo # Backlight control
     grimblast # Screenshots
     bibata-cursors # Cursor theme
+    egl-wayland
   ];
-
-  # Enable the Wayland backend for Electron applications
-  xdg.configFile."electron-flags.conf".text = ''
-    --enable-features=UseOzonePlatform
-    --ozone-platform=wayland
-  '';
-  xdg.portal = {
-    extraPortals = [pkgs.xdg-desktop-portal-wlr];
-    config.hyprland = {
-      default = [
-        "wlr"
-        "gtk"
-      ];
-    };
-  };
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -44,27 +30,11 @@ in {
         "TERMINAL, ghostty"
         # Wayland
 
+        # Flickering in Electron / CEF apps
+        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
         # Force all applications to use Wayland
         # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
         "NIXOS_OZONE_WL,1"
-
-        # Nvidia drivers Hyprland wiki
-        # Source: https://wiki.hyprland.org/Nvidia/
-        "LIBVA_DRIVER_NAME,nvidia"
-
-        #If you face problems with Discord windows not displaying or screen sharing not working in Zoom, first try running them in Native Wayland. Otherwise, remove or comment this line.
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-
-        # To force GBM as a backend
-        # Source: https://wiki.hyprland.org/Configuring/Environment-variables/
-        "GBM_BACKEND,nvidia-drm"
-        "__GL_VRR_ALLOWED,0"
-
-        # VA-API hardware video acceleration
-        "NVD_BACKEND,direct"
-
-        # Flickering in Electron / CEF apps
-        "ELECTRON_OZONE_PLATFORM_HINT,wayland"
 
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
