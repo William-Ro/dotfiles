@@ -23,6 +23,12 @@
       url = "github:zhaofengli-wip/nix-homebrew";
     };
 
+    # NixVim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
   };
