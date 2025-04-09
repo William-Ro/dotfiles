@@ -119,7 +119,7 @@
         "github.copilot.enable" = {
           "*" = true;
           "plaintext" = true;
-          "markdown" = false;
+          "markdown" = true;
           "scminput" = false;
         };
         "github.copilot.editor.enableAutoCompletions" = true;
