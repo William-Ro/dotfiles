@@ -20,7 +20,6 @@
       background = [
         {
           monitor = "";
-          path = "$HOME/Pictures/wallpapers/wallpaper.png";
         }
       ];
 
@@ -54,7 +53,7 @@
         {
           monitor = "";
           text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%I:%M'";
-          font_size = 150;
+          font_size = 120;
           color = "rgb(217, 224, 238)";
           font_family = "JetBrainsMono Nerd Font";
           position = "0%, 30%";
