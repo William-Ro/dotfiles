@@ -260,7 +260,7 @@ in {
 
       bindr = [
         # launcher
-        "$mod, Space, exec, wofi -H 400 -W 700 --show drun --insensitive -I"
+        "$mod, Space, exec, wofi -H 400 -W 700 --show drun"
       ];
 
       bindl = [
