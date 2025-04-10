@@ -4,11 +4,6 @@
   pkgs,
   ...
 }: {
-  # In case you want to use nwg-look
-  home.packages = with pkgs; [
-    nwg-look
-  ];
-
   # Set the GTK theme and cursor theme
   gtk = {
     enable = true;
@@ -20,10 +15,9 @@
         colorVariants = ["dark"];
       };
     };
-
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      package = pkgs.tela-icon-theme;
+      name = "Tela-black";
     };
 
     cursorTheme = {
@@ -43,16 +37,4 @@
       gtk-application-prefer-dark-theme = 1;
     };
   };
-
-  xdg.configFile."xsettingsd/xsettingsd.conf".text = ''
-    Net/ThemeName "Graphite-Dark"
-    Net/IconThemeName "Papirus-Dark"
-    Gtk/CursorThemeName "Bibata-Modern-Classic"
-    Net/EnableEventSounds 1
-    EnableInputFeedbackSounds 0
-    Xft/Antialias 1
-    Xft/Hinting 1
-    Xft/HintStyle "hintslight"
-    Xft/RGBA "rgb"
-  '';
 }
