@@ -16,7 +16,11 @@
     pamixer # PulseAudio volume control from the terminal
 
     # GNOME applications
-    eog # Eye of GNOME - image viewer
+    gnome-calculator
+    evince
+    file-roller
+    nautilus
+    eog
 
     # Bluetooth manager
     overskride # Bluetooth management tool
@@ -28,11 +32,6 @@
     pavucontrol # Advanced PulseAudio volume control
 
     wf-recorder # Screen recording tool for Wayland
-
-    # File manager GUI
-    xfce.thunar
-    gvfs
-    xfce.tumbler
   ];
   programs = {
   };
