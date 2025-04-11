@@ -9,23 +9,25 @@
     profiles.default = {
       enableUpdateCheck = false;
 
-      extensions = with pkgs; [
-        vscode-extensions.github.copilot
-        vscode-extensions.kamadorueda.alejandra
-        vscode-extensions.dart-code.dart-code
-        vscode-extensions.ms-vscode-remote.remote-containers
-        vscode-extensions.ms-azuretools.vscode-docker
-        vscode-extensions.dart-code.flutter
-        vscode-extensions.github.copilot-chat
-        vscode-extensions.bbenoist.nix
-        vscode-extensions.esbenp.prettier-vscode
-        vscode-extensions.golang.go
-        vscode-extensions.pkief.material-icon-theme
-        vscode-extensions.zhuangtongfa.material-theme
-        vscode-extensions.dracula-theme.theme-dracula
+      extensions = with pkgs.vscode-extensions; [
+        github.copilot
+        kamadorueda.alejandra
+        dart-code.dart-code
+        ms-vscode-remote.remote-containers
+        ms-azuretools.vscode-docker
+        dart-code.flutter
+        github.copilot-chat
+        bbenoist.nix
+        esbenp.prettier-vscode
+        golang.go
+        pkief.material-icon-theme
+        zhuangtongfa.material-theme
+        dracula-theme.theme-dracula
+        ms-vscode.cpptools
       ];
 
       userSettings = {
+        "window.zoomLevel" = 1;
         "editor.fontFamily" = "JetBrainsMono Nerd Font";
         "editor.fontSize" = 21;
         "editor.fontWeight" = "normal";
