@@ -21,6 +21,8 @@
     file-roller
     nautilus
     eog
+    sushi
+    gvfs
 
     # Bluetooth manager
     overskride # Bluetooth management tool
@@ -32,6 +34,8 @@
     pavucontrol # Advanced PulseAudio volume control
 
     wf-recorder # Screen recording tool for Wayland
+
+    gcc
   ];
   programs = {
   };
