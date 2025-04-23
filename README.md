@@ -8,12 +8,9 @@
 
 ### DE/WM
 
-**Hyprland**
-
 Desktop Environment:
 
 <p align="center"><img src="https://imgur.com/iQUVcRU.png"></p>
-<p align="center"><img src="https://i.imgur.com/AdLcIbZ.png"></p>
 <p align="center"><img src="https://i.imgur.com/FHhtaxj.png"></p>
 
 ## Nix Dotfiles Directory Structure
