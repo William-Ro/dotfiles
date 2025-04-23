@@ -14,8 +14,11 @@
         aarch64-linux = "/home/${config.username}";
         aarch64-darwin = "/Users/${config.username}";
       }
-      .${system};
+      .${
+        system
+      };
     packages = with pkgs; [
+      home-manager
       zip
       xz
       unzip
@@ -28,6 +31,4 @@
       fontconfig
     ];
   };
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }
