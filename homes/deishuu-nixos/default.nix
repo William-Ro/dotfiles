@@ -15,6 +15,7 @@
     "common/starship"
     "common/vesktop"
     "common/vscode"
+    "common/xdg"
     "common/yazi"
     "common/zsh"
     # nixOS specific packages
@@ -64,7 +65,6 @@
 
       wf-recorder # Screen recording tool for Wayland
     ];
-    
 
     sessionVariables = {
     };
