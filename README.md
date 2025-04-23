@@ -62,7 +62,7 @@ This repository contains my personal dotfiles for NixOS and macOS.
 They are highly opinionated and tailored to my own workflows and setups.
 
 > ⚠️ **Disclaimer:**
-> Use these dotfiles at your own risk. I am not responsible for any issues, data loss, or damages caused by applying this configuration to your system.
+> Use these dotfiles at your own risk. I am not responsible for any issues, data loss, or damages caused by applying this configuration to your system. If you’re going to use it, make sure to replace the `hardware-configuration.nix` file with the one generated for your own system. Using mine may cause boot or hardware issues.
 
 ## References
 
