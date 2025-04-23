@@ -34,6 +34,8 @@
       firefox
       qbittorrent
       wl-clipboard
+      nerdfetch
+      pipes
 
       nvidia-vaapi-driver # VA-API driver for NVIDIA GPUs (hardware acceleration)
 
