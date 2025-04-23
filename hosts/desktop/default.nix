@@ -23,13 +23,13 @@
       timeout = 0;
     };
     initrd.systemd = {
-    enable = true;
-    # Required to support TPM-based unlocking of LUKS encrypted drives.
-    # > sudo systemd-cryptenroll /dev/nvme0n1p6 --tpm2-device=auto --tpm2-pcrs=0+2+7
-    # PCRs are important to guarantee tamper-proofing
-    # Refer also to ./enable-tpm.sh
-    tpm2.enable = true;
-  };
+      enable = true;
+      # Required to support TPM-based unlocking of LUKS encrypted drives.
+      # > sudo systemd-cryptenroll /dev/nvme0n1p6 --tpm2-device=auto --tpm2-pcrs=0+2+7
+      # PCRs are important to guarantee tamper-proofing
+      # Refer also to ./enable-tpm.sh
+      tpm2.enable = true;
+    };
     plymouth.enable = true;
   };
 
