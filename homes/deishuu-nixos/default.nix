@@ -52,6 +52,7 @@
       evince # Document viewer
       file-roller # Archive manager
       eog # Eye of GNOME (image viewer)
+      sushi # File previewer for Nautilus
       nautilus # File manager
 
       # Bluetooth manager
