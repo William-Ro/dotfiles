@@ -47,14 +47,12 @@
       killall # Kill processes by name
       keychain # Manages SSH and GPG keys across sessions
       pamixer # PulseAudio volume control from the terminal
-      # GNOME applications
-      gnome-calculator
-      evince
-      file-roller
-      nautilus
-      eog
-      sushi
-      gvfs
+
+      gnome-calculator # Calculator
+      evince # Document viewer
+      file-roller # Archive manager
+      eog # Eye of GNOME (image viewer)
+      nautilus # File manager
 
       # Bluetooth manager
       overskride # Bluetooth management tool
