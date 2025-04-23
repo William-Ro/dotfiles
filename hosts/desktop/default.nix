@@ -30,7 +30,6 @@
       # Refer also to ./enable-tpm.sh
       tpm2.enable = true;
     };
-    plymouth.enable = true;
   };
 
   # Internationalization
