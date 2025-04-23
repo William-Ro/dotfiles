@@ -1,13 +1,9 @@
-<p align="center"><img src="https://i.imgur.com/X5zKxvp.png" width=300px></p>
-
 <p align="center">
     <img src="https://img.shields.io/static/v1?label=Hyprland&message=Stable&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
 </p>
 
 <p align="center">
 <a href="https://nixos.org/"><img src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4"></a>
-
-<p align="center"><img src="https://i.imgur.com/NbxQ8MY.png" width=600px></p>
 
 <h2 align="center">NixOS/MacOS Dotfiles</h2>
 
@@ -71,9 +67,5 @@ Desktop Environment:
 ├── lib
 │   ├── bootstrap.nix
 │   └── lib.nix
-
-```
-
-```
 
 ```
