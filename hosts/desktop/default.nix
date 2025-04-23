@@ -85,6 +85,8 @@
     shell = pkgs.zsh;
   };
 
+  services.gvfs.enable = true;
+
   # Docker & Podman
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
