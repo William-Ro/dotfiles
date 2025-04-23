@@ -37,8 +37,6 @@
       nerdfetch
       pipes
 
-      nvidia-vaapi-driver # VA-API driver for NVIDIA GPUs (hardware acceleration)
-
       # Basic utilities
       lm_sensors # Hardware monitoring (temperature, voltage, fan speed)
       mpv # Media player (video & audio)
