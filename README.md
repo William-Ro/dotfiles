@@ -67,5 +67,20 @@ Desktop Environment:
 ├── lib
 │   ├── bootstrap.nix
 │   └── lib.nix
-
 ```
+
+## About
+
+This repository contains my personal dotfiles for NixOS and macOS.
+They are highly opinionated and tailored to my own workflows and setups.
+
+> ⚠️ **Disclaimer:**
+> Use these dotfiles at your own risk. I am not responsible for any issues, data loss, or damages caused by applying this configuration to your system.
+
+## References
+
+This project was heavily inspired by the following amazing repositories:
+
+- [KubqoA/dotfiles](https://github.com/KubqoA/dotfiles)
+- [dustinlyons/nixos-config](https://github.com/dustinlyons/nixos-config)
+- [vimjoyer/nixconf](https://github.com/vimjoyer/nixconf)
