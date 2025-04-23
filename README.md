@@ -24,7 +24,7 @@
 Desktop Environment:
 
 <p align="center"><img src="https://imgur.com/iQUVcRU.png"></p>
-<p align="center"><img src="https://imgur.com/RVYBVQg.png"></p>
+<p align="center"><img src="https://i.imgur.com/AdLcIbZ.png"></p>
 
 ## Nix Dotfiles Directory Structure
 
