@@ -22,7 +22,7 @@
 
   wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
     if command -v swww >/dev/null 2>&1; then
-          swww img ~/Pictures/wallpapers/wallpaper.png  --transition-type simple
+          swww img ~/Pictures/wallpapers/wallpaper.jpg  --transition-type simple
     else
         echo "swww is not installed or running."
     fi
