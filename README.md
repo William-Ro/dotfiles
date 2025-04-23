@@ -6,17 +6,6 @@
   </a>
 </p>
 
-### Apps:
-
-|                          |                       NixOS                       |
-| ------------------------ | :-----------------------------------------------: |
-| **Desktop Environment**  |         [Hyprland](https://hyprland.org)          |
-| **Terminal**             | [Ghostty](https://github.com/ghostty-org/ghostty) |
-| **Display Server**       |    [Wayland](https://wayland.freedesktop.org)     |
-| **Application Launcher** |     [Wofi](https://github.com/SimplyCEO/wofi)     |
-| **Shell**                |         [Zsh](https://zsh.sourceforge.io)         |
-| **Text Editor**          |            [Neovim](https://neovim.io)            |
-
 ### DE/WM
 
 **Hyprland**
@@ -25,6 +14,7 @@ Desktop Environment:
 
 <p align="center"><img src="https://imgur.com/iQUVcRU.png"></p>
 <p align="center"><img src="https://i.imgur.com/AdLcIbZ.png"></p>
+<p align="center"><img src="https://i.imgur.com/FHhtaxj.png"></p>
 
 ## Nix Dotfiles Directory Structure
 
