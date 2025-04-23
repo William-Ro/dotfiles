@@ -6,6 +6,8 @@
   system,
   ...
 }: {
+  time.timeZone = "America/Costa_Rica";
+
   nix = {
     # Enable support for nix commands and flakes
     settings.experimental-features = ["nix-command" "flakes"];
