@@ -8,10 +8,15 @@
 
 ### DE/WM
 
-Desktop Environment:
+MacOS:
 
 <p align="center"><img src="https://i.imgur.com/Rg4zQ0P.jpeg"></p>
 <p align="center"><img src="https://i.imgur.com/GHeIXsb.png"></p>
+
+NixOS:
+
+<p align="center"><img src="https://i.imgur.com/JgVPEIY.png"></p>
+<p align="center"><img src="https://i.imgur.com/rXnZvfs.png"></p>
 
 ## Nix Dotfiles Directory Structure
 
