@@ -26,6 +26,9 @@
     "linux/wofi"
     # scripts
     "scripts/default"
+
+    # gaming
+    "gaming/steam"
   ];
 
   home = {
