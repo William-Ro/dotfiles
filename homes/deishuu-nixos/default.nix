@@ -29,6 +29,9 @@
 
     # gaming
     "gaming/steam"
+
+    # dev
+    "dev/cpp"
   ];
 
   home = {
