@@ -10,7 +10,7 @@
 
 Desktop Environment:
 
-<p align="center"><img src="https://i.imgur.com/2TM12KH.png"></p>
+<p align="center"><img src="https://i.imgur.com/pNzoLv7.jpeg"></p>
 <p align="center"><img src="https://i.imgur.com/KfVCAKD.png"></p>
 
 ## Nix Dotfiles Directory Structure
