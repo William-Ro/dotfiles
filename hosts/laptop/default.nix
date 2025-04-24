@@ -192,16 +192,4 @@
 
   # Add ability to used TouchID for sudo authentication
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  # Set the knownUsers so that the default shell works
-  # https://github.com/LnL7/nix-darwin/issues/1237#issuecomment-2562230471
-  users.knownUsers = [config.username];
-  users.users.${config.username} = {
-    home = config.homePath;
-    shell = pkgs.fish;
-    uid = 501;
-  };
-
-  # The platform the configuration will be used on.
-  nixpkgs.hostPlatform = system;
 }
