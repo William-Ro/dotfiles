@@ -213,9 +213,8 @@ in {
 
         # screenshot
         # area
-        ", Print, exec, pgrep grimblast || grimblast --notify copysave area"
-
-        "$mod SHIFT, S, exec, pgrep grimblast || grimblast --notify copysave area"
+        ", Print, exec, grimblast --notify copysave area \"$XDG_PICTURES_DIR/$(date +'%Y-%m-%d_%H-%M-%S').png\""
+        "$mod SHIFT, S, exec, grimblast --notify copysave area \"$XDG_PICTURES_DIR/$(date +'%Y-%m-%d_%H-%M-%S').png\""
 
         # record
         "$mod SHIFT, R, exec, record_screen"
