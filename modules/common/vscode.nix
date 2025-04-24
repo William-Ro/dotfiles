@@ -23,7 +23,8 @@
         pkief.material-icon-theme
         zhuangtongfa.material-theme
         dracula-theme.theme-dracula
-        ms-vscode.cpptools
+        llvm-vs-code-extensions.vscode-clangd
+        xaver.clang-format
       ];
 
       userSettings = {
@@ -150,6 +151,10 @@
         };
         "[go]" = {
           "editor.defaultFormatter" = "golang.go";
+        };
+        "[cpp]" = {
+          "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
+          "editor.formatOnSave" = true;
         };
       };
     };
