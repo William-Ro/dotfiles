@@ -55,7 +55,6 @@
       "iina" # video player
       "cursor"
       "docker"
-      "orbstack"
     ];
   };
 }
