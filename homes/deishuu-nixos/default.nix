@@ -69,6 +69,7 @@
       pavucontrol # Advanced PulseAudio volume control
 
       wf-recorder # Screen recording tool for Wayland
+      komikku # Manga reader
     ];
 
     sessionVariables = {
