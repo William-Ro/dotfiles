@@ -7,13 +7,26 @@
   wallpaper_random = pkgs.writeShellScriptBin "wallpaper_random" ''
     if command -v swww >/dev/null 2>&1; then
         pkill -f dynamic_wallpaper || true
-        WALLPAPER=$(find ~/Pictures/wallpapers -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)
 
-        if [ -n "$WALLPAPER" ]; then
-            echo "Setting wallpaper: $WALLPAPER"
-            swww img "$WALLPAPER" --transition-type simple
+        WALLPAPER_DIR=$(dirname "${config.wallpaperPath}")
+
+        # Obtener el wallpaper actual
+        CURRENT_WALLPAPER=$(swww query | grep 'Path:' | awk '{print $2}')
+
+        # Buscar un nuevo wallpaper que sea diferente al actual
+        while true; do
+            NEW_WALLPAPER=$(find "$WALLPAPER_DIR" -type f \( -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) | shuf -n1)
+
+            if [ "$NEW_WALLPAPER" != "$CURRENT_WALLPAPER" ] || [ -z "$CURRENT_WALLPAPER" ]; then
+                break
+            fi
+        done
+
+        if [ -n "$NEW_WALLPAPER" ]; then
+            echo "Setting wallpaper: $NEW_WALLPAPER"
+            swww img "$NEW_WALLPAPER" --transition-type simple
         else
-            echo "No images found in ~/Pictures/wallpapers/"
+            echo "No images found in $WALLPAPER_DIR"
         fi
     else
         echo "swww is not installed or running."
@@ -22,7 +35,7 @@
 
   wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
     if command -v swww >/dev/null 2>&1; then
-          swww img ~/Pictures/wallpapers/wallpaper.jpg  --transition-type simple
+        swww img "${config.wallpaperPath}" --transition-type simple
     else
         echo "swww is not installed or running."
     fi
