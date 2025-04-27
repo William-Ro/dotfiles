@@ -37,11 +37,9 @@
       firefox
       qbittorrent
       wl-clipboard
-      nerdfetch
+      fastfetch
       pipes
 
-      # Basic utilities
-      lm_sensors # Hardware monitoring (temperature, voltage, fan speed)
       mpv # Media player (video & audio)
       playerctl # Command-line media player controller
       mpc # CLI client for Music Player Daemon (MPD)
@@ -67,6 +65,7 @@
 
       wf-recorder # Screen recording tool for Wayland
       komikku # Manga reader
+      egl-wayland # EGL implementation for Wayland
     ];
 
     sessionVariables = {
