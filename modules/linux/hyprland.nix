@@ -14,7 +14,6 @@ in {
     brillo # Backlight control
     grimblast # Screenshots
     bibata-cursors # Cursor theme
-    egl-wayland
   ];
 
   wayland.windowManager.hyprland = {
