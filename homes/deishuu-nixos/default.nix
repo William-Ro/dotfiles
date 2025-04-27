@@ -27,9 +27,6 @@
     # scripts
     "scripts/default"
 
-    # gaming
-    "gaming/steam"
-
     # dev
     "dev/cpp"
   ];
