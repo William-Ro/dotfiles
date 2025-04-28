@@ -10,7 +10,8 @@ with lib; {
     usermail = mkOption {type = types.str;};
     homePath = mkOption {type = types.str;};
     dotfilesPath = mkOption {type = types.str;};
-    wallpaperPath = mkOption {type = types.str;};
+    wallpaper = mkOption {type = types.str;};
+    screenshots = mkOption {type = types.str;};
   };
 
   config = {
@@ -31,6 +32,7 @@ with lib; {
 
     dotfilesPath = "${config.homePath}/dotfiles";
 
-    wallpaperPath = "${config.homePath}/Pictures/wallpapers/default.jpg";
+    wallpaper = "${config.homePath}/Pictures/wallpapers/default.jpg";
+    screenshots = "${config.homePath}/Pictures/screenshots";
   };
 }
