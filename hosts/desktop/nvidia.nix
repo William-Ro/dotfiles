@@ -4,24 +4,11 @@
   libs,
   ...
 }: {
-  nixpkgs.config.nvidia.acceptLicense = true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-  environment.variables = {
-    # To force GBM as a backend
-    # Source: https://wiki.hyprland.org/Configuring/Environment-variables/
-    GBM_BACKEND = "nvidia-drm";
-    # Nvidia drivers Hyprland wiki
-    # Source: https://wiki.hyprland.org/Nvidia/
-    LIBVA_DRIVER_NAME = "nvidia";
-    #If you face problems with Discord windows not displaying or screen sharing not working in Zoom, first try running them in Native Wayland. Otherwise, remove or comment this line.
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  };
-  environment.systemPackages = with pkgs; [
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-  ];
+
+  nixpkgs.config.nvidia.acceptLicense = true;
+
   hardware = {
     graphics = {
       # Enable OpenGL
@@ -64,4 +51,10 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    vulkan-loader
+    vulkan-validation-layers
+    vulkan-tools
+  ];
 }
