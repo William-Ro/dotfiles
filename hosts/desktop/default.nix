@@ -74,7 +74,19 @@
     };
   };
   # Display Manager
-  services.displayManager.ly.enable = true;
+  # Using greetd with Hyprland
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.greetd}/bin/agreety --cmd Hyprland";
+      };
+      initial_session = {
+        command = "Hyprland";
+        user = "${config.username}";
+      };
+    };
+  };
 
   programs.hyprland.enable = true;
   programs.zsh.enable = true;
