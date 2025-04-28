@@ -35,7 +35,7 @@
 
           outline_thickness = 2;
 
-          font_family = "JetBrainsMono Nerd Font";
+          font_family = "${config.font}";
           font_color = "rgb(217, 224, 238)";
           outer_color = "rgba(31, 31, 31, 0.39)";
           inner_color = "rgba(31, 31, 31, 0.39)";
@@ -57,7 +57,7 @@
           text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%I:%M'";
           font_size = 120;
           color = "rgb(217, 224, 238)";
-          font_family = "JetBrainsMono Nerd Font";
+          font_family = "${config.font}";
           position = "0%, 30%";
 
           valign = "center";
@@ -73,7 +73,7 @@
           text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%A %b %d'";
           font_size = 20;
           color = "rgb(217, 224, 238)";
-          font_family = "JetBrainsMono Nerd Font";
+          font_family = "${config.font}";
           position = "0%, 40%";
 
           valign = "center";
