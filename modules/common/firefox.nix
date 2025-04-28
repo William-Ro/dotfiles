@@ -17,7 +17,7 @@
         packages = with inputs.firefox-addons.packages.${pkgs.system}; [
           bitwarden
           clearurls
-          custom-new-tab-page
+          new-tab-override
           darkreader
           fastforwardteam
           hover-zoom-plus
@@ -29,8 +29,8 @@
       };
       settings = {
         "browser.startup.homepage" = "https://william-ro.github.io/startpage/";
-        "privacy.resistFingerprinting" = false;
         "network.http.referer.XOriginPolicy" = 2;
+        "browser.translation.panel.show" = false;
         "media.peerconnection.enabled" = false;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
