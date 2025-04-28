@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs.alacritty = {
@@ -40,7 +41,7 @@
       # Fuente
       font = {
         normal = {
-          family = "JetBrainsMono Nerd Font";
+          family = "${config.font}";
         };
         size = 22.0;
       };

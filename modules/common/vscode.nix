@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs.vscode = {
@@ -29,7 +30,7 @@
 
       userSettings = {
         "window.zoomLevel" = 1;
-        "editor.fontFamily" = "JetBrainsMono Nerd Font";
+        "editor.fontFamily" = "${config.font}";
         "editor.fontSize" = 21;
         "editor.fontWeight" = "normal";
         "editor.fontLigatures" = true;
@@ -52,7 +53,7 @@
         "editor.bracketPairColorization.enabled" = true;
         "editor.smoothScrolling" = true;
         "editor.tabSize" = 2;
-        "terminal.integrated.fontFamily" = "JetBrainsMono Nerd Font";
+        "terminal.integrated.fontFamily" = "${config.font}";
         "terminal.integrated.fontSize" = 21;
         "terminal.integrated.cursorStyle" = "line";
         "terminal.integrated.cursorBlinking" = false;
@@ -134,7 +135,7 @@
         "extensions.autoUpdate" = true;
         "security.workspace.trust.untrustedFiles" = "open";
         "debug.console.fontSize" = 21;
-        "debug.console.fontFamily" = "JetBrainsMono Nerd Font";
+        "debug.console.fontFamily" = "${config.font}";
         "debug.internalConsoleOptions" = "openOnSessionStart";
         "[dart]" = {
           "editor.formatOnSave" = true;

@@ -1,9 +1,14 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
   isMacOS = pkgs.stdenv.isDarwin;
 in {
   programs.ghostty = {
     enable = true;
-  
+
     settings = {
       theme = "deishuu";
       "adjust-cell-height" = "10%";
@@ -49,7 +54,7 @@ in {
 
       # Other settings
       "font-size" = 22;
-      "font-family" = "JetBrainsMono Nerd Font";
+      "font-family" = "${config.font}";
       title = "Deishuu's Ghostty";
       "wait-after-command" = false;
       "shell-integration" = "detect";

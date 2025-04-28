@@ -1,4 +1,9 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   home.packages = [
     pkgs.vesktop
   ];
@@ -24,7 +29,7 @@
       @import url('https://refact0r.github.io/midnight-discord/build/midnight.css');
 
       body {
-        --font: 'JetBrainsMono Nerd Font';
+        --font: '${config.font}';
 
         /* sizes */
         --gap: 12px;
