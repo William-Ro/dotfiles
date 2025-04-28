@@ -21,7 +21,7 @@
       background = [
         {
           monitor = "";
-          path = config.wallpaperPath;
+          path = config.wallpaper;
         }
       ];
 
