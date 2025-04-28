@@ -8,6 +8,7 @@
     # Common packages
     "common/alacritty"
     "common/direnv"
+    "common/firefox"
     "common/ghostty"
     "common/git"
     "common/home"
@@ -38,7 +39,6 @@
   home = {
     packages = with pkgs; [
       spotify
-      firefox
       qbittorrent
       wl-clipboard
       fastfetch
