@@ -11,7 +11,6 @@ with lib; {
     homePath = mkOption {type = types.str;};
     dotfilesPath = mkOption {type = types.str;};
     wallpaperPath = mkOption {type = types.str;};
-    gitSigningKey = mkOption {type = types.str;};
   };
 
   config = {
@@ -33,8 +32,5 @@ with lib; {
     dotfilesPath = "${config.homePath}/dotfiles";
 
     wallpaperPath = "${config.homePath}/Pictures/wallpapers/default.jpg";
-
-    # TODO Replace with your own GPG key
-    gitSigningKey = "3F6BC2C89D644E2A";
   };
 }
