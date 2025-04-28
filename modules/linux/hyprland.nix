@@ -23,15 +23,6 @@ in {
       ### Environment ####
       ####################
       env = [
-        # Flickering in Electron / CEF apps
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        # Force all applications to use Wayland
-        # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
-        "NIXOS_OZONE_WL,1"
-
-        # VA-API hardware video acceleration
-        "NVD_BACKEND,direct"
-
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
@@ -132,22 +123,7 @@ in {
         # disable auto polling for config file changes
         disable_autoreload = true;
 
-        force_default_wallpaper = 0;
-
-        # disable dragging animation
         animate_mouse_windowdragging = true;
-
-        #
-
-        # disable variable refresh rate (effective depending on hardware)
-        vfr = true; # Variable Frame Rate
-        vrr = 0;
-      };
-      render = {
-        direct_scanout = false;
-        # Fixes some apps stuttering (xournalpp, hyprlock). Possibly an amdgpu bug
-        explicit_sync = 0;
-        explicit_sync_kms = 0;
       };
 
       # touchpad gestures
@@ -277,15 +253,9 @@ in {
         # telegram media viewer
         "float, title:^(Media viewer)$"
 
-        # Bitwarden extension
-        "float, title:^(.*Bitwarden Password Manager.*)$"
-
         # gnome calculator
         "float, class:^(org.gnome.Calculator)$"
         "size 360 490, class:^(org.gnome.Calculator)$"
-
-        # allow tearing in games
-        "immediate, class:^(osu\!|cs2)$"
 
         # make Firefox/Zen PiP window floating and sticky
         "float, title:^(Picture-in-Picture)$"
