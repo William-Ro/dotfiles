@@ -15,7 +15,6 @@ in {
   };
 
   home.sessionVariables = {
-    XDG_PICTURES_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
     CARGO_HOME = "${dataHome}/cargo";
     DOCKER_CONFIG = "${configHome}/docker";
     IRBRC = "${configHome}/irb/irbrc";
