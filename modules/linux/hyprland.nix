@@ -254,6 +254,16 @@ in {
         # telegram media viewer
         "float, title:^(Media viewer)$"
 
+        # file picker
+        "float, title:^(Open Files)$"
+        "center, title:^(Open Files)$"
+
+        "float, title:^(File Upload)$"
+        "center, title:^(File Upload)$"
+
+        "float, title:^(Save Image)$"
+        "center, title:^(Save Image)$"
+
         # gnome calculator
         "float, class:^(org.gnome.Calculator)$"
         "size 360 490, class:^(org.gnome.Calculator)$"
