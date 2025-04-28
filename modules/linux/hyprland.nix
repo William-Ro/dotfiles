@@ -8,11 +8,10 @@
   cursorSize = "23";
 in {
   home.packages = with pkgs; [
-    swww # Wallpaper manager
     hyprcursor # Cursor theme
-    hypridle # Idle management
+    hyprshot # Screenshots
+    swww # Wallpaper manager
     brillo # Backlight control
-    grimblast # Screenshots
     bibata-cursors # Cursor theme
   ];
 
@@ -29,6 +28,7 @@ in {
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "HYPRSHOT_DIR,${config.screenshots}"
       ];
       ####################
       #### Settings ######
@@ -175,10 +175,8 @@ in {
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
 
-        # screenshot
-        # area
-        ", Print, exec, grimblast --notify copysave area \"$XDG_PICTURES_DIR/$(date +'%Y-%m-%d_%H-%M-%S').png\""
-        "$mod SHIFT, S, exec, grimblast --notify copysave area \"$XDG_PICTURES_DIR/$(date +'%Y-%m-%d_%H-%M-%S').png\""
+        # Screenshot a region
+        "$mod SHIFT, S, exec, hyprshot -m region"
 
         # record
         "$mod SHIFT, R, exec, record_screen"
