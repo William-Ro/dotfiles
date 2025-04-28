@@ -8,7 +8,7 @@
     if command -v swww >/dev/null 2>&1; then
         pkill -f dynamic_wallpaper || true
 
-        WALLPAPER_DIR=$(dirname "${config.wallpaperPath}")
+        WALLPAPER_DIR=$(dirname "${config.wallpaper}")
 
         # Obtener el wallpaper actual
         CURRENT_WALLPAPER=$(swww query | grep 'Path:' | awk '{print $2}')
@@ -35,7 +35,7 @@
 
   wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
     if command -v swww >/dev/null 2>&1; then
-        swww img "${config.wallpaperPath}" --transition-type simple
+        swww img "${config.wallpaper}" --transition-type simple
     else
         echo "swww is not installed or running."
     fi
