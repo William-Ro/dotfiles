@@ -21,6 +21,7 @@
     # nixOS specific packages
     "linux/dunst"
     "linux/hypridle"
+    "linux/hyprlock"
     "linux/hyprland"
     "linux/waybar"
     "linux/wofi"
