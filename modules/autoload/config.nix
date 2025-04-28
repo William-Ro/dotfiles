@@ -12,6 +12,7 @@ with lib; {
     dotfilesPath = mkOption {type = types.str;};
     wallpaper = mkOption {type = types.str;};
     screenshots = mkOption {type = types.str;};
+    font = mkOption {type = types.str;};
   };
 
   config = {
@@ -31,8 +32,8 @@ with lib; {
       };
 
     dotfilesPath = "${config.homePath}/dotfiles";
-
     wallpaper = "${config.homePath}/Pictures/wallpapers/default.jpg";
     screenshots = "${config.homePath}/Pictures/screenshots";
+    font = "JetBrainsMono Nerd Font";
   };
 }
