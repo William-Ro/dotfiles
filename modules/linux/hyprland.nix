@@ -23,12 +23,6 @@ in {
       ### Environment ####
       ####################
       env = [
-        # Basic
-        "EDITOR,nvim"
-        "BROWSER, firefox"
-        "TERMINAL, ghostty"
-        # Wayland
-
         # Flickering in Electron / CEF apps
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # Force all applications to use Wayland
@@ -41,8 +35,6 @@ in {
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
-        "XCURSOR_THEME,${cursorName}"
-        "XCURSOR_SIZE,${cursorSize}"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
       ];
       ####################
@@ -55,26 +47,20 @@ in {
       ];
 
       exec-once = [
-        # set cursor for HL itself
         "hyprctl setcursor ${cursorName} ${cursorSize}"
-        "swww init & sleep 0.5 && exec wallpaper_random"
+        "swww init & sleep 0.5 && exec wallpaper_default"
+        "pkill waybar & sleep 0.5 && waybar"
+        "hyprlock"
         "hypridle"
         "dunst"
       ];
-      exec = [
-        # fix slow startup
-        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
 
-        "pkill waybar & sleep 0.5 && waybar"
-      ];
       general = {
         gaps_in = 5;
         gaps_out = 10;
         border_size = 1;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
-
         allow_tearing = true;
         resize_on_border = true;
         layout = "dwindle";
@@ -217,6 +203,9 @@ in {
 
         # record
         "$mod SHIFT, R, exec, record_screen"
+
+        # hyprlock
+        "$mod SHIFT, L, exec, hyprlock"
 
         # cycle workspaces
         "$mod, bracketleft, workspace, m-1"
