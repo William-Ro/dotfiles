@@ -166,7 +166,7 @@ in {
         # utility
         # terminal
         "$mod, Return, exec, ghostty"
-        "$mod, L, exec, hyprlock"
+
         "$mod, E, exec, ghostty -e yazi"
 
         # move focus
