@@ -97,7 +97,7 @@
       size = 23;
     };
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "${config.font}";
       size = 11;
     };
   };
