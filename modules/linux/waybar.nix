@@ -79,10 +79,10 @@
           "custom/icon"
         ];
         "hyprland/workspaces" = {
-          "all-outputs" = true;
-          "active-only" = false;
-          "disable-scroll" = true;
           "format" = "{icon}";
+          "on-click" = "activate";
+          "sort-by-number" = true;
+          "disable-scroll" = true;
           "format-icons" = {
             "1" = "";
             "2" = "";
