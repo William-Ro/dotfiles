@@ -9,7 +9,7 @@
 
     style = ''
       * {
-        font-family: "JetBrainsMono Nerd Font";
+        font-family: "${config.font}";
         font-size: 12pt;
         font-weight: bold;
         border-radius: 8px;
