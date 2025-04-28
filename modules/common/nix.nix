@@ -1,4 +1,3 @@
-# TODO try to put this in autoload
 {
   config,
   inputs,
