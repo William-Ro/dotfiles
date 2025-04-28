@@ -30,6 +30,9 @@
 
     # dev
     "dev/cpp"
+
+    # gaming
+    "gaming/steam"
   ];
 
   home = {
