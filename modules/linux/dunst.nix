@@ -35,7 +35,7 @@
         always_run_script = true;
         corner_radius = 10;
         follow = "mouse";
-        font = "JetBrainsMono Nerd Font 10";
+        font = "${config.font} 11";
         format = "<b>%s</b>\\n%b"; #format = "<span foreground='#f3f4f5'><b>%s %p</b></span>\n%b"
         frame_color = "#232323";
         frame_width = 1;
