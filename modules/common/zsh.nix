@@ -7,6 +7,10 @@
     enableCompletion = true;
 
     initExtra = ''
+      # Fix TERM if necessary
+      if [[ "$TERM" == "xterm-ghostty" ]]; then
+        export TERM="xterm-256color"
+      fi
       # Sudo plugin
       sudo-command-line() {
         [[ -z $BUFFER ]] && zle up-history
