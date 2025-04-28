@@ -13,18 +13,34 @@
       # https://nix-community.github.io/home-manager/options.xhtml#opt-programs.firefox.profiles._name_.search.force
       search.force = true;
 
-      extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-        bitwarden
-        clearurls
-        custom-new-tab-page
-        darkreader
-        fastforwardteam
-        hover-zoom-plus
-        istilldontcareaboutcookies
-        privacy-badger17
-        sponsorblock
-        ublock-origin
-      ];
+      extensions = {
+        packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+          bitwarden
+          clearurls
+          custom-new-tab-page
+          darkreader
+          fastforwardteam
+          hover-zoom-plus
+          istilldontcareaboutcookies
+          privacy-badger
+          sponsorblock
+          ublock-origin
+        ];
+      };
+      settings = {
+        "browser.startup.homepage" = "https://william-ro.github.io/startpage/";
+        "privacy.resistFingerprinting" = false;
+        "network.http.referer.XOriginPolicy" = 2;
+        "media.peerconnection.enabled" = false;
+        "media.videocontrols.picture-in-picture.enabled" = false;
+        "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
+        "ui.key.menuAccessKeyFocuses" = false;
+        "dom.security.https_only_mode" = true;
+        "identity.fxaccounts.enabled" = false;
+        "privacy.trackingprotection.enabled" = true;
+        "signon.rememberSignons" = false;
+        "browser.toolbars.bookmarks.visibility" = "never";
+      };
     };
   };
 }
