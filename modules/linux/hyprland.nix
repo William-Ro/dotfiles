@@ -19,9 +19,6 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      ####################
-      ### Environment ####
-      ####################
       env = [
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
@@ -111,6 +108,7 @@ in {
         # focus change on cursor move
         follow_mouse = 1;
         accel_profile = "flat";
+        sensitivity = 0;
         tablet.output = "current";
       };
       dwindle = {
