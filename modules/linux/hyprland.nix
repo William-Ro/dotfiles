@@ -20,6 +20,11 @@ in {
     enable = true;
     settings = {
       env = [
+        # Force all applications to use Wayland
+        # Source: https://wiki.hyprland.org/Getting-Started/Master-Tutorial/#force-apps-to-use-wayland
+        "NIXOS_OZONE_WL,1"
+        # Flickering in Electron / CEF apps
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
