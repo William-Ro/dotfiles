@@ -43,7 +43,7 @@
           fail_color = "rgba(255, 106, 134, 0.5)";
 
           fade_on_empty = false;
-          placeholder_text = "Password";
+          placeholder_text = "Enter Password";
 
           dots_spacing = 0.2;
           dots_center = true;
