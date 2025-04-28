@@ -67,6 +67,7 @@
       wf-recorder # Screen recording tool for Wayland
       komikku # Manga reader
       egl-wayland # EGL implementation for Wayland
+      xournalpp # Note-taking application
     ];
 
     sessionVariables = {
