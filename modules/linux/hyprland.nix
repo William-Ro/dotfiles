@@ -11,7 +11,6 @@ in {
     hyprcursor # Cursor theme
     hyprshot # Screenshots
     swww # Wallpaper manager
-    brillo # Backlight control
     bibata-cursors # Cursor theme
   ];
 
