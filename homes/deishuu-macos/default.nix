@@ -8,6 +8,7 @@
     # Common packages
     "common/alacritty"
     "common/direnv"
+    "common/firefox"
     "common/git"
     "common/home"
     "common/lazygit"
@@ -40,7 +41,7 @@
       INFOPATH = "/opt/homebrew/share/info:''${INFOPATH:-}";
 
       # Include Homebrew and Orbstack in the PATH
-      PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH:/Users/jakub/.orbstack/bin";
+      PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
 
       # Fix Homebrew libs
       LDFLAGS = "-L/opt/homebrew/lib";
@@ -58,8 +59,6 @@
       # Inlined from ‹eval "$(/opt/homebrew/bin/brew shellenv)"›
       fpath+="/opt/homebrew/share/zsh/site-functions"
 
-      # Inlined from ‹~/.orbstack/shell/init.zsh›
-      fpath+="/Applications/OrbStack.app/Contents/MacOS/../Resources/completions/zsh"
     '';
   };
 
