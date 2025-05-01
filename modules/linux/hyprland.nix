@@ -35,7 +35,7 @@ in {
 
       monitor = [
         # name, resolution, scale, rotation
-        "DP-1,2560x1440@165,auto,1"
+        "DP-1,2560x1440@165,0x0,1"
       ];
 
       exec-once = [
