@@ -108,7 +108,6 @@ in {
       };
       input = {
         kb_layout = "us";
-        kb_options = caps:swapescape;
 
         # focus change on cursor move
         force_no_accel = true;
