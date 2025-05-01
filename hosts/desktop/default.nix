@@ -89,6 +89,11 @@
   };
 
   programs.hyprland.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  programs.hyprland = {
+    xwayland.enable = true;
+  };
   programs.zsh.enable = true;
 
   users.users.${config.username} = {
