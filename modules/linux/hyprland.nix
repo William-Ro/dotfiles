@@ -23,6 +23,11 @@ in {
         "NIXOS_OZONE_WL,1"
         # Flickering in Electron / CEF apps
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
+
+        "LIBVA_DRIVER_NAME,nvidia"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+        "NVD_BACKEND,direct"
+
         # Cursor
         "HYPRCURSOR_THEME,${cursorName}"
         "HYPRCURSOR_SIZE,${cursorSize}"
