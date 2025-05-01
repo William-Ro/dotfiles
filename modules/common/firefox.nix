@@ -29,7 +29,6 @@
       };
       settings = {
         "browser.startup.homepage" = "https://william-ro.github.io/startpage/";
-        "browser.translation.panel.show" = false;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "ui.key.menuAccessKeyFocuses" = false;
