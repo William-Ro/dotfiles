@@ -4,25 +4,28 @@
   libs,
   ...
 }: {
+  # https://wiki.hyprland.org/Nvidia/
+  boot.kernelParams = [
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    # Since NVIDIA does not load kernel mode setting by default,
+    # enabling it is required to make Wayland compositors function properly.
+    "nvidia-drm.fbdev=1"
+  ];
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-
-  nixpkgs.config.nvidia.acceptLicense = true;
 
   hardware = {
     graphics = {
       # Enable OpenGL
       enable = true;
-      extraPackages = with pkgs; [nvidia-vaapi-driver];
-      #driSupport = true;
       enable32Bit = true;
+      extraPackages = with pkgs; [
+        nvidia-vaapi-driver
+      ];
     };
     nvidia = {
       # Modesetting is required.
       modesetting.enable = true;
-
-      # Enable full composition pipeline
-      forceFullCompositionPipeline = true;
 
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
       powerManagement.enable = true;
@@ -44,7 +47,7 @@
       nvidiaSettings = true;
 
       # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
 }
