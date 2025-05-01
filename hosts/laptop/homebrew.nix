@@ -50,7 +50,6 @@
       "insomnia" # REST client
       "firefox" # web browser
       "raycast" # app launcher
-      "aerospace" # window manager
       "spotify" # music player
       "iina" # video player
       "cursor"
