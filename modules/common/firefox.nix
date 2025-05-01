@@ -29,17 +29,17 @@
       };
       settings = {
         "browser.startup.homepage" = "https://william-ro.github.io/startpage/";
-        "network.http.referer.XOriginPolicy" = 2;
         "browser.translation.panel.show" = false;
-        "media.peerconnection.enabled" = false;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "ui.key.menuAccessKeyFocuses" = false;
-        "dom.security.https_only_mode" = true;
         "identity.fxaccounts.enabled" = false;
-        "privacy.trackingprotection.enabled" = true;
         "signon.rememberSignons" = false;
         "browser.toolbars.bookmarks.visibility" = "never";
+        "network.http.referer.XOriginPolicy" = 2;
+        "privacy.trackingprotection.enabled" = true;
+        "dom.security.https_only_mode" = true;
+        "media.peerconnection.enabled" = false;
       };
     };
   };
