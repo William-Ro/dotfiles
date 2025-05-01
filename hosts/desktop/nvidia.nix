@@ -15,11 +15,6 @@
       enable = true;
       #driSupport = true;
       enable32Bit = true;
-      extraPackages = with pkgs; [
-        nvidia-vaapi-driver
-        vaapiVdpau
-        libvdpau-va-gl
-      ];
     };
     nvidia = {
       # Modesetting is required.
@@ -51,10 +46,4 @@
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    vulkan-loader
-    vulkan-validation-layers
-    vulkan-tools
-  ];
 }
