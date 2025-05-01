@@ -37,8 +37,6 @@
     # `brew install`
 
     brews = [
-      "wget" # download tool
-      "curl" # no not install curl via nixpkgs, it's not working well on macOS!
       "mas" # Mac App Store CLI
       #"cocoapods" # dependency manager for Swift and Objective-C projects
       "displayplacer" # CLI for display settings
@@ -47,8 +45,7 @@
     # `brew install --cask`
     casks = [
       #"android-studio" # IDE for Android development
-      "insomnia" # REST client
-      "firefox" # web browser
+      "insomnia" # REST client¡
       "raycast" # app launcher
       "spotify" # music player
       "iina" # video player
