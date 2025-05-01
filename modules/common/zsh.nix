@@ -6,7 +6,7 @@
     syntaxHighlighting.enable = true;
     enableCompletion = true;
 
-    initExtra = ''
+    initContent = ''
       # Fix TERM if necessary
       if [[ "$TERM" == "xterm-ghostty" ]]; then
         export TERM="xterm-256color"
