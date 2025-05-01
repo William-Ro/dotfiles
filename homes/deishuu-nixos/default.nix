@@ -38,6 +38,7 @@
 
   home = {
     packages = with pkgs; [
+      chromium # Web browser
       spotify
       qbittorrent
       wl-clipboard
