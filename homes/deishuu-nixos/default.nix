@@ -68,6 +68,7 @@
       egl-wayland # EGL implementation for Wayland
       xournalpp # Note-taking application
       exfatprogs # Tools for exFAT filesystem
+      speedtest-cli
     ];
 
     sessionVariables = {
