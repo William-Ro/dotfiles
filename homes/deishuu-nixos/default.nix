@@ -54,19 +54,11 @@
       pamixer # PulseAudio volume control from the terminal
 
       gnome-calculator # Calculator
-      evince # Document viewer
-      file-roller # Archive manager
-      eog # Eye of GNOME (image viewer)
-      sushi # File previewer for Nautilus
-      nautilus # File manager
 
-      # Bluetooth manager
       overskride # Bluetooth management tool
 
-      # Network manager applet
       networkmanagerapplet # GUI for managing network connections
 
-      # Sound manager
       pavucontrol # Advanced PulseAudio volume control
 
       wf-recorder # Screen recording tool for Wayland
