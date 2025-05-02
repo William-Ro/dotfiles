@@ -3,9 +3,7 @@
   config,
   lib,
   ...
-}: let
-  isMacOS = pkgs.stdenv.isDarwin;
-in {
+}: {
   programs.ghostty = {
     enable = true;
 
