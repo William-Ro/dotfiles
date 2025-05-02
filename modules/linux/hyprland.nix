@@ -205,6 +205,12 @@ in {
         "$mod, T, togglefloating,"
         "$mod, P, pseudo,"
 
+        # Move windows
+        "$mod SHIFT, left, movewindow, l"
+        "$mod SHIFT, right, movewindow, r"
+        "$mod SHIFT, up, movewindow, u"
+        "$mod SHIFT, down, movewindow, d"
+
         # Utilities
         "$mod, Return, exec, ghostty"
         "$mod, E, exec, ghostty -e yazi"
