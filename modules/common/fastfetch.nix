@@ -53,6 +53,11 @@
           keyColor = "green";
         }
         {
+          type = "font";
+          key = " ├─ 󰌵"; # Icono para fuente
+          keyColor = "green";
+        }
+        {
           type = "shell";
           key = " ╰─  "; # Icono para shell
           keyColor = "green";
@@ -104,7 +109,7 @@
         }
         {
           type = "terminal";
-          key = " ╰──  "; # Terminal
+          key = " ╰─  "; # Terminal
           keyColor = "yellow";
         }
 
