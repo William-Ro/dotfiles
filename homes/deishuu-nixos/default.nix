@@ -46,6 +46,7 @@
       wl-clipboard
       fastfetch
       pipes
+      nerdfetch
 
       mpv # Media player (video & audio)
       playerctl # Command-line media player controller
@@ -66,7 +67,7 @@
       komikku # Manga reader
       egl-wayland # EGL implementation for Wayland
       xournalpp # Note-taking application
-      exfatprogs
+      exfatprogs # Tools for exFAT filesystem
     ];
 
     sessionVariables = {
