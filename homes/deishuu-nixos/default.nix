@@ -14,6 +14,7 @@
     "common/git"
     "common/home"
     "common/lazygit"
+    "common/librewolf"
     "common/starship"
     "common/vesktop"
     "common/vscode"
