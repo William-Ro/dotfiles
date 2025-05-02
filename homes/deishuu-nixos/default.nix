@@ -73,6 +73,7 @@
       komikku # Manga reader
       egl-wayland # EGL implementation for Wayland
       xournalpp # Note-taking application
+      exfatprogs
     ];
 
     sessionVariables = {
