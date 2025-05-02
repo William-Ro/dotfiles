@@ -9,6 +9,7 @@
     "common/alacritty"
     "common/direnv"
     "common/firefox"
+    "common/ghostty"
     "common/git"
     "common/home"
     "common/lazygit"
