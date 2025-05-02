@@ -9,7 +9,6 @@
     "common/alacritty"
     "common/direnv"
     "common/fastfetch"
-    "common/firefox"
     "common/ghostty"
     "common/git"
     "common/home"
