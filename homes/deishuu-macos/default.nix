@@ -24,6 +24,7 @@
 
   home = {
     packages = with pkgs; [
+      brave
       hyperfine # benchmarking tool
       nerdfetch
       oath-toolkit # fix pass support in Raycast
