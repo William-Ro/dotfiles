@@ -18,9 +18,11 @@
       "remember-recent-files" = false;
     };
     "org/gnome/nautilus/preferences" = {
-      "default-folder-viewer" = "list-view";
+      "default-folder-viewer" = "icon-view";
       "show-hidden-files" = true;
       "sort-directories-first" = true;
+      "always-use-location-entry" = true;
+      "show-image-thumbnails" = "always";
     };
   };
 }
