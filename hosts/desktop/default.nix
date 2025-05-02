@@ -49,6 +49,7 @@
   # Networking
   networking = {
     networkmanager.enable = true;
+    nameservers = ["1.1.1.1" "1.0.0.1"];
     # wireless.enable = true; # Uncomment if using Wi-Fi
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
