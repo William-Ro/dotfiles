@@ -56,7 +56,7 @@
   };
 
   programs = {
-    zsh.initExtraBeforeCompInit = ''
+    zsh.initContent = ''
       # Inlined from ‹eval "$(/opt/homebrew/bin/brew shellenv)"›
       fpath+="/opt/homebrew/share/zsh/site-functions"
 
