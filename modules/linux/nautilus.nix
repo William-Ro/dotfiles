@@ -11,6 +11,7 @@
     eog # Eye of GNOME (image viewer)
     file-roller # Archive manager
     glib # Gsettings backend
+    ffmpegthumbnailer # Video thumbnailer
   ];
 
   dconf.settings = {
