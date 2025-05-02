@@ -35,10 +35,6 @@
         "identity.fxaccounts.enabled" = false;
         "signon.rememberSignons" = false;
         "browser.toolbars.bookmarks.visibility" = "never";
-        "network.http.referer.XOriginPolicy" = 2;
-        "privacy.trackingprotection.enabled" = true;
-        "dom.security.https_only_mode" = true;
-        "media.peerconnection.enabled" = false;
       };
     };
   };
