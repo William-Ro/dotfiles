@@ -271,7 +271,7 @@ in {
       # Regular keybindings
       bind = [
         # Window manager
-        "$mod SHIFT, E, exec, pkill Hyprland"
+        "$mod SHIFT, E, exec, wlogout"
         "$mod, Q, killactive,"
         "$mod, F, fullscreen,"
         "$mod, G, togglegroup,"
