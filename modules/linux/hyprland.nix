@@ -396,6 +396,10 @@ in {
         "float, class:^(org.gnome.Calculator)$"
         "size 360 490, class:^(org.gnome.Calculator)$"
 
+        # Nautilus
+        "float, class:^(org.gnome.Nautilus)$"
+        "size 50% 50%, class:^(org.gnome.Nautilus)$"
+
         # Picture-in-Picture windows
         "float, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
@@ -407,14 +411,14 @@ in {
 
         # Idle inhibition for video players
         "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
-        "idleinhibit focus, class:^(zen)$, title:^(.*YouTube.*)$"
-        "idleinhibit fullscreen, class:^(zen)$"
+        "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
+        "idleinhibit fullscreen, class:^(firefox)$"
 
         # Dimming prompts
         "dimaround, class:^(gcr-prompter)$"
         "dimaround, class:^(xdg-desktop-portal-gtk)$"
         "dimaround, class:^(polkit-gnome-authentication-agent-1)$"
-        "dimaround, class:^(zen)$, title:^(File Upload)$"
+        "dimaround, class:^(firefox)$, title:^(File Upload)$"
 
         # XWayland fixes
         "rounding 0, xwayland:1"
