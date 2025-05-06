@@ -4,18 +4,14 @@
   inputs,
   ...
 }: let
-  # Cursor theme configuration
   cursorName = "Bibata-Modern-Classic";
   cursorSize = "23";
 in {
-  ########################################
-  ## Packages required by Hyprland setup
-  ########################################
   home.packages = with pkgs; [
-    hyprcursor # For custom cursors
-    hyprshot # For taking screenshots
-    swww # Wallpaper daemon
-    bibata-cursors # Bibata cursor theme
+    hyprcursor
+    hyprshot
+    swww
+    bibata-cursors
   ];
 
   ########################################
@@ -31,7 +27,6 @@ in {
       render.explicit_sync = 2;
       render.explicit_sync_kms = 0;
       opengl.nvidia_anti_flicker = 0;
-      misc.vfr = 0;
       debug.damage_tracking = 0;
 
       #############################
@@ -149,6 +144,25 @@ in {
       };
 
       #############################
+      ## Input Devices
+      #############################
+      input = {
+        kb_layout = "us";
+        numlock_by_default = true;
+        repeat_delay = 300;
+        repeat_rate = 35;
+        touchpad = {
+          natural_scroll = true;
+          disable_while_typing = true;
+          clickfinger_behavior = true;
+          scroll_factor = 0.5;
+        };
+        special_fallthrough = true;
+        follow_mouse = 1;
+        accel_profile = "flat";
+        sensitivity = 0;
+      };
+      #############################
       ## Grouping Settings
       #############################
       group = {
@@ -159,18 +173,6 @@ in {
         };
         "col.border_active" = "rgba(35447988)";
         "col.border_inactive" = "rgba(dce1ff88)";
-      };
-
-      #############################
-      ## Input Devices
-      #############################
-      input = {
-        kb_layout = "us";
-        force_no_accel = true;
-        follow_mouse = 1;
-        accel_profile = "flat";
-        sensitivity = 0;
-        tablet.output = "current";
       };
 
       #############################
@@ -186,7 +188,20 @@ in {
       #############################
       misc = {
         disable_autoreload = true; # Disable auto-reloading of config
-        animate_mouse_windowdragging = true;
+        vfr = 0;
+        vrr = 0;
+        animate_manual_resizes = false;
+        animate_mouse_windowdragging = false;
+        enable_swallow = false;
+        focus_on_activate = true; # Test
+        render_ahead_of_time = true;
+        render_ahead_safezone = 30;
+        # disable_scale_checks = true
+        disable_hyprland_logo = true;
+        force_default_wallpaper = 0;
+        # new_window_takes_over_fullscreen = 2
+        allow_session_lock_restore = true;
+        initial_workspace_tracking = true;
       };
 
       #############################
