@@ -77,9 +77,39 @@ in {
       ## Dwindle Tiling Layout
       #############################
       dwindle = {
+        # Enable pseudotiling (resize windows while keeping tiled layout)
+        pseudotile = true;
+        # Enable preserve_split to maintain split direction when closing windows
         preserve_split = true;
+        # How to handle window splits (0 = prefer horizontal, 1 = prefer vertical)
+        no_gaps_when_only = false;
+        # Force split direction (0 = based on dimensions, 1 = always horizontal, 2 = always vertical)
+        force_split = 0;
+        # Use smart resizing for windows
         smart_split = false;
-        smart_resizing = false;
+        smart_resizing = true;
+        # Use permanent direction for splits
+        permanent_direction_override = false;
+      };
+      #############################
+      ## Master Tiling Layout
+      #############################
+      master = {
+        # Set new windows as the master window
+        new_is_master = true;
+
+        # Master window orientation (left = master on left, right = master on right, top, bottom)
+        orientation = left;
+
+        # Whether to inherit fullscreen status when switching to a different layout
+        inherit_fullscreen = true;
+
+        # Remove gaps when only one window is open
+        no_gaps_when_only = false;
+
+        # Default is 1, which is one master window
+        # Set to 2 for two master windows side by side
+        mfact = 0.55;
       };
 
       #############################
@@ -155,26 +185,6 @@ in {
           "md2, 0.4, 0, 0.2, 1"
         ];
       };
-
-      #############################
-      ## Input Devices
-      #############################
-      input = {
-        kb_layout = "us";
-        numlock_by_default = true;
-        repeat_delay = 300;
-        repeat_rate = 35;
-        touchpad = {
-          natural_scroll = true;
-          disable_while_typing = true;
-          clickfinger_behavior = true;
-          scroll_factor = 0.5;
-        };
-        special_fallthrough = true;
-        follow_mouse = 1;
-        accel_profile = "flat";
-        sensitivity = 0;
-      };
       #############################
       ## Grouping Settings
       #############################
@@ -186,6 +196,57 @@ in {
         };
         "col.border_active" = "rgba(35447988)";
         "col.border_inactive" = "rgba(dce1ff88)";
+      };
+
+      #############################
+      ## Input Devices
+      #############################
+      input = {
+        kb_layout = "us";
+
+        # Enable capslock by pressing both shift keys
+        # and disable it by pressing either of them
+        capslock_disable = true;
+
+        # Repeat settings
+        repeat_rate = 50;
+        repeat_delay = 300;
+
+        # Enable numlock by default
+        numlock_by_default = true;
+
+        # Disable mousewheel on inactive windows
+        follow_mouse = 1;
+
+        # Cursor position: center of new window
+        force_no_accel = 0;
+
+        # Mouse sensitivity (relative to what you're used to)
+        sensitivity = 0.0;
+        accel_profile = "flat";
+
+        special_fallthrough = true;
+        touchpad = {
+          natural_scroll = true;
+          disable_while_typing = true;
+          tap-to-click = true;
+          drag_lock = true;
+          # Scrolling speed with two fingers
+          scroll_factor = 0.5;
+        };
+      };
+      #############################
+      ## Touchpad Gestures
+      #############################
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
+        workspace_swipe_distance = 300;
+        workspace_swipe_invert = false;
+        workspace_swipe_min_speed_to_force = 30;
+        workspace_swipe_cancel_ratio = 0.5;
+        workspace_swipe_create_new = true;
+        workspace_swipe_forever = false;
       };
 
       #############################
@@ -204,17 +265,10 @@ in {
         # disable_scale_checks = true
         disable_hyprland_logo = true;
         force_default_wallpaper = 0;
+        disable_splash_rendering = true;
         # new_window_takes_over_fullscreen = 2
         allow_session_lock_restore = true;
         initial_workspace_tracking = true;
-      };
-
-      #############################
-      ## Touchpad Gestures
-      #############################
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_forever = true;
       };
 
       #############################
@@ -334,14 +388,34 @@ in {
       ## Window Rules
       #############################
       windowrulev2 = [
-        # Floating windows
-        "float, title:^(Media viewer)$"
-        "float, title:^(Open Files)$"
-        "center, title:^(Open Files)$"
+        # Make sure all notifications are floating
+        "float, class:^(dunst)$"
+        "float, class:^(wired-notify)$"
+
+        # File pickers and dialogs
+        "float, title:^(Save As)$"
+        "float, title:^(Open File)$"
+        "size 50% 50%, title:^(Open File)$"
+        "center, title:^(Open File)$"
         "float, title:^(File Upload)$"
         "center, title:^(File Upload)$"
-        "float, title:^(Save Image)$"
-        "center, title:^(Save Image)$"
+
+        # Make image viewer floating with specific size
+        "float, class:^(imv)$"
+        "size 75% 75%, class:^(imv)$"
+        "center, class:^(imv)$"
+
+        # Video players
+        "float, class:^(mpv)$"
+        "size 70% 70%, class:^(mpv)$"
+        "center, class:^(mpv)$"
+
+        # Force Steam games to be fullscreen
+        "fullscreen, class:^(steam_app_)"
+
+        # Disable idle when gaming
+        "idleinhibit always, class:^(steam_app_)"
+        "idleinhibit always, class:^(gamescope)$"
 
         # Calculator
         "float, class:^(org.gnome.Calculator)$"
