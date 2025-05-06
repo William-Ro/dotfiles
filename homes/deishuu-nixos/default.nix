@@ -49,6 +49,7 @@
       nerdfetch
 
       mpv # Media player (video & audio)
+      imv # Image viewer
       playerctl # Command-line media player controller
       mpc # CLI client for Music Player Daemon (MPD)
       killall # Kill processes by name
