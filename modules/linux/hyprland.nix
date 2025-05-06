@@ -64,14 +64,22 @@ in {
       ## General Window Behavior
       #############################
       general = {
-        gaps_in = 5;
+        gaps_in = 10;
         gaps_out = 10;
-        border_size = 1;
+        gaps_workspaces = 0;
+        border_size = 0;
         "col.active_border" = "rgba(88888888)";
         "col.inactive_border" = "rgba(00000088)";
-        allow_tearing = false;
         resize_on_border = true;
         layout = "dwindle";
+      };
+      #############################
+      ## Dwindle Tiling Layout
+      #############################
+      dwindle = {
+        preserve_split = true;
+        smart_split = false;
+        smart_resizing = false;
       };
 
       #############################
@@ -80,18 +88,23 @@ in {
       decoration = {
         rounding = 10;
         rounding_power = 3;
+        active_opacity = 1.0; # Opacity of the active (focused) window
+        inactive_opacity = 1.0; # Opacity of inactive windows
+        fullscreen_opacity = 1.0; # Opacity of fullscreen windows
+        dim_inactive = false; # Whether to dim inactive windows
+        dim_strength = 0.1; # How much to dim inactive windows (0.0 - 1.0)
+        dim_special = 0.2; # How much to dim special windows (0.0 - 1.0)
+        dim_around = 0.4; # How much to dim the screen around fullscreen windows
+
         blur = {
           enabled = true;
-          brightness = 1.0;
-          contrast = 1.0;
-          noise = 0.01;
-          vibrancy = 0.2;
-          vibrancy_darkness = 0.5;
-          passes = 4;
+          xray = true;
           size = 7;
-          popups = true;
-          popups_ignorealpha = 0.2;
+          vibrancy_darkness = 3.0;
+          passes = 4;
+          vibrancy = 0.1796;
         };
+
         shadow = {
           enabled = true;
           color = "rgba(00000055)";
@@ -173,14 +186,6 @@ in {
         };
         "col.border_active" = "rgba(35447988)";
         "col.border_inactive" = "rgba(dce1ff88)";
-      };
-
-      #############################
-      ## Dwindle Tiling Layout
-      #############################
-      dwindle = {
-        pseudotile = true; # Retain floating dimensions
-        preserve_split = true;
       };
 
       #############################
