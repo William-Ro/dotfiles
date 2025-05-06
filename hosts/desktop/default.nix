@@ -32,6 +32,11 @@
     };
   };
 
+  # Fix Some Keyboard Issues
+  boot.extraModprobeConfig = ''
+    options hid_apple fnmode=2
+  '';
+
   # Internationalization
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
