@@ -27,6 +27,7 @@
     "linux/hyprlock"
     "linux/nautilus"
     "linux/waybar"
+    "linux/wlogout"
     "linux/wofi"
     # scripts
     "scripts/default"
