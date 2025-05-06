@@ -29,7 +29,7 @@
       ];
 
       userSettings = {
-        "window.zoomLevel" = 1;
+        "window.zoomLevel" = 2;
         "editor.fontFamily" = "${config.font}";
         "editor.fontSize" = 21;
         "editor.fontWeight" = "normal";
