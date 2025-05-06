@@ -81,8 +81,7 @@ in {
         pseudotile = true;
         # Enable preserve_split to maintain split direction when closing windows
         preserve_split = true;
-        # How to handle window splits (0 = prefer horizontal, 1 = prefer vertical)
-        no_gaps_when_only = false;
+
         # Force split direction (0 = based on dimensions, 1 = always horizontal, 2 = always vertical)
         force_split = 0;
         # Use smart resizing for windows
@@ -90,26 +89,6 @@ in {
         smart_resizing = true;
         # Use permanent direction for splits
         permanent_direction_override = false;
-      };
-      #############################
-      ## Master Tiling Layout
-      #############################
-      master = {
-        # Set new windows as the master window
-        new_is_master = true;
-
-        # Master window orientation (left = master on left, right = master on right, top, bottom)
-        orientation = left;
-
-        # Whether to inherit fullscreen status when switching to a different layout
-        inherit_fullscreen = true;
-
-        # Remove gaps when only one window is open
-        no_gaps_when_only = false;
-
-        # Default is 1, which is one master window
-        # Set to 2 for two master windows side by side
-        mfact = 0.55;
       };
 
       #############################
@@ -203,10 +182,6 @@ in {
       #############################
       input = {
         kb_layout = "us";
-
-        # Enable capslock by pressing both shift keys
-        # and disable it by pressing either of them
-        capslock_disable = true;
 
         # Repeat settings
         repeat_rate = 50;
