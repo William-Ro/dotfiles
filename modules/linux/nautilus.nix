@@ -8,7 +8,6 @@
     nautilus # File manager
     sushi # File previewer for Nautilus
     evince # Document viewer
-    eog # Eye of GNOME (image viewer)
     file-roller # Archive manager
     glib # Gsettings backend
     ffmpegthumbnailer # Video thumbnailer
