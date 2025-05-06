@@ -375,6 +375,14 @@ in {
         "float, title:^(File Upload)$"
         "center, title:^(File Upload)$"
 
+        # Make sure all file upload dialogs are floating
+        "float, title:^(Open Files)$"
+        "center, title:^(Open Files)$"
+        "float, title:^(File Upload)$"
+        "center, title:^(File Upload)$"
+        "float, title:^(Save Image)$"
+        "center, title:^(Save Image)$"
+
         # Make image viewer floating with specific size
         "float, class:^(imv)$"
         "size 75% 75%, class:^(imv)$"
