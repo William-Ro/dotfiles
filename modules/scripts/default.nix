@@ -55,7 +55,7 @@
         outputFile="$HOME/Videos/$dateTime.mp4"
 
         # Start recording with wf-recorder
-        wf-recorder --bframes max_b_frames -f $outputFile &
+        wf-recorder --audio --bframes max_b_frames -f $outputFile &
 
         # Notify the user
         dunstify "Recording Started" "Recording has started!"
