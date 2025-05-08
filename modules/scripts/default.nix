@@ -31,7 +31,8 @@
             ln -sf "$NEW_WALLPAPER" "$WALLPAPER_LINK"
 
             # Apply the new wallpaper using swww with a simple transition
-            swww img "$NEW_WALLPAPER" --transition-type simple
+            swww img "$NEW_WALLPAPER" --transition-type simple --transition-step 5 --transition-fps 60
+
         else
             echo "No images found in $WALLPAPER_DIR"
         fi
