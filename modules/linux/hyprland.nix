@@ -109,7 +109,7 @@ in {
           enabled = true;
           xray = true;
           size = 7;
-          vibrancy_darkness = 3.0;
+          vibrancy_darkness = 0.5;
           passes = 4;
           vibrancy = 0.1796;
         };
