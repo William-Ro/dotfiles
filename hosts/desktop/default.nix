@@ -12,8 +12,11 @@
     "common/packages"
   ];
 
-  # Bootloader
+  system.activationScripts.createSymlink = ''
+    ln -s ${config.homePath}/Pictures/wallpapers/default.jpg ${config.homePath}/Pictures/wallpapers/current.jpg
+  '';
 
+  # Bootloader
   boot = {
     loader = {
       systemd-boot.enable = true;
