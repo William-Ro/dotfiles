@@ -270,6 +270,12 @@ in {
 
       # Regular keybindings
       bind = [
+        # Monitor management
+        "$mod SHIFT, Y, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,1" # 90°
+        "$mod SHIFT, U, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,2" # 180°
+        "$mod SHIFT, I, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,3" # 270°
+        "$mod SHIFT, O, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,0" # Normal
+
         # Window manager
         "$mod SHIFT, E, exec, wlogout"
         "$mod, Q, killactive,"
