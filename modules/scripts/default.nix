@@ -40,13 +40,6 @@
     fi
   '';
 
-  wallpaper_default = pkgs.writeShellScriptBin "wallpaper_default" ''
-    if command -v swww >/dev/null 2>&1; then
-        swww img "${config.wallpaper}" --transition-type simple
-    else
-        echo "swww is not installed or running."
-    fi
-  '';
   record_screen = pkgs.writeShellScriptBin "record_screen" ''
     if command -v wf-recorder >/dev/null 2>&1; then
         # Verify if wf-recorder is already running
@@ -73,7 +66,6 @@
 in {
   home.packages = with pkgs; [
     wallpaper_random
-    wallpaper_default
     record_screen
   ];
 }
