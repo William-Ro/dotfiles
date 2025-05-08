@@ -131,8 +131,7 @@
         };
         "custom/icon" = {
           "format" = " ";
-          "on-click" = "exec wallpaper_default";
-          "on-click-right" = "exec wallpaper_random";
+          "on-click" = "exec wallpaper_random";
           "tooltip" = false;
         };
       }
