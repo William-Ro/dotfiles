@@ -32,7 +32,7 @@ with lib; {
       };
 
     dotfilesPath = "${config.homePath}/dotfiles";
-    wallpaper = "${config.homePath}/Pictures/wallpapers/default.jpg";
+    wallpaper = "${config.homePath}/Pictures/wallpapers/current.jpg";
     screenshots = "${config.homePath}/Pictures/screenshots";
     font = "JetBrainsMono Nerd Font";
   };
