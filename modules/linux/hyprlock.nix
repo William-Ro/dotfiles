@@ -39,9 +39,11 @@
           dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
           dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
-          outer_color = "rgba(0, 0, 0, 0)";
-          inner_color = "rgba(100, 114, 125, 0.4)";
-          font_color = "rgb(200, 200, 200)";
+
+          outer_color = "rgba(31, 31, 31, 0.39)";
+          inner_color = "rgba(31, 31, 31, 0.39)";
+          check_color = "rgba(247, 193, 19, 0.5)";
+          font_color = "rgb(217, 224, 238)";
           fade_on_empty = false;
           font_family = "${config.font}";
           placeholder_text = "Enter Password";
