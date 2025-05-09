@@ -4,39 +4,44 @@
   config,
   ...
 }: let
-  timeout = 600;
-
-  lock = "${pkgs.systemd}/bin/loginctl lock-session";
-  brillo = "${pkgs.brillo}/bin/brillo";
   home.packages = with pkgs; [
     hypridle
-    brillo
+    brightnessctl
   ];
 in {
   services.hypridle = {
     enable = true;
 
     settings = {
+      # General settings and commands to execute at different states
       general = {
-        before_sleep_cmd = lock;
-        after_sleep_cmd = "hyprctl dispatch dpms on";
-        lock_cmd = "pgrep hyprlock || ${pkgs.hyprlock}/bin/hyprlock";
+        lock_cmd = "pidof hyprlock || hyprlock"; # avoid starting multiple hyprlock instances.
+        before_sleep_cmd = "loginctl lock-session"; # lock before suspend.
+        after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key twice to turn on the display.
       };
 
       listener = [
+        # Dim screen after 2.5 minutes of inactivity
         {
-          timeout = timeout - 10;
-          on-timeout = "${brillo} -O; ${brillo} -u 500000 -S 10";
-          on-resume = "${brillo} -I -u 250000";
+          timeout = 150; # 2.5min.
+          on-timeout = "brightnessctl - s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
+          on-resume = "brightnessctl - r"; # monitor backlight restore.
         }
+        # Lock screen after 5 minutes of inactivity
         {
-          timeout = timeout;
-          on-timeout = "hyprctl dispatch dpms off";
-          on-resume = "hyprctl dispatch dpms on";
+          timeout = 300; # 5min
+          on-timeout = "loginctl lock-session"; # lock screen when timeout has passed
         }
+        # Turn off display after 5.5 minutes
         {
-          timeout = timeout + 10;
-          on-timeout = lock;
+          timeout = 330; # 5.5min
+          on-timeout = "hyprctl dispatch dpms off"; # screen off when timeout has passed
+          on-resume = "hyprctl dispatch dpms on"; # screen on when activity is detected after timeout has fired.
+        }
+        # Suspend system after 30 minutes
+        {
+          timeout = 1800; # 30min
+          on-timeout = "systemctl suspend"; # suspend pc
         }
       ];
     };
