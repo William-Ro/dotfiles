@@ -11,6 +11,7 @@ with lib; {
     homePath = mkOption {type = types.str;};
     dotfilesPath = mkOption {type = types.str;};
     wallpaper = mkOption {type = types.str;};
+    profile = mkOption {type = types.str;};
     screenshots = mkOption {type = types.str;};
     font = mkOption {type = types.str;};
   };
@@ -33,6 +34,7 @@ with lib; {
 
     dotfilesPath = "${config.homePath}/dotfiles";
     wallpaper = "${config.homePath}/Pictures/wallpapers/current.jpg";
+    profile = "${config.homePath}/Pictures/profile.png";
     screenshots = "${config.homePath}/Pictures/screenshots";
     font = "JetBrainsMono Nerd Font";
   };
