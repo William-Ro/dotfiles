@@ -71,6 +71,7 @@
       xournalpp # Note-taking application
       exfatprogs # Tools for exFAT filesystem
       speedtest-cli
+      imagemagick
     ];
 
     sessionVariables = {
