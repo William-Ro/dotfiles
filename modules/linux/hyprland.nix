@@ -53,7 +53,7 @@ in {
       #############################
       exec-once = [
         "hyprctl setcursor ${cursorName} ${cursorSize}"
-        "swww init & sleep 0.5 && exec wallpaper_random"
+        "swww init & sleep 0.5"
         "pkill waybar & sleep 0.5 && waybar"
         "hyprlock"
         "hypridle"
