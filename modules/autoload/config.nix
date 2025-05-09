@@ -34,7 +34,7 @@ with lib; {
 
     dotfilesPath = "${config.homePath}/dotfiles";
     wallpaper = "${config.homePath}/Pictures/wallpapers/current.jpg";
-    profile = "${config.homePath}/Pictures/profile.png";
+    profile = "${config.homePath}/Pictures/profile.jpg";
     screenshots = "${config.homePath}/Pictures/screenshots";
     font = "JetBrainsMono Nerd Font";
   };
