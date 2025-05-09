@@ -1,88 +1,105 @@
 {
   config,
-  inputs,
-  pkgs,
   lib,
+  pkgs,
   ...
 }: {
   programs.hyprlock = {
     enable = true;
 
     settings = {
-      general = {
-        disable_loading_bar = true;
-        immediate_render = true;
-        hide_cursor = false;
-        no_fade_in = true;
-      };
-
-      animation = "inputFieldDots, 1, 2, linear";
-
       background = [
         {
           monitor = "";
           path = config.wallpaper;
+
+          color = "rgba(25, 20, 20, 1.0)";
+          # all these options are taken from hyprland, see https://wiki.hyprland.org/Configuring/Variables/#blur for explanations
+          blur_passes = 0; # 0 disables blurring
+          blur_size = 2;
+          noise = 0;
+          contrast = 0;
+          brightness = 0;
+          vibrancy = 0;
+          vibrancy_darkness = 0.0;
         }
       ];
 
+      general = {
+        no_fade_in = false;
+        grace = 0;
+        disable_loading_bar = false;
+      };
+
       input-field = [
         {
-          monitor = "DP-1";
-
-          size = "300, 50";
-          valign = "bottom";
-          position = "0%, 10%";
-
+          monitor = "";
+          size = "250, 40";
           outline_thickness = 2;
-
-          font_family = "${config.font}";
-          font_color = "rgb(217, 224, 238)";
-          outer_color = "rgba(31, 31, 31, 0.39)";
-          inner_color = "rgba(31, 31, 31, 0.39)";
-          check_color = "rgba(247, 193, 19, 0.5)";
-          fail_color = "rgba(255, 106, 134, 0.5)";
-
-          fade_on_empty = false;
-          placeholder_text = "Enter Password";
-
-          dots_spacing = 0.2;
+          dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
+          dots_spacing = 0.2; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
-          dots_fade_time = 100;
+          outer_color = "rgba(0, 0, 0, 0)";
+          inner_color = "rgba(100, 114, 125, 0.4)";
+          font_color = "rgb(200, 200, 200)";
+          fade_on_empty = false;
+          font_family = "${config.font}";
+          placeholder_text = "Enter Password";
+          hide_input = false;
+          position = "0, -468";
+          halign = "center";
+          valign = "center";
         }
       ];
 
       label = [
+        # Date
         {
           monitor = "";
-          text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%I:%M'";
-          font_size = 120;
-          color = "rgb(217, 224, 238)";
-          font_family = "${config.font}";
-          position = "0%, 30%";
-
-          valign = "center";
-          halign = "center";
-
-          shadow_color = "rgba(0, 0, 0, 0.1)";
-          shadow_size = 20;
-          shadow_passes = 2;
-          shadow_boost = 0.3;
-        }
-        {
-          monitor = "";
-          text = "cmd[update:3600000] LANG=en_US.UTF-8 date +'%A %b %d'";
+          text = "cmd[update:1000] echo \"$(date +\"%A, %d %B\")\"";
+          color = "rgba(242, 243, 244, 0.75)";
           font_size = 20;
-          color = "rgb(217, 224, 238)";
           font_family = "${config.font}";
-          position = "0%, 40%";
-
-          valign = "center";
+          position = "0, 405";
           halign = "center";
-
-          shadow_color = "rgba(0, 0, 0, 0.1)";
-          shadow_size = 20;
-          shadow_passes = 2;
-          shadow_boost = 0.3;
+          valign = "center";
+        }
+        # Time
+        {
+          monitor = "";
+          text = "cmd[update:1000] echo \"$(date +\"%I:%M\")\"";
+          color = "rgba(242, 243, 244, 0.75)";
+          font_size = 93;
+          font_family = "${config.font}";
+          position = "0, 310";
+          halign = "center";
+          valign = "center";
+        }
+        # User
+        {
+          monitor = "";
+          text = "${config.username}";
+          color = "rgba(242, 243, 244, 0.75)";
+          font_size = 12;
+          font_family = "${config.font}";
+          position = "0, -407";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+      image = [
+        {
+          monitor = "";
+          path = config.profile;
+          border_color = "0xffdddddd";
+          border_size = 0;
+          size = 73;
+          rounding = -1;
+          rotate = 0;
+          reload_time = -1;
+          reload_cmd = "";
+          position = "0, -353";
+          halign = "center";
         }
       ];
     };
