@@ -101,9 +101,8 @@
         };
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M  %A %b %d}";
+          "format" = "{:%I:%M  %A %d %b}";
           "tooltip" = true;
-          "tooltip-format" = "{:%A; %d %B %Y}\n<tt>{calendar}</tt>";
         };
 
         "pulseaudio" = {
