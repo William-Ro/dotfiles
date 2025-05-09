@@ -12,10 +12,6 @@
     "common/packages"
   ];
 
-  system.activationScripts.createSymlink = ''
-    ln -s ${config.homePath}/Pictures/wallpapers/default.jpg ${config.homePath}/Pictures/wallpapers/current.jpg
-  '';
-
   # Bootloader
   boot = {
     loader = {
@@ -34,11 +30,6 @@
       tpm2.enable = true;
     };
   };
-
-  # Fix Some Keyboard Issues
-  boot.extraModprobeConfig = ''
-    options hid_apple fnmode=2
-  '';
 
   # Internationalization
   i18n.defaultLocale = "en_US.UTF-8";
