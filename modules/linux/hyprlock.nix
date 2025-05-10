@@ -77,33 +77,33 @@
           halign = "center";
           valign = "center";
         }
-        # User
-        {
-          monitor = "";
-          text = "${config.username}";
-          color = "rgba(242, 243, 244, 0.75)";
-          font_size = 12;
-          font_family = "${config.font}";
-          position = "0, -407";
-          halign = "center";
-          valign = "center";
-        }
+        # # User
+        # {
+        #   monitor = "";
+        #   text = "${config.username}";
+        #   color = "rgba(242, 243, 244, 0.75)";
+        #   font_size = 12;
+        #   font_family = "${config.font}";
+        #   position = "0, -407";
+        #   halign = "center";
+        #   valign = "center";
+        # }
       ];
-      image = [
-        {
-          monitor = "";
-          path = config.profile;
-          border_color = "0xffdddddd";
-          border_size = 0;
-          size = 73;
-          rounding = -1;
-          rotate = 0;
-          reload_time = -1;
-          reload_cmd = "";
-          position = "0, -353";
-          halign = "center";
-        }
-      ];
+      # image = [
+      #   {
+      #     monitor = "";
+      #     path = config.profile;
+      #     border_color = "0xffdddddd";
+      #     border_size = 0;
+      #     size = 73;
+      #     rounding = -1;
+      #     rotate = 0;
+      #     reload_time = -1;
+      #     reload_cmd = "";
+      #     position = "0, -353";
+      #     halign = "center";
+      #   }
+      # ];
     };
   };
 }
