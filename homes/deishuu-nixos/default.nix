@@ -72,6 +72,7 @@
       exfatprogs # Tools for exFAT filesystem
       speedtest-cli
       imagemagick
+      prismlauncher
     ];
 
     sessionVariables = {
