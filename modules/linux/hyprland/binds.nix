@@ -5,28 +5,13 @@
     #############################
     "$mod" = "ALT";
 
-    # Mouse bindings
-    bindm = [
-      "$mod, mouse:272, movewindow"
-      "$mod, mouse:273, resizewindow"
-      "$mod SUPER, mouse:272, resizewindow"
-    ];
-
     # Regular keybindings
     bind = [
-      # Monitor management
-      "$mod SHIFT, Y, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,1" # 90°
-      "$mod SHIFT, U, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,2" # 180°
-      "$mod SHIFT, I, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,3" # 270°
-      "$mod SHIFT, O, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,0" # Normal
-
       # Window manager
       "$mod SHIFT, E, exec, wlogout"
       "$mod, Q, killactive,"
       "$mod, F, fullscreen,"
       "$mod, G, togglegroup,"
-      "$mod SHIFT, N, changegroupactive, f"
-      "$mod SHIFT, P, changegroupactive, b"
       "$mod, R, togglesplit,"
       "$mod, T, togglefloating,"
       "$mod, P, pseudo,"
@@ -37,15 +22,21 @@
       "$mod SHIFT, up, movewindow, u"
       "$mod SHIFT, down, movewindow, d"
 
-      # Utilities
-      "$mod, Return, exec, ghostty"
-      "$mod, E, exec, ghostty -e yazi"
-
       # Focus movement
       "$mod, left, movefocus, l"
       "$mod, right, movefocus, r"
       "$mod, up, movefocus, u"
       "$mod, down, movefocus, d"
+
+      # Monitor management
+      "$mod SHIFT, Y, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,1" # 90°
+      "$mod SHIFT, U, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,2" # 180°
+      "$mod SHIFT, I, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,3" # 270°
+      "$mod SHIFT, O, exec, hyprctl keyword monitor DP-1,preferred,auto,1,transform,0" # Normal
+
+      # Utilities
+      "$mod, Return, exec, ghostty"
+      "$mod, E, exec, ghostty -e yazi"
 
       # Screenshots & screen recording
       "$mod SHIFT, S, exec, hyprshot -m region"
@@ -91,7 +82,12 @@
     bindr = [
       "$mod, Space, exec, wofi -H 400 -W 700 --show drun"
     ];
-
+    # Mouse bindings
+    bindm = [
+      "$mod, mouse:272, movewindow"
+      "$mod, mouse:273, resizewindow"
+      "$mod SUPER, mouse:272, resizewindow"
+    ];
     # Media controls
     bindl = [
       ", XF86AudioPlay, exec, playerctl play-pause"
