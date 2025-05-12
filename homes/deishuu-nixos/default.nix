@@ -26,6 +26,7 @@
     "linux/dunst"
     "linux/hypridle"
     "linux/hyprlock"
+    "linux/matugen"
     "linux/nautilus"
     "linux/waybar"
     "linux/wlogout"
