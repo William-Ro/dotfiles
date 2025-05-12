@@ -22,9 +22,9 @@
     "common/yazi"
     "common/zsh"
     # nixOS specific packages
+    "linux/hprland/hyprland"
     "linux/dunst"
     "linux/hypridle"
-    "linux/hyprland"
     "linux/hyprlock"
     "linux/nautilus"
     "linux/waybar"
