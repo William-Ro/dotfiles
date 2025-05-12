@@ -17,6 +17,7 @@
       dynamic_background_opacity 1.0
 
       include colors.conf
+      allow_remote_control yes
 
     '';
   };
