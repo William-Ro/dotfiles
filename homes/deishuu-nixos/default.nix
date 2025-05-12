@@ -13,6 +13,7 @@
     "common/ghostty"
     "common/git"
     "common/home"
+    "common/kitty"
     "common/lazygit"
     "common/starship"
     "common/vesktop"
