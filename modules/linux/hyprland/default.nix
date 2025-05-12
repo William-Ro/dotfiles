@@ -13,6 +13,9 @@ in {
     swww
     bibata-cursors
   ];
+  imports = [
+    ./binds.nix
+  ];
 
   ########################################
   ## Hyprland Window Manager Configuration
