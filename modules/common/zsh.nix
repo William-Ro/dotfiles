@@ -7,9 +7,9 @@
     enableCompletion = true;
 
     initContent = ''
-      # Fix TERM if necessary
-      [[ "$TERM" == "xterm-ghostty" ]] && export TERM="xterm-256color"
-      [[ "$TERM" == "xterm-kitty" ]] && export TERM="xterm-256color"
+      # Fix TERM if using ghostty or kitty
+      [[ "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ]] && export TERM="xterm-256color"
+
 
       # Sudo plugin
       sudo-command-line() {
