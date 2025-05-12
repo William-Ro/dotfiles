@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: let
   cursorName = "Bibata-Modern-Classic";
@@ -13,9 +14,9 @@ in {
     swww
     bibata-cursors
   ];
-  imports = [
-    ./binds.nix
-    ./rules.nix
+  imports = lib.imports [
+    "linux/hyprland/binds"
+    "linux/hyprland/rules"
   ];
 
   ########################################
