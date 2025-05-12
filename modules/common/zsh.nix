@@ -8,9 +8,9 @@
 
     initContent = ''
       # Fix TERM if necessary
-      if [[ "$TERM" == "xterm-ghostty" ]]; then
-        export TERM="xterm-256color"
-      fi
+      [[ "$TERM" == "xterm-ghostty" ]] && export TERM="xterm-256color"
+      [[ "$TERM" == "xterm-kitty" ]] && export TERM="xterm-256color"
+
       # Sudo plugin
       sudo-command-line() {
         [[ -z $BUFFER ]] && zle up-history
