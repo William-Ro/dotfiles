@@ -4,10 +4,7 @@
   inputs,
   lib,
   ...
-}: let
-  cursorName = "Bibata-Modern-Classic";
-  cursorSize = "23";
-in {
+}: {
   home.packages = with pkgs; [
     hyprcursor
     hyprshot
@@ -15,8 +12,11 @@ in {
     bibata-cursors
   ];
   imports = lib.imports [
+    "linux/hyprland/animations"
     "linux/hyprland/binds"
+    "linux/hyprland/decorations"
     "linux/hyprland/rules"
+    "linux/hyprland/settings"
   ];
 
   ########################################

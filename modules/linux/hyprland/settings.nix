@@ -1,4 +1,11 @@
-{...}: {
+{
+  config,
+  lib,
+  ...
+}: let
+  cursorName = "Bibata-Modern-Classic";
+  cursorSize = "23";
+in {
   wayland.windowManager.hyprland.settings = {
     #############################
     ## Nvidia Temporary Fixes
