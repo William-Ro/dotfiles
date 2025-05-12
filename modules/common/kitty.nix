@@ -16,6 +16,8 @@
       window_padding_width 12
       dynamic_background_opacity 1.0
 
+      include colors.conf
+
     '';
   };
 }
