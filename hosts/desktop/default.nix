@@ -68,8 +68,8 @@
     # jack.enable = true; # Uncomment if using JACK applications
     extraConfig.pipewire."adjust-sample-rate" = {
       "context.properties" = {
-        "default.clock.rate" = 384000;
-        "default.clock.allowed-rates" = [384000 192000];
+        "default.clock.rate" = 192000;
+        "default.clock.allowed-rates" = [192000];
       };
     };
   };
