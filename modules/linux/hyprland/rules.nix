@@ -45,6 +45,17 @@
       "float, class:^(org.gnome.Calculator)$"
       "size 360 490, class:^(org.gnome.Calculator)$"
 
+      # Terminal
+      "float, class:^(Alacritty)$"
+      "size 50% 50%, class:^(Alacritty)$"
+      "center, class:^(Alacritty)$"
+      "float, class:^(kitty)$"
+      "size 50% 50%, class:^(kitty)$"
+      "center, class:^(kitty)$"
+      "float, class:^(com.mitchellh.ghostty)$"
+      "size 50% 50%, class:^(com.mitchellh.ghostty)$"
+      "center, class:^(com.mitchellh.ghostty)$"
+
       # Nautilus
       "float, class:^(org.gnome.Nautilus)$"
       "size 50% 50%, class:^(org.gnome.Nautilus)$"
