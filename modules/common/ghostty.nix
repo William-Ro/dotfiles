@@ -53,7 +53,6 @@
       # Other settings
       "font-size" = 22;
       "font-family" = "${config.font}";
-      title = "Deishuu's Ghostty";
       "wait-after-command" = false;
       "shell-integration" = "detect";
       "window-save-state" = "always";
