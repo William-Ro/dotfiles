@@ -10,7 +10,6 @@
   ];
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
-  # Servidor de Minecraft
   services.minecraft-servers = {
     enable = true;
     eula = true;
@@ -21,7 +20,10 @@
       sergioland2 = {
         enable = true;
         jvmOpts = "-Xmx10G -Xms6G";
-        package = pkgs.fabricServers.fabric-1_21;
+        # Specify the custom minecraft server package
+        package = pkgs.fabricServers.fabric-1_21.override {
+          loaderVersion = "0.16.14";
+        };
         serverProperties = {
           gamemode = "survival";
           difficulty = "normal";
