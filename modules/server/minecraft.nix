@@ -8,7 +8,6 @@
     inputs.nix-minecraft.nixosModules.minecraft-servers
     inputs.playit-nixos-module.nixosModules.default
   ];
-
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
   # Servidor de Minecraft
@@ -16,11 +15,23 @@
     enable = true;
     eula = true;
     openFirewall = true;
+    dataDir = "/var/lib/minecraft";
+
     servers = {
       sergioland = {
         enable = true;
-        jvmOpts = "-Xmx4G -Xms2G";
-        package = pkgs.minecraftServers.vanilla-1_21;
+        jvmOpts = "-Xmx10G -Xms6G";
+        package = pkgs.fabricServers.fabric-1_21;
+        serverProperties = {
+          gamemode = "survival";
+          difficulty = "normal";
+          simulation-distance = 10;
+          motd = "§k####§5 Sergioland §7§k####§r";
+          max-players = 20;
+        };
+        whitelist = {
+          /**/
+        };
       };
     };
   };
