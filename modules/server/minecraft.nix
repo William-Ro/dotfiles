@@ -1,14 +1,17 @@
 {
   inputs,
   pkgs,
+  config,
   ...
-}:
-# Make sure the flake inputs are in your system's config
-{
-  imports = [inputs.nix-minecraft.nixosModules.minecraft-servers];
+}: {
+  imports = [
+    inputs.nix-minecraft.nixosModules.minecraft-servers
+    inputs.playit-nixos-module.nixosModules.default
+  ];
+
   nixpkgs.overlays = [inputs.nix-minecraft.overlay];
 
-  # Minecraft server settings
+  # Servidor de Minecraft
   services.minecraft-servers = {
     enable = true;
     eula = true;
@@ -17,10 +20,16 @@
       sergioland = {
         enable = true;
         jvmOpts = "-Xmx4G -Xms2G";
-
-        # Specify the custom minecraft server package
         package = pkgs.minecraftServers.vanilla-1_21;
       };
     };
+  };
+
+  # Playit Agent
+  services.playit = {
+    enable = true;
+    user = "playit";
+    group = "playit";
+    secretPath = "/etc/playit/secret.toml";
   };
 }
