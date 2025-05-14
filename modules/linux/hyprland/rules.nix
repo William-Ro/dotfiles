@@ -69,8 +69,10 @@
       "workspace special silent, title:^(Zen — Sharing Indicator)$"
       "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
 
-      # Idle inhibition for video players
+      # Idle inhibition
       "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
+      "idleinhibit focus, class:^(imv)$"
+
       "idleinhibit focus, class:^(firefox)$, title:^(.*YouTube.*)$"
       "idleinhibit fullscreen, class:^(firefox)$"
 
