@@ -19,10 +19,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
   };
 
   outputs = inputs:
