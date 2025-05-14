@@ -18,7 +18,7 @@
     dataDir = "/var/lib/minecraft";
 
     servers = {
-      sergioland = {
+      sergioland2 = {
         enable = true;
         jvmOpts = "-Xmx10G -Xms6G";
         package = pkgs.fabricServers.fabric-1_21;
