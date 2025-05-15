@@ -22,6 +22,7 @@
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.iosevka
+      nerd-fonts.roboto-mono
 
       noto-fonts
       noto-fonts-emoji
