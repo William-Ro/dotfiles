@@ -47,6 +47,14 @@
                 url = "https://cdn.modrinth.com/data/DQIfKUHf/versions/Ui7MOgqG/styledplayerlist-3.5.1%2B1.21.jar";
                 hash = "sha512-aXbbxdr/8ymuoYsqf8IENmQCcVEdn8FxS3diA4Lk5GdUyRQAlk0/xynGLXi9eyBFIevakE5Z6RkrKGbAJJGABA==";
               };
+              Polymer = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/xGdtZczs/versions/p33F2gAj/polymer-bundled-0.9.9%2B1.21.jar";
+                hash = "sha512-qhDNCiXABlttk8il3mu6AoPsDVsAIDWmDnZ+/fN8Rznn9IX5QpZ1jWx1Iyvp50GCw8wLlVFIj0flFnaWb8bIng==";
+              };
+              ServerBackpacks = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/E7IsBILg/versions/bR4UNS3n/serverbackpacks-1.1.2.jar";
+                hash = "sha512-60Cy/3f6Qrnd0WmXT94LRvea6o5MVGnmlQxQxp2qRKS/0lsRipocQykJnoFlyJWb8geRyOEPQhZPrz2WCm2JCg==";
+              };
             }
           );
         };
