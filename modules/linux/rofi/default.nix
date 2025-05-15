@@ -1,9 +1,11 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: {
   programs.rofi = {
+    package = pkgs.rofi-wayland;
     enable = true;
     font = "${config.font} 12";
     theme = ./rofi-theme.rasi;
