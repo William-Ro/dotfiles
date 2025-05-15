@@ -29,7 +29,7 @@
     "linux/hyprlock"
     "linux/nautilus"
     "linux/waybar"
-    "linux/wofi"
+
     # scripts
     "scripts/default"
 
