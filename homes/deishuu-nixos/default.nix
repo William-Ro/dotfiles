@@ -23,6 +23,7 @@
     "common/zsh"
     # nixOS specific packages
     "linux/hyprland"
+    "linux/rofi"
     "linux/dunst"
     "linux/hypridle"
     "linux/hyprlock"
