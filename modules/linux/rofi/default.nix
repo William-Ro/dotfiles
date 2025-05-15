@@ -1,7 +1,11 @@
 {
+  config,
+  lib,
+  ...
+}: {
   programs.rofi = {
     enable = true;
-    font = "Roboto Mono 12";
+    font = "${config.font} 12";
     theme = ./rofi-theme.rasi;
 
     extraConfig = {
