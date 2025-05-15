@@ -80,7 +80,7 @@
 
     # Launcher (wofi)
     bindr = [
-      "$mod, Space, exec, wofi -H 400 -W 700 --show drun"
+      "$mod, Space, exec, rofi -show drun"
     ];
     # Mouse bindings
     bindm = [
