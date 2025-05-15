@@ -25,21 +25,27 @@
           loaderVersion = "0.16.14";
         };
         symlinks = {
-          "server-icon.png" = "${config}/server-icon.png";
-
           mods = pkgs.linkFarmFromDrvs "mods" (
             builtins.attrValues {
               Fabric-API = pkgs.fetchurl {
                 url = "https://cdn.modrinth.com/data/P7dR8mSH/versions/oGwyXeEI/fabric-api-0.102.0%2B1.21.jar";
-                sha512 = "11732c4e36c3909360a24aa42a44da89048706cf10aaafa0404d7153cbc7395ff68a130f7b497828d6932740e004416b692650c3fbcc1f32babd7cb6eb9791d8";
+                hash = "sha512-EXMsTjbDkJNgokqkKkTaiQSHBs8Qqq+gQE1xU8vHOV/2ihMPe0l4KNaTJ0DgBEFraSZQw/vMHzK6vXy265eR2A==";
               };
               ServerSleep = pkgs.fetchurl {
                 url = "https://cdn.modrinth.com/data/Cw8IlnGM/versions/Yy52wehM/serversleep-datapack2.jar";
-                sha512 = "2c0e6fbf24177233451295957b02f2105d9af14c8c5d681c7a871f51d07798b734165a8a60fe899c4e6871ef0de86f0f3bd8df2d7500bdcb1149c871aaeba9c7";
+                hash = "sha512-LA5vvyQXcjNFEpWVewLyEF2a8UyMXWgceocfUdB3mLc0FlqKYP6JnE5oce8N6G8PO9jfLXUAvcsRSchxquupxw==";
               };
               UniversalGraves = pkgs.fetchurl {
                 url = "https://cdn.modrinth.com/data/yn9u3ypm/versions/Fg64B87Y/graves-3.4.4%2B1.21.jar";
-                sha512 = "a247df6557c4020ea5499a1be54d1b2a90b33fffcb94866bf682b40a6524708360ec4e1e912aa10754722761ccabcf3674bea1f82f5438f225eada983e59989a";
+                hash = "sha512-okffZVfEAg6lSZob5U0bKpCzP//LlIZr9oK0CmUkcINg7E4ekSqhB1RyJ2HMq882dL6h+C9UOPIl6tqYPlmYmg==";
+              };
+              StyledChat = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/doqSKB0e/versions/4e1xZSk3/styled-chat-2.6.1%2B1.21.jar";
+                hash = "sha512-z0btaSoYOWwS3rWELJsEKH2BJ7qNPjYEdD3HdL8izYYKW7o9ADd61nHC5UlCOU6pk1myDoAuAhgC6KsEkb7JTA==";
+              };
+              StyledPlayerList = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/DQIfKUHf/versions/Ui7MOgqG/styledplayerlist-3.5.1%2B1.21.jar";
+                hash = "sha512-aXbbxdr/8ymuoYsqf8IENmQCcVEdn8FxS3diA4Lk5GdUyRQAlk0/xynGLXi9eyBFIevakE5Z6RkrKGbAJJGABA==";
               };
             }
           );
