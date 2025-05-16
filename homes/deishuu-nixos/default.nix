@@ -34,7 +34,7 @@
     "scripts/default"
 
     # dev
-    "dev/cpp"
+    "dev/python"
 
     # gaming
     "gaming/steam"
