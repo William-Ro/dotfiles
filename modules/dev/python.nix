@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.python3
+  home.packages = with pkgs; [
+    (pkgs.python3.withPackages (ps:
+      with ps; [
+        pip
+      ]))
   ];
 }
