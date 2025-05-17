@@ -8,6 +8,7 @@
   home.packages = with pkgs; [
     hyprcursor
     hyprshot
+    hyprpolkitagent
     swww
     bibata-cursors
   ];

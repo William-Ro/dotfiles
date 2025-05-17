@@ -37,6 +37,7 @@ in {
     #############################
     exec-once = [
       "hyprctl setcursor ${cursorName} ${cursorSize}"
+      "systemctl --user start hyprpolkitagent"
       "swww init & sleep 0.5"
       "pkill waybar & sleep 0.5 && waybar"
       "hyprlock"
