@@ -102,6 +102,8 @@ in {
       # Enable numlock by default
       numlock_by_default = true;
 
+      kb_options = ctrl:nocaps;
+
       # Disable mousewheel on inactive windows
       follow_mouse = 1;
 
