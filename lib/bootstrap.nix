@@ -19,7 +19,7 @@ inputs @ {
       then {
         fn = lib.darwinSystem;
         option = "darwinConfigurations";
-        command = "nix run nix-darwin --";
+        command = "sudo nix run nix-darwin --";
       }
       else {
         fn = lib.nixosSystem;
