@@ -18,6 +18,9 @@
     "linux/hyprland/decorations"
     "linux/hyprland/rules"
     "linux/hyprland/settings"
+
+    "linux/hyprland/hyprlock"
+    "linux/hyprland/hypridle"
   ];
 
   ########################################
