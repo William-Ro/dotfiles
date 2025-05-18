@@ -15,6 +15,9 @@
         border-radius: 8px;
         transition-property: background-color;
         transition-duration: 0.5s;
+        min-height: 0;
+        min-width: 0;
+
       }
       window#waybar {
         background-color: transparent;
@@ -22,18 +25,32 @@
       window > box {
         margin-left: 10px;
         margin-right: 10px;
-        margin-top: 6px;
+        margin-top: 10px;
         background-color: #1F1F1F;
         padding: 3px;
-        padding-left:8px;
-        border: 2px none #d9e0ee;
       }
+
+      @keyframes blink_red {
+        to {
+          background-color: rgb(242, 143, 173);
+          color: rgb(26, 24, 38);
+        }
+      }
+      .warning, .critical, .urgent {
+        animation-name: blink_red;
+        animation-duration: 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
       tooltip {
         background: #1F1F1F;
       }
       tooltip label {
         color: #d9e0ee;
       }
+
       #workspaces {
         background-color: #1F1F1F;
       }
@@ -43,45 +60,31 @@
       #workspaces button.active {
         color: #d9e0ee;
       }
-      #clock {
-        color: #d9e0ee;
-      }
-      #pulseaudio {
-        color: #d9e0ee;
-      }
-      #network {
-        color: #d9e0ee;
-      }
-      #network.disconnected {
-        color: #d9e0ee;
-      }
-      #custom-icon {
-        color: #d9e0ee;
-      }
-      #clock, #pulseaudio, #bluetooth, #network, #custom-icon{
+
+      #clock, #tray, #network, #pulseaudio, #custom-icon{
         padding-left: 10px;
         padding-right: 10px;
+        color: #d9e0ee;
       }
     '';
     settings = [
       {
         "layer" = "top";
         "position" = "top";
+
         modules-left = [
           "hyprland/workspaces"
         ];
         modules-center = [
-          "clock"
+          "custom/text"
         ];
         modules-right = [
+          "tray"
           "pulseaudio"
           "network"
           "custom/icon"
         ];
         "hyprland/workspaces" = {
-          persistent-workspaces = {
-            "*" = [1 2];
-          };
           "format" = "{icon}";
           "on-click" = "activate";
           "sort-by-number" = true;
@@ -102,17 +105,23 @@
           };
           "tooltip" = false;
         };
+
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M  %A %d %b}";
-          "tooltip" = true;
+          "format" = "{:%I:%M}";
+          "tooltip" = false;
+        };
+
+        "tray" = {
+          "icon-size" = 18;
+          "spacing" = 15;
         };
 
         "pulseaudio" = {
-          "format" = "{icon} {volume}%";
-          "format-muted" = "󰝟 0%";
-          "on-click" = "wpctl set-mute @DEFAULT_SINK@ toggle";
-          "on-click-right" = "pavucontrol";
+          "format" = "{icon}";
+          "format-muted" = "󰝟";
+          "on-click" = "pavucontrol";
+          "on-click-right" = "wpctl set-mute @DEFAULT_SINK@ toggle";
           "on-scroll-up" = "wpctl set-volume -l 1.3 @DEFAULT_SINK@ 5%+";
           "on-scroll-down" = "wpctl set-volume @DEFAULT_SINK@ 5%-";
           "scroll-step" = 5;
@@ -125,18 +134,26 @@
         };
 
         "network" = {
-          "format-disconnected" = "󰯡 ";
-          "format-ethernet" = "󰈀 ";
-          "format-linked" = "󰖪 ";
-          "format-wifi" = "󰖩 ";
-          "interval" = 1;
+          "format-icons" = ["󰤟" "󰤢" "󰤥" "󰤨"];
+          "format-wifi" = "{icon}";
+          "format-ethernet" = "󰤨";
+          "format-linked" = "󰄡";
+          "format-disconnected" = "󰯡";
+          "tooltip-format" = "{essid} ({signalStrength}%) - {gwaddr}";
+          "tooltip-format-ethernet" = "{ifname} - {gwaddr}";
+          "tooltip-format-disconnected" = "Disconnected";
           "on-click" = "nm-connection-editor";
-          "tooltip" = false;
         };
+
         "custom/icon" = {
           "format" = " ";
           "on-click" = "exec wallpaper_random";
           "tooltip" = false;
+        };
+        "custom/text" = {
+          "format" = "でいしゅう";
+          "tooltip" = false;
+          "on-click" = "exec wallpaper_random";
         };
       }
     ];
