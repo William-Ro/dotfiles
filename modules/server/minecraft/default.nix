@@ -55,6 +55,10 @@
                 url = "https://cdn.modrinth.com/data/E7IsBILg/versions/bR4UNS3n/serverbackpacks-1.1.2.jar";
                 hash = "sha512-60Cy/3f6Qrnd0WmXT94LRvea6o5MVGnmlQxQxp2qRKS/0lsRipocQykJnoFlyJWb8geRyOEPQhZPrz2WCm2JCg==";
               };
+              AntiCreeper = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/Uqqp9wzq/versions/tyJRFJbu/anti-creeper-1.1.0.jar";
+                hash = "sha512-pQhvaztLAPsgLIM9zsr83n2Hiafj70+1n0ywwWyUVeDf5Aa22ScB3DiDZ/ymef5R2AoCiIgKVmURiCLxGJ5suQ==";
+              };
             }
           );
         };
