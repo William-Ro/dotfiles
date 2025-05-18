@@ -61,7 +61,7 @@
         color: #d9e0ee;
       }
 
-      #clock, #tray, #network, #pulseaudio, #custom-icon{
+      #workspaces,#custom-text,#tray,#pulseaudio,#network,#custom-icon,#clock {
         padding-left: 10px;
         padding-right: 10px;
         color: #d9e0ee;
@@ -83,6 +83,7 @@
           "pulseaudio"
           "network"
           "custom/icon"
+          "clock"
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
@@ -108,7 +109,7 @@
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M}";
+          "format" = "{:%I:%M }";
           "tooltip" = false;
         };
 
@@ -146,14 +147,13 @@
         };
 
         "custom/icon" = {
-          "format" = " ";
+          "format" = "";
           "on-click" = "exec wallpaper_random";
           "tooltip" = false;
         };
         "custom/text" = {
           "format" = "でいしゅう";
           "tooltip" = false;
-          "on-click" = "exec wallpaper_random";
         };
       }
     ];
