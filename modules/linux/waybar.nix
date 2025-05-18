@@ -79,6 +79,9 @@
           "custom/icon"
         ];
         "hyprland/workspaces" = {
+          persistent-workspaces = {
+            "*" = [1 2];
+          };
           "format" = "{icon}";
           "on-click" = "activate";
           "sort-by-number" = true;
@@ -106,17 +109,19 @@
         };
 
         "pulseaudio" = {
-          "format" = "{icon}";
-          "format-muted" = "{format_source}";
-          "format-bluetooth" = "{icon}";
-          "format-bluetooth-muted" = "{format_source}";
-          "format-source" = " ";
+          "format" = "{icon} {volume}%";
+          "format-muted" = "󰝟 0%";
+          "on-click" = "wpctl set-mute @DEFAULT_SINK@ toggle";
+          "on-click-right" = "pavucontrol";
+          "on-scroll-up" = "wpctl set-volume -l 1.3 @DEFAULT_SINK@ 5%+";
+          "on-scroll-down" = "wpctl set-volume @DEFAULT_SINK@ 5%-";
+          "scroll-step" = 5;
           "format-icons" = {
-            "default" = [" " " " " "];
+            "headphone" = "󱡏";
+            "hands-free" = "󱡏";
+            "headset" = "󱡏";
+            "default" = ["" ""];
           };
-          "on-click" = "pavucontrol";
-          "on-click-right" = "pamixer -t";
-          "tooltip" = false;
         };
 
         "network" = {
