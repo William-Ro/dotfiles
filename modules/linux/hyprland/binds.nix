@@ -41,7 +41,7 @@
       # Screenshots & screen recording
       "$mod SHIFT, S, exec, hyprshot -m region"
       "$mod SHIFT, R, exec, record_screen"
-      "$mod SHIFT, L, exec, hyprlock"
+      "$mod SHIFT, L, exec, pidof hyprlock || hyprlock"
 
       # Workspace switching
       "$mod, bracketleft, workspace, m-1"
