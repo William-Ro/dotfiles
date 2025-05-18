@@ -47,23 +47,18 @@
       qbittorrent
       wl-clipboard
       fastfetch
-      pipes
       nerdfetch
+      pipes
 
       mpv # Media player (video & audio)
       imv # Image viewer
-      playerctl # Command-line media player controller
-      mpc # CLI client for Music Player Daemon (MPD)
+
       killall # Kill processes by name
       keychain # Manages SSH and GPG keys across sessions
-      pamixer # PulseAudio volume control from the terminal
 
       gnome-calculator # Calculator
-
       overskride # Bluetooth management tool
-
       networkmanagerapplet # GUI for managing network connections
-
       pavucontrol # Advanced PulseAudio volume control
 
       wf-recorder # Screen recording tool for Wayland
