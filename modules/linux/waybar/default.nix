@@ -147,7 +147,7 @@
         };
 
         "custom/icon" = {
-          "format" = "";
+          "format" = "󰽢";
           "on-click" = "exec wallpaper_random";
           "tooltip" = false;
         };
