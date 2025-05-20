@@ -65,9 +65,15 @@
     };
     xserver = {
       xkb = {
+        enable = true;
         layout = "us";
         variant = "intl";
       };
+    };
+    logind = {
+      enable = true;
+      lidSwitch = "ignore";
+      lidSwitchDocked = "ignore";
     };
   };
 
