@@ -32,6 +32,9 @@
       x86_64-linux = {
         homes.deishuu-nixos = ./homes/deishuu-nixos;
         hosts.desktop = ./hosts/desktop;
+
+        homes.deishuu-server = ./homes/deishuu-server;
+        hosts.server = ./hosts/server;
       };
       aarch64-darwin = {
         homes.deishuu-macos = ./homes/deishuu-macos;
