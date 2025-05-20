@@ -45,11 +45,15 @@
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
   };
 
+  # Username
+
   users.users.${config.username} = {
     isNormalUser = true;
     extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
   };
+  # Zsh
+  programs.zsh.enable = true;
 
   # Docker & Podman
   virtualisation.docker.enable = true;
@@ -65,15 +69,9 @@
     };
     xserver = {
       xkb = {
-        enable = true;
         layout = "us";
         variant = "intl";
       };
-    };
-    logind = {
-      enable = true;
-      lidSwitch = "ignore";
-      lidSwitchDocked = "ignore";
     };
   };
 
