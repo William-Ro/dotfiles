@@ -64,6 +64,7 @@
   };
   # Services
   services = {
+    logind.lidSwitchExternalPower = "ignore";
     openssh = {
       enable = true;
     };
