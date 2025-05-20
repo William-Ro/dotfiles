@@ -24,11 +24,6 @@
     kernelParams = ["console=tty"];
   };
 
-  # Networking
-  networking = {
-    networkmanager.enable = true;
-  };
-
   # Username
   users.users.${config.username} = {
     isNormalUser = true;
