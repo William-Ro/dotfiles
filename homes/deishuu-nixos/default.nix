@@ -44,7 +44,6 @@
       spotify
       qbittorrent
       wl-clipboard
-      fastfetch
       nerdfetch
       pipes
 
