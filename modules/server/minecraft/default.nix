@@ -39,10 +39,6 @@
                 url = "https://cdn.modrinth.com/data/yn9u3ypm/versions/Fg64B87Y/graves-3.4.4%2B1.21.jar";
                 hash = "sha512-okffZVfEAg6lSZob5U0bKpCzP//LlIZr9oK0CmUkcINg7E4ekSqhB1RyJ2HMq882dL6h+C9UOPIl6tqYPlmYmg==";
               };
-              StyledChat = pkgs.fetchurl {
-                url = "https://cdn.modrinth.com/data/doqSKB0e/versions/4e1xZSk3/styled-chat-2.6.1%2B1.21.jar";
-                hash = "sha512-z0btaSoYOWwS3rWELJsEKH2BJ7qNPjYEdD3HdL8izYYKW7o9ADd61nHC5UlCOU6pk1myDoAuAhgC6KsEkb7JTA==";
-              };
               StyledPlayerList = pkgs.fetchurl {
                 url = "https://cdn.modrinth.com/data/DQIfKUHf/versions/Ui7MOgqG/styledplayerlist-3.5.1%2B1.21.jar";
                 hash = "sha512-aXbbxdr/8ymuoYsqf8IENmQCcVEdn8FxS3diA4Lk5GdUyRQAlk0/xynGLXi9eyBFIevakE5Z6RkrKGbAJJGABA==";
