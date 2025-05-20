@@ -7,6 +7,7 @@
 }: {
   imports = lib.imports [
     ./hardware-configuration.nix
+    ./networking.nix
     ./services/docker.nix
     ./services/ssh.nix
     "common/nix"
