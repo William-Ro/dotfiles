@@ -49,7 +49,7 @@
 
   users.users.${config.username} = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel"];
     shell = pkgs.zsh;
   };
   # Zsh
