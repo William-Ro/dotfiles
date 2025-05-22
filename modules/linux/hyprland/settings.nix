@@ -94,7 +94,7 @@ in {
     #############################
     input = {
       kb_layout = "us";
-      kb_variant = "intl";
+      #kb_variant = "intl";
 
       # Repeat settings
       repeat_rate = 50;
