@@ -11,6 +11,7 @@
     # enabling it is required to make Wayland compositors function properly.
     "nvidia-drm.fbdev=1"
   ];
+  nixpkgs.config.nvidia.acceptLicense = true;
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
