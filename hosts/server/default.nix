@@ -15,6 +15,16 @@
     "server/minecraft"
   ];
 
+  nix.settings = {
+    substituters = [
+      "https://cache.nixos.org/"
+      "https://playit-nixos-module.cachix.org"
+    ];
+    trusted-public-keys = [
+      "playit-nixos-module.cachix.org-1:22hBXWXBbd/7o1cOnh+p0hpFUVk9lPdRLX3p5YSfRz4="
+    ];
+  };
+
   # Bootloader
   boot = {
     loader = {
