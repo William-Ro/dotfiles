@@ -99,19 +99,11 @@
 
   users.users.${config.username} = {
     isNormalUser = true;
-    extraGroups = ["audio" "video" "wheel" "networkmanager" "docker"];
+    extraGroups = ["wheel" "networkmanager"];
     shell = pkgs.zsh;
   };
 
   services.gvfs.enable = true;
-
-  # Docker & Podman
-  virtualisation.docker.enable = true;
-
-  virtualisation.docker.rootless = {
-    enable = true;
-    setSocketVariable = true;
-  };
 
   # NixOS System Version
   system.stateVersion = "24.11"; # Keep this at initial install version
