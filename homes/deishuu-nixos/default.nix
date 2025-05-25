@@ -31,7 +31,6 @@
     "scripts/default"
 
     # dev
-    "dev/python"
     "dev/devenv"
     "dev/direnv"
 
