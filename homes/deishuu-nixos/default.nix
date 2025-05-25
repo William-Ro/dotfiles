@@ -7,7 +7,6 @@
   imports = lib.imports [
     # Common packages
     "common/alacritty"
-    "common/direnv"
     "common/fastfetch"
     "common/firefox"
     "common/ghostty"
@@ -33,6 +32,7 @@
 
     # dev
     "dev/python"
+    "dev/direnv"
 
     # gaming
     "gaming/steam"
