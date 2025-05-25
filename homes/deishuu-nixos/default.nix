@@ -32,6 +32,7 @@
 
     # dev
     "dev/python"
+    "dev/devenv"
     "dev/direnv"
 
     # gaming
