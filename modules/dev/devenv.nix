@@ -1,5 +1,5 @@
-{...}: {
-  programs.devenv = {
-    enable = true;
-  };
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    devenv
+  ];
 }
