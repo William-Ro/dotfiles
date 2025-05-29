@@ -10,7 +10,6 @@
     ./nvidia.nix
     "common/nix"
     "common/packages"
-    "server/minecraft"
   ];
 
   # Bootloader
