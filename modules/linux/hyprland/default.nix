@@ -11,6 +11,7 @@
     hyprpolkitagent
     swww
     bibata-cursors
+    brightnessctl
   ];
   imports = lib.imports [
     "linux/hyprland/animations"
