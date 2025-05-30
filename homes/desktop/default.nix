@@ -25,6 +25,7 @@
     "linux/hyprland"
     "linux/nautilus"
     "linux/rofi"
+    "linux/swayosd"
     "linux/waybar"
 
     # scripts
