@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -18,9 +20,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
   };
 
   outputs = inputs:
