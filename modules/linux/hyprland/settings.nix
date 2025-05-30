@@ -25,12 +25,12 @@ in {
       "QT_WAYLAND_DISABLE_WINDOWDECORATION,1" # Disable Qt window decorations
       "HYPRSHOT_DIR,${config.screenshots}" # Custom screenshot directory
     ];
-    #############################
+    #############################>
     ## Display / Monitor Setup
     #############################
     monitor = [
       # Format: name, resolution@refresh rate, position, scale
-      "DP-1,2560x1440@165,0x0,1"
+      ", preferred, auto, 1"
     ];
     #############################
     ## Autostart Applications
@@ -117,7 +117,7 @@ in {
 
       special_fallthrough = true;
       touchpad = {
-        natural_scroll = true;
+        natural_scroll = false;
         disable_while_typing = true;
         tap-to-click = true;
         drag_lock = true;
