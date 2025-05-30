@@ -25,14 +25,14 @@
   outputs = inputs:
     import ./lib/bootstrap.nix inputs {
       x86_64-linux = {
-        homes.deishuu-nixos = ./homes/deishuu-nixos;
+        homes.desktop = ./homes/desktop;
         hosts.desktop = ./hosts/desktop;
 
-        homes.deishuu-server = ./homes/deishuu-server;
+        homes.server = ./homes/server;
         hosts.server = ./hosts/server;
       };
       aarch64-darwin = {
-        homes.deishuu-macos = ./homes/deishuu-macos;
+        homes.laptop = ./homes/laptop;
         hosts.laptop = ./hosts/laptop;
       };
     };
