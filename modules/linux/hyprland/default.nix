@@ -12,6 +12,7 @@
     swww
     bibata-cursors
     brightnessctl
+    swayosd
   ];
   imports = lib.imports [
     "linux/hyprland/animations"
