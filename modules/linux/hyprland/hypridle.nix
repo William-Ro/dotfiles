@@ -6,7 +6,6 @@
 }: let
   home.packages = with pkgs; [
     hypridle
-    brightnessctl
   ];
 in {
   services.hypridle = {
@@ -24,8 +23,8 @@ in {
         # Dim screen after 2.5 minutes of inactivity
         {
           timeout = 150; # 2.5min.
-          on-timeout = "brightnessctl - s set 10"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
-          on-resume = "brightnessctl - r"; # monitor backlight restore.
+          on-timeout = "brightnessctl -s; brightnessctl set 10%"; # set monitor backlight to minimum, avoid 0 on OLED monitor.
+          on-resume = "brightnessctl -r"; # monitor backlight restore.
         }
         # Lock screen after 5 minutes of inactivity
         {
