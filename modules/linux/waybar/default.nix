@@ -61,7 +61,7 @@
         color: #d9e0ee;
       }
 
-      #workspaces,#custom-text,#tray,#pulseaudio,#network,#custom-icon,#clock {
+      #workspaces,#custom-text,#tray,#pulseaudio,#network,#battery,#custom-icon,#clock {
         padding-left: 10px;
         padding-right: 10px;
         color: #d9e0ee;
@@ -82,6 +82,7 @@
           "tray"
           "pulseaudio"
           "network"
+          "battery"
           "custom/icon"
           "clock"
         ];
@@ -144,6 +145,28 @@
           "tooltip-format-ethernet" = "{ifname} - {gwaddr}";
           "tooltip-format-disconnected" = "Disconnected";
           "on-click" = "nm-connection-editor";
+        };
+        battery = {
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          format = "{icon}";
+          format-full = "{icon}";
+          format-charging = "";
+          format-plugged = "";
+          format-alt = "{icon}";
+          format-icons = [
+            ""
+            ""
+            ""
+            ""
+            ""
+          ];
+        };
+
+        "battery#bat2" = {
+          bat = "BAT2";
         };
 
         "custom/icon" = {
