@@ -12,6 +12,15 @@ in {
         logs-dir=''${XDG_STATE_HOME}/npm/logs
       '';
     };
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+      download = "${config.home.homeDirectory}/Downloads";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      videos = "${config.home.homeDirectory}/Videos";
+    };
   };
 
   home.sessionVariables = {
