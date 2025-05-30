@@ -76,7 +76,7 @@
           "hyprland/workspaces"
         ];
         modules-center = [
-          "custom/text"
+          "clock"
         ];
         modules-right = [
           "tray"
@@ -84,7 +84,6 @@
           "network"
           "battery"
           "custom/icon"
-          "clock"
         ];
         "hyprland/workspaces" = {
           "format" = "{icon}";
@@ -110,7 +109,7 @@
 
         "clock" = {
           "interval" = 1;
-          "format" = "{:%I:%M }";
+          "format" = "{:%I:%M %a %d %b}";
           "tooltip" = false;
         };
 
@@ -128,9 +127,8 @@
           "on-scroll-down" = "wpctl set-volume @DEFAULT_SINK@ 5%-";
           "scroll-step" = 5;
           "format-icons" = {
-            "headphone" = "󱡏";
-            "hands-free" = "󱡏";
-            "headset" = "󱡏";
+            "headphone" = "";
+            "headset" = "";
             "default" = ["" ""];
           };
         };
@@ -154,7 +152,7 @@
           format = "{icon}";
           format-full = "{icon}";
           format-charging = "";
-          format-plugged = "";
+          format-plugged = "";
           format-alt = "{icon}";
           format-icons = [
             ""
@@ -170,12 +168,8 @@
         };
 
         "custom/icon" = {
-          "format" = "󰽢";
+          "format" = " ";
           "on-click" = "exec wallpaper_random";
-          "tooltip" = false;
-        };
-        "custom/text" = {
-          "format" = "でいしゅう";
           "tooltip" = false;
         };
       }
