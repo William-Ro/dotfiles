@@ -12,10 +12,6 @@ in {
         logs-dir=''${XDG_STATE_HOME}/npm/logs
       '';
     };
-    userDirs = {
-      enable = true;
-      createDirectories = true;
-    };
   };
 
   home.sessionVariables = {
