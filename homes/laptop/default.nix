@@ -7,7 +7,6 @@
   imports = lib.imports [
     # Common packages
     "common/alacritty"
-    "common/direnv"
     "common/fastfetch"
     "common/firefox"
     "common/git"
