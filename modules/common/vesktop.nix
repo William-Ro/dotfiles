@@ -50,7 +50,7 @@
 
         /* dms button icon options */
         --dms-icon: on;
-        --dms-icon-svg-url: url('https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg');
+        --dms-icon-svg-url: url('https://i.imgur.com/MuwiDQY.png');
         --dms-icon-svg-size: 90%;
         --dms-icon-color-before: var(--icon-secondary);
         --dms-icon-color-after: var(--white);
