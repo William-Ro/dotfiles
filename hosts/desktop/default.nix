@@ -103,6 +103,7 @@
   };
 
   services.gvfs.enable = true;
+  services.flatpak.enable = true;
 
   # NixOS System Version
   system.stateVersion = "24.11"; # Keep this at initial install version
