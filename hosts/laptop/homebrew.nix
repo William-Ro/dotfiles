@@ -47,6 +47,7 @@
     casks = [
       #"android-studio" # IDE for Android development
       "insomnia" # REST client¡
+      "qbittorrent" # torrent client
       "raycast" # app launcher
       "ghostty" # terminal emulator
       "spotify" # music player
