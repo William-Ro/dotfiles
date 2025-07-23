@@ -33,13 +33,15 @@
 
     taps = [
       "nikitabobko/tap"
+      "hashicorp/tap"
     ];
 
     # `brew install`
 
     brews = [
       "mas" # Mac App Store CLI
-      #"cocoapods" # dependency manager for Swift and Objective-C projects
+      #"cocoapods" # dependency manager
+      "hashicorp/tap/terraform"
       "displayplacer" # CLI for display settings
     ];
 
