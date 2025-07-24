@@ -10,8 +10,6 @@ in {
     #############################
     ## Nvidia Temporary Fixes
     #############################
-    render.explicit_sync = 2;
-    render.explicit_sync_kms = 0;
     opengl.nvidia_anti_flicker = 0;
     debug.damage_tracking = 0;
 
@@ -38,7 +36,7 @@ in {
     exec-once = [
       "hyprctl setcursor ${cursorName} ${cursorSize}"
       "systemctl --user start hyprpolkitagent"
-      "swww init & sleep 0.5"
+      "swww-daemon & sleep 0.5"
       "pkill waybar & sleep 0.5 && waybar"
       "hyprlock"
       "hypridle"
@@ -150,8 +148,6 @@ in {
       animate_mouse_windowdragging = false;
       enable_swallow = false;
       focus_on_activate = true; # Test
-      render_ahead_of_time = true;
-      render_ahead_safezone = 30;
       # disable_scale_checks = true
       disable_hyprland_logo = true;
       force_default_wallpaper = 0;
