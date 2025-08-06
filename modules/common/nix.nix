@@ -7,8 +7,6 @@
 }: {
   time.timeZone = "America/Costa_Rica";
 
-  config.fontconfig.enable = true;
-
   nix = {
     # Enable support for nix commands and flakes
     settings.experimental-features = ["nix-command" "flakes"];
