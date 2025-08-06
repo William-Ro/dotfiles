@@ -45,7 +45,7 @@
       HOMEBREW_REPOSITORY = "/opt/homebrew";
       INFOPATH = "/opt/homebrew/share/info:''${INFOPATH:-}";
 
-      # Include Homebrew and Orbstack in the PATH
+      # Include Homebrew in the PATH
       PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
 
       # Fix Homebrew libs
