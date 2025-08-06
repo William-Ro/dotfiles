@@ -10,7 +10,7 @@
     "common/nix"
     "common/packages"
   ];
-  config.fontconfig.enable = true;
+
   system = {
     stateVersion = 5;
     primaryUser = config.username;
