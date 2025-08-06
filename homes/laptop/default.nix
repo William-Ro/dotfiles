@@ -13,7 +13,7 @@
     "common/home"
     "common/lazygit"
     "common/starship"
-    "common/vesktop"
+    "common/discord"
     "common/vscode"
     "common/xdg"
     "common/yazi"
