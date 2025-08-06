@@ -28,7 +28,6 @@
       ctop
       lsd
       bat
-      fontconfig
     ];
   };
 }
