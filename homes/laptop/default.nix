@@ -36,7 +36,6 @@
       httpie # command-line HTTP client
       # dev env managed by mise, but here are some exceptions
       shellcheck
-      fontconfig
     ];
 
     sessionVariables = {
