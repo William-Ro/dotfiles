@@ -55,7 +55,6 @@
       "spotify" # music player
       "iina" # video player
       "cursor"
-      "docker"
     ];
   };
 }
