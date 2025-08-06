@@ -19,6 +19,7 @@
         system
       };
     packages = with pkgs; [
+      fontconfig
       home-manager
       zip
       xz
@@ -31,5 +32,4 @@
       bat
     ];
   };
-  news.display = "silent"; # Disable news display
 }
