@@ -47,6 +47,8 @@
       wl-clipboard
       nerdfetch
       pipes
+      terraform
+      code-cursor
 
       mpv # Media player (video & audio)
       imv # Image viewer
