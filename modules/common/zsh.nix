@@ -54,10 +54,4 @@
     # Lazygit alias
     lg = "lazygit";
   };
-  # Add new path to zshenv
-  home.file.".zshenv" = {
-    text = ''
-      export PATH=$HOME/Development/flutter/bin:$PATH
-    '';
-  };
 }
