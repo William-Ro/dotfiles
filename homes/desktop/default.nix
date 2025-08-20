@@ -14,12 +14,14 @@
     "common/home"
     "common/kitty"
     "common/lazygit"
+    "common/obsidian"
     "common/starship"
     "common/discord"
     "common/vscode"
     "common/xdg"
     "common/yazi"
     "common/zsh"
+
     # nixOS specific packages
     "linux/dunst"
     "linux/hyprland"
