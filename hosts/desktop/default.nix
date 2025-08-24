@@ -98,12 +98,17 @@
 
   users.users.${config.username} = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager"];
+    extraGroups = ["wheel" "networkmanager" "docker"];
     shell = pkgs.zsh;
   };
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    logDriver = "none";
+  };
 
   # NixOS System Version
   system.stateVersion = "24.11"; # Keep this at initial install version
