@@ -49,7 +49,10 @@
       wl-clipboard
       nerdfetch
       pipes
+      # DevOps
       terraform
+      awscli2
+      kubectl
 
       mpv # Media player (video & audio)
       imv # Image viewer
