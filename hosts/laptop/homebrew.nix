@@ -55,6 +55,7 @@
       "spotify" # music player
       "iina" # video player
       "cursor"
+      "microsoft-teams"
     ];
   };
 }
