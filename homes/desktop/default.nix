@@ -21,9 +21,6 @@
     "common/yazi"
     "common/zsh"
 
-    # nixOS specific packages
-    "linux/rofi"
-
     # scripts
     #"scripts/default"
 
