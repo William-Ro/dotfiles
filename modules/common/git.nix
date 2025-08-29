@@ -27,8 +27,8 @@
       }
       {
         # use different email & name for dotfiles
-        path = "~/dotfiles/.gitconfig";
-        condition = "gitdir:~/dotfiles/";
+        path = "~/.dotfiles/.gitconfig";
+        condition = "gitdir:~/.dotfiles/";
       }
     ];
 
