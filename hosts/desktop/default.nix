@@ -21,14 +21,6 @@
       # This makes the boot more "flicker free".
       timeout = 0;
     };
-    initrd.systemd = {
-      enable = true;
-      # Required to support TPM-based unlocking of LUKS encrypted drives.
-      # > sudo systemd-cryptenroll /dev/nvme0n1p6 --tpm2-device=auto --tpm2-pcrs=0+2+7
-      # PCRs are important to guarantee tamper-proofing
-      # Refer also to ./enable-tpm.sh
-      tpm2.enable = true;
-    };
   };
 
   # Internationalization
@@ -48,7 +40,6 @@
   # Networking
   networking = {
     networkmanager.enable = true;
-    nameservers = ["1.1.1.1" "1.0.0.1"];
     # wireless.enable = true; # Uncomment if using Wi-Fi
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -58,6 +49,7 @@
   hardware.bluetooth.enable = true;
 
   # Sound (PipeWire)
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
   services.pipewire = {
@@ -74,26 +66,22 @@
     };
   };
   # Display Manager
-  # Using greetd with Hyprland
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.greetd}/bin/agreety --cmd Hyprland";
-      };
-      initial_session = {
-        command = "Hyprland";
-        user = "${config.username}";
-      };
-    };
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
 
-  programs.hyprland.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  programs.hyprland = {
-    xwayland.enable = true;
-  };
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
   programs.zsh.enable = true;
 
   users.users.${config.username} = {

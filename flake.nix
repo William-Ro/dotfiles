@@ -4,8 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,9 +25,6 @@
       x86_64-linux = {
         homes.desktop = ./homes/desktop;
         hosts.desktop = ./hosts/desktop;
-
-        homes.server = ./homes/server;
-        hosts.server = ./hosts/server;
       };
       aarch64-darwin = {
         homes.laptop = ./homes/laptop;

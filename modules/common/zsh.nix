@@ -7,10 +7,6 @@
     enableCompletion = true;
 
     initContent = ''
-      # Fix TERM if using ghostty or kitty
-      [[ "$TERM" == "xterm-ghostty" || "$TERM" == "xterm-kitty" ]] && export TERM="xterm-256color"
-
-
       # Sudo plugin
       sudo-command-line() {
         [[ -z $BUFFER ]] && zle up-history
@@ -22,9 +18,6 @@
       zle -N sudo-command-line
       bindkey -M emacs '^[^[' sudo-command-line
       bindkey -M viins '^[^[' sudo-command-line
-
-      # Keychain
-      eval "$(keychain --agents ssh --eval id_ed25519 2>/dev/null)" >/dev/null
 
       # Yazi integration
       function y() {
@@ -46,7 +39,6 @@
     lla = "lsd -lha --group-dirs=first";
     ls = "lsd --group-dirs=first";
     cat = "bat";
-    c = "bat";
     # Neovim aliases
     vim = "nvim";
     vi = "nvim";
