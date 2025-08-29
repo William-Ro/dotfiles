@@ -36,6 +36,9 @@
       httpie # command-line HTTP client
       # dev env managed by mise, but here are some exceptions
       shellcheck
+      # devops
+      awscli2
+      kubectl
     ];
 
     sessionVariables = {
