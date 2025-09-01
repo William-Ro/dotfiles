@@ -13,28 +13,18 @@
     "common/home"
     "common/lazygit"
     "common/starship"
-    "common/discord"
-    "common/vscode"
     "common/xdg"
     "common/yazi"
     "common/zsh"
     # macOS specific packages
     "darwin/aerospace"
-
-    # dev
-    "dev/devenv"
-    "dev/direnv"
   ];
 
   home = {
     packages = with pkgs; [
-      brave
-      hyperfine # benchmarking tool
       nerdfetch
       oath-toolkit # fix pass support in Raycast
       tldr # collection of help pages for command-line
-      httpie # command-line HTTP client
-      # dev env managed by mise, but here are some exceptions
       shellcheck
     ];
 
