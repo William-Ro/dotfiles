@@ -26,6 +26,11 @@
       oath-toolkit # fix pass support in Raycast
       tldr # collection of help pages for command-line
       shellcheck
+
+      # DevOps Tools
+      ansible
+      awscli2
+      kubectl
     ];
 
     sessionVariables = {
