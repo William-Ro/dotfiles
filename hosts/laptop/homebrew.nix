@@ -53,7 +53,6 @@
       "iina" # video player
       "cursor"
       "docker-desktop"
-      ""
       "microsoft-teams"
     ];
   };
