@@ -41,6 +41,7 @@
     brews = [
       "mas" # Mac App Store CLI
       "hashicorp/tap/terraform"
+      "docker-compose"
       "displayplacer" # CLI for display settings
     ];
 
@@ -51,7 +52,8 @@
       "ghostty" # terminal emulator
       "iina" # video player
       "cursor"
-      "docker"
+      "docker-desktop"
+      ""
       "microsoft-teams"
     ];
   };
