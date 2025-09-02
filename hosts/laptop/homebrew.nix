@@ -51,6 +51,7 @@
       "ghostty" # terminal emulator
       "iina" # video player
       "cursor"
+      "docker"
       "microsoft-teams"
     ];
   };
