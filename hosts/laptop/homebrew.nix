@@ -52,8 +52,10 @@
       "ghostty" # terminal emulator
       "iina" # video player
       "cursor"
+      "spotify"
       "docker-desktop"
       "microsoft-teams"
+      "google-chrome"
     ];
   };
 }
