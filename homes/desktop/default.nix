@@ -19,7 +19,7 @@
     "common/vscode"
     "common/xdg"
     "common/yazi"
-    "common/zsh"
+    "common/fish"
 
     # scripts
     #"scripts/default"
