@@ -49,6 +49,7 @@
       killall # Kill processes by name
       komikku # Manga reader
       xournalpp # Note-taking application
+      chromium
     ];
 
     sessionVariables = {
