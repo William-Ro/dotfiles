@@ -12,10 +12,9 @@
     "common/git"
     "common/home"
     "common/lazygit"
-    "common/starship"
     "common/xdg"
     "common/yazi"
-    "common/zsh"
+    "common/fish"
     # macOS specific packages
     "darwin/aerospace"
   ];
@@ -55,11 +54,6 @@
   };
 
   programs = {
-    zsh.initContent = ''
-      # Inlined from ‹eval "$(/opt/homebrew/bin/brew shellenv)"›
-      fpath+="/opt/homebrew/share/zsh/site-functions"
-
-    '';
   };
 
   home.stateVersion = "24.05";
