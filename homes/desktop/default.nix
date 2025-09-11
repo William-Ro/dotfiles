@@ -19,6 +19,7 @@
     "common/xdg"
     "common/yazi"
     "common/fish"
+    "common/starship"
 
     # scripts
     #"scripts/default"
