@@ -5,24 +5,9 @@
   pkgs,
   ...
 }: {
-  options = with lib; {
-    programs.fish.art = mkOption {
-      type = types.nullOr types.str;
-      default = builtins.replaceStrings ["\\"] ["\\\\"] ''
-                _    .  ,   .           .
-            *  / \_ *  / \_      _  *        *   /\'__        *
-              /    \  /    \,   ((        .    _/  /  \  *'.
-         .   /\/\  /\/ :' __ \_  `          _^/  ^/    `--.
-            /    \/  \  _/  \-'\      *    /.' ^_   \_   .'\  *
-          /\  .-   `. \/     \ /==~=-=~=-=-;.  _/ \ -. `_/   \
-         /  `-.__ ^   / .-'.--\ =-=~_=-=~=^/  _ `--./ .-'  `-
-        /        `.  / /       `.~-^=-=~=^=.-'      '-._ `._
-      '';
-    };
-  };
-
   config.programs.fish = {
     enable = true;
+
     plugins = [
       {
         name = "fish-async-prompt";
@@ -43,27 +28,45 @@
         src = pkgs.fishPlugins.sponge;
       }
     ];
+
     functions = {
-      fish_greeting = "echo $fish_greeting";
+      fish_greeting = "";
     };
-    interactiveShellInit = let
-      optionalGreeting =
-        if builtins.isString config.programs.fish.art
-        then ''"${config.programs.fish.art}"''
-        else "";
-    in ''
-      set -U fish_greeting ${optionalGreeting}
+
+    shellAliases = {
+      ll = "lsd -lh --group-dirs=first";
+      la = "lsd -a --group-dirs=first";
+      l = "lsd --group-dirs=first";
+      lla = "lsd -lha --group-dirs=first";
+      ls = "lsd --group-dirs=first";
+      cat = "bat";
+
+      vim = "nvim";
+      vi = "nvim";
+      v = "nvim";
+      lg = "lazygit";
+    };
+
+    interactiveShellInit = ''
       set -U fish_prompt_pwd_dir_length 10
-      set -g hydro_symbol_start "\n"
-      set -g hydro_symbol_prompt "❯"
+      set -g hydro_multiline false
+
+      set -g hydro_symbol_start ""
+      set -g hydro_symbol_prompt "→"
+      set -g hydro_symbol_prompt ""
+      set -g hydro_symbol_error ""
+      set -g hydro_symbol_vim_cmd ""
+
       set -g hydro_symbol_git_dirty "*"
       set -g hydro_symbol_git_ahead "⇡"
       set -g hydro_symbol_git_behind "⇣"
-      set -g hydro_color_pwd blue
+      set -g hydro_symbol_git_stashed "≡"
       set -g hydro_color_git brblack
+
+      set -g hydro_color_pwd blue
       set -g hydro_color_prompt magenta
       set -g hydro_color_duration yellow
-      set -g hydro_multiline true
+
       set -g hydro_cmd_duration_threshold 10000
     '';
   };
