@@ -34,6 +34,7 @@
 
   home = {
     packages = with pkgs; [
+      prismlauncher
       spotify
       qbittorrent
       wl-clipboard
