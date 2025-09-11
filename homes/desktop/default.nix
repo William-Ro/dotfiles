@@ -14,7 +14,6 @@
     "common/home"
     "common/kitty"
     "common/lazygit"
-    "common/starship"
     "common/discord"
     "common/vscode"
     "common/xdg"
