@@ -7,18 +7,6 @@
     enableCompletion = true;
 
     initContent = ''
-      # Sudo plugin
-      sudo-command-line() {
-        [[ -z $BUFFER ]] && zle up-history
-        if [[ $BUFFER != sudo\ * ]]; then
-          BUFFER="sudo $BUFFER"
-          zle end-of-line
-        fi
-      }
-      zle -N sudo-command-line
-      bindkey -M emacs '^[^[' sudo-command-line
-      bindkey -M viins '^[^[' sudo-command-line
-
       # Yazi integration
       function y() {
        local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
