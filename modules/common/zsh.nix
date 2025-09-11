@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # Enable zsh
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;

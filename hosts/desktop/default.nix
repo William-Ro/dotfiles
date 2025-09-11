@@ -90,12 +90,12 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   users.users.${config.username} = {
     isNormalUser = true;
     extraGroups = ["wheel" "networkmanager" "docker"];
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
   };
 
   services.gvfs.enable = true;
