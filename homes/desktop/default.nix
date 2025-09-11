@@ -18,7 +18,7 @@
     "common/vscode"
     "common/xdg"
     "common/yazi"
-    "common/fish"
+    "common/zsh"
     "common/starship"
 
     # scripts

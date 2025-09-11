@@ -14,7 +14,8 @@
     "common/lazygit"
     "common/xdg"
     "common/yazi"
-    "common/fish"
+    "common/zsh"
+    "common/starship"
     # macOS specific packages
     "darwin/aerospace"
   ];
