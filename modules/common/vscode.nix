@@ -56,9 +56,10 @@
         # Terminal
         "terminal.integrated.fontFamily" = "${config.font}";
         "terminal.integrated.fontSize" = 21;
+        "terminal.integrated.shellIntegration.decorationsEnabled" = "never";
         "terminal.integrated.cursorStyle" = "line";
         "terminal.integrated.cursorBlinking" = false;
-        "terminal.integrated.gpuAcceleration" = "off";
+        "terminal.integrated.gpuAcceleration" = "on";
         "terminal.integrated.allowedLinkSchemes" = [
           "file"
           "http"
