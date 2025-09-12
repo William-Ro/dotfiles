@@ -47,6 +47,7 @@
       kubectl
 
       mpv # Media player (video & audio)
+      imv # Image viewer
       killall # Kill processes by name
       komikku # Manga reader
       xournalpp # Note-taking application
