@@ -29,7 +29,7 @@
     "dev/direnv"
 
     # gaming
-    "gaming/steam"
+    "gaming/default"
   ];
 
   home = {
