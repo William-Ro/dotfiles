@@ -40,22 +40,22 @@
 
     brews = [
       "mas" # Mac App Store CLI
-      #"cocoapods" # dependency manager
       "hashicorp/tap/terraform"
+      "docker-compose"
       "displayplacer" # CLI for display settings
     ];
 
     # `brew install --cask`
     casks = [
       #"android-studio" # IDE for Android development
-      "insomnia" # REST client¡
-      "qbittorrent" # torrent client
       "raycast" # app launcher
       "ghostty" # terminal emulator
-      "spotify" # music player
       "iina" # video player
+      "cursor"
+      "spotify"
+      "docker-desktop"
       "microsoft-teams"
-      "docker"
+      "google-chrome"
     ];
   };
 }

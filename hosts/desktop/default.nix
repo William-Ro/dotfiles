@@ -48,7 +48,6 @@
   # Networking
   networking = {
     networkmanager.enable = true;
-    nameservers = ["1.1.1.1" "1.0.0.1"];
     # wireless.enable = true; # Uncomment if using Wi-Fi
     # proxy.default = "http://user:password@proxy:port/";
     # proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -58,6 +57,7 @@
   hardware.bluetooth.enable = true;
 
   # Sound (PipeWire)
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
   services.pipewire = {
@@ -74,26 +74,22 @@
     };
   };
   # Display Manager
-  # Using greetd with Hyprland
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.greetd}/bin/agreety --cmd Hyprland";
-      };
-      initial_session = {
-        command = "Hyprland";
-        user = "${config.username}";
-      };
-    };
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
   };
 
-  programs.hyprland.enable = true;
-  xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  programs.hyprland = {
-    xwayland.enable = true;
-  };
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
   programs.zsh.enable = true;
 
   users.users.${config.username} = {
@@ -104,6 +100,13 @@
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
 
   virtualisation.docker = {
     enable = true;

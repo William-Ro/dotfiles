@@ -10,7 +10,6 @@
   programs.mangohud.enable = true;
 
   home.packages = with pkgs; [
-    steam # Steam client
     gamescope # A micro-compositor for games
     mangohud # A Vulkan and OpenGL overlay for monitoring FPS, temperatures, CPU/GPU load, etc.
     gamemode # GameMode is a daemon/lib combo that allows you to request a set of optimizations on demand

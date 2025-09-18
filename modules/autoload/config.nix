@@ -32,8 +32,8 @@ with lib; {
       };
 
     dotfilesPath = "${config.homePath}/dotfiles";
-    wallpaper = "${config.homePath}/Pictures/wallpapers/current.jpg";
-    screenshots = "${config.homePath}/Pictures/screenshots";
+    wallpaper = "${config.homePath}/Pictures/Wallpapers/current.jpg";
+    screenshots = "${config.homePath}/Pictures/Screenshots";
     font = "JetBrainsMono Nerd Font";
   };
 }
