@@ -8,7 +8,6 @@
     enable = true;
 
     settings = {
-      theme = "deishuu";
       "adjust-cell-height" = "10%";
       "window-theme" = "dark";
       "window-height" = 20;
@@ -60,35 +59,6 @@
       "unfocused-split-opacity" = 0.5;
       "quick-terminal-position" = "center";
       "shell-integration-features" = "cursor,sudo";
-    };
-
-    themes = {
-      deishuu = {
-        palette = [
-          "0=#45475a"
-          "1=#f38ba8"
-          "2=#a6e3a1"
-          "3=#f9e2af"
-          "4=#89b4fa"
-          "5=#f5c2e7"
-          "6=#94e2d5"
-          "7=#a6adc8"
-          "8=#585b70"
-          "9=#f37799"
-          "10=#89d88b"
-          "11=#ebd391"
-          "12=#74a8fc"
-          "13=#f2aede"
-          "14=#6bd7ca"
-          "15=#bac2de"
-        ];
-        background = "#1F1F1F";
-        foreground = "#d9e0ee";
-        "cursor-color" = "#f5e0dc";
-        "cursor-text" = "#cdd6f4";
-        "selection-background" = "#585b70";
-        "selection-foreground" = "#cdd6f4";
-      };
     };
   };
 }
