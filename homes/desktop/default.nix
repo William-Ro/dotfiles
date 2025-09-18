@@ -40,10 +40,6 @@
       wl-clipboard
       nerdfetch
       pipes
-      # DevOps
-      terraform
-      awscli2
-      kubectl
 
       # DevOps
       awscli2
