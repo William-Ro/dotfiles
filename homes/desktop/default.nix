@@ -42,7 +42,6 @@
       pipes
 
       # DevOps
-      #terraform
       awscli2
       kubectl
 
