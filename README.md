@@ -1,10 +1,4 @@
 <h2 align="center">NixOS/MacOS Dotfiles</h2>
-<p align="center">
-  <img src="https://img.shields.io/static/v1?label=Hyprland&message=Stable&style=flat&logo=hyprland&colorA=24273A&colorB=8AADF4&logoColor=CAD3F5"/>
-  <a href="https://nixos.org/">
-    <img src="https://img.shields.io/badge/NixOS-Unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8AADF4">
-  </a>
-</p>
 
 ## Nix Dotfiles Directory Structure
 
