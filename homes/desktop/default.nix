@@ -51,6 +51,8 @@
       komikku # Manga reader
       xournalpp # Note-taking application
       chromium
+      parted
+      exfatprogs
     ];
 
     sessionVariables = {
