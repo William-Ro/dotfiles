@@ -3,10 +3,7 @@
   lib,
   ...
 }: {
-  # `programs.git` will generate the config file: ~/.config/git/config
-  # to make git use this config file, `~/.gitconfig` should not exist!
-  #
-  #    https://git-scm.com/docs/git-config#Documentation/git-config.txt---global
+  # Asegura que no exista ~/.gitconfig, porque Home Manager generará ~/.config/git/config
   home.activation.removeExistingGitconfig = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
     rm -f ~/.gitconfig
   '';
@@ -15,44 +12,28 @@
     enable = true;
     lfs.enable = true;
 
-    # TODO replace with your own name & email
-    userName = config.username;
-    userEmail = config.usermail;
+    settings = {
+      user.name = config.username;
+      user.email = config.usermail;
+
+      init.defaultBranch = "main";
+      push.autoSetupRemote = true;
+      pull.rebase = true;
+      credential.helper = "pass";
+    };
 
     includes = [
       {
-        # use diffrent email & name for work
         path = "~/Work/.gitconfig";
         condition = "gitdir:~/Work/";
       }
       {
-        # use different email & name for dotfiles
         path = "~/.dotfiles/.gitconfig";
         condition = "gitdir:~/.dotfiles/";
       }
     ];
 
-    extraConfig = {
-      init.defaultBranch = "main";
-      push.autoSetupRemote = true;
-      pull.rebase = true;
-
-      credential.helper = "pass";
-    };
-
-    # signing = {
-    #   key = "xxx";
-    #   signByDefault = true;
-    # };
-
-    delta = {
-      enable = true;
-      options = {
-        features = "side-by-side";
-      };
-    };
-
-    aliases = {
+    settings.alias = {
       # common aliases
       br = "branch";
       co = "checkout";
@@ -67,6 +48,14 @@
       # aliases for submodule
       update = "submodule update --init --recursive";
       foreach = "submodule foreach";
+    };
+  };
+
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      features = "side-by-side";
     };
   };
 }
