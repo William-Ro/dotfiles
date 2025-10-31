@@ -41,6 +41,11 @@
       nerdfetch
       pipes
 
+      # Ebook related
+      hakuneko
+      kcc
+      gimp
+
       # DevOps
       awscli2
       kubectl
