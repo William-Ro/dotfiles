@@ -25,7 +25,7 @@
       nerd-fonts.roboto-mono
 
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       font-awesome_5
       font-awesome_6
     ];
