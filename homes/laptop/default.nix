@@ -38,6 +38,8 @@
       gh
       git-lfs
       bfg-repo-cleaner
+      terraform
+      packer
     ];
 
     sessionVariables = {
