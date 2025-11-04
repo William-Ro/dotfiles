@@ -35,6 +35,9 @@
       ansible
       awscli2
       kubectl
+      gh
+      git-lfs
+      bfg-repo-cleaner
     ];
 
     sessionVariables = {
