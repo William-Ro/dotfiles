@@ -47,7 +47,6 @@
 
     # `brew install --cask`
     casks = [
-      #"android-studio" # IDE for Android development
       "raycast" # app launcher
       "ghostty" # terminal emulator
       "iina" # video player
