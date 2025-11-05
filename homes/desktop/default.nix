@@ -49,6 +49,8 @@
       # DevOps
       awscli2
       kubectl
+      terraform
+      packer
 
       mpv # Media player (video & audio)
       imv # Image viewer
