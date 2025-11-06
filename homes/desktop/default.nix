@@ -46,9 +46,13 @@
       kcc
       gimp
 
-      # DevOps
+      # DevOps Tools
+      ansible
       awscli2
       kubectl
+      gh
+      git-lfs
+      bfg-repo-cleaner
       terraform
       packer
 
