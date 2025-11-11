@@ -71,6 +71,7 @@
         ];
 
         # Explorer
+        "explorer.confirmDragAndDrop" = false;
         "explorer.compactFolders" = false;
         "explorer.confirmDelete" = false;
         "explorer.fileNesting.enabled" = true;
