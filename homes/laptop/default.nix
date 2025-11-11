@@ -16,6 +16,7 @@
     "common/yazi"
     "common/zsh"
     "common/starship"
+    "common/vscode"
     # macOS specific packages
     "darwin/aerospace"
 
@@ -29,7 +30,7 @@
       nerdfetch
       oath-toolkit # fix pass support in Raycast
       tldr # collection of help pages for command-line
-      shellcheck
+      shellcheck    
 
       # DevOps Tools
       ansible
