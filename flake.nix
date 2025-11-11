@@ -27,8 +27,8 @@
         hosts.desktop = ./hosts/desktop;
       };
       aarch64-darwin = {
-        homes.laptop = ./homes/laptop;
-        hosts.laptop = ./hosts/laptop;
+        homes.work = ./homes/work;
+        hosts.work = ./hosts/work;
       };
     };
 }

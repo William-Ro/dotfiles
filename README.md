@@ -14,7 +14,7 @@
 │   ├── desktop
 │   │   ├── default.nix
 │   │   └── nvidia.nix
-│   └── laptop
+│   └── work
 │       ├── default.nix
 │       └── homebrew.nix
 ├── modules
