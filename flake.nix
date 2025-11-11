@@ -25,6 +25,8 @@
       x86_64-linux = {
         homes.desktop = ./homes/desktop;
         hosts.desktop = ./hosts/desktop;
+        homes.laptop = ./homes/laptop;
+        hosts.laptop = ./hosts/laptop;
       };
       aarch64-darwin = {
         homes.work = ./homes/work;
