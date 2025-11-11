@@ -64,6 +64,7 @@
       chromium
       parted
       exfatprogs
+      jq
     ];
 
     sessionVariables = {
