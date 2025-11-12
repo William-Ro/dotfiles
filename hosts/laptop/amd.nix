@@ -12,7 +12,6 @@
       enable32Bit = true;
 
       extraPackages = with pkgs; [
-        vaapiVdpau
         libvdpau
         mesa.drivers
       ];
