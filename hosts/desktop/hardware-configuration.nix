@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
@@ -19,13 +19,13 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3F9D-DF3D";
+    { device = "/dev/disk/by-uuid/C69D-2BE2";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/c31265ee-d21f-473d-a68a-30015b0fe32d"; }
+    [ { device = "/dev/disk/by-uuid/a452227d-3a30-46fa-9086-cd7b04b746d2"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
