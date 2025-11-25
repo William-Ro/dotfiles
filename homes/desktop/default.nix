@@ -65,6 +65,8 @@
       parted
       exfatprogs
       jq
+      tree
+      exiftool
     ];
 
     sessionVariables = {
