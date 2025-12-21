@@ -67,6 +67,10 @@
       jq
       tree
       exiftool
+      cargo
+      lm_sensors
+      nvtopPackages.nvidia
+      htop
     ];
 
     sessionVariables = {
