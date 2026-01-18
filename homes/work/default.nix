@@ -30,7 +30,10 @@
       nerdfetch
       oath-toolkit # fix pass support in Raycast
       tldr # collection of help pages for command-line
-      shellcheck    
+      shellcheck
+      tree
+      cargo
+      exiftool
 
       # DevOps Tools
       ansible
@@ -41,6 +44,7 @@
       bfg-repo-cleaner
       terraform
       packer
+      terragrunt
     ];
 
     sessionVariables = {
