@@ -102,6 +102,7 @@
         "debug.console.fontSize" = 21;
         "debug.console.fontFamily" = "${config.font}";
         "debug.internalConsoleOptions" = "openOnSessionStart";
+        "chat.viewSessions.enabled" = false;
       };
     };
   };
