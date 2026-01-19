@@ -6,10 +6,11 @@
 }: {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-bin;
 
     profiles.default = {
       extensions = {
-        packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
           bitwarden
           clearurls
           new-tab-override
