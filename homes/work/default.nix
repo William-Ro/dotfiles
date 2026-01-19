@@ -34,6 +34,7 @@
       tree
       cargo
       exiftool
+      code-cursor
 
       # DevOps Tools
       ansible
