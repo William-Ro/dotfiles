@@ -73,6 +73,7 @@
       htop
       dig
       nvme-cli
+      tailscale
     ];
 
     sessionVariables = {
