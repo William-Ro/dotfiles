@@ -71,6 +71,8 @@
       lm_sensors
       nvtopPackages.nvidia
       htop
+      dig
+      nvme-cli
     ];
 
     sessionVariables = {
