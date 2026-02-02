@@ -46,6 +46,7 @@
       terraform
       packer
       terragrunt
+      neovim
     ];
 
     sessionVariables = {
