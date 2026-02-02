@@ -43,6 +43,7 @@
       "hashicorp/tap/terraform"
       "docker-compose"
       "displayplacer" # CLI for display settings
+      "cliclick"
     ];
 
     # `brew install --cask`
@@ -55,6 +56,7 @@
       "docker-desktop"
       "microsoft-teams"
       "google-chrome"
+      "qbittorrent"
     ];
   };
 }
