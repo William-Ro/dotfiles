@@ -5,6 +5,6 @@
   ...
 }: {
   home.packages = [
-    pkgs.discord
+    pkgs.vesktop
   ];
 }
