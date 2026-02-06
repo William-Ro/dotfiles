@@ -22,19 +22,12 @@
       credential.helper = "pass";
     };
 
-    includes =
-      lib.optionals (builtins.pathExists (config.homePath + "/Work/.gitconfig")) [
-        {
-          path = "${config.homePath}/Work/.gitconfig";
-          condition = "gitdir:${config.homePath}/Work/";
-        }
-      ]
-      ++ lib.optionals (builtins.pathExists (config.dotfilesPath + "/.gitconfig")) [
-        {
-          path = "${config.dotfilesPath}/.gitconfig";
-          condition = "gitdir:${config.dotfilesPath}/";
-        }
-      ];
+    includes = lib.optionals (builtins.pathExists (config.homePath + "/Work/.gitconfig")) [
+      {
+        path = "${config.homePath}/Work/.gitconfig";
+        condition = "gitdir:${config.homePath}/Work/";
+      }
+    ];
 
     settings.alias = {
       # common aliases
