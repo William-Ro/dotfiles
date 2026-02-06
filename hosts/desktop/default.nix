@@ -11,6 +11,7 @@
     "common/nix"
     "common/packages"
     "common/locale"
+    "common/audio"
     "linux/default"
   ];
 
@@ -47,23 +48,6 @@
   # Bluetooth
   hardware.bluetooth.enable = true;
 
-  # Sound (PipeWire)
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  security.polkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # jack.enable = true; # Uncomment if using JACK applications
-    extraConfig.pipewire."adjust-sample-rate" = {
-      "context.properties" = {
-        "default.clock.rate" = 192000;
-        "default.clock.allowed-rates" = [192000];
-      };
-    };
-  };
   # Display Manager
   # Enable the X11 windowing system.
   services.xserver.enable = true;
