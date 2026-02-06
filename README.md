@@ -54,11 +54,13 @@ They are highly opinionated and tailored to my own workflows and setups.
 ## Setup
 
 **Build:**
+
 ```bash
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
 
 **Update:**
+
 ```bash
 nix flake update
 sudo nixos-rebuild switch --flake .#<hostname>
