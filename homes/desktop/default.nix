@@ -9,10 +9,8 @@
     "common/alacritty"
     "common/fastfetch"
     "common/firefox"
-    "common/ghostty"
     "common/git"
     "common/home"
-    "common/kitty"
     "common/lazygit"
     "common/discord"
     "common/vscode"
@@ -30,6 +28,9 @@
 
     # gaming
     "gaming/default"
+
+    # linux
+    "linux/gnome-extensions"
   ];
 
   home = {
@@ -37,7 +38,6 @@
       prismlauncher
       spotify
       qbittorrent
-      wl-clipboard
       nerdfetch
       pipes
 
@@ -69,7 +69,6 @@
       exiftool
       cargo
       lm_sensors
-      nvtopPackages.nvidia
       htop
       dig
       nvme-cli

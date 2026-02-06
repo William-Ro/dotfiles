@@ -10,6 +10,7 @@
     ./amd.nix
     "common/nix"
     "common/packages"
+    "linux/default"
   ];
 
   # Bootloader
