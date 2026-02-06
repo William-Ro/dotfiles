@@ -20,6 +20,6 @@
   ];
 
   # Enable GNOME's file indexing and search
-  services.gnome.tracker-miners.enable = true;
-  services.gnome.tracker.enable = true;
+  services.gnome.localsearch.enable = true;
+  services.gnome.tinysparql.enable = true;
 }
