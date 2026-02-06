@@ -1,6 +1,6 @@
 .DS_Store
 .gitconfig
+docs
 
-
-
-
+# Hardware configurations (system-specific, should not be shared)
+hosts/*/hardware-configuration.nix
