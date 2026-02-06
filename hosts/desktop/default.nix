@@ -12,6 +12,7 @@
     "common/packages"
     "common/locale"
     "common/audio"
+    "gaming/steam"
     "linux/default"
   ];
 
@@ -75,13 +76,6 @@
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
-
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = false; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
 
   virtualisation.docker = {
     enable = true;
