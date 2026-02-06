@@ -31,6 +31,7 @@
 
     # linux
     "linux/gnome-extensions"
+    "linux/electron"
   ];
 
   home = {
