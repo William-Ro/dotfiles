@@ -5,6 +5,8 @@
   ...
 }: {
   home.packages = [
-    pkgs.discord
+    (pkgs.discord.override {
+      withTTS = true;
+    })
   ];
 }
