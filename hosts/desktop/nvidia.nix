@@ -39,8 +39,8 @@
       # accessible via `nvidia-settings`.
       nvidiaSettings = true;
 
-      # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # Use the latest driver to ensure support for newer GPUs (e.g., RTX 50-series).
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 }
