@@ -22,7 +22,7 @@ with lib; {
     username = "deishuu";
     usermail = "deishuu666@gmail.com";
 
-    # Git configuration (can be different from system username)
+    # Git configuration
     gitUsername = "William-Ro";
     gitUsermail = "william.r2409@gmail.com";
 
