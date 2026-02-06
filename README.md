@@ -53,16 +53,12 @@ They are highly opinionated and tailored to my own workflows and setups.
 
 ## Setup
 
-**Hardware configuration:** Generate your own with `sudo nixos-generate-config`, then copy to `hosts/<hostname>/hardware-configuration.nix` and run `git update-index --assume-unchanged hosts/<hostname>/hardware-configuration.nix`
-
 **Build:**
-
 ```bash
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
 
 **Update:**
-
 ```bash
 nix flake update
 sudo nixos-rebuild switch --flake .#<hostname>
