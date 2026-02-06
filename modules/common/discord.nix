@@ -2,10 +2,9 @@
   pkgs,
   lib,
   config,
-  system,
   ...
 }: {
-  home.packages = lib.optionals (system == "aarch64-darwin") [
+  home.packages = [
     pkgs.discord
   ];
 }
