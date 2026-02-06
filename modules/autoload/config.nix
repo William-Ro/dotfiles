@@ -8,6 +8,8 @@ with lib; {
   options = {
     username = mkOption {type = types.str;};
     usermail = mkOption {type = types.str;};
+    gitUsername = mkOption {type = types.str;};
+    gitUsermail = mkOption {type = types.str;};
     homePath = mkOption {type = types.str;};
     dotfilesPath = mkOption {type = types.str;};
     wallpaper = mkOption {type = types.str;};
@@ -19,6 +21,10 @@ with lib; {
     # Replace with your own name
     username = "deishuu";
     usermail = "deishuu666@gmail.com";
+
+    # Git configuration (can be different from system username)
+    gitUsername = "William-Ro";
+    gitUsermail = "william.r2409@gmail.com";
 
     homePath =
       lib.mkDefault

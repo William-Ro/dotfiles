@@ -13,8 +13,8 @@
     lfs.enable = true;
 
     settings = {
-      user.name = config.username;
-      user.email = config.usermail;
+      user.name = config.gitUsername;
+      user.email = config.gitUsermail;
 
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
