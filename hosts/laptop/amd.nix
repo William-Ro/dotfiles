@@ -13,7 +13,6 @@
 
       extraPackages = with pkgs; [
         libvdpau
-        mesa.drivers
       ];
     };
   };

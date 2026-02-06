@@ -22,7 +22,6 @@
       };
 
       modules = [
-        # Sección: Información del SO
         {
           type = "custom";
           outputColor = "blue";
@@ -39,31 +38,30 @@
         }
         {
           type = "os";
-          key = " ├─ "; # Icono para NixOS
+          key = " ├─ ";
           keyColor = "green";
         }
         {
           type = "kernel";
-          key = " ├─ "; # Icono para kernel Linux
+          key = " ├─ ";
           keyColor = "green";
         }
         {
           type = "packages";
-          key = " ├─ "; # Icono para paquetes Nix
+          key = " ├─ ";
           keyColor = "green";
         }
         {
           type = "font";
-          key = " ├─ 󰌵"; # Icono para fuente
+          key = " ├─ 󰌵";
           keyColor = "green";
         }
         {
           type = "shell";
-          key = " ╰─  "; # Icono para shell
+          key = " ╰─  ";
           keyColor = "green";
         }
 
-        # Sección: Hardware
         {
           type = "custom";
           outputColor = "blue";
@@ -71,32 +69,31 @@
         }
         {
           type = "display";
-          key = " ╭─ 󰍹 "; # Monitor
+          key = " ╭─ 󰍹 ";
           keyColor = "blue";
           compactType = "original-with-refresh-rate";
         }
         {
           type = "cpu";
-          key = " ├─ 󰍛 "; # CPU
+          key = " ├─ 󰍛 ";
           keyColor = "blue";
         }
         {
           type = "gpu";
-          key = " ├─  "; # GPU
+          key = " ├─  ";
           keyColor = "blue";
         }
         {
           type = "disk";
-          key = " ├─ 󱛟 "; # Disco
+          key = " ├─ 󱛟 ";
           keyColor = "blue";
         }
         {
           type = "memory";
-          key = " ╰─  "; # Memoria
+          key = " ╰─  ";
           keyColor = "blue";
         }
 
-        # Sección: Software
         {
           type = "custom";
           outputColor = "blue";
@@ -104,16 +101,15 @@
         }
         {
           type = "wm";
-          key = " ╭─  "; # Window Manager
+          key = " ╭─  ";
           keyColor = "yellow";
         }
         {
           type = "terminal";
-          key = " ╰─  "; # Terminal
+          key = " ╰─  ";
           keyColor = "yellow";
         }
 
-        # Cierre del marco
         {
           type = "custom";
           outputColor = "blue";
@@ -123,7 +119,7 @@
           type = "custom";
           format = "   {#39}   {#34}    {#36}    {#35}    {#34}    {#33}    {#32}    {#31} ";
         }
-        "break" # Salto de línea final
+        "break"
       ];
     };
   };

@@ -1,4 +1,3 @@
-# [home-manager]
 {config, ...}: let
   inherit (config.xdg) dataHome configHome cacheHome stateHome;
 in {

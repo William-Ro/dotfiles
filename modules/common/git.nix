@@ -3,7 +3,6 @@
   lib,
   ...
 }: {
-  # Asegura que no exista ~/.gitconfig, porque Home Manager generará ~/.config/git/config
   home.activation.removeExistingGitconfig = lib.hm.dag.entryBefore ["checkLinkTargets"] ''
     rm -f ~/.gitconfig
   '';
@@ -13,8 +12,8 @@
     lfs.enable = true;
 
     settings = {
-      user.name = config.gitUsername;
-      user.email = config.gitUsermail;
+      user.name = config.git_username;
+      user.email = config.git_usermail;
 
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
@@ -22,15 +21,14 @@
       credential.helper = "pass";
     };
 
-    includes = lib.optionals (builtins.pathExists (config.homePath + "/Work/.gitconfig")) [
+    includes = lib.optionals (builtins.pathExists (config.home_path + "/Work/.gitconfig")) [
       {
-        path = "${config.homePath}/Work/.gitconfig";
-        condition = "gitdir:${config.homePath}/Work/";
+        path = "${config.home_path}/Work/.gitconfig";
+        condition = "gitdir:${config.home_path}/Work/";
       }
     ];
 
     settings.alias = {
-      # common aliases
       br = "branch";
       co = "checkout";
       st = "status";
@@ -41,7 +39,6 @@
       dc = "diff --cached";
       amend = "commit --amend -m";
 
-      # aliases for submodule
       update = "submodule update --init --recursive";
       foreach = "submodule foreach";
     };

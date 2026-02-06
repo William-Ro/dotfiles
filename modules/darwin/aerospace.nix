@@ -1,5 +1,4 @@
 {pkgs, ...}: {
-  # Ensure aerospace package installed
   home.packages = with pkgs; [
     aerospace
   ];
