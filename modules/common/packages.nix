@@ -9,6 +9,7 @@
     git
     curl
     wget
+    xclip
   ];
   fonts = {
     packages = with pkgs; [
