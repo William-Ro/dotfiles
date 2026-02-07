@@ -17,6 +17,7 @@
     "common/yazi"
     "common/zsh"
     "common/starship"
+    "common/nvchad"
 
     # scripts
     #"scripts/default"
