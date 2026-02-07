@@ -17,6 +17,7 @@
     "common/yazi"
     "common/zsh"
     "common/starship"
+    "common/vscode"
     "common/nvchad"
 
     # scripts
