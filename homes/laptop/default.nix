@@ -32,6 +32,7 @@
 
     # linux
     "linux/gnome-extensions"
+    "linux/gnome-settings"
     "linux/electron"
   ];
 
