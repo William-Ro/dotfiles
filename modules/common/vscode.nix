@@ -6,7 +6,6 @@
 }: {
   programs.vscode = {
     enable = true;
-    package = vscode.fhs;
 
     profiles.default = {
       enableUpdateCheck = false;
