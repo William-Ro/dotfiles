@@ -59,5 +59,5 @@
     logDriver = "none";
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "24.05";
 }

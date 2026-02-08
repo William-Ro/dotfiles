@@ -53,5 +53,5 @@
   services.gvfs.enable = true;
   services.flatpak.enable = true;
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "24.05";
 }

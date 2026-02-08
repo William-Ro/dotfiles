@@ -69,5 +69,5 @@
   programs = {
   };
 
-  home.stateVersion = "25.11";
+  home.stateVersion = "24.05";
 }
