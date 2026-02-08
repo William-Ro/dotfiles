@@ -44,6 +44,11 @@
       move-to-workspace-9 = ["<Alt><Shift>9"];
     };
 
+    # Shell Keybindings
+    "org/gnome/shell/keybindings" = {
+      toggle-application-view = ["<Alt>space"];
+    };
+
     # Mouse & Touchpad
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
@@ -99,6 +104,7 @@
       edge-tiling = true;
       dynamic-workspaces = false;
       workspaces-only-on-primary = true;
+      overlay-key = "";
     };
   };
 }
