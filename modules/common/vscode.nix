@@ -3,21 +3,10 @@
   pkgs,
   lib,
   ...
-}: let
-  # Pin VSCode to NixOS 25.05 for stability
-  nixpkgs-25-05 = import (pkgs.fetchFromGitHub {
-    owner = "NixOS";
-    repo = "nixpkgs";
-    rev = "nixos-25.05";
-    sha256 = "sha256-OnSAY7XDSx7CtDoqNh8jwVwh4xNL/2HaJxGjryLWzX8=";
-  }) {
-    system = pkgs.system;
-    config.allowUnfree = true;
-  };
-in {
+}: {
   programs.vscode = {
     enable = true;
-    package = nixpkgs-25-05.vscode.fhs;
+    package = vscode.fhs;
 
     profiles.default = {
       enableUpdateCheck = false;
