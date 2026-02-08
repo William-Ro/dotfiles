@@ -7,6 +7,7 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
+      clock-format = "12h";
       enable-hot-corners = false;
       gtk-theme = "Adwaita-dark";
       color-scheme = "prefer-dark";
@@ -20,7 +21,7 @@
 
     # Keyboard Settings
     "org/gnome/desktop/wm/keybindings" = {
-      close = ["<Super>q"];
+      close = ["<Alt>q"];
       switch-to-workspace-1 = ["<Alt>1"];
       switch-to-workspace-2 = ["<Alt>2"];
       switch-to-workspace-3 = ["<Alt>3"];
@@ -41,9 +42,9 @@
       move-to-workspace-9 = ["<Alt><Shift>9"];
     };
 
-    # Shell Keybindings
     "org/gnome/shell/keybindings" = {
-      toggle-application-view = ["<Alt>space"];
+      toggle-overview = ["<Alt>space"];
+      show-screenshot-ui = ["<Alt><Shift>s"];
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -58,7 +59,7 @@
     };
 
     "org/gnome/nautilus/preferences" = {
-      default-folder-viewer = "list-view";
+      default-folder-viewer = "icon-view";
       search-filter-time-type = "last_modified";
       show-hidden-files = true;
     };
