@@ -17,11 +17,9 @@
         pkief.material-icon-theme
         zhuangtongfa.material-theme
         dracula-theme.theme-dracula
-        # GitHub Copilot extensions
         github.copilot
         github.copilot-chat
       ];
-
       userSettings = {
         "window.zoomLevel" = 2;
         "workbench.activityBar.location" = "hidden";
