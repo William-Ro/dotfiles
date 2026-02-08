@@ -4,9 +4,7 @@
   pkgs,
   ...
 }: {
-  # GNOME dconf settings
   dconf.settings = {
-    # Desktop Interface Settings
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       enable-hot-corners = false;
@@ -15,7 +13,6 @@
       show-battery-percentage = true;
     };
 
-    # Window Manager Preferences
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       num-workspaces = 9;
@@ -49,7 +46,6 @@
       toggle-application-view = ["<Alt>space"];
     };
 
-    # Mouse & Touchpad
     "org/gnome/desktop/peripherals/touchpad" = {
       tap-to-click = true;
       two-finger-scrolling-enabled = true;
@@ -61,7 +57,6 @@
       speed = 0.0;
     };
 
-    # File Manager (Nautilus) Settings
     "org/gnome/nautilus/preferences" = {
       default-folder-viewer = "list-view";
       search-filter-time-type = "last_modified";
@@ -73,14 +68,12 @@
       sort-directories-first = true;
     };
 
-    # Power Settings
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
       sleep-inactive-battery-timeout = 900; # 15 minutes
       power-button-action = "interactive";
     };
 
-    # Privacy Settings
     "org/gnome/desktop/privacy" = {
       remember-recent-files = false;
       recent-files-max-age = 30;
@@ -89,17 +82,14 @@
       old-files-age = 30;
     };
 
-    # Session Settings
     "org/gnome/desktop/session" = {
       idle-delay = lib.hm.gvariant.mkUint32 900; # 15 minutes
     };
 
-    # Shell Settings
     "org/gnome/shell" = {
       favorite-apps = [];
     };
 
-    # Mutter (Window Manager) Settings
     "org/gnome/mutter" = {
       edge-tiling = true;
       dynamic-workspaces = false;
