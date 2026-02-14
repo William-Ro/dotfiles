@@ -8,10 +8,10 @@
   imports = lib.imports [
     ./hardware-configuration.nix
     ./nvidia.nix
-    "common/nix"
-    "common/packages"
-    "common/locale"
-    "common/audio"
+    "system/nix"
+    "system/packages"
+    "system/locale"
+    "system/audio"
     "gaming/steam"
     "linux/default"
   ];

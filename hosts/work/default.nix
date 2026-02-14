@@ -7,8 +7,8 @@
 }: {
   imports = lib.imports [
     ./homebrew.nix
-    "common/nix"
-    "common/packages"
+    "system/nix"
+    "system/packages"
   ];
 
   system = {
