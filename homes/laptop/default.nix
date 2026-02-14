@@ -38,11 +38,11 @@
 
   home = {
     packages = with pkgs; [
-      prismlauncher
       spotify
       qbittorrent
       nerdfetch
       pipes
+      antigravity
 
       mpv # Media player (video & audio)
       imv # Image viewer
