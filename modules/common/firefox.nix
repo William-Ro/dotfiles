@@ -17,6 +17,7 @@
         "browser.translations.automaticallyPopup" = false;
         "browser.translations.enable" = false;
         "extensions.unifiedExtensions.enabled" = true;
+        "media.videocontrols.picture-in-picture.enabled" = false;
       };
 
       extensions = {
