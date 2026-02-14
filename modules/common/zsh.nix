@@ -1,14 +1,9 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    enableCompletion = true;
-    dotDir = config.home.homeDirectory;
+    enableCompletion = false;
 
     initContent = ''
       function y() {
