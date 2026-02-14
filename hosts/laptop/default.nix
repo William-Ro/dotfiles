@@ -7,7 +7,7 @@
 }: {
   imports = lib.imports [
     ./hardware-configuration.nix
-    ./amd.nix
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480s
     "system/nix"
     "system/packages"
     "system/locale"
