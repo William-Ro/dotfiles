@@ -19,7 +19,6 @@ with lib; {
 
   config = {
     username = "deishuu";
-    usermail = "deishuu666@gmail.com";
     git_username = "William-Ro";
     git_usermail = "william.r2409@gmail.com";
 
@@ -33,9 +32,6 @@ with lib; {
       .${
         system
       };
-
-    dotfiles_path = "${config.home_path}/dotfiles";
-    wallpaper = "${config.home_path}/Pictures/Wallpapers/current.jpg";
     screenshots = "${config.home_path}/Pictures/Screenshots";
     font = "JetBrainsMono Nerd Font";
   };

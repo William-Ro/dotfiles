@@ -12,7 +12,6 @@
     "common/git"
     "common/home"
     "common/lazygit"
-    "common/xdg"
     "common/yazi"
     "common/zsh"
     "common/starship"

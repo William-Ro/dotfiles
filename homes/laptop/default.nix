@@ -13,7 +13,6 @@
     "common/home"
     "common/lazygit"
     "common/discord"
-    "common/xdg"
     "common/yazi"
     "common/zsh"
     "common/starship"
@@ -33,7 +32,6 @@
     # linux
     "linux/gnome-extensions"
     "linux/gnome-settings"
-    "linux/electron"
   ];
 
   home = {

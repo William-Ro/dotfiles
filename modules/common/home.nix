@@ -1,20 +1,11 @@
 {
   config,
   pkgs,
-  system,
   ...
 }: {
   home = {
     username = config.username;
-    homeDirectory =
-      {
-        x86_64-linux = "/home/${config.username}";
-        aarch64-linux = "/home/${config.username}";
-        aarch64-darwin = "/Users/${config.username}";
-      }
-      .${
-        system
-      };
+    homeDirectory = config.home_path;
     packages = with pkgs; [
       fontconfig
       home-manager
