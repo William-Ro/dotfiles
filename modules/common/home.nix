@@ -7,17 +7,42 @@
     username = config.username;
     homeDirectory = config.home_path;
     packages = with pkgs; [
-      fontconfig
+      # Core
       home-manager
+      fontconfig
+      which
+
+      # Nix tools
+      alejandra
+
+      # Archive
       zip
       xz
       unzip
       p7zip
-      which
-      glow
-      ctop
+
+      # CLI utilities
       lsd
       bat
+      jq
+      tree
+      htop
+      tldr
+      killall
+      nerdfetch
+      pipes
+
+      # TUI tools
+      glow
+      ctop
+
+      # Media
+      mpv
+      imv
+
+      # Disk tools
+      parted
+      exfatprogs
     ];
   };
 }

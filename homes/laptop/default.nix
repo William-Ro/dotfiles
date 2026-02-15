@@ -38,16 +38,7 @@
     packages = with pkgs; [
       spotify
       qbittorrent
-      nerdfetch
-      pipes
       antigravity
-
-      mpv # Media player (video & audio)
-      imv # Image viewer
-      killall # Kill processes by name
-      parted
-      exfatprogs
-      jq
     ];
 
     sessionVariables = {

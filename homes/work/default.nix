@@ -26,13 +26,8 @@
 
   home = {
     packages = with pkgs; [
-      nerdfetch
       oath-toolkit # fix pass support in Raycast
-      tldr # collection of help pages for command-line
       shellcheck
-      tree
-      cargo
-      exiftool
       code-cursor
 
       # DevOps Tools

@@ -1,15 +1,8 @@
-{
-  inputs,
-  pkgs,
-  system,
-  ...
-}: {
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    alejandra
     git
     curl
     wget
-    xclip
   ];
   fonts = {
     packages = with pkgs; [

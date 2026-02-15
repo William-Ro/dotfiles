@@ -38,8 +38,6 @@
       prismlauncher
       spotify
       qbittorrent
-      nerdfetch
-      pipes
 
       # Ebook related
       hakuneko
@@ -56,20 +54,11 @@
       terraform
       packer
 
-      mpv # Media player (video & audio)
-      imv # Image viewer
-      killall # Kill processes by name
+      # Desktop specific
       komikku # Manga reader
       xournalpp # Note-taking application
       chromium
-      parted
-      exfatprogs
-      jq
-      tree
-      exiftool
-      cargo
       lm_sensors
-      htop
       dig
       nvme-cli
     ];
