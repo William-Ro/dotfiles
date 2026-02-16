@@ -29,6 +29,7 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
   hardware.bluetooth.enable = true;
 
   services.xserver.enable = true;
