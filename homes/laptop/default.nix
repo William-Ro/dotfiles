@@ -19,13 +19,6 @@
     "common/vscode"
     "common/nvchad"
 
-    # scripts
-    #"scripts/default"
-
-    # dev
-    "dev/devenv"
-    "dev/direnv"
-
     # gaming
     "gaming/default"
 

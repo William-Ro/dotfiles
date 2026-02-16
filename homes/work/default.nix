@@ -16,6 +16,7 @@
     "common/zsh"
     "common/starship"
     "common/vscode"
+    "common/nvchad"
     # macOS specific packages
     "darwin/aerospace"
 
@@ -40,7 +41,6 @@
       terraform
       packer
       terragrunt
-      neovim
     ];
 
     sessionVariables = {

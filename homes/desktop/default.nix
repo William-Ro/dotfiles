@@ -14,16 +14,10 @@
     "common/lazygit"
     "common/discord"
     "common/vscode"
+    "common/nvchad"
     "common/yazi"
     "common/zsh"
     "common/starship"
-
-    # scripts
-    #"scripts/default"
-
-    # dev
-    "dev/devenv"
-    "dev/direnv"
 
     # gaming
     "gaming/default"
