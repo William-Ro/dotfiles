@@ -38,25 +38,16 @@
       prismlauncher
       spotify
       qbittorrent
+      antigravity
 
       # Ebook related
-      hakuneko
       kcc
       gimp
 
       # DevOps Tools
-      ansible
-      awscli2
-      kubectl
       gh
-      git-lfs
-      bfg-repo-cleaner
-      terraform
-      packer
 
       # Desktop specific
-      komikku # Manga reader
-      xournalpp # Note-taking application
       chromium
       lm_sensors
       dig
