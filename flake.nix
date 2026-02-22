@@ -32,7 +32,8 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     import ./lib/bootstrap.nix inputs {
       x86_64-linux = {
         homes.desktop = ./homes/desktop;

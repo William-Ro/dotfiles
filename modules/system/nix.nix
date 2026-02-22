@@ -4,18 +4,25 @@
   lib,
   system,
   ...
-}: {
+}:
+{
   time.timeZone = "America/Costa_Rica";
 
   nix = {
-    settings.experimental-features = ["nix-command" "flakes"];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
-    settings.trusted-users = ["root" config.username];
+    settings.trusted-users = [
+      "root"
+      config.username
+    ];
 
     registry.nixpkgs.flake = inputs.nixpkgs;
-    nixPath =
-      lib.mapAttrsToList (name: value: "${name}=${value}")
-      (lib.filterAttrs (_: value: value ? _type && value._type == "flake") inputs);
+    nixPath = lib.mapAttrsToList (name: value: "${name}=${value}") (
+      lib.filterAttrs (_: value: value ? _type && value._type == "flake") inputs
+    );
 
     gc = {
       automatic = true;

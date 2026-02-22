@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   security.polkit.enable = true;
@@ -12,7 +13,10 @@
     extraConfig.pipewire."92-low-latency" = {
       "context.properties" = {
         "default.clock.rate" = 48000;
-        "default.clock.allowed-rates" = [44100 48000];
+        "default.clock.allowed-rates" = [
+          44100
+          48000
+        ];
       };
     };
 
@@ -20,7 +24,7 @@
     wireplumber.extraConfig."51-increase-headroom" = {
       "monitor.alsa.rules" = [
         {
-          matches = [{"node.name" = "~alsa_output.*";}];
+          matches = [ { "node.name" = "~alsa_output.*"; } ];
           actions.update-props = {
             "session.suspend-timeout-seconds" = 0;
           };

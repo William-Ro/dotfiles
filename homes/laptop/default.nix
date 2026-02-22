@@ -4,7 +4,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = lib.imports [
     # Common packages
     "common/alacritty"
