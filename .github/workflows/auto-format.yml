@@ -1,0 +1,44 @@
+---
+name: Auto Format
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: auto-format
+  cancel-in-progress: false
+
+jobs:
+  format:
+    name: Format Nix Files
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Run nixfmt
+        run: |
+          nix shell nixpkgs#nixfmt-rfc-style --command \
+            find . -name "*.nix" -not -path "./.git/*" -not -name "result" \
+            -exec nixfmt {} +
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "style: format nix files"
+          title: "style: format nix files"
+          body: Automated Nix formatting via `nixfmt-rfc-style`.
+          branch: style/auto-format
+          delete-branch: true
+          labels: formatting, automated
