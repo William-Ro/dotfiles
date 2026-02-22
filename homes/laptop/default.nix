@@ -33,6 +33,7 @@
       spotify
       qbittorrent
       inputs.antigravity-nix.packages.${pkgs.system}.default
+      gh
     ];
 
     sessionVariables = {
