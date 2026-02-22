@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = lib.imports [
@@ -31,7 +32,7 @@
     packages = with pkgs; [
       spotify
       qbittorrent
-      antigravity
+      inputs.antigravity-nix.packages.${pkgs.system}.default
     ];
 
     sessionVariables = {

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = lib.imports [
@@ -32,7 +33,7 @@
       prismlauncher
       spotify
       qbittorrent
-      antigravity
+      inputs.antigravity-nix.packages.${pkgs.system}.default
 
       # Ebook related
       kcc
