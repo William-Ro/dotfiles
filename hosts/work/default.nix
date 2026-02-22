@@ -4,7 +4,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = lib.imports [
     ./homebrew.nix
     "system/nix"
@@ -103,19 +104,33 @@
           # Disable some of the default keybindings
           AppleSymbolicHotKeys = {
             # Spotlight
-            "64" = {enabled = false;}; # Cmd + Space
-            "65" = {enabled = false;}; # Cmd + Alt + Space
+            "64" = {
+              enabled = false;
+            }; # Cmd + Space
+            "65" = {
+              enabled = false;
+            }; # Cmd + Alt + Space
 
             # Mission Control
-            "34" = {enabled = false;}; # Control + Arrow Left
-            "35" = {enabled = false;}; # Control + Arrow Right
+            "34" = {
+              enabled = false;
+            }; # Control + Arrow Left
+            "35" = {
+              enabled = false;
+            }; # Control + Arrow Right
 
             # Show Desktop
-            "36" = {enabled = false;}; # Cmd + F3
+            "36" = {
+              enabled = false;
+            }; # Cmd + F3
 
             # Input Sources
-            "60" = {enabled = false;}; # Control + Space
-            "61" = {enabled = false;}; # Control + Alt + Space
+            "60" = {
+              enabled = false;
+            }; # Control + Space
+            "61" = {
+              enabled = false;
+            }; # Control + Alt + Space
           };
         };
         "com.apple.finder" = {

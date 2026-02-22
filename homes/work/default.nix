@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = lib.imports [
     # Common packages
     "common/alacritty"
@@ -48,7 +49,7 @@
       HOMEBREW_PREFIX = "/opt/homebrew";
       HOMEBREW_CELLAR = "/opt/homebrew/Cellar";
       HOMEBREW_REPOSITORY = "/opt/homebrew";
-      INFOPATH = "/opt/homebrew/share/info:''${INFOPATH:-}";
+      INFOPATH = "/opt/homebrew/share/info:''${"INFOPATH:-"}";
 
       # Include Homebrew in the PATH
       PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";

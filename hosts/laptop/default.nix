@@ -4,7 +4,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   imports = lib.imports [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t480s
@@ -48,7 +49,11 @@
 
   users.users.${config.username} = {
     isNormalUser = true;
-    extraGroups = ["wheel" "networkmanager" "docker"];
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 

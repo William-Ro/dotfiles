@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   programs.fastfetch = {
     enable = true;
 
@@ -25,7 +26,7 @@
         {
           type = "custom";
           outputColor = "blue";
-          format = ''┌──────────── OS Information ────────────┐'';
+          format = "┌──────────── OS Information ────────────┐";
         }
         {
           type = "title";
@@ -65,7 +66,7 @@
         {
           type = "custom";
           outputColor = "blue";
-          format = ''├───────── Hardware Information ─────────┤'';
+          format = "├───────── Hardware Information ─────────┤";
         }
         {
           type = "display";
@@ -97,7 +98,7 @@
         {
           type = "custom";
           outputColor = "blue";
-          format = ''├───────── Software Information ─────────┤'';
+          format = "├───────── Software Information ─────────┤";
         }
         {
           type = "wm";
@@ -113,7 +114,7 @@
         {
           type = "custom";
           outputColor = "blue";
-          format = ''└────────────────────────────────────────┘'';
+          format = "└────────────────────────────────────────┘";
         }
         {
           type = "custom";

@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   # Exclude default GNOME apps we don't need
   environment.gnome.excludePackages = with pkgs; [
     epiphany # GNOME Web browser (you have Firefox and Chromium)
