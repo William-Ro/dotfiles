@@ -12,9 +12,16 @@
     channel.enable = lib.mkDefault false;
 
     settings = {
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
 
-      trusted-users = ["root" "@wheel" config.username];
+      trusted-users = [
+        "root"
+        "@wheel"
+        config.username
+      ];
 
       log-lines = lib.mkDefault 25;
 
