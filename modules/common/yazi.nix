@@ -2,6 +2,7 @@
 {
   programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
     settings = {
       manager = {
         sort_by = "natural";
