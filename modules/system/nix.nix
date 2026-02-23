@@ -12,13 +12,10 @@
     channel.enable = lib.mkDefault false;
 
     settings = {
-      # Enable support for nix commands and flakes
       experimental-features = ["nix-command" "flakes"];
 
-      # If the user is in @wheel they are trusted by default.
       trusted-users = ["root" "@wheel" config.username];
 
-      # The default at 10 is rarely enough.
       log-lines = lib.mkDefault 25;
 
       # Avoid disk full issues
