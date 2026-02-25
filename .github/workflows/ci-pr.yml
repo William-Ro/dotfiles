@@ -52,7 +52,7 @@ jobs:
 
       - name: Format Check
         run: |
-          nix shell nixpkgs#nixfmt-rfc-style --command \
+          nix shell nixpkgs#nixfmt --command \
             find . -name "*.nix" -not -path "./.git/*" -not -name "result" \
             -exec nixfmt --check {} +
 
@@ -186,7 +186,7 @@ jobs:
               `**Ready to Merge:** ${syntaxOk && buildOk ? 'Yes. All required checks passed.' : 'No. Pipeline requirements have not been met.'}`,
               '',
               `[View full workflow run details](${runUrl})`
-            ].join('\\n');
+            ].join('\n');
 
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
