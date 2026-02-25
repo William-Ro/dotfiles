@@ -28,7 +28,7 @@ jobs:
 
       - name: Run nixfmt
         run: |
-          nix shell nixpkgs#nixfmt-rfc-style --command \
+          nix shell nixpkgs#nixfmt --command \
             find . -name "*.nix" -not -path "./.git/*" -not -name "result" \
             -exec nixfmt {} +
 
