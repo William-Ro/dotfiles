@@ -50,10 +50,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: "chore(deps): update flake inputs"
           title: "chore(deps): update flake dependencies"
-          body: |
-            Automated flake inputs update.
-
-            Review `flake.lock` changes before merging.
+          body: "Automated flake inputs update."
           branch: chore/update-flake-deps
           delete-branch: true
           labels: dependencies, automated

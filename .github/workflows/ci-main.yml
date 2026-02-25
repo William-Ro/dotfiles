@@ -38,13 +38,13 @@ jobs:
         run: |
           nix build .#nixosConfigurations.desktop.config.system.build.toplevel \
             --dry-run 2>&1 | tee /tmp/desktop.log
-          echo "✅ desktop" >> $GITHUB_STEP_SUMMARY
+          echo "desktop build successful" >> $GITHUB_STEP_SUMMARY
 
       - name: Build laptop
         run: |
           nix build .#nixosConfigurations.laptop.config.system.build.toplevel \
             --dry-run 2>&1 | tee /tmp/laptop.log
-          echo "✅ laptop" >> $GITHUB_STEP_SUMMARY
+          echo "laptop build successful" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload build logs
         if: always()
