@@ -182,6 +182,15 @@ jobs:
               `- **Security Verification:** ${checkStatus(securityOk, 'No critical vulnerabilities or secrets found.', 'Review trivy or gitleaks findings in the artifacts.')}`,
               `- **System Build Dry-Run:** ${checkStatus(buildOk, 'Desktop and laptop configurations evaluate and build successfully.', 'System closure failed to build. Review the logs.')}`,
               '',
+              ...(!syntaxOk ? [
+                '### Quick Fix: Formatting',
+                'If the syntax check failed due to unformatted files, run the following command at the root of your repository to automatically format them:',
+                '```bash',
+                'nix shell nixpkgs#nixfmt --command \\',
+                '  find . -name "*.nix" -not -path "./.git/*" -not -name "result" -exec nixfmt {} +',
+                '```',
+                ''
+              ] : []),
               '### Conclusion',
               `**Ready to Merge:** ${syntaxOk && buildOk ? 'Yes. All required checks passed.' : 'No. Pipeline requirements have not been met.'}`,
               '',

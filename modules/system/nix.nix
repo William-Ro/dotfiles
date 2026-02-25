@@ -8,7 +8,7 @@
 {
   time.timeZone = "America/Costa_Rica";
 
-  nix = {
+nix = {
     channel.enable = lib.mkDefault false;
 
     settings = {
