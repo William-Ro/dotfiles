@@ -93,7 +93,7 @@ jobs:
       - name: Check syntax result
         run: |
           if [ "${{ needs.syntax.result }}" != "success" ]; then
-            echo "❌ Syntax validation failed"
+            echo "Syntax validation failed"
             exit 1
           fi
 
@@ -109,14 +109,7 @@ jobs:
             const syntaxOk = process.env.SYNTAX_RESULT === 'success';
             const securityOk = process.env.SECURITY_RESULT === 'success';
 
-            const table = [
-              '| Check | Status |',
-              '|-------|--------|',
-              `| Syntax & Lint | ${syntaxOk ? '✅ Pass' : '❌ Fail'} |`,
-              `| Security Scan | ${securityOk ? '✅ Pass' : '⚠️ Review findings'} |`
-            ].join('\n');
-
-            const body = `## 🔍 CI Results\n\n${table}\n\n**Ready to merge**: ${syntaxOk ? '✅ Yes' : '❌ No — fix syntax errors first'}`;
+            const body = `## CI Results\n\n- Syntax & Lint: ${syntaxOk ? 'Pass' : 'Fail'}\n- Security Scan: ${securityOk ? 'Pass' : 'Review findings'}\n\nReady to merge: ${syntaxOk ? 'Yes' : 'No - fix syntax errors first'}`;
 
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
