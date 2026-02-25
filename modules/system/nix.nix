@@ -4,7 +4,8 @@
   lib,
   system,
   ...
-}: {
+}:
+{
   time.timeZone = "America/Costa_Rica";
 
   nix = {
