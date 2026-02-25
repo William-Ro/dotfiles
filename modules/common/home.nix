@@ -36,7 +36,7 @@
       # TUI tools
       glow
       ctop
-
+    ] ++ lib.optionals stdenv.isLinux [
       # Media
       mpv
       imv
