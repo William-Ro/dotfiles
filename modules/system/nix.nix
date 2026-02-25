@@ -4,8 +4,7 @@
   lib,
   system,
   ...
-}:
-{
+}: {
   time.timeZone = "America/Costa_Rica";
 
   nix = {
@@ -45,7 +44,7 @@
 
     gc = {
       automatic = true;
-      dates = if system != "aarch64-darwin" then "weekly" else lib.mkDefault "weekly";
+      dates = lib.mkIf (system != "aarch64-darwin") "weekly";
       options = "--delete-older-than 1w";
     };
 
