@@ -21,9 +21,6 @@
     # macOS specific packages
     "darwin/aerospace"
 
-    # dev
-    "dev/devenv"
-    "dev/direnv"
   ];
 
   home = {
