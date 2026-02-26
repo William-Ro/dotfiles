@@ -4,6 +4,8 @@
   ...
 }:
 {
+  news.display = "silent";
+
   home = {
     username = config.username;
     homeDirectory = config.home_path;
