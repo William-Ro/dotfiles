@@ -21,25 +21,33 @@ This repository contains my personal declarative system configuration files for 
 
 ## Usage
 
-### Applying System Configuration
-
-Run the following command at the root of the repository to build and apply a host configuration:
-
-#### Linux (NixOS)
+Enter the declarative build environment:
 
 ```bash
-sudo nixos-rebuild switch --flake .#<hostname>
+nix develop
 ```
 
-#### macOS (nix-darwin)
+This shell provides two wrapper functions (`os` and `hm`) to easily build and apply your configurations across macOS and NixOS.
+
+### Applying System Configuration
+
+Use the `os` function to apply a host configuration:
 
 ```bash
-darwin-rebuild switch --flake .#<hostname>
+os <hostname>
+```
+
+### Applying Home Configuration
+
+Use the `hm` function to apply a home-manager configuration:
+
+```bash
+hm <home-name>
 ```
 
 ### Updating Dependencies
 
-Update the inputs in `flake.lock` before rebuilding the system:
+Update the `flake.lock` inputs before rebuilding:
 
 ```bash
 nix flake update
