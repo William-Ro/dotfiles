@@ -1,75 +1,46 @@
-<h2 align="center">NixOS/MacOS Dotfiles</h2>
+# NixOS and macOS Dotfiles
 
-## Nix Dotfiles Directory Structure
+This repository contains my personal declarative system configuration files for NixOS and macOS.
 
-```
-├── flake.nix
-├── flake.lock
-├── homes
-│   ├── deishuu-macos
-│   │   └── default.nix
-│   └── deishuu-nixos
-│       └── default.nix
-├── hosts
-│   ├── desktop
-│   │   ├── default.nix
-│   │   └── nvidia.nix
-│   └── work
-│       ├── default.nix
-│       └── homebrew.nix
-├── modules
-│   ├── autoload
-│   │   ├── config.nix
-│   │   ├── hostname.nix
-│   │   └── nixpkgs.nix
-│   ├── common
-│   │   ├── alacritty.nix
-│   │   ├── direnv.nix
-│   │   ├── ghostty.nix
-│   │   └── ...
-│   ├── darwin
-│   │   └── aerospace.nix
-│   ├── dev
-│   ├── linux
-│   │   ├── dunst.nix
-│   │   ├── hypridle.nix
-│   │   ├── hyprland.nix
-│   │   ├── waybar.nix
-│   │   └── wofi.nix
-│   └── scripts
-│       └── default.nix
-├── lib
-│   ├── bootstrap.nix
-│   └── lib.nix
-```
+## Configuration Structure
 
-## About
+- `homes/` - Home-manager configurations (user-specific environments)
+- `hosts/` - NixOS and nix-darwin configurations (system-level environments)
+- `modules/` - Shared and modularized configurations
+  - `common/` - Shared tools and dotfiles
+  - `darwin/` - macOS specific modules
+  - `linux/` - Linux specific modules (window managers, Wayland)
+  - `system/` - Core system configurations (packages, Nix settings)
+- `lib/` - Custom functions and system bootstrapping logic
 
-This repository contains my personal dotfiles for NixOS and macOS.
-They are highly opinionated and tailored to my own workflows and setups.
+### Managed Systems
 
-> ⚠️ **Disclaimer:**
-> Use these dotfiles at your own risk. I am not responsible for any issues, data loss, or damages caused by applying this configuration to your system.
+- `desktop` (x86_64-linux)
+- `laptop` (x86_64-linux)
+- `work` (aarch64-darwin)
 
-## Setup
+## Usage
 
-**Build:**
+### Applying System Configuration
+
+Run the following command at the root of the repository to build and apply a host configuration:
+
+#### Linux (NixOS)
 
 ```bash
 sudo nixos-rebuild switch --flake .#<hostname>
 ```
 
-**Update:**
+#### macOS (nix-darwin)
+
+```bash
+darwin-rebuild switch --flake .#<hostname>
+```
+
+### Updating Dependencies
+
+Update the inputs in `flake.lock` before rebuilding the system:
 
 ```bash
 nix flake update
-sudo nixos-rebuild switch --flake .#<hostname>
 ```
-
-## References
-
-This project was heavily inspired by the following amazing repositories:
-
-- [KubqoA/dotfiles](https://github.com/KubqoA/dotfiles)
-- [dustinlyons/nixos-config](https://github.com/dustinlyons/nixos-config)
-- [vimjoyer/nixconf](https://github.com/vimjoyer/nixconf)
