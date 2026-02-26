@@ -67,10 +67,10 @@ let
       );
     in
     {
-      formatter.${system} = pkgs.alejandra;
+      formatter.${system} = pkgs.nixfmt;
       devShells.${system}.default = pkgs.mkShell {
         packages = [
-          pkgs.alejandra
+          pkgs.nixfmt
           pkgs.home-manager
         ];
         shellHook = ''
@@ -103,8 +103,8 @@ configuration
 
   # Merge all options into one attribute set for use with ‹nixd›
   options = {
-    nixos = getOptions self.nixosConfigurations;
-    darwin = getOptions self.darwinConfigurations;
-    home-manager = getOptions self.homeConfigurations;
+    nixos = getOptions (self.nixosConfigurations or { });
+    darwin = getOptions (self.darwinConfigurations or { });
+    home-manager = getOptions (self.homeConfigurations or { });
   };
 }
