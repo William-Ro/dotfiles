@@ -24,12 +24,9 @@
 
       extensions = {
         packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-          bitwarden
           clearurls
           new-tab-override
-          darkreader
           fastforwardteam
-          hover-zoom-plus
           istilldontcareaboutcookies
           privacy-badger
           sponsorblock
