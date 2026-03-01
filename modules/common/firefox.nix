@@ -15,6 +15,7 @@
         "signon.rememberSignons" = false;
         "signon.autofillForms" = false;
         "signon.generation.enabled" = false;
+        "browser.formfill.enable" = false;
         "browser.translations.automaticallyPopup" = false;
         "browser.translations.enable" = false;
         "extensions.unifiedExtensions.enabled" = true;
