@@ -42,14 +42,75 @@
       move-to-workspace-7 = [ "<Alt><Shift>7" ];
       move-to-workspace-8 = [ "<Alt><Shift>8" ];
       move-to-workspace-9 = [ "<Alt><Shift>9" ];
+
+      maximize = [ "<Alt>Up" ];
+      unmaximize = [ "<Alt>Down" ];
+
+      # Disabled default keybinds
+      begin-move = [ ];
+      begin-resize = [ ];
+      cycle-group = [ ];
+      cycle-group-backward = [ ];
+      cycle-panels = [ ];
+      cycle-panels-backward = [ ];
+      cycle-windows = [ ];
+      cycle-windows-backward = [ ];
+      move-to-monitor-down = [ ];
+      move-to-monitor-left = [ ];
+      move-to-monitor-right = [ ];
+      move-to-monitor-up = [ ];
+      move-to-workspace-down = [ ];
+      move-to-workspace-up = [ ];
+      move-to-workspace-left = [ ];
+      move-to-workspace-right = [ ];
+      move-to-workspace-last = [ ];
+      switch-to-workspace-down = [ ];
+      switch-to-workspace-up = [ ];
+      switch-to-workspace-left = [ ];
+      switch-to-workspace-right = [ ];
+      switch-to-workspace-last = [ ];
+      switch-panels = [ ];
+      switch-panels-backward = [ ];
+      switch-group = [ ];
+      switch-group-backward = [ ];
     };
 
     "org/gnome/shell/keybindings" = {
       toggle-overview = [ "<Alt>space" ];
       show-screenshot-ui = [ "<Alt><Shift>s" ];
+
+      # Disabled default keybinds
+      switch-to-application-1 = [ ];
+      switch-to-application-2 = [ ];
+      switch-to-application-3 = [ ];
+      switch-to-application-4 = [ ];
+      switch-to-application-5 = [ ];
+      switch-to-application-6 = [ ];
+      switch-to-application-7 = [ ];
+      switch-to-application-8 = [ ];
+      switch-to-application-9 = [ ];
+      open-new-window-application-1 = [ ];
+      open-new-window-application-2 = [ ];
+      open-new-window-application-3 = [ ];
+      open-new-window-application-4 = [ ];
+      open-new-window-application-5 = [ ];
+      open-new-window-application-6 = [ ];
+      open-new-window-application-7 = [ ];
+      open-new-window-application-8 = [ ];
+      open-new-window-application-9 = [ ];
+      focus-active-notification = [ ];
+      shift-overview-down = [ ];
+      shift-overview-up = [ ];
+      toggle-application-view = [ ];
+      toggle-message-tray = [ ];
+      toggle-quick-settings = [ ];
     };
 
-    # Custom keybindings
+    "org/gnome/mutter/keybindings" = {
+      toggle-tiled-left = [ "<Alt>Left" ];
+      toggle-tiled-right = [ "<Alt>Right" ];
+    };
+
     "org/gnome/settings-daemon/plugins/media-keys" = {
       screensaver = [ "<Alt>l" ];
       custom-keybindings = [
@@ -111,7 +172,7 @@
         "Vitals@CoreCoding.com"
         "clipboard-indicator@tudmotu.com"
         "caffeine@patapon.info"
-        "gsconnect@andyholmes.github.io"
+        "no-overview@fthx"
       ];
     };
 
