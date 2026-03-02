@@ -49,4 +49,6 @@
         exfatprogs
       ];
   };
+
+  news.display = "silent";
 }
