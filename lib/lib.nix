@@ -3,7 +3,9 @@ inputs: lib: _:
   autoloadedModules =
     let
       optionsDir = ../modules/autoload;
-      nixFiles = lib.filterAttrs (n: v: v == "regular" && lib.hasSuffix ".nix" n) (builtins.readDir optionsDir);
+      nixFiles = lib.filterAttrs (n: v: v == "regular" && lib.hasSuffix ".nix" n) (
+        builtins.readDir optionsDir
+      );
     in
     map (file: optionsDir + "/${file}") (builtins.attrNames nixFiles);
 
