@@ -22,6 +22,7 @@
 
     # Keyboard Settings
     "org/gnome/desktop/wm/keybindings" = {
+      activate-window-menu = [ ];
       close = [ "<Alt>q" ];
       switch-to-workspace-1 = [ "<Alt>1" ];
       switch-to-workspace-2 = [ "<Alt>2" ];
@@ -50,6 +51,7 @@
 
     # Custom keybindings
     "org/gnome/settings-daemon/plugins/media-keys" = {
+      screensaver = [ "<Alt>l" ];
       custom-keybindings = [
         "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
       ];
