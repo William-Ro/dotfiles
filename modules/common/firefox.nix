@@ -31,6 +31,7 @@
           privacy-badger
           sponsorblock
           ublock-origin
+          bitwarden
         ];
       };
     };
