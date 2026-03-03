@@ -9,7 +9,6 @@
     package = pkgs.steam.override {
       extraEnv = {
         MANGOHUD = "1";
-        MANGOHUD_CONFIG = "read_cfg,no_display";
         GAMEMODERUN = "1";
         VKD3D_CONFIG = "dxr,dxr11";
         PROTON_LOCAL_SHADER_CACHE = "1";
