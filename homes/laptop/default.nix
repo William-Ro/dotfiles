@@ -33,7 +33,7 @@
     packages = with pkgs; [
       spotify
       qbittorrent
-      inputs.antigravity-nix.packages.${pkgs.system}.default
+      inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
       gh
     ];
 
