@@ -4,7 +4,6 @@
   ...
 }:
 {
-  news.display = "silent";
 
   home = {
     username = config.username;
