@@ -42,6 +42,7 @@
 
       # DevOps Tools
       gh
+      kubectl
 
       # Desktop specific
       chromium
