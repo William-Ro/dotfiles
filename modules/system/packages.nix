@@ -4,6 +4,8 @@
     git
     curl
     wget
+    docker-compose
+    podman-tui
   ];
   fonts = {
     packages = with pkgs; [
