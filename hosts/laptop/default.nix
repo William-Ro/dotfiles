@@ -51,13 +51,19 @@
     extraGroups = [
       "wheel"
       "networkmanager"
-      "docker"
     ];
     shell = pkgs.zsh;
   };
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
+  
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   system.stateVersion = "24.05";
 }
