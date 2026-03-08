@@ -42,7 +42,6 @@
     brews = [
       "mas" # Mac App Store CLI
       "hashicorp/tap/terraform"
-      "docker-compose"
       "displayplacer" # CLI for display settings
       "cliclick"
     ];
@@ -54,7 +53,6 @@
       "iina" # video player
       "cursor"
       "spotify"
-      "docker-desktop"
       "microsoft-teams"
       "google-chrome"
       "qbittorrent"
