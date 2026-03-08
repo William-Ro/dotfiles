@@ -35,6 +35,8 @@
       qbittorrent
       inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
       gh
+      kubectl
+      minikube
     ];
 
     sessionVariables = {
