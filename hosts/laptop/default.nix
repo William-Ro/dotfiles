@@ -57,7 +57,7 @@
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
-  
+
   virtualisation.containers.enable = true;
   virtualisation.podman = {
     enable = true;
