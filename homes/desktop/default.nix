@@ -43,6 +43,7 @@
       # DevOps Tools
       gh
       kubectl
+      helmfile
 
       # Desktop specific
       chromium
