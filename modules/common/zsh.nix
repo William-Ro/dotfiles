@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -29,5 +28,6 @@
     vi = "nvim";
     v = "nvim";
     lg = "lazygit";
+    k = "kubectl";
   };
 }
