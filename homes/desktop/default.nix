@@ -51,6 +51,7 @@
       lm_sensors
       dig
       nvme-cli
+      ledger-live-desktop
     ];
 
     sessionVariables = {

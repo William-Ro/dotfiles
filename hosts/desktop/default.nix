@@ -32,6 +32,7 @@
   hardware.enableRedistributableFirmware = true;
   networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
+  hardware.ledger.enable = true;
 
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
@@ -51,6 +52,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "plugdev"
     ];
     shell = pkgs.zsh;
   };
