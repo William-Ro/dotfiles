@@ -15,7 +15,6 @@
         bbenoist.nix
         esbenp.prettier-vscode
         pkief.material-icon-theme
-        zhuangtongfa.material-theme
         dracula-theme.theme-dracula
         github.copilot
         github.copilot-chat
