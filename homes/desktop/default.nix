@@ -44,6 +44,7 @@
       gh
       kubectl
       helmfile
+      kubernetes-helm
 
       # Desktop specific
       chromium
