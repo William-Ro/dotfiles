@@ -12,7 +12,6 @@
       enableUpdateCheck = false;
 
       extensions = with pkgs.vscode-extensions; [
-        kamadorueda.alejandra
         bbenoist.nix
         esbenp.prettier-vscode
         pkief.material-icon-theme
