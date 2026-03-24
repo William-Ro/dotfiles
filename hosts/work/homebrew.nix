@@ -27,9 +27,8 @@
     # For details, see https://github.com/mas-cli/mas
     masApps = {
       #Xcode = 497799835;
-      HiddenBar = 1452453066;
-      OneThing = 1604176982;
-      WhatsApp = 310633997;
+      #HiddenBar = 1452453066;
+      #OneThing = 1604176982;
     };
 
     taps = [
@@ -55,7 +54,6 @@
       "spotify"
       "microsoft-teams"
       "google-chrome"
-      "qbittorrent"
     ];
   };
 }

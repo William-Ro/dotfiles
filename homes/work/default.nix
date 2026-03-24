@@ -27,18 +27,7 @@
     packages = with pkgs; [
       oath-toolkit # fix pass support in Raycast
       shellcheck
-      code-cursor
-
-      # DevOps Tools
-      ansible
-      awscli2
-      kubectl
       gh
-      git-lfs
-      bfg-repo-cleaner
-      terraform
-      packer
-      terragrunt
     ];
 
     sessionVariables = {
