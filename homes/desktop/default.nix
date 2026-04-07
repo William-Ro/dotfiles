@@ -45,6 +45,8 @@
       kubectl
       helmfile
       kubernetes-helm
+      fluxcd
+      fluxcd-operator
 
       # Desktop specific
       chromium
