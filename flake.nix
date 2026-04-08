@@ -38,7 +38,7 @@
 
   outputs =
     inputs:
-    import ./lib/bootstrap.nix inputs {
+    import ./bootstrap inputs {
       x86_64-linux = {
         homes.desktop = ./homes/desktop;
         hosts.desktop = ./hosts/desktop;
