@@ -14,7 +14,7 @@
     "system/locale"
     "system/audio"
     "gaming/steam"
-    "linux/default"
+    "linux"
   ];
 
   boot = {

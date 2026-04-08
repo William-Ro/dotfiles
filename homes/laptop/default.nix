@@ -22,7 +22,7 @@
     "common/nvchad"
 
     # gaming
-    "gaming/default"
+    "gaming"
 
     # linux
     "linux/gnome-extensions"

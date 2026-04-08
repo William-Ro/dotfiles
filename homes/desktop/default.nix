@@ -22,7 +22,7 @@
     "common/starship"
 
     # gaming
-    "gaming/default"
+    "gaming"
 
     # linux
     "linux/gnome-extensions"
