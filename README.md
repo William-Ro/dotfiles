@@ -1,54 +1,109 @@
-# NixOS and macOS Dotfiles
+<div align="center">
 
-This repository contains my personal declarative system configuration files for NixOS and macOS.
+# deishuu dotfiles
 
-## Configuration Structure
+Opinionated cross-platform system configuration built with `Nix flakes`, `home-manager`, and `nix-darwin`.
 
-- `homes/` - Home-manager configurations (user-specific environments)
-- `hosts/` - NixOS and nix-darwin configurations (system-level environments)
-- `modules/` - Shared and modularized configurations
-  - `common/` - Shared tools and dotfiles
-  - `darwin/` - macOS specific modules
-  - `linux/` - Linux specific modules (window managers, Wayland)
-  - `system/` - Core system configurations (packages, Nix settings)
-- `lib/` - Custom functions and system bootstrapping logic
+This repository manages a NixOS desktop, a NixOS laptop, and a macOS work machine from a single flake, using reusable modules for shared tools and machine-specific overrides where needed.
 
-### Managed Systems
+</div>
 
-- `desktop` (x86_64-linux)
-- `laptop` (x86_64-linux)
-- `work` (aarch64-darwin)
+## Overview
 
-## Usage
+The setup is split into three layers:
 
-Enter the declarative build environment:
+- `hosts/` for system-level machine definitions
+- `homes/` for Home Manager user profiles
+- `modules/` for reusable building blocks such as terminal, editor, browser, GNOME, and gaming configuration
+
+### Available targets
+
+| Target | Platform | Purpose | Highlights |
+| --- | --- | --- | --- |
+| `desktop` | `x86_64-linux` | Main NixOS desktop | NVIDIA, GNOME, Steam, Podman, desktop tooling |
+| `laptop` | `x86_64-linux` | Portable NixOS setup | ThinkPad profile, GNOME, Tailscale, printing, dev tools |
+| `work` | `aarch64-darwin` | macOS work machine | `nix-darwin`, Homebrew, Aerospace, shared dev environment |
+
+## Included setup
+
+- Terminal workflow with `zsh`, `starship`, `alacritty`, `yazi`, `bat`, and `lsd`
+- Development tools such as `git`, `delta`, `lazygit`, `VS Code`, and `NvChad`
+- Firefox with privacy-oriented defaults and curated extensions
+- GNOME customization for Linux machines and `Aerospace` on macOS
+- Gaming support on Linux with `Steam`, `MangoHud`, `gamescope`, and `gamemode`
+- Shared fonts, system packages, and platform-specific extras managed declaratively
+
+> [!NOTE]
+> This is a personal setup. If you want to reuse it, review `modules/autoload/config.nix` first, then adapt the relevant files under `hosts/` and `homes/` to match your machine names, paths, and preferences.
+
+## Repository layout
+
+```text
+.
+├── bootstrap/   # flake bootstrap helpers and developer shell
+├── homes/       # Home Manager profiles per machine
+├── hosts/       # NixOS and nix-darwin host definitions
+├── modules/     # reusable modules grouped by domain
+└── flake.nix    # flake inputs and outputs
+```
+
+## Getting started
+
+### Prerequisites
+
+- [Nix](https://nixos.org/download/) with `flakes` and `nix-command` enabled
+- A machine matching one of the declared targets, or your own adapted fork of this repo
+
+### Clone and inspect
+
+```bash
+git clone <your-repo-url> ~/.dotfiles
+cd ~/.dotfiles
+nix flake show
+```
+
+### Enter the development shell
 
 ```bash
 nix develop
 ```
 
-This shell provides two wrapper functions (`os` and `hm`) to easily build and apply your configurations across macOS and NixOS.
+The shell defined in `bootstrap/default.nix` provides two convenient helpers:
 
-### Applying System Configuration
+- `hm <name>` to apply a Home Manager profile
+- `os <name>` to rebuild and switch a host configuration
 
-Use the `os` function to apply a host configuration:
+> [!TIP]
+> Running `nix develop` prints the available host and home targets so you can quickly see what can be applied on the current machine.
 
-```bash
-os <hostname>
-```
+## Apply a configuration
 
-### Applying Home Configuration
-
-Use the `hm` function to apply a home-manager configuration:
+### Home Manager only
 
 ```bash
-hm <home-name>
+home-manager switch --flake .#desktop
+home-manager switch --flake .#laptop
+home-manager switch --flake .#work
 ```
 
-### Updating Dependencies
-
-Update the `flake.lock` inputs before rebuilding:
+### NixOS hosts
 
 ```bash
-nix flake update
+sudo nixos-rebuild switch --flake .#desktop
+sudo nixos-rebuild switch --flake .#laptop
 ```
+
+### macOS host
+
+```bash
+sudo nix run nix-darwin -- switch --flake .#work
+```
+
+## Validation and maintenance
+
+```bash
+nix flake check --no-build
+nix fmt
+```
+
+GitHub Actions in `.github/workflows/` also handle CI checks, dry-run builds, security scanning, automatic formatting, and scheduled flake input updates.
