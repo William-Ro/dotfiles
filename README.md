@@ -1,6 +1,6 @@
 <div align="center">
 
-# deishuu dotfiles
+# dotfiles
 
 Opinionated cross-platform system configuration built with `Nix flakes`, `home-manager`, and `nix-darwin`.
 
@@ -18,11 +18,11 @@ The setup is split into three layers:
 
 ### Available targets
 
-| Target | Platform | Purpose | Highlights |
-| --- | --- | --- | --- |
-| `desktop` | `x86_64-linux` | Main NixOS desktop | NVIDIA, GNOME, Steam, Podman, desktop tooling |
-| `laptop` | `x86_64-linux` | Portable NixOS setup | ThinkPad profile, GNOME, Tailscale, printing, dev tools |
-| `work` | `aarch64-darwin` | macOS work machine | `nix-darwin`, Homebrew, Aerospace, shared dev environment |
+| Target    | Platform         | Purpose              | Highlights                                                |
+| --------- | ---------------- | -------------------- | --------------------------------------------------------- |
+| `desktop` | `x86_64-linux`   | Main NixOS desktop   | NVIDIA, GNOME, Steam, Podman, desktop tooling             |
+| `laptop`  | `x86_64-linux`   | Portable NixOS setup | ThinkPad profile, GNOME, Tailscale, printing, dev tools   |
+| `work`    | `aarch64-darwin` | macOS work machine   | `nix-darwin`, Homebrew, Aerospace, shared dev environment |
 
 ## Included setup
 
