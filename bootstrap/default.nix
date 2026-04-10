@@ -1,6 +1,7 @@
 inputs@{
   nixpkgs,
   self,
+  sops-nix,
   ...
 }:
 systems:
@@ -25,12 +26,14 @@ let
             fn = lib.darwinSystem;
             option = "darwinConfigurations";
             command = "sudo nix run nix-darwin --";
+            sopsModule = sops-nix.darwinModules.sops;
           }
         else
           {
             fn = lib.nixosSystem;
             option = "nixosConfigurations";
             command = "sudo nixos-rebuild";
+            sopsModule = sops-nix.nixosModules.sops;
           };
 
       mapHosts = builtins.mapAttrs (
@@ -46,7 +49,7 @@ let
               hostName
               ;
           };
-          modules = [ path ] ++ lib.autoloadedModules;
+          modules = [ path systemSpecifics.sopsModule ] ++ lib.autoloadedModules;
         }
       );
 
@@ -62,7 +65,7 @@ let
               homeName
               ;
           };
-          modules = [ path ] ++ lib.autoloadedModules;
+          modules = [ path sops-nix.homeManagerModules.sops ] ++ lib.autoloadedModules;
         }
       );
     in
