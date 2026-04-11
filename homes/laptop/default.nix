@@ -38,6 +38,7 @@
       gh
       kubectl
       minikube
+      rpi-imager
     ];
 
     sessionVariables = {
