@@ -49,7 +49,11 @@ let
               hostName
               ;
           };
-          modules = [ path systemSpecifics.sopsModule ] ++ lib.autoloadedModules;
+          modules = [
+            path
+            systemSpecifics.sopsModule
+          ]
+          ++ lib.autoloadedModules;
         }
       );
 
@@ -65,7 +69,11 @@ let
               homeName
               ;
           };
-          modules = [ path sops-nix.homeManagerModules.sops ] ++ lib.autoloadedModules;
+          modules = [
+            path
+            sops-nix.homeManagerModules.sops
+          ]
+          ++ lib.autoloadedModules;
         }
       );
     in
