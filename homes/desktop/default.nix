@@ -36,6 +36,7 @@
       qbittorrent
       inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.cursor-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
+      wl-clipboard
       # Ebook related
       kcc
       gimp
@@ -47,6 +48,8 @@
       kubernetes-helm
       fluxcd
       fluxcd-operator
+      k9s
+      bws
 
       # Desktop specific
       chromium
@@ -69,6 +72,7 @@
       name = "${config.font}";
       size = 11;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   programs = {
