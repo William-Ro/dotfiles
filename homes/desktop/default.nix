@@ -20,6 +20,7 @@
     "common/yazi"
     "common/zsh"
     "common/starship"
+    "common/zellij"
 
     # gaming
     "gaming"
@@ -40,6 +41,7 @@
       # Ebook related
       kcc
       gimp
+      mcrcon
 
       # DevOps Tools
       gh
@@ -49,6 +51,7 @@
       fluxcd
       fluxcd-operator
       k9s
+      flux9s
       bws
 
       # Desktop specific
