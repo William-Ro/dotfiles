@@ -87,6 +87,16 @@
         "github.copilot.inlineSuggest.enable" = true;
 
         "files.insertFinalNewline" = true;
+        "json.schemaDownload.trustedDomains" = {
+          "https://developer.microsoft.com/json-schemas/" = true;
+          "https://docs.renovatebot.com/renovate-schema.json" = true;
+          "https://json-schema.org/" = true;
+          "https://json.schemastore.org/" = true;
+          "https://raw.githubusercontent.com/devcontainers/spec/" = true;
+          "https://raw.githubusercontent.com/microsoft/vscode/" = true;
+          "https://schemastore.azurewebsites.net/" = true;
+          "https://www.schemastore.org/" = true;
+        };
         "extensions.ignoreRecommendations" = true;
         "extensions.autoUpdate" = true;
         "security.workspace.trust.untrustedFiles" = "open";
