@@ -20,7 +20,6 @@
     "common/yazi"
     "common/zsh"
     "common/starship"
-    "common/zellij"
 
     # gaming
     "gaming"
