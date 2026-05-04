@@ -34,7 +34,6 @@
       spotify
       qbittorrent
       inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
-      inputs.cursor-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
       gh
       kubectl
       minikube
