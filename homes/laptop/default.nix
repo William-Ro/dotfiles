@@ -37,6 +37,7 @@
       gh
       kubectl
       minikube
+      calibre
     ];
 
     sessionVariables = {
