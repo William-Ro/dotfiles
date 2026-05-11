@@ -58,6 +58,7 @@
       dig
       nvme-cli
       ledger-live-desktop
+      calibre
     ];
 
     sessionVariables = {
