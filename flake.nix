@@ -28,10 +28,6 @@
       url = "github:jacopone/antigravity-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    cursor-nix = {
-      url = "github:jacopone/code-cursor-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
