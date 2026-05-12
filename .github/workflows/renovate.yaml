@@ -1,0 +1,29 @@
+---
+name: Renovate
+permissions: { contents: read }
+
+on:
+  schedule: [{ cron: "0 * * * *" }]
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: Dry Run
+        default: false
+        required: false
+        type: boolean
+      log-level:
+        description: Log Level
+        type: choice
+        default: debug
+        options: [debug, info]
+        required: true
+
+jobs:
+  renovate:
+    uses: William-Ro/github-workflows/.github/workflows/renovate.yaml@94028364b1121ec287d043b84ae419771f8244dd # main
+    with:
+      dry-run: ${{ inputs.dry-run || false }}
+      log-level: ${{ inputs.log-level || 'debug' }}
+    secrets:
+      BOT_APP_ID: ${{ secrets.BOT_APP_ID }}
+      BOT_APP_PRIVATE_KEY: ${{ secrets.BOT_APP_PRIVATE_KEY }}

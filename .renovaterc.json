@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    // Shared base config
+    "github>William-Ro/renovate-config//default.json5"
+  ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 6am on monday"],
+    "automerge": true,
+    "automergeType": "pr",
+    "commitMessageAction": "update",
+    "addLabels": ["renovate/nix"]
+  },
+  "packageRules": [
+    {
+      // Group all flake input updates into a single PR
+      "description": "Group all nix flake input updates together",
+      "groupName": "nix flake inputs",
+      "matchManagers": ["nix"],
+      "addLabels": ["renovate/nix"]
+    }
+  ]
+}
