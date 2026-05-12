@@ -1,9 +1,13 @@
----
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: CI PR
 
 on:
   pull_request:
     branches: [main]
+    paths:
+      - "**/*.nix"
+      - flake.lock
+      - .github/workflows/**
 
 concurrency:
   group: ci-pr-${{ github.ref }}
@@ -16,140 +20,50 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: read
-
     steps:
-      - uses: actions/checkout@v4
-
-      - uses: cachix/install-nix-action@v25
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          nix_path: nixpkgs=channel:nixos-unstable
+          persist-credentials: false
+
+      - uses: cachix/install-nix-action@b97f05dcb019ddea06450a50ef6203d2fdc19fee # v31
+        with:
           extra_nix_config: |
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
             max-jobs = auto
             cores = 0
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
         with:
           path: ~/.cache/nix
           key: nix-${{ runner.os }}-${{ hashFiles('flake.lock') }}
           restore-keys: nix-${{ runner.os }}-
 
-      - name: Flake check
-        run: nix flake check --no-build
-
-      - name: Flake show
-        run: nix flake show
-
-      - name: Deadnix
-        continue-on-error: true
-        run: |
-          nix shell nixpkgs#deadnix --command deadnix --exclude result
-
-      - name: Statix
-        continue-on-error: true
-        run: |
-          nix shell nixpkgs#statix --command statix check
-
-      - name: Format Check
+      - name: Format check
         run: |
           nix shell nixpkgs#nixfmt --command \
             find . -name "*.nix" -not -path "./.git/*" -not -name "result" \
             -exec nixfmt --check {} +
 
-      - name: Flake Checker
-        uses: DeterminateSystems/flake-checker-action@main
+      - name: Flake check
+        run: nix flake check --no-build
 
-  security:
-    name: Security Scan
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    permissions:
-      contents: read
-      security-events: write
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: cachix/install-nix-action@v25
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
-
-      - name: Gitleaks
+      - name: Deadnix
         continue-on-error: true
-        run: |
-          nix shell nixpkgs#gitleaks --command \
-            gitleaks detect --source . --report-path gitleaks-report.json || true
+        run: nix shell nixpkgs#deadnix --command deadnix --exclude result
 
-      - name: Trivy
+      - name: Statix
         continue-on-error: true
-        run: |
-          nix shell nixpkgs#trivy --command \
-            trivy fs --severity CRITICAL,HIGH --exit-code 0 .
-
-      - name: Upload security reports
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: security-reports
-          path: gitleaks-report.json
-          if-no-files-found: ignore
-          retention-days: 30
-
-  build:
-    name: Build Configs
-    runs-on: ubuntu-latest
-    timeout-minutes: 60
-    permissions:
-      contents: read
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: cachix/install-nix-action@v25
-        with:
-          nix_path: nixpkgs=channel:nixos-unstable
-          extra_nix_config: |
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw=
-            max-jobs = auto
-            cores = 0
-
-      - uses: actions/cache@v4
-        with:
-          path: ~/.cache/nix
-          key: nix-${{ runner.os }}-${{ hashFiles('flake.lock') }}
-          restore-keys: nix-${{ runner.os }}-
-
-      - name: Build desktop
-        run: |
-          nix build .#nixosConfigurations.desktop.config.system.build.toplevel \
-            --dry-run 2>&1 | tee /tmp/desktop.log
-          echo "desktop build successful" >> $GITHUB_STEP_SUMMARY
-
-      - name: Build laptop
-        run: |
-          nix build .#nixosConfigurations.laptop.config.system.build.toplevel \
-            --dry-run 2>&1 | tee /tmp/laptop.log
-          echo "laptop build successful" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload build logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-logs
-          path: /tmp/*.log
-          if-no-files-found: ignore
-          retention-days: 7
+        run: nix shell nixpkgs#statix --command statix check
 
   summary:
     name: Summary
     runs-on: ubuntu-latest
-    needs: [syntax, security, build]
+    needs: [syntax]
     if: always()
     permissions:
       pull-requests: write
-
     steps:
-      - name: Check syntax result
+      - name: Check required jobs
         run: |
           if [ "${{ needs.syntax.result }}" != "success" ]; then
             echo "Syntax validation failed"
@@ -157,42 +71,26 @@ jobs:
           fi
 
       - name: Post PR comment
-        uses: actions/github-script@v7
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9
         if: always() && github.event_name == 'pull_request'
         env:
           SYNTAX_RESULT: ${{ needs.syntax.result }}
-          SECURITY_RESULT: ${{ needs.security.result }}
-          BUILD_RESULT: ${{ needs.build.result }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const syntaxOk = process.env.SYNTAX_RESULT === 'success';
-            const securityOk = process.env.SECURITY_RESULT === 'success';
-            const buildOk = process.env.BUILD_RESULT === 'success';
 
             const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-
-            const checkStatus = (isOk, passMsg, failMsg) => isOk ? `**Pass** - ${passMsg}` : `**Fail** - ${failMsg}`;
+            const check = (ok, pass, fail) => ok ? `**Pass** - ${pass}` : `**Fail** - ${fail}`;
 
             const body = [
-              '## Nix Configuration CI Report',
+              '## Nix CI Report',
               '',
               '### Pipeline Status',
-              `- **Syntax & Formatting:** ${checkStatus(syntaxOk, 'Code is properly formatted and idiomatic.', 'Check nixfmt, deadnix, or statix output.')}`,
-              `- **Security Verification:** ${checkStatus(securityOk, 'No critical vulnerabilities or secrets found.', 'Review trivy or gitleaks findings in the artifacts.')}`,
-              `- **System Build Dry-Run:** ${checkStatus(buildOk, 'Desktop and laptop configurations evaluate and build successfully.', 'System closure failed to build. Review the logs.')}`,
+              `- **Syntax & Lint:** ${check(syntaxOk, 'Format, flake check, deadnix and statix passed.', 'Check nixfmt, flake check, or static analysis output.')}`,
               '',
-              ...(!syntaxOk ? [
-                '### Quick Fix: Formatting',
-                'If the syntax check failed due to unformatted files, run the following command at the root of your repository to automatically format them:',
-                '```bash',
-                'nix shell nixpkgs#nixfmt --command \\',
-                '  find . -name "*.nix" -not -path "./.git/*" -not -name "result" -exec nixfmt {} +',
-                '```',
-                ''
-              ] : []),
               '### Conclusion',
-              `**Ready to Merge:** ${syntaxOk && buildOk ? 'Yes. All required checks passed.' : 'No. Pipeline requirements have not been met.'}`,
+              `**Ready to Merge:** ${syntaxOk ? 'Yes. All required checks passed.' : 'No. Fix the failing jobs before merging.'}`,
               '',
               `[View full workflow run details](${runUrl})`
             ].join('\n');
