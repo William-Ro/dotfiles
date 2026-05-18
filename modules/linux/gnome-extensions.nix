@@ -7,6 +7,5 @@
     vitals # System monitor in top bar
     clipboard-indicator # Clipboard manager
     no-overview
-    caffeine
   ];
 }

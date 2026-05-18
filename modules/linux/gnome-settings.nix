@@ -171,7 +171,6 @@
         "blur-my-shell@aunetx"
         "Vitals@CoreCoding.com"
         "clipboard-indicator@tudmotu.com"
-        "caffeine@patapon.info"
         "no-overview@fthx"
       ];
     };
