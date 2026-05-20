@@ -59,6 +59,7 @@
       nvme-cli
       ledger-live-desktop
       calibre
+      osu-lazer
     ];
 
     sessionVariables = {
