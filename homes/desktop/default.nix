@@ -15,6 +15,7 @@
     "common/home"
     "common/lazygit"
     "common/discord"
+    "common/easyeffects"
     "common/vscode"
     "common/nvchad"
     "common/yazi"
