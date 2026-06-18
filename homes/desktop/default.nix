@@ -61,6 +61,7 @@
       ledger-live-desktop
       calibre
       osu-lazer
+      ffmpegthumbnailer
     ];
 
     sessionVariables = {
