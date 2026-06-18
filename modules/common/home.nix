@@ -44,6 +44,7 @@
         # Media
         mpv
         imv
+        ffmpegthumbnailer
 
         # Disk tools
         parted
