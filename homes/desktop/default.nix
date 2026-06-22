@@ -52,6 +52,7 @@
       k9s
       flux9s
       bws
+      github-copilot-cli
 
       # Desktop specific
       chromium
