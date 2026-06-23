@@ -41,6 +41,7 @@
       kcc
       gimp
       mcrcon
+      jellyfin-mpv-shim
 
       # DevOps Tools
       gh
