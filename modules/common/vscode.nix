@@ -104,6 +104,7 @@
         "debug.console.fontFamily" = "${config.font}";
         "debug.internalConsoleOptions" = "openOnSessionStart";
         "chat.viewSessions.enabled" = false;
+        "yaml.customTags" = ["!env_var scalar"];
       };
     };
   };
