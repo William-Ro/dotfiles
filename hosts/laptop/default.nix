@@ -48,12 +48,10 @@
     flatpak.enable = true;
 
     pcscd.enable = true;
-    gnome.gcr-ssh-agent.enable = false;
   };
 
   programs = {
     zsh.enable = true;
-    ssh.startAgent = true;
   };
 
   users.users.${config.username} = {
