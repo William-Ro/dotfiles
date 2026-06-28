@@ -42,7 +42,7 @@
     layout = "us";
     variant = "";
   };
-
+  services.pcscd.enable = true;
   services.printing.enable = true;
 
   programs.zsh.enable = true;

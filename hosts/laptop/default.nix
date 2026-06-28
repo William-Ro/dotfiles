@@ -36,7 +36,7 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   services.tailscale.enable = true;
-
+  services.pcscd.enable = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
