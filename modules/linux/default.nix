@@ -9,6 +9,7 @@
   environment.gnome.excludePackages = with pkgs; [
     epiphany # GNOME Web browser (you have Firefox and Chromium)
     gnome-tour # First-run tour
+    gnome-keyring # Keyring manager (you have pass)
     gnome-music # Music player (you have mpv)
     totem # Video player (you have mpv)
     geary # Email client
