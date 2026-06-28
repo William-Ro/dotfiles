@@ -6,6 +6,8 @@
     wget
     docker-compose
     podman-tui
+    libfido2
+    pcsclite
   ];
   fonts = {
     packages = with pkgs; [

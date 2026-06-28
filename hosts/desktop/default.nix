@@ -42,8 +42,12 @@
     layout = "us";
     variant = "";
   };
-  services.pcscd.enable = true;
   services.printing.enable = true;
+
+  # yubikey
+  programs.ssh.startAgent = true;
+  services.gnome.gcr-ssh-agent.enable = false;
+  services.pcscd.enable = true;
 
   programs.zsh.enable = true;
 
@@ -59,6 +63,7 @@
 
   services.gvfs.enable = true;
   services.flatpak.enable = true;
+
 
   virtualisation.containers.enable = true;
   virtualisation.podman = {

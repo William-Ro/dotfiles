@@ -35,14 +35,18 @@
   services.xserver.enable = true;
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
-  services.tailscale.enable = true;
-  services.pcscd.enable = true;
+
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
   services.printing.enable = true;
+
+  # yubikey
+  programs.ssh.startAgent = true;
+  services.gnome.gcr-ssh-agent.enable = false;
+  services.pcscd.enable = true;
 
   programs.zsh.enable = true;
 
