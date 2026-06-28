@@ -10,6 +10,7 @@
     epiphany # GNOME Web browser (you have Firefox and Chromium)
     gnome-tour # First-run tour
     gnome-keyring # Keyring manager (you have pass)
+    seahorse # Passwords and Keys app
     gnome-music # Music player (you have mpv)
     totem # Video player (you have mpv)
     geary # Email client
