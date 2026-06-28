@@ -29,26 +29,32 @@
     };
   };
 
-  networking.networkmanager.enable = true;
   hardware.bluetooth.enable = true;
 
-  services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  networking.networkmanager.enable = true;
 
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services = {
+    xserver.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    printing.enable = true;
+    gvfs.enable = true;
+    flatpak.enable = true;
+
+    pcscd.enable = true;
+    gnome.gcr-ssh-agent.enable = false;
   };
 
-  services.printing.enable = true;
-
-  # yubikey
-  programs.ssh.startAgent = true;
-  services.gnome.gcr-ssh-agent.enable = false;
-  services.pcscd.enable = true;
-
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+    ssh.startAgent = true;
+  };
 
   users.users.${config.username} = {
     isNormalUser = true;
@@ -59,14 +65,13 @@
     shell = pkgs.zsh;
   };
 
-  services.gvfs.enable = true;
-  services.flatpak.enable = true;
-
-  virtualisation.containers.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
   };
 
   system.stateVersion = "24.05";
