@@ -56,6 +56,7 @@
   };
 
   programs = {
+    zsh.enable = true;
     ssh.startAgent = true;
   };
 

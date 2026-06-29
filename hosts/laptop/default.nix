@@ -29,7 +29,10 @@
     };
   };
 
-  hardware.bluetooth.enable = true;
+  hardware = {
+    enableRedistributableFirmware = true;
+    bluetooth.enable = true;
+  };
 
   networking.networkmanager.enable = true;
 
@@ -52,6 +55,7 @@
 
   programs = {
     zsh.enable = true;
+    ssh.startAgent = true;
   };
 
   users.users.${config.username} = {
@@ -59,6 +63,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "plugdev"
     ];
     shell = pkgs.zsh;
   };
