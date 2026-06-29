@@ -41,7 +41,7 @@
       kcc
       gimp
       mcrcon
-      
+
       jellyfin-mpv-shim
       jellyfin-desktop
 
