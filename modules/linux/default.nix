@@ -24,7 +24,7 @@
 
   # Enable GNOME's file indexing and search
   services.gnome.localsearch.enable = true;
-  services.gnome.gnome-keyring.enable = false;
+  services.gnome.gnome-keyring.enable = true;
   services.gnome.gcr-ssh-agent.enable = false;
   services.gnome.tinysparql.enable = true;
   
