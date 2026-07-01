@@ -86,17 +86,6 @@
         };
         "github.copilot.inlineSuggest.enable" = true;
 
-        "mcp" = {
-          "servers" = {
-            "grafana" = {
-              "url" = "https://grafana-mcp.internal.reli.cc/sse";
-            };
-            "flux" = {
-              "url" = "https://flux-mcp.internal.reli.cc/sse";
-            };
-          };
-        };
-
         "files.insertFinalNewline" = true;
         "json.schemaDownload.trustedDomains" = {
           "https://developer.microsoft.com/json-schemas/" = true;
@@ -118,5 +107,23 @@
         "yaml.customTags" = [ "!env_var scalar" ];
       };
     };
+  };
+
+  home.file.".config/Code/User/mcp.json".text = builtins.toJSON {
+    servers = {
+      github = {
+        type = "http";
+        url = "https://api.githubcopilot.com/mcp/";
+      };
+      grafana = {
+        url = "https://grafana-mcp.internal.reli.cc/sse";
+        type = "http";
+      };
+      flux = {
+        url = "https://flux-mcp.internal.reli.cc/sse";
+        type = "http";
+      };
+    };
+    inputs = [];
   };
 }
