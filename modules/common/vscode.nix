@@ -86,6 +86,17 @@
         };
         "github.copilot.inlineSuggest.enable" = true;
 
+        "mcp" = {
+          "servers" = {
+            "grafana" = {
+              "url" = "https://grafana-mcp.internal.reli.cc/sse";
+            };
+            "flux" = {
+              "url" = "https://flux-mcp.internal.reli.cc/sse";
+            };
+          };
+        };
+
         "files.insertFinalNewline" = true;
         "json.schemaDownload.trustedDomains" = {
           "https://developer.microsoft.com/json-schemas/" = true;
