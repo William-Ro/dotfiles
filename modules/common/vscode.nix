@@ -111,6 +111,28 @@
     };
   };
 
+  # Before home-manager checks for link conflicts, remove any mutable copies
+  # so home-manager can place fresh symlinks
+  home.activation.vscodePrepareFiles = lib.hm.dag.entryBefore [ "checkLinkTargets" ] ''
+    for f in settings.json mcp.json; do
+      p="${config.xdg.configHome}/Code/User/$f"
+      if [ -f "$p" ] && [ ! -L "$p" ]; then
+        $DRY_RUN_CMD rm "$p"
+      fi
+    done
+  '';
+
+  # After home-manager places symlinks, convert them to mutable copies
+  # so VS Code can write to them without EROFS errors
+  home.activation.vscodeMutableFiles = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    for f in settings.json mcp.json; do
+      p="${config.xdg.configHome}/Code/User/$f"
+      if [ -L "$p" ]; then
+        $DRY_RUN_CMD cp --remove-destination "$(readlink -f "$p")" "$p"
+      fi
+    done
+  '';
+
   home.file.".config/Code/User/mcp.json".text = builtins.toJSON {
     servers = {
       nixos = {
