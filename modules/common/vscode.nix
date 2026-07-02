@@ -127,7 +127,7 @@
         type = "http";
       };
       flux = {
-        url = "https://flux-mcp.internal.reli.cc/sse";
+        url = "https://flux-mcp.internal.reli.cc/mcp";
         type = "http";
       };
     };
