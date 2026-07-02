@@ -27,6 +27,7 @@
 
         # CLI utilities
         uv
+        python3
         lsd
         bat
         jq
@@ -51,6 +52,10 @@
         parted
         exfatprogs
       ];
+  };
+
+  home.sessionVariables = {
+    UV_PYTHON_DOWNLOADS = "never";
   };
 
   news.display = "silent";
