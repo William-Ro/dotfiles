@@ -113,6 +113,11 @@
 
   home.file.".config/Code/User/mcp.json".text = builtins.toJSON {
     servers = {
+      nixos = {
+        type = "stdio";
+        command = "uvx";
+        args = [ "mcp-nixos" ];
+      };
       github = {
         type = "http";
         url = "https://api.githubcopilot.com/mcp/";
