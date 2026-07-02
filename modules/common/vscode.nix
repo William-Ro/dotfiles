@@ -115,7 +115,7 @@
     servers = {
       nixos = {
         type = "stdio";
-        command = "uvx";
+        command = "/home/deishuu/.nix-profile/bin/uvx";
         args = [ "mcp-nixos" ];
       };
       github = {
