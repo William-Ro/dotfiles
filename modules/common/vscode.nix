@@ -105,6 +105,7 @@
         "debug.internalConsoleOptions" = "openOnSessionStart";
         "chat.viewSessions.enabled" = false;
         "chat.mcp.gallery.enabled" = true;
+        "update.mode" = "none";
         "yaml.customTags" = [ "!env_var scalar" ];
       };
     };
