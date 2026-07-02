@@ -26,6 +26,7 @@
         p7zip
 
         # CLI utilities
+        uv
         lsd
         bat
         jq
