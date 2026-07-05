@@ -35,7 +35,6 @@
       prismlauncher
       spotify
       qbittorrent
-      inputs.antigravity-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
       wl-clipboard
       # Ebook related
       kcc
