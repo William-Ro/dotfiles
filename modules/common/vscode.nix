@@ -153,6 +153,6 @@
         type = "http";
       };
     };
-    inputs = [];
+    inputs = [ ];
   };
 }
