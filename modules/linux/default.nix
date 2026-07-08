@@ -26,4 +26,7 @@
   services.gnome.gcr-ssh-agent.enable = false;
   services.gnome.tinysparql.enable = true;
 
+  # Prevent ssh-askpass GUI popup when YubiKey touch is required
+  environment.sessionVariables.SSH_ASKPASS_REQUIRE = "never";
+
 }
