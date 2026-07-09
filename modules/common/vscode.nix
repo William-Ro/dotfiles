@@ -152,6 +152,11 @@
         url = "https://flux-mcp.internal.reli.cc/mcp";
         type = "http";
       };
+      graphify = {
+        type = "stdio";
+        command = "/home/deishuu/.nix-profile/bin/uvx";
+        args = [ "--from" "graphifyy" "graphify-mcp" ];
+      };
     };
     inputs = [ ];
   };
