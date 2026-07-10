@@ -55,6 +55,7 @@
       flux9s
       bws
       github-copilot-cli
+      gst_all_1.gst-plugins-good
 
       # Desktop specific
       chromium
