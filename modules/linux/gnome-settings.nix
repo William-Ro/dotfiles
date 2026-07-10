@@ -169,7 +169,6 @@
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "blur-my-shell@aunetx"
-        "Vitals@CoreCoding.com"
         "clipboard-indicator@tudmotu.com"
         "no-overview@fthx"
       ];
