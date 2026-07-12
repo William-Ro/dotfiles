@@ -51,6 +51,8 @@
     flatpak.enable = true;
 
     pcscd.enable = true;
+    # Disabled until a working Twingate configuration is provided for this host.
+    twingate.enable = false;
   };
 
   programs = {
