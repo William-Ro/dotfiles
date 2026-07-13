@@ -32,17 +32,9 @@
 
   home = {
     packages = with pkgs; [
-      prismlauncher
       spotify
       qbittorrent
       wl-clipboard
-      # Ebook related
-      kcc
-      gimp
-      mcrcon
-
-      jellyfin-mpv-shim
-      jellyfin-desktop
 
       # DevOps Tools
       gh
@@ -52,18 +44,13 @@
       fluxcd
       fluxcd-operator
       k9s
-      flux9s
-      bws
       github-copilot-cli
 
       # Desktop specific
       chromium
-      lm_sensors
       dig
       nvme-cli
       ledger-live-desktop
-      calibre
-      osu-lazer
     ];
 
     sessionVariables = {
