@@ -106,6 +106,26 @@
         "chat.viewSessions.enabled" = false;
         "chat.mcp.gallery.enabled" = true;
         "update.mode" = "none";
+        "mcp" = {
+          "servers" = {
+            "nixos" = {
+              "command" = "nix";
+              "args" = [ "run" "github:utensils/mcp-nixos" "--" ];
+            };
+            "github" = {
+              "type" = "http";
+              "url" = "https://api.githubcopilot.com/mcp/";
+            };
+            "notebooklm" = {
+              "command" = "${pkgs.nodejs}/bin/npx";
+              "args" = [ "notebooklm-mcp@latest" ];
+              "env" = {
+                "PLAYWRIGHT_BROWSERS_PATH" = "${pkgs.playwright-driver.browsers}";
+                "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS" = "true";
+              };
+            };
+          };
+        };
         "yaml.customTags" = [ "!env_var scalar" ];
       };
     };
