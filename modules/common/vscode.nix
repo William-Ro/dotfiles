@@ -155,7 +155,11 @@
       graphify = {
         type = "stdio";
         command = "/home/deishuu/.nix-profile/bin/uvx";
-        args = [ "--from" "graphifyy[mcp]" "graphify-mcp" ];
+        args = [
+          "--from"
+          "graphifyy[mcp]"
+          "graphify-mcp"
+        ];
       };
     };
     inputs = [ ];
