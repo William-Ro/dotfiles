@@ -105,6 +105,7 @@
         "debug.internalConsoleOptions" = "openOnSessionStart";
         "chat.viewSessions.enabled" = false;
         "chat.mcp.gallery.enabled" = true;
+        "chat.agent.sandbox.enabled" = false;
         "update.mode" = "none";
         "mcp" = {
           "servers" = {
@@ -116,14 +117,7 @@
               "type" = "http";
               "url" = "https://api.githubcopilot.com/mcp/";
             };
-            "notebooklm" = {
-              "command" = "${pkgs.nodejs}/bin/npx";
-              "args" = [ "notebooklm-mcp@latest" ];
-              "env" = {
-                "PLAYWRIGHT_BROWSERS_PATH" = "${pkgs.playwright-driver.browsers}";
-                "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS" = "true";
-              };
-            };
+          
           };
         };
         "yaml.customTags" = [ "!env_var scalar" ];
