@@ -11,21 +11,12 @@
     profiles.default = {
       enableUpdateCheck = false;
 
-      extensions =
-        (with pkgs.vscode-extensions; [
-          bbenoist.nix
-          esbenp.prettier-vscode
-          jdinhlife.gruvbox
-        ])
-        ++ [
-          # Gruvbox Material Icon Theme (not packaged in nixpkgs)
-          (pkgs.vscode-utils.extensionFromVscodeMarketplace {
-            name = "gruvbox-material-icon-theme";
-            publisher = "jonathanharty";
-            version = "1.1.5";
-            sha256 = "01p67g44mgik5lp7wb2acv2rki6xf3if0w48qyfsckwawm91d9gk";
-          })
-        ];
+      extensions = with pkgs.vscode-extensions; [
+        bbenoist.nix
+        esbenp.prettier-vscode
+        pkief.material-icon-theme
+        jdinhlife.gruvbox
+      ];
       userSettings = {
         "window.zoomLevel" = 2;
         "workbench.activityBar.location" = "hidden";
