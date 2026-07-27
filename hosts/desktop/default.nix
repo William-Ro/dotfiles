@@ -49,9 +49,6 @@
     printing.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
-
-    pcscd.enable = true;
-
   };
 
   programs = {
