@@ -14,7 +14,6 @@
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
         esbenp.prettier-vscode
-        pkief.material-icon-theme
         jdinhlife.gruvbox
       ];
       userSettings = {
