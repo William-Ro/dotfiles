@@ -32,7 +32,6 @@
   hardware = {
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
-    ledger.enable = true;
   };
 
   networking.networkmanager.enable = true;

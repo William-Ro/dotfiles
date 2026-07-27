@@ -50,7 +50,6 @@
       chromium
       dig
       nvme-cli
-      ledger-live-desktop
     ];
 
     sessionVariables = {
