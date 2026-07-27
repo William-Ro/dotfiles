@@ -11,19 +11,28 @@
     profiles.default = {
       enableUpdateCheck = false;
 
-      extensions = with pkgs.vscode-extensions; [
-        bbenoist.nix
-        esbenp.prettier-vscode
-        pkief.material-icon-theme
-        jdinhlife.gruvbox
-      ];
+      extensions =
+        (with pkgs.vscode-extensions; [
+          bbenoist.nix
+          esbenp.prettier-vscode
+          jdinhlife.gruvbox
+        ])
+        ++ [
+          # Gruvbox Material Icon Theme (not packaged in nixpkgs)
+          (pkgs.vscode-utils.extensionFromVscodeMarketplace {
+            name = "gruvbox-material-icon-theme";
+            publisher = "jonathanharty";
+            version = "1.1.5";
+            sha256 = "01p67g44mgik5lp7wb2acv2rki6xf3if0w48qyfsckwawm91d9gk";
+          })
+        ];
       userSettings = {
         "window.zoomLevel" = 2;
         "workbench.activityBar.location" = "hidden";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
         "workbench.colorTheme" = "Gruvbox Dark Medium";
-        "workbench.iconTheme" = "material-icon-theme";
+        "workbench.iconTheme" = "gruvbox-material-icon-theme";
 
         "editor.fontFamily" = "${config.font}";
         "editor.fontSize" = 21;
