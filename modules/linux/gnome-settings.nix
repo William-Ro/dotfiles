@@ -5,14 +5,25 @@
   ...
 }:
 {
+  # Gruvbox GTK/Shell theme (https://github.com/morhetz/gruvbox)
+  gtk.theme = {
+    name = "Gruvbox-Dark";
+    package = pkgs.gruvbox-gtk-theme;
+  };
+
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       clock-show-weekday = true;
       clock-format = "12h";
       enable-hot-corners = false;
-      gtk-theme = "Adwaita-dark";
+      gtk-theme = "Gruvbox-Dark";
       color-scheme = "prefer-dark";
+      accent-color = "orange";
       show-battery-percentage = true;
+    };
+
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Gruvbox-Dark";
     };
 
     "org/gnome/desktop/wm/preferences" = {
@@ -168,9 +179,9 @@
       favorite-apps = [ ];
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
-        "blur-my-shell@aunetx"
         "clipboard-indicator@tudmotu.com"
         "no-overview@fthx"
+        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 

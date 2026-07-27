@@ -15,16 +15,14 @@
         bbenoist.nix
         esbenp.prettier-vscode
         pkief.material-icon-theme
-        dracula-theme.theme-dracula
-        github.copilot
-        github.copilot-chat
+        jdinhlife.gruvbox
       ];
       userSettings = {
         "window.zoomLevel" = 2;
         "workbench.activityBar.location" = "hidden";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
-        "workbench.colorTheme" = "Dracula Theme";
+        "workbench.colorTheme" = "Gruvbox Dark Medium";
         "workbench.iconTheme" = "material-icon-theme";
 
         "editor.fontFamily" = "${config.font}";
