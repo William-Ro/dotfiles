@@ -95,14 +95,14 @@
           "https://www.schemastore.org/" = true;
         };
         "extensions.ignoreRecommendations" = true;
-        "extensions.autoUpdate" = true;
+        "extensions.autoUpdate" = "on";
         "security.workspace.trust.untrustedFiles" = "open";
         "debug.console.fontSize" = 21;
         "debug.console.fontFamily" = "${config.font}";
         "debug.internalConsoleOptions" = "openOnSessionStart";
         "chat.viewSessions.enabled" = false;
         "chat.mcp.gallery.enabled" = true;
-        "chat.agent.sandbox.enabled" = false;
+        "chat.agent.sandbox.enabled" = "off";
         "update.mode" = "none";
         "mcp" = {
           "servers" = {
