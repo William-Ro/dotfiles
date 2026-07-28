@@ -104,38 +104,6 @@
         "chat.mcp.gallery.enabled" = true;
         "chat.agent.sandbox.enabled" = "off";
         "update.mode" = "none";
-        "mcp" = {
-          "servers" = {
-            "nixos" = {
-              "command" = "nix";
-              "args" = [
-                "run"
-                "github:utensils/mcp-nixos"
-                "--"
-              ];
-            };
-            "github" = {
-              "type" = "http";
-              "url" = "https://api.githubcopilot.com/mcp/";
-            };
-            "notebooklm" = {
-              "command" = "${pkgs.nodejs}/bin/npx";
-              "args" = [ "notebooklm-mcp@latest" ];
-              "env" = {
-                "PLAYWRIGHT_BROWSERS_PATH" = "${pkgs.playwright-driver.browsers}";
-                "PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS" = "true";
-              };
-            };
-            "grafana" = {
-              "type" = "http";
-              "url" = "https://grafana-mcp.internal.reli.cc/sse";
-            };
-            "flux" = {
-              "type" = "http";
-              "url" = "https://flux-mcp.internal.reli.cc/mcp";
-            };
-          };
-        };
         "yaml.customTags" = [ "!env_var scalar" ];
       };
     };
