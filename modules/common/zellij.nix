@@ -11,7 +11,7 @@
     attachExistingSession = true;
     settings = {
       default_layout = "compact";
-      theme = "catppuccin-mocha";
+      theme = "gruvbox-dark";
       show_startup_tips = false;
     };
   };

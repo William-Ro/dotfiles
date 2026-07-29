@@ -5,13 +5,10 @@
   ...
 }:
 {
-  # Catppuccin Mocha GTK/Shell theme (https://github.com/catppuccin/gtk)
+  # Gruvbox GTK theme (https://github.com/morhetz/gruvbox)
   gtk.theme = {
-    name = "catppuccin-mocha-blue-standard";
-    package = pkgs.catppuccin-gtk.override {
-      variant = "mocha";
-      accents = [ "blue" ];
-    };
+    name = "Gruvbox-Dark";
+    package = pkgs.gruvbox-gtk-theme;
   };
 
   dconf.settings = {
@@ -19,9 +16,9 @@
       clock-show-weekday = true;
       clock-format = "12h";
       enable-hot-corners = false;
-      gtk-theme = "catppuccin-mocha-blue-standard";
+      gtk-theme = "Gruvbox-Dark";
       color-scheme = "prefer-dark";
-      accent-color = "blue";
+      accent-color = "orange";
       show-battery-percentage = true;
     };
 
