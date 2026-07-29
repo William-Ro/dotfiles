@@ -25,10 +25,6 @@
       show-battery-percentage = true;
     };
 
-    "org/gnome/shell/extensions/user-theme" = {
-      name = "catppuccin-mocha-blue-standard";
-    };
-
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
       num-workspaces = 9;
@@ -184,7 +180,6 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "clipboard-indicator@tudmotu.com"
         "no-overview@fthx"
-        "user-theme@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
