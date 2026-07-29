@@ -14,15 +14,16 @@
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
         esbenp.prettier-vscode
-        jdinhlife.gruvbox
+        catppuccin.catppuccin-vsc
+        catppuccin.catppuccin-vsc-icons
       ];
       userSettings = {
         "window.zoomLevel" = 2;
         "workbench.activityBar.location" = "hidden";
         "workbench.sideBar.location" = "right";
         "workbench.startupEditor" = "none";
-        "workbench.colorTheme" = "Gruvbox Dark Medium";
-        "workbench.iconTheme" = "gruvbox-material-icon-theme";
+        "workbench.colorTheme" = "Catppuccin Mocha";
+        "workbench.iconTheme" = "catppuccin-mocha";
 
         "editor.fontFamily" = "${config.font}";
         "editor.fontSize" = 21;
