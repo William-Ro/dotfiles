@@ -177,6 +177,7 @@
         "appindicatorsupport@rgcjonas.gmail.com"
         "clipboard-indicator@tudmotu.com"
         "no-overview@fthx"
+        "blur-my-shell@aunetx"
       ];
     };
 

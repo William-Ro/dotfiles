@@ -5,5 +5,6 @@
     appindicator # Tray icons support
     clipboard-indicator # Clipboard manager
     no-overview
+    blur-my-shell # Blur/transparency for shell panel, dash, overview
   ];
 }
