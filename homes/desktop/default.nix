@@ -33,7 +33,6 @@
   home = {
     packages = with pkgs; [
       spotify
-      wl-clipboard
 
       # DevOps Tools
       gh
@@ -43,12 +42,9 @@
       fluxcd
       fluxcd-operator
       k9s
-      github-copilot-cli
 
       # Desktop specific
       chromium
-      dig
-      nvme-cli
     ];
   };
 

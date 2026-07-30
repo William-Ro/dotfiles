@@ -8,11 +8,14 @@
     podman-tui
     libfido2
     pcsclite
+    wl-clipboard
+    dig
+    github-copilot-cli
   ];
   fonts = {
     packages = with pkgs; [
       material-design-icons
-      font-awesome
+      font-awesome_6
       nerd-fonts.symbols-only
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
@@ -20,8 +23,6 @@
       nerd-fonts.roboto-mono
       noto-fonts
       noto-fonts-color-emoji
-      font-awesome_5
-      font-awesome_6
     ];
   };
 }
