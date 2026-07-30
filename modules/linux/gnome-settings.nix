@@ -155,7 +155,7 @@
 
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
-      sleep-inactive-battery-timeout = 900
+      sleep-inactive-battery-timeout = 900;
       power-button-action = "interactive";
     };
 
