@@ -109,8 +109,8 @@
       shift-overview-down = [ ];
       shift-overview-up = [ ];
       toggle-application-view = [ ];
-      toggle-message-tray = [ ];
-      toggle-quick-settings = [ ];
+      toggle-message-tray = [ "<Super>n" ];
+      toggle-quick-settings = [ "<Super>v" ];
     };
 
     "org/gnome/mutter/keybindings" = {
@@ -161,10 +161,8 @@
 
     "org/gnome/desktop/privacy" = {
       remember-recent-files = false;
-      recent-files-max-age = 30;
       remove-old-trash-files = false;
       remove-old-temp-files = false;
-      old-files-age = 30;
     };
 
     "org/gnome/desktop/session" = {

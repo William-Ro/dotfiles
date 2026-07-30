@@ -7,26 +7,17 @@
 {
   # Exclude default GNOME apps we don't need
   environment.gnome.excludePackages = with pkgs; [
-    epiphany # GNOME Web browser (you have Firefox and Chromium)
-    gnome-tour # First-run tour
-    gnome-music # Music player (you have mpv)
-    totem # Video player (you have mpv)
-    geary # Email client
+    epiphany 
+    gnome-tour
+    gnome-music
+    totem
+    geary
     gnome-calendar
     gnome-contacts
     gnome-maps
     gnome-weather
-    simple-scan # Document scanner
-    yelp # Help viewer
+    simple-scan
+    yelp
   ];
-
-  # Enable GNOME's file indexing and search
-  services.gnome.localsearch.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.gnome.gcr-ssh-agent.enable = false;
-  services.gnome.tinysparql.enable = true;
-
-  # Prevent ssh-askpass GUI popup when YubiKey touch is required
-  environment.sessionVariables.SSH_ASKPASS_REQUIRE = "never";
 
 }
