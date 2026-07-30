@@ -13,6 +13,7 @@
     "system/packages"
     "system/locale"
     "system/audio"
+    "system/virtualisation"
     "gaming/steam"
     "gnome"
   ];
@@ -49,8 +50,6 @@
     printing.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
-
-    # Disabled until a working Twingate configuration is provided for this host.
     twingate.enable = false;
   };
 
@@ -64,17 +63,9 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "podman"
     ];
     shell = pkgs.zsh;
-  };
-
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
   };
 
   system.stateVersion = "24.05";

@@ -13,6 +13,7 @@
     "system/packages"
     "system/locale"
     "system/audio"
+    "system/virtualisation"
     "gaming/steam"
     "gnome"
   ];
@@ -61,17 +62,9 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "podman"
     ];
     shell = pkgs.zsh;
-  };
-
-  virtualisation = {
-    containers.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-    };
   };
 
   system.stateVersion = "24.05";
