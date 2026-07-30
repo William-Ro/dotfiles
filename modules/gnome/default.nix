@@ -5,6 +5,18 @@
   ...
 }:
 {
+  services = {
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
+    };
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+
   # Exclude default GNOME apps we don't need
   environment.gnome.excludePackages = with pkgs; [
     epiphany

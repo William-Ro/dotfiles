@@ -33,7 +33,6 @@
   home = {
     packages = with pkgs; [
       spotify
-      qbittorrent
       wl-clipboard
 
       # DevOps Tools

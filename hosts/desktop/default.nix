@@ -38,15 +38,6 @@
   networking.networkmanager.enable = true;
 
   services = {
-    xserver.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
-    };
-
     printing.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
