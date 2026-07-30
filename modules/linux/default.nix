@@ -20,4 +20,8 @@
     yelp
   ];
 
+  # Disabled because programs.ssh.startAgent is enabled (hosts set their own SSH agent);
+  # both cannot be enabled at the same time.
+  services.gnome.gcr-ssh-agent.enable = false;
+
 }
