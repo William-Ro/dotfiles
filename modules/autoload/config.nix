@@ -8,13 +8,9 @@ with lib;
 {
   options = {
     username = mkOption { type = types.str; };
-    usermail = mkOption { type = types.str; };
     git_username = mkOption { type = types.str; };
     git_usermail = mkOption { type = types.str; };
     home_path = mkOption { type = types.str; };
-    dotfiles_path = mkOption { type = types.str; };
-    wallpaper = mkOption { type = types.str; };
-    screenshots = mkOption { type = types.str; };
     font = mkOption { type = types.str; };
   };
 
@@ -24,7 +20,6 @@ with lib;
     git_usermail = "william.r2409@gmail.com";
 
     home_path = lib.mkDefault "/home/${config.username}";
-    screenshots = "${config.home_path}/Pictures/Screenshots";
     font = "JetBrainsMono Nerd Font";
   };
 }

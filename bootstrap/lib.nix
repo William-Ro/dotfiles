@@ -17,9 +17,6 @@ inputs: lib: _:
         if builtins.isPath path then
           # Handle explicit paths
           path
-        else if builtins.substring 0 1 (toString path) == "/" then
-          # Handle absolute paths, including concatenated ones
-          path
         else if builtins.pathExists ../modules/${path} then
           # Handle directory modules
           ../modules/${path}
@@ -28,9 +25,6 @@ inputs: lib: _:
           ../modules/${path}.nix;
     in
     builtins.map modulePath;
-
-  # mkIfHome = {homeName ? null, ...}: config: lib.mkIf (homeName != null) config;
-  # mkIfHost = {hostName ? null, ...}: config: lib.mkIf (hostName != null) config;
 }
 # Make sure to add lib extensions from inputs
 // inputs.home-manager.lib

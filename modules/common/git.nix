@@ -23,13 +23,6 @@
       credential.helper = "pass";
     };
 
-    includes = lib.optionals (builtins.pathExists (config.home_path + "/Work/.gitconfig")) [
-      {
-        path = "${config.home_path}/Work/.gitconfig";
-        condition = "gitdir:${config.home_path}/Work/";
-      }
-    ];
-
     settings.alias = {
       br = "branch";
       co = "checkout";

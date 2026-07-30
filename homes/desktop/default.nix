@@ -51,12 +51,6 @@
       dig
       nvme-cli
     ];
-
-    sessionVariables = {
-    };
-
-    file = {
-    };
   };
 
   gtk = {
@@ -66,9 +60,6 @@
       size = 11;
     };
     gtk4.theme = config.gtk.theme;
-  };
-
-  programs = {
   };
 
   home.stateVersion = "24.05";

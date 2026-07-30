@@ -36,12 +36,6 @@
       gh
       kubectl
     ];
-
-    sessionVariables = {
-    };
-
-    file = {
-    };
   };
 
   gtk = {
@@ -50,9 +44,6 @@
       name = "${config.font}";
       size = 11;
     };
-  };
-
-  programs = {
   };
 
   home.stateVersion = "24.05";

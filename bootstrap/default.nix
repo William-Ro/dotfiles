@@ -19,15 +19,9 @@ let
     let
       pkgs = nixpkgs.legacyPackages.${system};
 
-      systemSpecifics = {
-        fn = lib.nixosSystem;
-        option = "nixosConfigurations";
-        command = "sudo nixos-rebuild";
-      };
-
       mapHosts = builtins.mapAttrs (
         hostName: path:
-        systemSpecifics.fn {
+        lib.nixosSystem {
           inherit system;
           specialArgs = {
             inherit
@@ -83,25 +77,17 @@ let
           }
 
           os() {
-            ${systemSpecifics.command} switch --flake .#$1
+            sudo nixos-rebuild switch --flake .#$1
           }
         '';
       };
-      ${systemSpecifics.option} = mapHosts hosts;
+      nixosConfigurations = mapHosts hosts;
       homeConfigurations = mapHomes homes;
     };
 
   configuration = foldl recursiveUpdate { } (mapAttrsToList mapSystem systems);
-
-  getOptions = configs: foldl recursiveUpdate { } (mapAttrsToList (_: value: value.options) configs);
 in
 configuration
 // {
   inherit lib;
-
-  # Merge all options into one attribute set for use with ‹nixd›
-  options = {
-    nixos = getOptions (self.nixosConfigurations or { });
-    home-manager = getOptions (self.homeConfigurations or { });
-  };
 }
