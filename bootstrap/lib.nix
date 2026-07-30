@@ -29,32 +29,8 @@ inputs: lib: _:
     in
     builtins.map modulePath;
 
-  # On macOS creates a simple package that symlinks to a package installed by homebrew
-  brew-alias =
-    pkgs: name:
-    lib.mkIf pkgs.stdenv.isDarwin (
-      let
-        brewPrefix = if pkgs.stdenv.isAarch64 then "/opt/homebrew/bin" else "/usr/local/bin";
-      in
-      pkgs.stdenv.mkDerivation {
-        name = "${name}-brew";
-        version = "1.0.0";
-        dontUnpack = true;
-        installPhase = ''
-          mkdir -p $out/bin
-          ln -s ${brewPrefix}/${name} $out/bin/${name}
-        '';
-        meta = with pkgs.lib; {
-          mainProgram = "${name}";
-          description = "Wrapper for Homebrew-installed ${name}";
-          platforms = platforms.darwin;
-        };
-      }
-    );
-
   # mkIfHome = {homeName ? null, ...}: config: lib.mkIf (homeName != null) config;
   # mkIfHost = {hostName ? null, ...}: config: lib.mkIf (hostName != null) config;
 }
 # Make sure to add lib extensions from inputs
 // inputs.home-manager.lib
-// inputs.nix-darwin.lib

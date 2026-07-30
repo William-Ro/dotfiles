@@ -23,14 +23,7 @@ with lib;
     git_username = "William-Ro";
     git_usermail = "william.r2409@gmail.com";
 
-    home_path =
-      lib.mkDefault
-        {
-          x86_64-linux = "/home/${config.username}";
-          aarch64-linux = "/home/${config.username}";
-          aarch64-darwin = "/Users/${config.username}";
-        }
-        .${system};
+    home_path = lib.mkDefault "/home/${config.username}";
     screenshots = "${config.home_path}/Pictures/Screenshots";
     font = "JetBrainsMono Nerd Font";
   };

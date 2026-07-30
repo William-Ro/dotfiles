@@ -7,7 +7,7 @@
 {
   # Exclude default GNOME apps we don't need
   environment.gnome.excludePackages = with pkgs; [
-    epiphany 
+    epiphany
     gnome-tour
     gnome-music
     totem

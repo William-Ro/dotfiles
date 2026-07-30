@@ -1,13 +1,8 @@
 {
-  description = "deishuu macos/nixos configuration";
+  description = "deishuu nixos configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    nix-darwin = {
-      url = "github:LnL7/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -45,10 +40,6 @@
         hosts.desktop = ./hosts/desktop;
         homes.laptop = ./homes/laptop;
         hosts.laptop = ./hosts/laptop;
-      };
-      aarch64-darwin = {
-        homes.work = ./homes/work;
-        hosts.work = ./hosts/work;
       };
     };
 }

@@ -45,7 +45,7 @@
 
     gc = {
       automatic = true;
-      dates = lib.mkIf (system != "aarch64-darwin") "weekly";
+      dates = "weekly";
       options = "--delete-older-than 1w";
     };
 

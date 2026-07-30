@@ -20,21 +20,12 @@ let
     let
       pkgs = nixpkgs.legacyPackages.${system};
 
-      systemSpecifics =
-        if pkgs.stdenv.isDarwin then
-          {
-            fn = lib.darwinSystem;
-            option = "darwinConfigurations";
-            command = "sudo nix run nix-darwin --";
-            sopsModule = sops-nix.darwinModules.sops;
-          }
-        else
-          {
-            fn = lib.nixosSystem;
-            option = "nixosConfigurations";
-            command = "sudo nixos-rebuild";
-            sopsModule = sops-nix.nixosModules.sops;
-          };
+      systemSpecifics = {
+        fn = lib.nixosSystem;
+        option = "nixosConfigurations";
+        command = "sudo nixos-rebuild";
+        sopsModule = sops-nix.nixosModules.sops;
+      };
 
       mapHosts = builtins.mapAttrs (
         hostName: path:
@@ -115,7 +106,6 @@ configuration
   # Merge all options into one attribute set for use with ‹nixd›
   options = {
     nixos = getOptions (self.nixosConfigurations or { });
-    darwin = getOptions (self.darwinConfigurations or { });
     home-manager = getOptions (self.homeConfigurations or { });
   };
 }
