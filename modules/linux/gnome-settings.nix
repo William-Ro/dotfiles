@@ -155,7 +155,7 @@
 
     "org/gnome/settings-daemon/plugins/power" = {
       sleep-inactive-ac-type = "nothing";
-      sleep-inactive-battery-timeout = 900; # 15 minutes
+      sleep-inactive-battery-timeout = 900
       power-button-action = "interactive";
     };
 
@@ -166,7 +166,7 @@
     };
 
     "org/gnome/desktop/session" = {
-      idle-delay = lib.hm.gvariant.mkUint32 900; # 15 minutes
+      idle-delay = lib.hm.gvariant.mkUint32 900;
     };
 
     "org/gnome/shell" = {
