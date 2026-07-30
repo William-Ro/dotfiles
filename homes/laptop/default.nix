@@ -15,6 +15,7 @@
     "common/home"
     "common/lazygit"
     "common/discord"
+    "common/easyeffects"
     "common/yazi"
     "common/zsh"
     "common/starship"
@@ -32,7 +33,6 @@
   home = {
     packages = with pkgs; [
       spotify
-      qbittorrent
       gh
       kubectl
     ];
