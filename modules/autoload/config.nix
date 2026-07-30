@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  system,
   ...
 }:
 with lib;

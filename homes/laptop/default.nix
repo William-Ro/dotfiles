@@ -25,9 +25,9 @@
     # gaming
     "gaming"
 
-    # linux
-    "linux/gnome-extensions"
-    "linux/gnome-settings"
+    # gnome
+    "gnome/extensions"
+    "gnome/settings"
   ];
 
   home = {
