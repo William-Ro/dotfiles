@@ -1,7 +1,6 @@
 inputs@{
   nixpkgs,
   self,
-  sops-nix,
   ...
 }:
 systems:
@@ -24,7 +23,6 @@ let
         fn = lib.nixosSystem;
         option = "nixosConfigurations";
         command = "sudo nixos-rebuild";
-        sopsModule = sops-nix.nixosModules.sops;
       };
 
       mapHosts = builtins.mapAttrs (
@@ -42,7 +40,6 @@ let
           };
           modules = [
             path
-            systemSpecifics.sopsModule
           ]
           ++ lib.autoloadedModules;
         }
@@ -62,7 +59,6 @@ let
           };
           modules = [
             path
-            sops-nix.homeManagerModules.sops
           ]
           ++ lib.autoloadedModules;
         }
