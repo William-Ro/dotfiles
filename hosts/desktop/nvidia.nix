@@ -40,8 +40,16 @@
       # accessible via `nvidia-settings`.
       nvidiaSettings = true;
 
-      # Use the latest driver to ensure support for newer GPUs (e.g., RTX 50-series).
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      # NOTE: was previously `nvidiaPackages.latest` (610.43.03). That driver
+      # branch tracks NVIDIA's newest/least-tested releases and coincided with
+      # gnome-shell segfaulting on almost every login since 2026-07-15 (crash
+      # happens during KMS/EGL init on this nvidia-drm + amdgpu hybrid setup,
+      # ~1s into shell startup, before any extensions even load — see
+      # coredumpctl/journalctl history). Trying `.stable` instead since
+      # Blackwell (RTX 50-series) support should have landed there by now;
+      # revert to `.latest` if this causes other regressions (e.g. missing
+      # feature support) rather than fixing the crash.
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
 }
