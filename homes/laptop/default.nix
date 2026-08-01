@@ -33,8 +33,14 @@
   home = {
     packages = with pkgs; [
       spotify
-      gh
       feishin
+      gh
+      kubectl
+      helmfile
+      kubernetes-helm
+      fluxcd
+      fluxcd-operator
+      k9s
       chromium
 ];
   };
