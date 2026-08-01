@@ -41,7 +41,7 @@
     printing.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
-    twingate.enable = false;
+    twingate.enable = true;
   };
 
   programs = {
