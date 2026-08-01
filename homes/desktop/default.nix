@@ -33,8 +33,7 @@
   home = {
     packages = with pkgs; [
       spotify
-
-      # DevOps Tools
+      feishin
       gh
       kubectl
       helmfile
@@ -42,8 +41,6 @@
       fluxcd
       fluxcd-operator
       k9s
-
-      # Desktop specific
       chromium
     ];
   };

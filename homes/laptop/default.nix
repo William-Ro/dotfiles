@@ -34,7 +34,9 @@
     packages = with pkgs; [
       spotify
       gh
-    ];
+      feishin
+      chromium
+];
   };
 
   gtk = {
