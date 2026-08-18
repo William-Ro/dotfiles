@@ -42,7 +42,7 @@
       fluxcd-operator
       k9s
       chromium
-];
+    ];
   };
 
   gtk = {
