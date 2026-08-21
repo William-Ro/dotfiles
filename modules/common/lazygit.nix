@@ -5,10 +5,10 @@
 
     settings = {
       git = {
-        pagers = [
+        diffRenderers = [
           {
             colorArg = "always";
-            pager = "delta --color-only --dark --paging=never";
+            command = "delta --color-only --dark --paging=never";
           }
         ];
       };
