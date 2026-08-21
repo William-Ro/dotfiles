@@ -5,10 +5,10 @@
   ...
 }:
 {
-  # Gruvbox GTK theme (https://github.com/morhetz/gruvbox)
+  # Gruvbox GTK theme (https://github.com/jmattheis/gruvbox-dark-gtk)
   gtk.theme = {
-    name = "Gruvbox-Dark";
-    package = pkgs.gruvbox-gtk-theme;
+    name = "gruvbox-dark";
+    package = pkgs.gruvbox-dark-gtk;
   };
 
   dconf.settings = {
@@ -16,7 +16,7 @@
       clock-show-weekday = true;
       clock-format = "12h";
       enable-hot-corners = false;
-      gtk-theme = "Gruvbox-Dark";
+      gtk-theme = "gruvbox-dark";
       color-scheme = "prefer-dark";
       accent-color = "orange";
       show-battery-percentage = true;
