@@ -101,7 +101,7 @@
         "debug.console.fontSize" = 21;
         "debug.console.fontFamily" = "${config.font}";
         "debug.internalConsoleOptions" = "openOnSessionStart";
-        "chat.viewSessions.enabled" = false;
+        "chat.viewSessions.enabled" = true;
         "chat.mcp.gallery.enabled" = true;
         "chat.agent.sandbox.enabled" = "off";
         "update.mode" = "none";
