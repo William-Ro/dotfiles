@@ -27,11 +27,22 @@
       enable = true;
       tpm2.enable = true;
     };
+
+    kernel.sysctl."kernel.panic" = 10;
   };
 
   hardware = {
     enableRedistributableFirmware = true;
     bluetooth.enable = true;
+    # Records MCE bank/address; query with `sudo ras-mc-ctl --errors`.
+    rasdaemon.enable = true;
+    graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+        vpl-gpu-rt
+      ];
+    };
   };
 
   networking.networkmanager.enable = true;
