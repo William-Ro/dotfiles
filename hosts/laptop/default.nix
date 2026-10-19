@@ -13,6 +13,7 @@
     "system/locale"
     "system/audio"
     "system/virtualisation"
+    "system/debug"
     "gaming/steam"
     "gnome"
   ];
