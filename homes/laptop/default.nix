@@ -51,6 +51,7 @@
       name = "${config.font}";
       size = 11;
     };
+    gtk4.theme = config.gtk.theme;
   };
 
   home.stateVersion = "24.05";
