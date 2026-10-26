@@ -10,6 +10,8 @@
 
     profiles.default = {
       enableUpdateCheck = false;
+      # let VS Code's Settings UI write toggles without rebuild clobbering them
+      mutableUserSettings = true;
 
       extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
