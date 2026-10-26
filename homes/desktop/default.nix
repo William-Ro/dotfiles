@@ -33,7 +33,6 @@
   home = {
     packages = with pkgs; [
       spotify
-      feishin
       gh
       kubectl
       helmfile
@@ -42,6 +41,7 @@
       fluxcd-operator
       k9s
       chromium
+      github-copilot-cli
     ];
   };
 
