@@ -4,7 +4,6 @@
     git
     curl
     wget
-    gjs
     docker-compose
     podman-tui
     libfido2

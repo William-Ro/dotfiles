@@ -40,9 +40,6 @@
       fluxcd
       fluxcd-operator
       k9s
-      flux9s
-      bws
-      gst_all_1.gst-plugins-good
       chromium
       github-copilot-cli
     ];
