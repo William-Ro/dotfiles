@@ -25,7 +25,6 @@
       timeout = 0;
     };
     initrd.systemd = {
-      enable = true;
       tpm2.enable = true;
     };
   };
