@@ -12,11 +12,12 @@ number or content. A decision still only on an open PR/branch hasn't shipped
 yet — amend it in place (same filename, rewritten body) instead of leaving two
 documents that argue with each other.
 
-| #                                                 | Title                                                     | Status   |
-| ------------------------------------------------- | --------------------------------------------------------- | -------- |
-| [0001](0001-run-ci-on-every-pr-no-path-filter.md)         | Run CI on every PR, no path filter                        | Accepted |
-| [0002](0002-enforce-pr-required-workflow.md)              | Enforce PR-required workflow with a required status check | Accepted |
-| [0003](0003-gate-renovate-branch-automerge-with-ci.md)    | Gate Renovate branch automerge with CI                     | Accepted |
+| #                                                       | Title                                                      | Status   |
+| ------------------------------------------------------- | ----------------------------------------------------------- | -------- |
+| [0001](0001-run-ci-on-every-pr-no-path-filter.md)      | Run CI on every PR, no path filter                         | Accepted |
+| [0002](0002-enforce-pr-required-workflow.md)           | Enforce PR-required workflow with a required status check | Accepted |
+| [0003](0003-gate-renovate-branch-automerge-with-ci.md) | Gate Renovate branch automerge with CI                     | Accepted |
+| [0004](0004-make-deadnix-statix-required.md)           | Make deadnix and statix required checks                    | Accepted |
 
 Not every change needs a record — only choices that trade something off, that
 aren't obvious from the code/manifests alone, or that someone could plausibly
