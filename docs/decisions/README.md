@@ -18,6 +18,7 @@ documents that argue with each other.
 | [0002](0002-enforce-pr-required-workflow.md)           | Enforce PR-required workflow with a required status check | Accepted |
 | [0003](0003-gate-renovate-branch-automerge-with-ci.md) | Gate Renovate branch automerge with CI                     | Accepted |
 | [0004](0004-make-deadnix-statix-required.md)           | Make deadnix and statix required checks                    | Accepted |
+| [0005](0005-no-automerge-lockfile-maintenance.md)      | Don't automerge the weekly lockfile maintenance PR         | Accepted |
 
 Not every change needs a record — only choices that trade something off, that
 aren't obvious from the code/manifests alone, or that someone could plausibly
