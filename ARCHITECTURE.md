@@ -35,7 +35,7 @@ machines (`desktop`, `laptop`), built from a shared pool of modules.
 | Firefox extensions             | `rycee/nur-expressions` (`firefox-addons` flake input)         | [`flake.nix#L13-L17`](flake.nix)                                                                             |
 | Neovim distro                  | `nix4nvchad`                                                   | [`flake.nix#L19-L23`](flake.nix), [`modules/common/nvchad.nix`](modules/common/nvchad.nix)                   |
 | Formatter                      | `nixfmt` (RFC-style)                                           | [`bootstrap/default.nix#L31,L68`](bootstrap/default.nix), CI `nixfmt --check`                                |
-| Lint (non-blocking)            | `deadnix`, `statix`                                            | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                 |
+| Lint (required)                | `deadnix`, `statix`                                            | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml), [decisions/0004](docs/decisions/0004-make-deadnix-statix-required.md) |
 | Dependency automation          | Renovate, via shared org config + shared reusable workflow     | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml) |
 | CI runner                      | GitHub Actions, `cachix/install-nix-action`                    | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                 |
 | Desktop environment            | GNOME (Wayland, GDM)                                           | [`modules/gnome/default.nix`](modules/gnome/default.nix)                                                     |
@@ -65,14 +65,15 @@ function, consumed by the Nix CLI:
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | `nix shell nixpkgs#nixfmt --command find . -name "*.nix" ... -exec nixfmt --check {} +` | Format check, all `.nix` files                                       | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) `syntax` job |
 | `nix flake check --no-build`                                                            | Evaluate the flake (schema/type errors) without building derivations | same job                                                                  |
-| `nix shell nixpkgs#deadnix --command deadnix --exclude result`                          | Dead-code lint                                                       | same job, `continue-on-error: true` — **not blocking**                    |
-| `nix shell nixpkgs#statix --command statix check`                                       | Nix anti-pattern lint                                                | same job, `continue-on-error: true` — **not blocking**                    |
+| `nix shell nixpkgs#deadnix --command deadnix --exclude result`                          | Dead-code lint                                                       | same job — **required** (decisions/0004)                                  |
+| `nix shell nixpkgs#statix --command statix check`                                       | Nix anti-pattern lint                                                | same job — **required** (decisions/0004)                                  |
 | `nixos-rebuild switch --flake .#<host>` (via the `os` devShell helper)                  | Apply a NixOS system configuration to a live host                    | [`bootstrap/default.nix#L73`](bootstrap/default.nix)                      |
 | `home-manager switch --flake .#<home>` (via the `hm` devShell helper)                   | Apply a home-manager user configuration                              | [`bootstrap/default.nix#L70`](bootstrap/default.nix)                      |
 
-**CI enforcement:** `CI PR` (`syntax` job: format + flake check, lint
-non-blocking) runs on every `pull_request` targeting `main`, regardless of
-which files changed — an earlier path filter (`**/*.nix`, `flake.lock`,
+**CI enforcement:** `CI PR` (`syntax` job: format check, flake check,
+`deadnix`, `statix` — all required, see
+[decisions/0004](docs/decisions/0004-make-deadnix-statix-required.md)) runs
+on every `pull_request` targeting `main`, regardless of which files changed — an earlier path filter (`**/*.nix`, `flake.lock`,
 `.github/workflows/**`) was removed because it meant docs/instructions-only
 PRs (e.g. this one) triggered no checks at all, same gap
 `William-Ro/homelab` hit and fixed (see
@@ -114,8 +115,8 @@ before opening a PR (see Developer gotchas below).
 | `modules/gaming/`                                | Steam/gaming-related home-manager module, opted into by both home profiles.                                                                                                                                       |
 | `modules/gnome/`                                 | GNOME desktop environment: NixOS-level enablement (`default.nix`) plus home-manager-level extensions/dconf settings (`extensions.nix`, `settings.nix`).                                                           |
 | `.github/workflows/`                             | `ci-pr.yml`, `renovate.yaml` (see Commands table above).                                                                                                                                                          |
-| `.renovaterc.json`                               | Extends the shared `William-Ro/renovate-config` preset; adds nix-specific lockfile-maintenance scheduling and groups all flake-input bumps into one PR.                                                           |
-| `flake.lock`                                     | Pins exact revisions of all flake inputs; Renovate's `lockFileMaintenance` keeps it current weekly.                                                                                                               |
+| `.renovaterc.json`                               | Extends the shared `William-Ro/renovate-config` preset; adds nix-specific lockfile-maintenance scheduling (opens a PR but no longer auto-merges, see [decisions/0005](docs/decisions/0005-no-automerge-lockfile-maintenance.md)) and groups all flake-input bumps into one PR.                                                           |
+| `flake.lock`                                     | Pins exact revisions of all flake inputs; Renovate's `lockFileMaintenance` keeps it current weekly, routine per-input bumps merge themselves via branch automerge.                                                                                                               |
 
 ### Deployment & Runtime Surface
 
@@ -347,7 +348,7 @@ sequenceDiagram
 | Hostname                                       | `modules/autoload/hostname.nix`, set from `specialArgs.hostName`                                                             | [`modules/autoload/hostname.nix`](modules/autoload/hostname.nix), [`bootstrap/default.nix#L19-L26`](bootstrap/default.nix) |
 | Secrets                                        | **None stored in-repo** — `programs.git.settings.credential.helper = "pass"` delegates to the external `pass` password store | [`modules/common/git.nix#L16`](modules/common/git.nix)                                                                     |
 | Formatting                                     | `nixfmt`, enforced in CI (`ci-pr.yml`, blocking)                                                                             | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                               |
-| Linting                                        | `deadnix`, `statix` — both `continue-on-error: true`, informational only                                                     | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                               |
+| Linting                                        | `deadnix`, `statix` — both required/blocking since decisions/0004                                                     | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                               |
 | Dependency updates                             | Renovate via shared org preset + shared reusable workflow                                                                    | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml)               |
 
 ### Inferred Architectural Decision Records
@@ -379,8 +380,8 @@ sequenceDiagram
 
 ### Governance & enforcement mechanisms
 
-- **CI gates:** `ci-pr.yml` (format + flake-check, pre-merge), now a
-  **required** check for merging to `main`, on both `pull_request` and
+- **CI gates:** `ci-pr.yml` (format check, flake check, `deadnix`, `statix` —
+  all required since decisions/0004), on both `pull_request` and
   `push` to `renovate/**` (decisions/0003).
 - **Branch protection:** one active ruleset on `main` — requires a pull
   request and the `Syntax & Lint` status check, blocks force-pushes and

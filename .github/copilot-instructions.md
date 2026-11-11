@@ -48,8 +48,10 @@ Nothing in CI builds a host or home — run this yourself before opening a PR
 for anything beyond a trivial module tweak.
 
 `nix shell nixpkgs#deadnix --command deadnix --exclude result` and
-`nix shell nixpkgs#statix --command statix check` also run in CI but are
-non-blocking (`continue-on-error: true`) — worth running locally, not a gate.
+`nix shell nixpkgs#statix --command statix check` also run in CI and are
+**required** too (see `docs/decisions/0004`) — run them locally before
+opening a PR, since a single unused argument or anti-pattern now fails the
+whole `Syntax & Lint` check.
 
 ## Repository conventions
 
