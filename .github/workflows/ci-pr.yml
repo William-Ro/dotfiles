@@ -4,6 +4,9 @@ name: CI PR
 on:
   pull_request:
     branches: [main]
+  push:
+    branches:
+      - "renovate/**"
 
 concurrency:
   group: ci-pr-${{ github.ref }}
