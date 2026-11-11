@@ -82,13 +82,14 @@ This is now the **only** validation workflow besides `Renovate` — a former
 (post-merge dry-run build of both hosts) and `auto-format.yml` (weekly
 auto-formatting PR) were removed to match the same minimal two-workflow shape
 `William-Ro/homelab` uses (`renovate.yaml` + `ci-pr.yml`), now that all changes
-are expected to go through a PR. Confirmed via the GitHub API: `main`'s only
-active ruleset blocks branch **deletion** — it does not yet require a pull
-request, review, or any status check, and a GitHub App integration can bypass
-it entirely. **No CI workflow is a required/blocking check here today** — PRs
-are the adopted convention, not yet an enforced one; see
-[decisions/](docs/decisions/README.md) if that changes. There is no test suite
-in the conventional sense, and **no CI step builds anything** anymore — `nix
+are expected to go through a PR. Confirmed via the GitHub API: `main`'s
+ruleset requires a pull request and the `Syntax & Lint` status check before
+merging (see
+[decisions/0002](docs/decisions/0002-enforce-pr-required-workflow.md)) — a
+GitHub App integration (Renovate) can still bypass the PR requirement for
+branch automerge, but the required status check still applies to it. There is
+no test suite in the conventional sense, and **no CI step builds anything**
+anymore — `nix
 flake check` (schema-level) is the closest automated equivalent to a "test";
 run the `nixosConfigurations`/`homeConfigurations` dry-run builds yourself
 before opening a PR (see Developer gotchas below).
@@ -207,10 +208,12 @@ root/.github listing]`.
   in `ci-main.yml` was removed along with that workflow. A change that
   evaluates fine but fails to actually build is caught only if someone runs
   the dry-run build commands locally (see Commands & Verification Inventory).
-- **`main` has no required-status-check or PR-required rule yet** — only a
-  deletion-protection rule exists (confirmed via the GitHub API). PRs for
-  every change are now the adopted convention, but nothing in GitHub enforces
-  it; a direct `git push` to `main` is still technically possible.
+- **`main` now has a required-PR and required-status-check rule** — the
+  ruleset requires a pull request plus the `Syntax & Lint` check to pass
+  before merging (see
+  [decisions/0002](docs/decisions/0002-enforce-pr-required-workflow.md)).
+  Direct `git push` to `main` is rejected; only Renovate's Integration bypass
+  actor can merge without a PR, and even then the status check still applies.
 
 ### Relationship to broader ecosystem (as visible from disk)
 
@@ -354,10 +357,10 @@ sequenceDiagram
   Nix path literals.** Trades compile-time path-checking for shorter,
   directory-root-relative import lists in every host/home file.
   `[INFERRED]` from [`bootstrap/lib.nix#L11-L24`](bootstrap/lib.nix).
-- **CI validates, it doesn't gate — yet.** `ci-pr.yml` checks format/flake-eval
-  pre-merge; no branch ruleset requires it to pass. PRs for every change are
-  the adopted convention, not an enforced one — confirmed via the GitHub
-  ruleset API, not asserted from the workflow files alone.
+- **CI validates and gates.** `ci-pr.yml` checks format/flake-eval pre-merge;
+  the ruleset requires it (`Syntax & Lint`) plus a PR to merge to `main` —
+  confirmed via the GitHub ruleset API
+  ([decisions/0002](docs/decisions/0002-enforce-pr-required-workflow.md)).
 - **Dependency automation is centralized, CI logic is not.** Both `Renovate`
   config and workflow are shared with `William-Ro/homelab` (and presumably
   other repos); the validation workflow (`ci-pr.yml`) is local to this repo
@@ -371,12 +374,13 @@ sequenceDiagram
 
 ### Governance & enforcement mechanisms
 
-- **CI gates:** `ci-pr.yml` (format + flake-check, pre-merge, not required by
-  any ruleset).
-- **Branch protection:** one active ruleset on `main` — blocks branch
-  deletion only; no required status checks, no required PR, no required
-  review. A GitHub App integration (likely the Renovate/bot app, `[UNVERIFIED]`
-  exact identity) can bypass it entirely. Confirmed via
+- **CI gates:** `ci-pr.yml` (format + flake-check, pre-merge), now a
+  **required** check for merging to `main`.
+- **Branch protection:** one active ruleset on `main` — requires a pull
+  request and the `Syntax & Lint` status check, blocks force-pushes and
+  branch deletion. A GitHub App integration (Renovate, confirmed by actor ID)
+  can bypass the PR requirement for branch automerge, but not the required
+  status check. Confirmed via
   `gh api repos/William-Ro/dotfiles/rulesets`.
 - **No CODEOWNERS or CONTRIBUTING file found.**
 
@@ -463,7 +467,7 @@ host and home configuration passes through it.
 | Flake structure, bootstrap/lib.nix mechanics, module composition                                    | High — read directly                                                           |
 | Directory layout and purpose table                                                                  | High — every path cited was opened                                             |
 | CI commands and triggers                                                                            | High — read directly from workflow YAML                                        |
-| CI is not a required/blocking gate on `main`                                                        | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
+| CI is a required/blocking gate on `main`                                                     | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
 | Shared ecosystem with `William-Ro/homelab` (Renovate preset + workflow)                             | High — same exact `extends`/`uses` strings found in both repos                 |
 | "One home profile per host, not per-user" being an intentional constraint (vs. just not-yet-needed) | Inferred — plausible from the directory keying, not stated anywhere            |
 | License / contribution policy                                                                       | Unverified — no LICENSE or CONTRIBUTING file found in the checkout             |
@@ -480,4 +484,5 @@ host and home configuration passes through it.
 - [`modules/system/nix.nix`](modules/system/nix.nix) — Nix daemon settings (GC, trusted users, registry).
 - [`.renovaterc.json`](.renovaterc.json) — shared Renovate preset + nix-specific lockfile-maintenance/grouping rules.
 - [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml) — all CI/automation behavior.
-- GitHub API (`rulesets`, `rulesets/13970002`) — confirmed `main`'s only rule is deletion-protection, no required status checks.
+- GitHub API (`rulesets`, `rulesets/13970002`) — confirmed `main` requires a
+  PR and the `Syntax & Lint` status check (decisions/0002).

@@ -38,9 +38,8 @@ nix shell nixpkgs#nixfmt --command \
 nix flake check --no-build
 ```
 
-Both run in CI (`ci-pr.yml`) on every PR, but **neither is a required/blocking
-check** — `main`'s only branch rule blocks deletion, not merges without
-passing CI. Treat a CI failure as real signal regardless.
+Both run in CI (`ci-pr.yml`) on every PR and are **required status checks** on
+`main` (see `docs/decisions/`) — a PR can't merge until `Syntax & Lint` passes.
 
 For anything beyond a trivial module tweak, also confirm the affected
 host/home actually builds — **nothing in CI builds anything**, so this is on
@@ -50,6 +49,16 @@ you before opening a PR:
 nix build .#nixosConfigurations.<host>.config.system.build.toplevel --dry-run
 nix build .#homeConfigurations.<home>.activationPackage --dry-run
 ```
+
+## Authority gate
+
+Before changing anything with no already-stated-correct answer — a package
+version, a module's internal option values, which modules a host/home
+imports, hardware-adjacent settings — confirm the choice is already settled
+by an existing convention, an instructions file, or a record in
+`docs/decisions/`. A configurable default, or "it happened to be set this
+way," is **not** authority. If no settled answer exists, stop and ask instead
+of inventing one.
 
 ## Working with git
 
