@@ -32,10 +32,10 @@ nix shell nixpkgs#nixfmt --command \
 nix flake check --no-build
 ```
 
-Both run in CI (`ci-pr.yml`) on every PR touching `**/*.nix`, `flake.lock`, or
-`.github/workflows/**`, but **neither is a required/blocking check** — `main`'s
-only branch rule blocks deletion, not merges without passing CI. Treat CI
-failures as real signal anyway; don't rely on the ruleset to catch them.
+Both run in CI (`ci-pr.yml`) on every PR, but **neither is a required/blocking
+check** — `main`'s only branch rule blocks deletion, not merges without
+passing CI. Treat CI failures as real signal anyway; don't rely on the
+ruleset to catch them.
 
 To confirm a host or home actually evaluates and builds (not just formats and
 type-checks):
