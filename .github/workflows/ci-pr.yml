@@ -47,9 +47,7 @@ jobs:
         run: nix flake check --no-build
 
       - name: Deadnix
-        continue-on-error: true
         run: nix shell nixpkgs#deadnix --command deadnix --exclude result
 
       - name: Statix
-        continue-on-error: true
         run: nix shell nixpkgs#statix --command statix check

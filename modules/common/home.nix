@@ -6,7 +6,7 @@
 {
 
   home = {
-    username = config.username;
+    inherit (config) username;
     homeDirectory = config.home_path;
     packages = with pkgs; [
       # Core
