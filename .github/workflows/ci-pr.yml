@@ -4,10 +4,6 @@ name: CI PR
 on:
   pull_request:
     branches: [main]
-    paths:
-      - "**/*.nix"
-      - flake.lock
-      - .github/workflows/**
 
 concurrency:
   group: ci-pr-${{ github.ref }}

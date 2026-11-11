@@ -1,11 +1,11 @@
 # Architecture
 
-| | |
-| --- | --- |
-| Remote | `git@github.com:William-Ro/dotfiles` |
-| Branch | `main` |
+|             |                                            |
+| ----------- | ------------------------------------------ |
+| Remote      | `git@github.com:William-Ro/dotfiles`       |
+| Branch      | `main`                                     |
 | HEAD commit | `7622a92a1a0852fe2f2be8dcc38f4b83affad6c2` |
-| License | None found in checkout `[UNVERIFIED]` |
+| License     | None found in checkout `[UNVERIFIED]`      |
 
 This document describes the repository as of the commit above. It is generated
 from the files on disk; claims are cited to a path, and anything not directly
@@ -27,20 +27,20 @@ machines (`desktop`, `laptop`), built from a shared pool of modules.
 
 ### Tech-stack detection table
 
-| Layer | Technology | Evidence |
-| --- | --- | --- |
-| Package/config language | Nix (flakes) | [`flake.nix`](flake.nix) |
-| OS configuration | NixOS, `nixpkgs-unstable` channel | [`flake.nix#L6`](flake.nix) |
-| User-environment configuration | home-manager (`nix-community/home-manager`, follows `nixpkgs`) | [`flake.nix#L8-L11`](flake.nix) |
-| Firefox extensions | `rycee/nur-expressions` (`firefox-addons` flake input) | [`flake.nix#L13-L17`](flake.nix) |
-| Neovim distro | `nix4nvchad` | [`flake.nix#L19-L23`](flake.nix), [`modules/common/nvchad.nix`](modules/common/nvchad.nix) |
-| Formatter | `nixfmt` (RFC-style) | [`bootstrap/default.nix#L31,L68`](bootstrap/default.nix), CI `nixfmt --check` |
-| Lint (non-blocking) | `deadnix`, `statix` | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) |
-| Dependency automation | Renovate, via shared org config + shared reusable workflow | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml) |
-| CI runner | GitHub Actions, `cachix/install-nix-action` | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) |
-| Desktop environment | GNOME (Wayland, GDM) | [`modules/gnome/default.nix`](modules/gnome/default.nix) |
-| Containers | Podman (Docker-compatible socket) | [`modules/system/virtualisation.nix`](modules/system/virtualisation.nix) |
-| GPU (desktop only) | NVIDIA proprietary driver, `.stable` channel | [`hosts/desktop/nvidia.nix`](hosts/desktop/nvidia.nix) |
+| Layer                          | Technology                                                     | Evidence                                                                                                     |
+| ------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Package/config language        | Nix (flakes)                                                   | [`flake.nix`](flake.nix)                                                                                     |
+| OS configuration               | NixOS, `nixpkgs-unstable` channel                              | [`flake.nix#L6`](flake.nix)                                                                                  |
+| User-environment configuration | home-manager (`nix-community/home-manager`, follows `nixpkgs`) | [`flake.nix#L8-L11`](flake.nix)                                                                              |
+| Firefox extensions             | `rycee/nur-expressions` (`firefox-addons` flake input)         | [`flake.nix#L13-L17`](flake.nix)                                                                             |
+| Neovim distro                  | `nix4nvchad`                                                   | [`flake.nix#L19-L23`](flake.nix), [`modules/common/nvchad.nix`](modules/common/nvchad.nix)                   |
+| Formatter                      | `nixfmt` (RFC-style)                                           | [`bootstrap/default.nix#L31,L68`](bootstrap/default.nix), CI `nixfmt --check`                                |
+| Lint (non-blocking)            | `deadnix`, `statix`                                            | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                 |
+| Dependency automation          | Renovate, via shared org config + shared reusable workflow     | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml) |
+| CI runner                      | GitHub Actions, `cachix/install-nix-action`                    | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                 |
+| Desktop environment            | GNOME (Wayland, GDM)                                           | [`modules/gnome/default.nix`](modules/gnome/default.nix)                                                     |
+| Containers                     | Podman (Docker-compatible socket)                              | [`modules/system/virtualisation.nix`](modules/system/virtualisation.nix)                                     |
+| GPU (desktop only)             | NVIDIA proprietary driver, `.stable` channel                   | [`hosts/desktop/nvidia.nix`](hosts/desktop/nvidia.nix)                                                       |
 
 ### Entry points
 
@@ -61,20 +61,24 @@ function, consumed by the Nix CLI:
 
 ### Commands & Verification Inventory
 
-| Command | Purpose | Evidence |
-| --- | --- | --- |
-| `nix shell nixpkgs#nixfmt --command find . -name "*.nix" ... -exec nixfmt --check {} +` | Format check, all `.nix` files | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) `syntax` job |
-| `nix flake check --no-build` | Evaluate the flake (schema/type errors) without building derivations | same job |
-| `nix shell nixpkgs#deadnix --command deadnix --exclude result` | Dead-code lint | same job, `continue-on-error: true` — **not blocking** |
-| `nix shell nixpkgs#statix --command statix check` | Nix anti-pattern lint | same job, `continue-on-error: true` — **not blocking** |
-| `nixos-rebuild switch --flake .#<host>` (via the `os` devShell helper) | Apply a NixOS system configuration to a live host | [`bootstrap/default.nix#L73`](bootstrap/default.nix) |
-| `home-manager switch --flake .#<home>` (via the `hm` devShell helper) | Apply a home-manager user configuration | [`bootstrap/default.nix#L70`](bootstrap/default.nix) |
+| Command                                                                                 | Purpose                                                              | Evidence                                                                  |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `nix shell nixpkgs#nixfmt --command find . -name "*.nix" ... -exec nixfmt --check {} +` | Format check, all `.nix` files                                       | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) `syntax` job |
+| `nix flake check --no-build`                                                            | Evaluate the flake (schema/type errors) without building derivations | same job                                                                  |
+| `nix shell nixpkgs#deadnix --command deadnix --exclude result`                          | Dead-code lint                                                       | same job, `continue-on-error: true` — **not blocking**                    |
+| `nix shell nixpkgs#statix --command statix check`                                       | Nix anti-pattern lint                                                | same job, `continue-on-error: true` — **not blocking**                    |
+| `nixos-rebuild switch --flake .#<host>` (via the `os` devShell helper)                  | Apply a NixOS system configuration to a live host                    | [`bootstrap/default.nix#L73`](bootstrap/default.nix)                      |
+| `home-manager switch --flake .#<home>` (via the `hm` devShell helper)                   | Apply a home-manager user configuration                              | [`bootstrap/default.nix#L70`](bootstrap/default.nix)                      |
 
 **CI enforcement:** `CI PR` (`syntax` job: format + flake check, lint
-non-blocking) runs on every PR touching `**/*.nix`, `flake.lock`, or
-`.github/workflows/**`
-([`.github/workflows/ci-pr.yml#L5-L9`](.github/workflows/ci-pr.yml)). This is
-now the **only** validation workflow besides `Renovate` — a former `ci-main.yml`
+non-blocking) runs on every `pull_request` targeting `main`, regardless of
+which files changed — an earlier path filter (`**/*.nix`, `flake.lock`,
+`.github/workflows/**`) was removed because it meant docs/instructions-only
+PRs (e.g. this one) triggered no checks at all, same gap
+`William-Ro/homelab` hit and fixed (see
+[decisions/0001](docs/decisions/0001-run-ci-on-every-pr-no-path-filter.md)).
+This is now the **only** validation workflow besides `Renovate` — a former
+`ci-main.yml`
 (post-merge dry-run build of both hosts) and `auto-format.yml` (weekly
 auto-formatting PR) were removed to match the same minimal two-workflow shape
 `William-Ro/homelab` uses (`renovate.yaml` + `ci-pr.yml`), now that all changes
@@ -91,32 +95,32 @@ before opening a PR (see Developer gotchas below).
 
 ### Directory layout
 
-| Path | Purpose |
-| --- | --- |
-| [`flake.nix`](flake.nix) | Declares flake inputs and calls `bootstrap/` with the `{ hosts, homes }` map for `x86_64-linux`. |
-| [`bootstrap/default.nix`](bootstrap/default.nix) | The flake-output generator: turns `{ hosts, homes }` into `nixosConfigurations`, `homeConfigurations`, `formatter`, and `devShells` for each system. |
-| [`bootstrap/lib.nix`](bootstrap/lib.nix) | Custom `lib` extensions: `autoloadedModules` (auto-discovers every `.nix` file under `modules/autoload/`) and `imports` (a helper that resolves bare strings like `"system/nix"` to `../modules/system/nix.nix`). |
-| `hosts/<name>/` | One directory per physical machine's NixOS configuration (`default.nix`, `hardware-configuration.nix`, plus machine-specific extras like `desktop/nvidia.nix`). |
-| `homes/<name>/` | One directory per machine's home-manager user configuration — note the directory is keyed by **machine name**, not username; there is one home profile per host, not per-user. |
-| `modules/autoload/` | Modules applied to **every** NixOS and home-manager configuration automatically, with no explicit import — discovered by filename at eval time ([`bootstrap/lib.nix#L4-L9`](bootstrap/lib.nix)). |
-| `modules/common/` | Home-manager modules shared by both machines' home profiles (shell, editor, git, terminal apps, desktop apps), explicitly imported via `lib.imports [...]`. |
-| `modules/system/` | NixOS system-level modules shared by both hosts (nix daemon settings, system packages/fonts, locale, audio, virtualisation). |
-| `modules/gaming/` | Steam/gaming-related home-manager module, opted into by both home profiles. |
-| `modules/gnome/` | GNOME desktop environment: NixOS-level enablement (`default.nix`) plus home-manager-level extensions/dconf settings (`extensions.nix`, `settings.nix`). |
-| `.github/workflows/` | `ci-pr.yml`, `renovate.yaml` (see Commands table above). |
-| `.renovaterc.json` | Extends the shared `William-Ro/renovate-config` preset; adds nix-specific lockfile-maintenance scheduling and groups all flake-input bumps into one PR. |
-| `flake.lock` | Pins exact revisions of all flake inputs; Renovate's `lockFileMaintenance` keeps it current weekly. |
+| Path                                             | Purpose                                                                                                                                                                                                           |
+| ------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`flake.nix`](flake.nix)                         | Declares flake inputs and calls `bootstrap/` with the `{ hosts, homes }` map for `x86_64-linux`.                                                                                                                  |
+| [`bootstrap/default.nix`](bootstrap/default.nix) | The flake-output generator: turns `{ hosts, homes }` into `nixosConfigurations`, `homeConfigurations`, `formatter`, and `devShells` for each system.                                                              |
+| [`bootstrap/lib.nix`](bootstrap/lib.nix)         | Custom `lib` extensions: `autoloadedModules` (auto-discovers every `.nix` file under `modules/autoload/`) and `imports` (a helper that resolves bare strings like `"system/nix"` to `../modules/system/nix.nix`). |
+| `hosts/<name>/`                                  | One directory per physical machine's NixOS configuration (`default.nix`, `hardware-configuration.nix`, plus machine-specific extras like `desktop/nvidia.nix`).                                                   |
+| `homes/<name>/`                                  | One directory per machine's home-manager user configuration — note the directory is keyed by **machine name**, not username; there is one home profile per host, not per-user.                                    |
+| `modules/autoload/`                              | Modules applied to **every** NixOS and home-manager configuration automatically, with no explicit import — discovered by filename at eval time ([`bootstrap/lib.nix#L4-L9`](bootstrap/lib.nix)).                  |
+| `modules/common/`                                | Home-manager modules shared by both machines' home profiles (shell, editor, git, terminal apps, desktop apps), explicitly imported via `lib.imports [...]`.                                                       |
+| `modules/system/`                                | NixOS system-level modules shared by both hosts (nix daemon settings, system packages/fonts, locale, audio, virtualisation).                                                                                      |
+| `modules/gaming/`                                | Steam/gaming-related home-manager module, opted into by both home profiles.                                                                                                                                       |
+| `modules/gnome/`                                 | GNOME desktop environment: NixOS-level enablement (`default.nix`) plus home-manager-level extensions/dconf settings (`extensions.nix`, `settings.nix`).                                                           |
+| `.github/workflows/`                             | `ci-pr.yml`, `renovate.yaml` (see Commands table above).                                                                                                                                                          |
+| `.renovaterc.json`                               | Extends the shared `William-Ro/renovate-config` preset; adds nix-specific lockfile-maintenance scheduling and groups all flake-input bumps into one PR.                                                           |
+| `flake.lock`                                     | Pins exact revisions of all flake inputs; Renovate's `lockFileMaintenance` keeps it current weekly.                                                                                                               |
 
 ### Deployment & Runtime Surface
 
-| Component | Version pin | Evidence |
-| --- | --- | --- |
-| `nixpkgs` | `nixpkgs-unstable` (rolling, pinned only by `flake.lock` revision) | [`flake.nix#L6`](flake.nix) |
-| `home-manager` | Tracks `nixpkgs` via `inputs.nixpkgs.follows` | [`flake.nix#L9-L11`](flake.nix) |
-| NixOS/home-manager state version (both hosts/homes) | `"24.05"` | [`hosts/desktop/default.nix#L55`](hosts/desktop/default.nix), [`hosts/laptop/default.nix#L52`](hosts/laptop/default.nix), [`homes/desktop/default.nix#L37`](homes/desktop/default.nix), [`homes/laptop/default.nix#L36`](homes/laptop/default.nix) |
-| NVIDIA driver (desktop only) | `nvidiaPackages.stable` (switched from `.latest` after a crash regression) | [`hosts/desktop/nvidia.nix#L28-L38`](hosts/desktop/nvidia.nix) |
-| CI runner image | `ubuntu-latest` (GitHub-hosted) | all workflow files |
-| `cachix/install-nix-action` | pinned by commit SHA, `# v31` | [`.github/workflows/ci-pr.yml#L28`](.github/workflows/ci-pr.yml) |
+| Component                                           | Version pin                                                                | Evidence                                                                                                                                                                                                                                           |
+| --------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `nixpkgs`                                           | `nixpkgs-unstable` (rolling, pinned only by `flake.lock` revision)         | [`flake.nix#L6`](flake.nix)                                                                                                                                                                                                                        |
+| `home-manager`                                      | Tracks `nixpkgs` via `inputs.nixpkgs.follows`                              | [`flake.nix#L9-L11`](flake.nix)                                                                                                                                                                                                                    |
+| NixOS/home-manager state version (both hosts/homes) | `"24.05"`                                                                  | [`hosts/desktop/default.nix#L55`](hosts/desktop/default.nix), [`hosts/laptop/default.nix#L52`](hosts/laptop/default.nix), [`homes/desktop/default.nix#L37`](homes/desktop/default.nix), [`homes/laptop/default.nix#L36`](homes/laptop/default.nix) |
+| NVIDIA driver (desktop only)                        | `nvidiaPackages.stable` (switched from `.latest` after a crash regression) | [`hosts/desktop/nvidia.nix#L28-L38`](hosts/desktop/nvidia.nix)                                                                                                                                                                                     |
+| CI runner image                                     | `ubuntu-latest` (GitHub-hosted)                                            | all workflow files                                                                                                                                                                                                                                 |
+| `cachix/install-nix-action`                         | pinned by commit SHA, `# v31`                                              | [`.github/workflows/ci-pr.yml#L28`](.github/workflows/ci-pr.yml)                                                                                                                                                                                   |
 
 `system.stateVersion`/`home.stateVersion` are compatibility markers for
 on-disk format/default changes, not a "current version" field — NixOS/HM
@@ -171,9 +175,15 @@ See the table at the top of this document.
 
 ### Repo-specific agent/contributor docs present
 
-None found at this commit — no `AGENTS.md`, `.github/copilot-instructions.md`,
-`CONTRIBUTING.md`, or `docs/` existed prior to this document.
-`[UNVERIFIED beyond a root/.github listing]`.
+| File                                                                                                 | Encodes                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [AGENTS.md](AGENTS.md)                                                                               | Short router to this document, `.github/copilot-instructions.md`, both scoped instructions files, and `docs/`.                           |
+| [.github/copilot-instructions.md](.github/copilot-instructions.md)                                   | Always-loaded repo conventions and validation commands.                                                                                  |
+| [.github/instructions/nix-modules.instructions.md](.github/instructions/nix-modules.instructions.md) | Scoped (via `applyTo`) to `hosts/**/*.nix`, `homes/**/*.nix`, `modules/**/*.nix`, `bootstrap/**/*.nix` — module/host-adding conventions. |
+| [.github/instructions/pr-workflow.instructions.md](.github/instructions/pr-workflow.instructions.md) | Branch/commit/push/PR workflow and Conventional Commits format.                                                                          |
+
+No `CONTRIBUTING.md` or `CODEOWNERS` file found. `[UNVERIFIED beyond a
+root/.github listing]`.
 
 ### Developer gotchas (each cited)
 
@@ -323,14 +333,14 @@ sequenceDiagram
 
 ### Cross-cutting concerns
 
-| Concern | Location | Evidence |
-| --- | --- | --- |
-| Shared identity (username, git identity, font) | `modules/autoload/config.nix`, a NixOS-module-style `options`/`config` pair available everywhere | [`modules/autoload/config.nix`](modules/autoload/config.nix) |
-| Hostname | `modules/autoload/hostname.nix`, set from `specialArgs.hostName` | [`modules/autoload/hostname.nix`](modules/autoload/hostname.nix), [`bootstrap/default.nix#L19-L26`](bootstrap/default.nix) |
-| Secrets | **None stored in-repo** — `programs.git.settings.credential.helper = "pass"` delegates to the external `pass` password store | [`modules/common/git.nix#L16`](modules/common/git.nix) |
-| Formatting | `nixfmt`, enforced in CI (`ci-pr.yml`, blocking) | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) |
-| Linting | `deadnix`, `statix` — both `continue-on-error: true`, informational only | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml) |
-| Dependency updates | Renovate via shared org preset + shared reusable workflow | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml) |
+| Concern                                        | Location                                                                                                                     | Evidence                                                                                                                   |
+| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Shared identity (username, git identity, font) | `modules/autoload/config.nix`, a NixOS-module-style `options`/`config` pair available everywhere                             | [`modules/autoload/config.nix`](modules/autoload/config.nix)                                                               |
+| Hostname                                       | `modules/autoload/hostname.nix`, set from `specialArgs.hostName`                                                             | [`modules/autoload/hostname.nix`](modules/autoload/hostname.nix), [`bootstrap/default.nix#L19-L26`](bootstrap/default.nix) |
+| Secrets                                        | **None stored in-repo** — `programs.git.settings.credential.helper = "pass"` delegates to the external `pass` password store | [`modules/common/git.nix#L16`](modules/common/git.nix)                                                                     |
+| Formatting                                     | `nixfmt`, enforced in CI (`ci-pr.yml`, blocking)                                                                             | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                               |
+| Linting                                        | `deadnix`, `statix` — both `continue-on-error: true`, informational only                                                     | [`.github/workflows/ci-pr.yml`](.github/workflows/ci-pr.yml)                                                               |
+| Dependency updates                             | Renovate via shared org preset + shared reusable workflow                                                                    | [`.renovaterc.json`](.renovaterc.json), [`.github/workflows/renovate.yaml`](.github/workflows/renovate.yaml)               |
 
 ### Inferred Architectural Decision Records
 
@@ -448,15 +458,15 @@ host and home configuration passes through it.
 
 ## Confidence assessment
 
-| Claim area | Confidence |
-| --- | --- |
-| Flake structure, bootstrap/lib.nix mechanics, module composition | High — read directly |
-| Directory layout and purpose table | High — every path cited was opened |
-| CI commands and triggers | High — read directly from workflow YAML |
-| CI is not a required/blocking gate on `main` | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
-| Shared ecosystem with `William-Ro/homelab` (Renovate preset + workflow) | High — same exact `extends`/`uses` strings found in both repos |
-| "One home profile per host, not per-user" being an intentional constraint (vs. just not-yet-needed) | Inferred — plausible from the directory keying, not stated anywhere |
-| License / contribution policy | Unverified — no LICENSE or CONTRIBUTING file found in the checkout |
+| Claim area                                                                                          | Confidence                                                                     |
+| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Flake structure, bootstrap/lib.nix mechanics, module composition                                    | High — read directly                                                           |
+| Directory layout and purpose table                                                                  | High — every path cited was opened                                             |
+| CI commands and triggers                                                                            | High — read directly from workflow YAML                                        |
+| CI is not a required/blocking gate on `main`                                                        | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
+| Shared ecosystem with `William-Ro/homelab` (Renovate preset + workflow)                             | High — same exact `extends`/`uses` strings found in both repos                 |
+| "One home profile per host, not per-user" being an intentional constraint (vs. just not-yet-needed) | Inferred — plausible from the directory keying, not stated anywhere            |
+| License / contribution policy                                                                       | Unverified — no LICENSE or CONTRIBUTING file found in the checkout             |
 
 ## Footnotes — local file citations
 

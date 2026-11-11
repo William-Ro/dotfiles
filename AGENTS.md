@@ -17,6 +17,10 @@ Code, Codex, Cursor, etc.), not just one tool.
 - [.github/copilot-instructions.md](.github/copilot-instructions.md) — repo
   conventions and validation commands. Read before editing anything under
   `hosts/`, `homes/`, `modules/`, or `bootstrap/`.
+- [.github/instructions/nix-modules.instructions.md](.github/instructions/nix-modules.instructions.md) —
+  scoped conventions for Nix host/home/module files specifically.
+- [.github/instructions/pr-workflow.instructions.md](.github/instructions/pr-workflow.instructions.md) —
+  how to carry a change through to an open PR.
 - [decisions/](docs/decisions/README.md) — lasting decisions and their
   rationale. Check here before "fixing" something that looks wrong; it may be
   intentional (e.g. a driver version pin).
@@ -49,13 +53,8 @@ nix build .#homeConfigurations.<home>.activationPackage --dry-run
 
 ## Working with git
 
-Open a PR for every change — that's the adopted convention here (mirroring
-`William-Ro/homelab`), even though `main`'s branch ruleset doesn't yet enforce
-it (only a deletion-protection rule exists). The repo's history predates this
-convention and mixes direct pushes with PR merges, but don't treat that as
-license to push directly going forward. Conventional Commits are already the
-norm (`fix(nix): ...`, `feat(desktop): ...`, `chore: ...`, `ci: ...`,
-`style: ...`, `revert: ...`) — follow that format.
+See [.github/instructions/pr-workflow.instructions.md](.github/instructions/pr-workflow.instructions.md)
+for the branch/commit/push/PR workflow and Conventional Commits format.
 
 ## Stop and ask before
 
