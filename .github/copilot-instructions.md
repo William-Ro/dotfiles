@@ -32,10 +32,9 @@ nix shell nixpkgs#nixfmt --command \
 nix flake check --no-build
 ```
 
-Both run in CI (`ci-pr.yml`) on every PR, but **neither is a required/blocking
-check** — `main`'s only branch rule blocks deletion, not merges without
-passing CI. Treat CI failures as real signal anyway; don't rely on the
-ruleset to catch them.
+Both run in CI (`ci-pr.yml`) on every PR and are **required** — `main`'s
+branch ruleset requires a PR plus the `Syntax & Lint` status check before
+merging (see `docs/decisions/0002`). Direct pushes to `main` are rejected.
 
 To confirm a host or home actually evaluates and builds (not just formats and
 type-checks):

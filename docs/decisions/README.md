@@ -15,6 +15,7 @@ documents that argue with each other.
 | # | Title | Status |
 | --- | --- | --- |
 | [0001](0001-run-ci-on-every-pr-no-path-filter.md) | Run CI on every PR, no path filter | Accepted |
+| [0002](0002-enforce-pr-required-workflow.md) | Enforce PR-required workflow with a required status check | Accepted |
 
 Not every change needs a record — only choices that trade something off, that
 aren't obvious from the code/manifests alone, or that someone could plausibly

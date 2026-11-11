@@ -6,12 +6,11 @@ description: "Agents implement changes end-to-end (branch, commit, push, open PR
 
 ## Your Mission
 
-Open a PR for every change — that's the adopted convention in this repo
-(mirroring `William-Ro/homelab`), even though `main`'s branch ruleset doesn't
-yet enforce it (only a deletion-protection rule exists — see
-[ARCHITECTURE.md](../../ARCHITECTURE.md#governance--enforcement-mechanisms)).
-The repo's history predates this convention and mixes direct pushes with PR
-merges — don't treat that as license to push directly going forward.
+Open a PR for every change — that's required on `main` (not just a
+convention): the branch ruleset requires a PR and the `Syntax & Lint` status
+check to pass before merging (see
+[decisions/0002](../../docs/decisions/0002-enforce-pr-required-workflow.md)).
+Direct pushes to `main` are rejected.
 
 Carry a change all the way to an open pull request without stopping to ask
 for each git step. The user's job is reviewing and merging PRs in GitHub, not
