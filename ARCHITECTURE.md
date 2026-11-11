@@ -77,6 +77,11 @@ which files changed — an earlier path filter (`**/*.nix`, `flake.lock`,
 PRs (e.g. this one) triggered no checks at all, same gap
 `William-Ro/homelab` hit and fixed (see
 [decisions/0001](docs/decisions/0001-run-ci-on-every-pr-no-path-filter.md)).
+It also runs on `push` to `renovate/**` branches, so Renovate's branch
+automerge (the default for `digest`/`minor`/`patch`/`pin` flake input bumps —
+see `.renovaterc.json`) has a status to merge against instead of hanging
+forever waiting on a check that would never run (see
+[decisions/0003](docs/decisions/0003-gate-renovate-branch-automerge-with-ci.md)).
 This is now the **only** validation workflow besides `Renovate` — a former
 `ci-main.yml`
 (post-merge dry-run build of both hosts) and `auto-format.yml` (weekly
@@ -375,12 +380,14 @@ sequenceDiagram
 ### Governance & enforcement mechanisms
 
 - **CI gates:** `ci-pr.yml` (format + flake-check, pre-merge), now a
-  **required** check for merging to `main`.
+  **required** check for merging to `main`, on both `pull_request` and
+  `push` to `renovate/**` (decisions/0003).
 - **Branch protection:** one active ruleset on `main` — requires a pull
   request and the `Syntax & Lint` status check, blocks force-pushes and
   branch deletion. A GitHub App integration (Renovate, confirmed by actor ID)
   can bypass the PR requirement for branch automerge, but not the required
-  status check. Confirmed via
+  status check — which is why `ci-pr.yml` also triggers on `push` to
+  `renovate/**` (decisions/0003). Confirmed via
   `gh api repos/William-Ro/dotfiles/rulesets`.
 - **No CODEOWNERS or CONTRIBUTING file found.**
 
@@ -467,7 +474,7 @@ host and home configuration passes through it.
 | Flake structure, bootstrap/lib.nix mechanics, module composition                                    | High — read directly                                                           |
 | Directory layout and purpose table                                                                  | High — every path cited was opened                                             |
 | CI commands and triggers                                                                            | High — read directly from workflow YAML                                        |
-| CI is a required/blocking gate on `main`                                                     | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
+| CI is a required/blocking gate on `main`                                                            | High — confirmed via GitHub ruleset API, not just inferred from workflow files |
 | Shared ecosystem with `William-Ro/homelab` (Renovate preset + workflow)                             | High — same exact `extends`/`uses` strings found in both repos                 |
 | "One home profile per host, not per-user" being an intentional constraint (vs. just not-yet-needed) | Inferred — plausible from the directory keying, not stated anywhere            |
 | License / contribution policy                                                                       | Unverified — no LICENSE or CONTRIBUTING file found in the checkout             |
