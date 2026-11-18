@@ -41,6 +41,7 @@
       k9s
       chromium
       github-copilot-cli
+      feishin
     ];
   };
 
