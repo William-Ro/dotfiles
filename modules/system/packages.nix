@@ -10,7 +10,7 @@
     pcsclite
     wl-clipboard
     dig
-    github-copilot-cli
+    openssl
   ];
   fonts = {
     packages = with pkgs; [
