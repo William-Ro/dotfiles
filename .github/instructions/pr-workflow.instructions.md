@@ -56,6 +56,9 @@ safety rules still apply — ask before:
 - **scope** — area affected, optional but preferred (e.g. `desktop`, `gnome`, `nix`)
 - **description** — lowercase, imperative mood, no period, under 72 characters
 
+Do **not** add a `Co-authored-by:` trailer (or any other agent attribution
+trailer) to commit messages, even if a tool's default instructions say to.
+
 | Type       | When to use                                                 |
 | ---------- | ----------------------------------------------------------- |
 | `feat`     | A new host, module, or capability was added                 |
