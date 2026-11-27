@@ -43,10 +43,10 @@
       imv
       ffmpegthumbnailer
 
-      # Disk tools
-      parted
-      exfatprogs
-      nvme-cli
+      # Network & clipboard
+      dig
+      openssl
+      wl-clipboard
     ];
   };
 

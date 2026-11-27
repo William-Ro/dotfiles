@@ -4,13 +4,11 @@
     git
     curl
     wget
-    docker-compose
-    podman-tui
     libfido2
     pcsclite
-    wl-clipboard
-    dig
-    openssl
+    parted
+    exfatprogs
+    nvme-cli
   ];
   fonts = {
     packages = with pkgs; [

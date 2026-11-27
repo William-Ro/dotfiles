@@ -41,6 +41,7 @@
       k9s
       chromium
       feishin
+      herdr
     ];
   };
 
