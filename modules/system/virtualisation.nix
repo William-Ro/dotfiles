@@ -1,4 +1,10 @@
-_: {
+{ pkgs, ... }:
+{
+  environment.systemPackages = with pkgs; [
+    docker-compose
+    podman-tui
+  ];
+
   virtualisation = {
     containers.enable = true;
     podman = {
