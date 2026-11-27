@@ -47,9 +47,10 @@
       codex
       github-copilot-cli
       cursor-cli
-      # required by herdr's copilot hook (herdr-agent-state.sh)
-      python3
     ];
+
+    # the nixpkgs copilot runs as `node .../index.js`, which herdr can't recognize without this hint
+    shellAliases.copilot = "HERDR_AGENT=copilot copilot";
   };
 
   gtk = {
