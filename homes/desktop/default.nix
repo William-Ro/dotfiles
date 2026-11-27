@@ -39,8 +39,14 @@
       fluxcd-operator
       k9s
       chromium
-      feishin
+
+      # AI
       herdr
+      claude-code
+      antigravity-cli
+      codex
+      github-copilot-cli
+      cursor-cli
       # required by herdr's copilot hook (herdr-agent-state.sh)
       python3
     ];
