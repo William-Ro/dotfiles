@@ -39,11 +39,6 @@
     printing.enable = true;
     gvfs.enable = true;
     flatpak.enable = true;
-    udev.packages = [
-      (pkgs.writeTextDir "lib/udev/rules.d/70-hidraw-uaccess.rules" ''
-        KERNEL=="hidraw*", SUBSYSTEM=="hidraw", TAG+="uaccess"
-      '')
-    ];
   };
 
   programs = {
@@ -57,7 +52,6 @@
       "wheel"
       "networkmanager"
       "podman"
-      "dialout"
     ];
     shell = pkgs.zsh;
   };
