@@ -43,7 +43,6 @@
 
   programs = {
     zsh.enable = true;
-    ssh.startAgent = true;
   };
 
   users.users.${config.username} = {
