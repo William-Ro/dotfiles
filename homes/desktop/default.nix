@@ -16,7 +16,6 @@
     "common/discord"
     "common/easyeffects"
     "common/vscode"
-    "common/nvchad"
     "common/yazi"
     "common/zsh"
     "common/starship"

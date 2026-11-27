@@ -1,5 +1,4 @@
 {
-  inputs,
   pkgs,
   ...
 }:
@@ -18,21 +17,7 @@
         "browser.formfill.enable" = false;
         "browser.translations.automaticallyPopup" = false;
         "browser.translations.enable" = false;
-        "extensions.unifiedExtensions.enabled" = true;
         "media.videocontrols.picture-in-picture.enabled" = false;
-      };
-
-      extensions = {
-        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
-          clearurls
-          new-tab-override
-          fastforwardteam
-          istilldontcareaboutcookies
-          privacy-badger
-          sponsorblock
-          ublock-origin
-          bitwarden
-        ];
       };
     };
   };
