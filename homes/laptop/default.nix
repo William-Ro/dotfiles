@@ -19,7 +19,6 @@
     "common/zsh"
     "common/starship"
     "common/vscode"
-    "common/nvchad"
 
     # gaming
     "gaming"

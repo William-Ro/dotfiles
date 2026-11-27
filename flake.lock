@@ -1,27 +1,5 @@
 {
   "nodes": {
-    "firefox-addons": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "pkgs/firefox-addons",
-        "lastModified": 1795320161,
-        "narHash": "sha256-1cVr0CyXUbvjSA6awXv3B9UNn38/s2jri1yqQH3LDCY=",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "rev": "c83f1fa2548ad34b88ad7ebc0dff52be8c909ebd",
-        "type": "gitlab"
-      },
-      "original": {
-        "dir": "pkgs/firefox-addons",
-        "owner": "rycee",
-        "repo": "nur-expressions",
-        "type": "gitlab"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -42,27 +20,6 @@
         "type": "github"
       }
     },
-    "nix4nvchad": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nvchad-starter": "nvchad-starter"
-      },
-      "locked": {
-        "lastModified": 1795280967,
-        "narHash": "sha256-zwhC9NyFqO0JuVlAJehac14qlGXf0Fa4pyHsFiDwJAc=",
-        "owner": "nix-community",
-        "repo": "nix4nvchad",
-        "rev": "f234ac12bfa6954c308eacfcf1d8de5773831059",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "nix4nvchad",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1795371335,
@@ -79,28 +36,9 @@
         "type": "github"
       }
     },
-    "nvchad-starter": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1753939018,
-        "narHash": "sha256-xdLr6tlU9uA+wu0pqha2br0fdVm+1MjgjbB5awz9ICU=",
-        "owner": "NvChad",
-        "repo": "starter",
-        "rev": "e3572e1f5e1c297212c3deeb17b7863139ce663e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NvChad",
-        "ref": "main",
-        "repo": "starter",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
-        "nix4nvchad": "nix4nvchad",
         "nixpkgs": "nixpkgs"
       }
     }
