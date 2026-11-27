@@ -41,6 +41,8 @@
       chromium
       feishin
       herdr
+      # required by herdr's copilot hook (herdr-agent-state.sh)
+      python3
     ];
   };
 
